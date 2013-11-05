@@ -1,0 +1,21 @@
+.partners{
+	h3{
+		margin-bottom:20px;
+	}
+	.partner{
+		margin-bottom:$unit2;		
+		a{
+			opacity:0.35;
+			width:130px;
+			margin:0 auto;
+			display:block;
+			img{
+				display:block;
+				margin:0;
+			}
+			&:hover{
+				opacity:1;
+			}
+		}
+	}
+}

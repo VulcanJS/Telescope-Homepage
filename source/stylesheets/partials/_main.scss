@@ -1,0 +1,168 @@
+
+$unit:40px;
+$unit2:$unit/2;
+
+
+@mixin light{
+	font-weight:100;
+}
+@mixin regular{
+	font-weight:300;
+}
+@mixin bold{
+	font-weight:600;
+}
+html, body{
+	width:100%;
+	height:100%;
+	padding:0;
+	margin:0;
+}
+body, input, textarea, button{
+	font-family: 'Source Sans Pro', sans-serif;
+	background:#0b091c;
+	color:white(0.7);
+	line-height:1.7;
+	@include regular;	
+}
+h1, h2, h3, h4, h5, .intro{
+	text-shadow: 0px 1px 2px black(0.9);
+	text-align:center;
+	margin:0;
+}
+h3{
+	text-shadow: 0px 2px 5px black(0.9), 0px 0px 15px white(0.5);
+	@include light;
+	font-size:38px;
+	margin-bottom:20px;
+	color:$pink;
+	strong{
+		@include bold;
+		// color:white;
+	}
+}
+p{
+	margin:0 0 $unit2 0;
+	&.small{
+		font-size:14px;
+	}
+}
+strong{
+	@include bold;
+	// color:white(0.85);
+}
+a{
+	@include bold;
+	text-decoration:none;
+	@include single-transition(ease-out, all, 300ms, 0ms);
+	&:link, &:active, &:visited{
+		color:white;
+	}
+	&:hover{
+		color:#fcebff;
+		text-shadow:0px 0px 5px white;
+	}
+}
+// body{
+// 	background:url(../images/stars1-bg.jpg);
+// 	background-size:2000px 1212px;
+// }
+.bg { 
+	width:100%;
+	height:100%;
+	background: url(../images/stars-bg.jpg) no-repeat top center; 
+	// background: url(../images/stars2-bg.png) no-repeat top center; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/stars-bg.jpg', sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/stars-bg.jpg', sizingMethod='scale')";
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:-10;
+}
+.container{
+	padding:60px 10px;
+}
+
+.button{
+	display:block;
+	@include border-radius(5px);
+	// @include background(linear-gradient(bottom, #41378b, #b281ff));
+	@include background(linear-gradient(bottom, #201a4b, #cbabff));
+	@include box-shadow(inset 0px 1px white(0.25));
+	border:none;
+	height:80px;
+	text-align:center;
+	position:relative;
+	overflow:hidden;
+	margin-bottom:10px;
+	span{
+		@include single-transition(ease-out, all, 300ms, 0ms);
+		display:block;
+		width:100%;
+	}
+	.bg1, .bg2{
+		position:absolute;
+		height:100%;
+		width:102%;
+	}
+	.bg1{
+		background: url(../images/button-bg.png)  center center repeat;
+		z-index:10;
+		opacity:0.6;
+	}
+	.bg2{
+		background: url(../images/button-bg-hover.png)  center center repeat;
+		background-size:390px 80px;
+		z-index:20;
+		opacity:0;
+	}
+	.button-content{
+		@include border-radius(5px);
+		@include box-shadow(inset 0px 1px white(0.25));
+		position:absolute;
+		z-index:30;
+		font-size:24px;
+		text-shadow:0px 2px 5px black(0.35);
+		line-height:78px;
+		height:100%;
+	}
+	.action{
+		em{
+			@include regular;
+			font-style:normal;
+		}
+	}
+	&:hover{
+		.button-content{
+			@include box-shadow(inset 0px 1px white(0.1));
+		}
+		.bg1{
+			opacity:0;
+		}
+		.bg2{
+			background-size:440px 90px;
+			opacity:1;
+		}
+	}
+	&:active{
+		position:relative;
+		top:1px;
+	}
+}
+.section{
+	border-bottom:1px solid white(0.15);
+	margin-bottom:$unit;
+	padding-bottom:$unit;
+	&.no-border{
+		border-bottom:none;
+		margin-bottom:0;
+	}
+}
+.sign-up-confirm{
+	text-align:center;
+	font-size:24px;
+}

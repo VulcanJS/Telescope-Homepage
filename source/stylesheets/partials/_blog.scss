@@ -1,0 +1,92 @@
+#blog{
+	h3{
+		margin-bottom: 40px;
+		a{
+			font-size: 16px;
+		}
+	}
+}
+.inverted{
+	color: $darker-text;
+	a{
+		&:link{
+			color: $medium-purple;
+		}
+		&:visited{
+			color: $dark-purple;
+		}
+		&:hover{
+			color: $pink;
+		}
+	}	
+}
+.post, .comments{
+	background: white;
+	@include border-radius(10px);
+	margin-bottom: 40px;
+	@include regular;
+}
+.post-top{
+	@include cf;
+	@include border-radius(5px 5px 0 0);
+	background: $light-grey;
+	padding: 5px 15px;
+	font-size: 14px;
+	.back{
+		display: block;
+		float: left;
+		height: 28px;
+		line-height: 28px;
+		margin-top: 2px;
+	}
+	.meta{
+		display: block;
+		float: right;
+		>div{
+			display: inline-block;
+			margin-left: 20px;
+		}
+	}
+	.twitter{
+		iframe{
+			position: relative;
+			top:5px;
+		}
+	}
+}
+.post-content{
+	font-size: 18px;
+	padding: 40px;
+	.post-title{
+		text-shadow:none;
+		font-size: 46px;
+		text-align: left;
+		margin-bottom: 20px;
+		@include light;
+	}
+	h3{
+		text-shadow:none;
+		color: $dark-text;
+		@include bold;
+		text-align: left;
+		font-size: 24px;
+	}
+	img{
+		border: 10px solid $light-grey;
+		width: 80%;
+		margin: 0 auto;
+		display: block;
+	}
+}
+.articles{
+	.post-title{
+		font-size: 30px;
+		margin-bottom: 10px;
+		a{
+			@include light;
+		}
+	}
+}
+.comments{
+	padding: 40px;	
+}

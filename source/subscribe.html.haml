@@ -1,0 +1,42 @@
+!!!
+/[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7">
+/[if IE 7] <html class="no-js lt-ie9 lt-ie8">
+/[if IE 8] <html class="no-js lt-ie9">
+/ [if gt IE 8]><!
+%html.no-js
+  / <![endif]
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:name => "google", :value => "notranslate"}
+    %meta{:content => "en", "http-equiv" => "Content-Language"}
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    %title Telescope, an open-source social news app built with Meteor
+    %meta{:content => "", :name => "description"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %link{:rel=>"shortcut icon", :href=>"/images/favicon.ico"}
+    %link{:href => "http://fonts.googleapis.com/css?family=Bitter:400,700,400italic", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "stylesheets/screen.css", :rel => "stylesheet"}
+  %body
+    .bg
+    .container
+      .row
+        .span12.section
+          %h2 Almost finished
+          %p.sign-up-confirm You're almost done. You just need to confirm your subscription by clicking the link in the email you just received.
+    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"}
+    %script{:src => "//static.getclicky.com/js", :type => "text/javascript"}
+    :javascript
+      var clicky_custom = {};
+      clicky_custom.goal = { name: 'Signed up for newsletter' };
+
+      window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')
+      try{ clicky.init(100538336); }catch(e){}
+
+      $(function(){
+        clicky.goal('Signup');
+      });
+    %noscript
+      %p
+        %img{:alt => "Clicky", :height => "1", :src => "//in.getclicky.com/100538336ns.gif", :width => "1"}/  
+    %script{:src => "javascripts/main.js"}

@@ -1,0 +1,119 @@
+---
+title: Discover Meteor - Learn how to build real-time JavaScript web apps with Meteor.js
+page: home
+---
+
+- content_for(:title, current_page.data.title)
+- content_for(:page, current_page.data.page)
+
+%section#primary
+  .intro
+    / %h2 Warp Drive, Engage!
+    %p Learn <a href="http://meteor.com" target="_blank">Meteor</a> and build faster & simpler web apps, as we teach you how to build a real-time Meteor app from scratch. 
+    / %h3 Learn how how to build a full-featured, real-time <a href="http://meteor.com">Meteor</a> app, including:
+    / %ul
+    /   %li Managing user accounts
+    /   %li Working with real-time collections
+    /   %li Deploying Meteor apps
+    /   %li Animating your user interface
+    /   %li And much more! 
+    .buy
+      / - if content_for?(:discount)
+      /   %a.packages-link.button{:href => "/packages?discount=#{yield_content(:discount_code)}"} Get the book
+      / - else
+      %a.packages-link.button{:href => "/packages"} Get the book
+    .sample
+      %span Or download a sample chapter:
+      %a{:href => "/sample/DiscoverMeteor-Templates-Sample.pdf"} Chapter 3 — Collections
+  .book
+    %img{:src => '/images/meteor_book_illustration.png'}
+
+%section#testimonials
+  %h2 What People Are Saying
+  .testimonials
+    - data.testimonials[0..1].each do |testimonial|
+      =partial("partials/testimonial", :locals=>{testimonial:testimonial})
+  .testimonials
+    - data.testimonials[2..3].each do |testimonial|
+      =partial("partials/testimonial", :locals=>{testimonial:testimonial})      
+  %a.more-reviews{:href => "/reviews"} Read more reviews…
+
+%section#share.hidden
+  .share
+    %h3 Share: 
+    %ul
+      %li
+        %a.ss-icon{:href => "https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Ftwitter.com%2Fabout%2Fresources%2Fbuttons&text=The%20Meteor%20Book%3A%20learn%20to%20build%20a%20Meteor%20app%20from%20scratch&tw_p=tweetbutton&url=http%3A%2F%2Fthemeteorbook.com&via=TheMeteorBook", :target => "_blank"} twitter
+      %li
+        %a.ss-icon{:href => "http://www.facebook.com/sharer/sharer.php?src=bm&v=4&i=1359253178&u=http%3A%2F%2Fthemeteorbook.com", :target => "_blank"} facebook  
+      %li
+        %a.ss-icon{:href => "https://plus.google.com/share?url=http://themeteorbook.com", :target => "_blank"} googleplus
+
+=partial("partials/newsletter")   
+
+%section#meteor
+  %h2 So What's Meteor?
+  %p.first <a href="http://meteor.com" target="_blank">Meteor</a> is at the forefront of a new wave of frameworks that make building web apps <em>easier</em>, <em>simpler</em>, and <em>faster</em>. 
+  %p Not only is Meteor <strong>entirely real-time</strong> (meaning any change to your database is automatically reflected live in the browser), but the fact that <strong>it uses JavaScript on both the client and server</strong> means that you won't have to juggle with multiple languages and environments anymore. 
+  %p No matter your programming experience, by following our step-by-step instructions you'll be able to get your own Meteor app up and running in a matter of days! 
+
+
+%section#microscope
+  %h2 What We're Building
+  %a.screenshot{:href => "http://meteor-book-chapter14-2.meteor.com/", :target => "_blank"}
+    %img{:src => "/images/13-5.png"}
+    %span.overlay
+    %span.button Launch Demo
+  %h3 A real-time social news app, complete with posting, voting and commenting. 
+  %p We've learned a lot building <a href="http://telesc.pe" target="_blank">Telescope</a>, our open-source <a href="http://reddit.com" target="_blank">Reddit</a>-style app (and one of the most popular Meteor projects). Now we'll use everything we learned to show you how to build your own social news app from scratch!
+
+%section#features
+  %h2 What You're Getting
+  %img.illustration{:src => "/images/contents-illustration.png"}
+  - data.features.features.each_with_index do |feature, index|
+    =partial("partials/feature", :locals=>{feature:feature})
+
+%section#chapters
+  %h2 Full Chapters List
+  %ul.chapters-list
+    - data.chapters.each_with_index do |item, index|
+      %li
+        %span.chapter-title=item.name
+        %span.chapter-number=item.number
+    / %li.end -
+
+
+%section#authors
+  %h2 About The Authors
+  - data.authors.each do |author|
+    =partial("partials/author", :locals=>{author:author})     
+
+%section.cta2
+
+  %h2 It's Time to Discover Meteor!
+  %p Get the book, and start building your app right away.
+  / - if content_for?(:discount)
+  /   %a.packages-link.button{:href => "/packages?discount=#{yield_content(:discount_code)}"} Get the book
+  / - else
+  %a.packages-link.button{:href => "/packages"} Get the book  
+
+%section#faq
+  %h2 OK, but…
+  .question
+    %h3 Will you provide free updates?
+    %p You bet! Meteor is constantly evolving, and we will of course make sure the book is kept up to date free of charge.  
+  .question
+    %h3 What if I'm not an experienced developer?
+    %p We cover all the basics. If you know HTML, CSS, and a little bit of JavaScript, you should be able to follow along just fine. 
+  .question
+    %h3 What if I don't like the book?
+    %p If you're not satisfied with the book for any reason, contact us and we'll provide you with a full refund. 
+
+%section#contact
+  %h2 Get in touch
+  %p If you have any questions, please don't hesitate to <a href="http://discovermeteor.wufoo.com/forms/get-in-touch/">get in touch</a>!
+
+%section#thankyou
+  %h2 Thanks
+  %p We'd like to thank our awesome beta readers (Chuck, Richie, Thomas, Daler, Patrick, David, and all the others) for their great feedback, <a href="http://julien-c.fr/">Julien Chaumond</a> for contributing to the deployment section of the book, <a href="http://eventedmind.com">Chris Mather</a> for his excellent screencasts, <a href="http://offline-data.meteor.com/">Andrew Wilcox</a>, <a href="https://twitter.com/sarfata">Thomas Sarlandie</a>, and of course the Meteor team for putting together such a great environment and community!
+  %p Book cover photo credit: <a href="http://www.flickr.com/photos/dobieks/4889222256/in/photostream/">Perseid Hunting</a> by Darren Blackburn, licensed under a Creative Commons Attribution 2.0 Generic license.

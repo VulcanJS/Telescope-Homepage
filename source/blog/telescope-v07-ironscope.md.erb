@@ -1,0 +1,52 @@
+---
+title: 'Telescope v0.7 “IronScope”'
+published: true
+author: sacha
+date: 2013/11/05
+---
+
+I'm happy to announce a very big update to [Telescope](http://telesc.pe) [ [demo](http://telescope-demo.meteor.com/) | [GitHub](https://github.com/SachaG/Telescope) ]. 
+
+Actually, this update is more like a refactoring, with over 80 commits that add new features and clean up the codebase. So let's see what's new.
+
+READMORE
+
+
+(Note: in case you're wondering, Telescope is an open-source social news app built with the [Meteor](http://www.meteor.com) JavaScript framework. Think [Hacker News](http://news.ycombinator.com) or [Reddit](http://reddit.com), but responsive, modern, and real-time!)
+
+
+### Introducing IronRouter
+
+The biggest change is the switch to [IronRouter](https://github.com/EventedMind/iron-router), the new Router package developed by Chris Mather and Tom Coleman. 
+
+![https://github.com/EventedMind/iron-router](http://f.cl.ly/items/2Y2p0q3C0a3E3W3w2E1z/iron.png)
+
+IronRouter was made from scratch with Meteor apps in mind, and apart from its routing features it also helps a lot when it comes to subscriptions.
+
+Now, instead of throwing in all your subscription code in your `main.js` file and hoping for the best, IronRouter will let you specify which subscriptions to load on which route, and whether or not to wait for them.
+
+### In Progress
+
+This means you can now do really cool things such as use the [nProgress](http://ricostacruz.com/nprogress/) JavaScript plugin (there's also a [Meteorite package](https://atmosphere.meteor.com/package/nprogress)) to display a Medium-style progress bar between each page. 
+
+![http://sidebar.io](http://f.cl.ly/items/0n0H1u3V1S1Z2o2l0n1Z/sidebar.png)
+
+_[Sidebar](http://sidebar.io) running on the new version of Telescope._
+
+### Better Subscriptions
+
+The other benefit is that you also don't need to load all your data right from the start. This means that Telescope will now only ask for the data it needs right now, which in turns means faster loading times. 
+
+### Everybody's Invited!
+
+Another cool new feature is an invite system. As before, admins can invite individual users from the admin dashboard, but users can now also invite each others (provided they are themselves invited and have an invite available). 
+
+![](http://f.cl.ly/items/1y1O2k1Z3x2v2h1f3o3t/invite.png)
+
+### Getting Started
+
+If you want to get started with Telescope, you can [try out the demo](http://telescope-demo.meteor.com/) or [check out the code on GitHub](https://github.com/SachaG/Telescope). 
+
+Of course, if you want to know more about Meteor in general, there's also our book, [Discover Meteor](https://discovermeteor.com). It will teach you how to build a real-time app from scratch, using Telescope's little brother [Microscope](https://github.com/DiscoverMeteor/Microscope) as an example. 
+
+It's been almost a year now since I started building Telescope, and I'm finally starting to feel like the code is solid. So I'll hope you'll give it a try, and maybe even join us on the project!

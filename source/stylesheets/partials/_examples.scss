@@ -1,0 +1,21 @@
+.examples{
+	h4{
+		font-size:18px;
+	}
+	p{
+		text-align:center;
+	}
+	.logo{
+		display:block;
+		margin-bottom:20px;
+		opacity:0.4;
+		img{
+			display:block;
+			margin:0 auto;
+			height:50px;
+		}
+		&:hover{
+			opacity:1;
+		}
+	}
+}
