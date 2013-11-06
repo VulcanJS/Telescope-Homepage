@@ -1,0 +1,72 @@
+---
+title: 'Building Daily Digests with RSS Feeds & MailChimp'
+published: true
+author: sacha
+date: 2013/11/06
+---
+
+Telescope comes with built-in email notifications for new posts, which every user can turn on in their account panel. But receiving an email for every single new post might be a bit much, especially for very active communities. 
+
+So instead, let's take a look at an easy way to send out daily or weekly digests of the latest posts, using [MailChimp](http://mailchimp.com)'s [RSS Campaigns](http://kb.mailchimp.com/article/what-is-an-rss-to-email-campaign-and-how-to-i-set-one-up/) feature. 
+
+READMORE
+
+### Introducing MailChimp
+
+The first step is signing up for a [MailChimp](http://mailchimp.com) account, if you don't already have one. MailChimp is an email marketing service that makes it easy to send mass email campaigns to a list of members, and it's what we'll be using to send out our email digests.
+
+<%= figure "blog/mailchimp.jpg", "MailChimp", "", "http://mailchimp.com" %>
+
+So let's begin by creating a new list to hold all our member's emails. At this point, the details are not that important, and don't worry, you'll be able to change everything later on.
+
+<%= figure "blog/creatinglist.jpg", "Creating a new MailChimp list" %>
+
+### RSS-to-Email
+
+Now the “normal” way of creating email campaigns with MailChimp is to type them out manually each time. But MailChimp also includes a special "RSS-to-email" feature that lets you automatically generate new campaigns from RSS feeds.
+
+What's more, since receiving an email for every single new entry in a RSS feed would quickly get overwhelming, MailChimp is smart enough to aggregate multiple entries in a single campaign and only send it at the end of the day (or week, or month).
+
+<%= figure "blog/rssfeed.jpg", "Setting up an RSS-driven campaign" %>
+
+That happens to be exactly what we need! So let's set up a new RSS-driven campaign (*Campaigns > Create Campaign > RSS-Driven*). By the way, unlike regular campaigns – which send out only a single email – RSS-driven campaigns will keep sending out emails as long as your RSS feed is updated with new content, meaning you only need to set them up once. 
+
+To get the URL of your Telescope RSS feed, just add `feed.xml` after your Telescope URL. For example: `http://demo.telesc.pe/feed.xml`.
+
+<%= figure "blog/mailchimprss.jpg", "Designing your campaign" %>
+
+The next step is the fun part: actually designing your email template. For this, I'll defer to [the MailChimp docs](http://kb.mailchimp.com/article/what-is-an-rss-to-email-campaign-and-how-to-i-set-one-up/), but I suggest selecting MailChimp's new responsive email builder, which provides ready-made “RSS items” template blocks that will automatically loop through your RSS items and display them. 
+
+<%= figure "blog/mailchimppreview.jpg", "Previewing your RSS placeholders" %>
+
+The really cool part is that you can preview your campaign right there, and MailChimp will be smart enough to pull up RSS items from your actual RSS feeds so you can see if the placeholders match.
+
+### It Works, But…
+
+Once you've finished setting up your RSS campaign, you'll now have a brand new list that automatically sends out regular email digests of your community's activity. Isn't that great?
+
+Except the only problem is, there's nobody to receive them…
+
+You *could* include a big email sign-up form somewhere on your site, but wouldn't it simply be nicer if you could automatically sign up new members to receive these email digests? Well, the good news is, you can!
+
+### Telescope + MailChimp
+
+Telescope comes with built-in MailChimp integrattion, meaning that Telescope will ping MailChimp for every new member that signs up and subscribe them to a list of your choice. So let's see how to set this up. 
+
+We'll need to get two special values from MailChimp in order for Telescope and MailChimp to communicate: the **API Key** and the **List ID**. 
+
+First, let's generate an API key. Just go to *Account Settings > Extras > API Keys*, then click "Create a Key" and copy the value.
+
+<%= figure "blog/apikey.jpg", "Generating Your MailChimp API Key" %>
+
+Now open Telescope, go to the *Settings* page, paste the value in the *MailChimp API Key* field, and save your settings.
+
+Next, let's get the list ID. You'll find it by navigating to your list's dashboard, then selecting *Settings > List name & defaults*. Copy-paste that value into Telescope's *MailChimp List ID* field and save again. 
+
+### Done!
+
+If you were expecting more, sorry to disappoint you. That's actually all there is to it. With your RSS campaign set up and Telescope automatically subscribing every new user to your MailChimp list, you now have automated email digests. 
+
+And as an added bonus, you can also send *regular* email campaigns through MailChimp whenever you want, for things like community announcements and news.
+
+Building a community is tough work. You'll need to leverage every tool at your disposal to give yourself a fighting chance, and email is definitely one of the best. So give Telescope's MailChimp integration a try, and let me know what you think!

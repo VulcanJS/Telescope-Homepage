@@ -28,7 +28,7 @@ section{
 	@include border-radius(10px);
 	@include regular;
 }
-.post-top{
+.post-top, .post-nav{
 	@include cf;
 	@include border-radius(5px 5px 0 0);
 	background: $light-grey;
@@ -56,9 +56,19 @@ section{
 		}
 	}
 }
+.post-nav{
+	@include border-radius(0 0 5px 5px);
+	.prev{
+		float: left;
+	}
+	.next{
+		float: right;
+	}
+}
 .post-content{
 	font-size: 18px;
 	padding: 40px;
+	font-weight: 400;
 	.post-title{
 		text-shadow:none;
 		font-size: 46px;
@@ -72,16 +82,25 @@ section{
 		color: $dark-text;
 		@include bold;
 		text-align: left;
-		font-size: 24px;
+		font-size: 30px;
 	}
 	img{
 		border: 10px solid $light-grey;
-		width: 80%;
+		width: 85%;
 		margin: 0 auto;
 		display: block;
 	}
+	figcaption{
+		margin-top: 10px;
+		font-size: 16px;
+		font-style: italic;
+		text-align: center;
+	}
 }
 .articles{
+	.post{
+		margin-bottom: 40px;
+	}
 	.post-title{
 		font-size: 30px;
 		margin-bottom: 10px;

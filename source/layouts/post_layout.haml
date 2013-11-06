@@ -9,7 +9,8 @@
           %a{:href => '/feed.xml'} Subscribe (RSS)
         .meta-date
           =current_article.date.strftime('%b %e %Y')
-          by Sacha Greif
+          by
+          %a{:href => 'http://sachagreif.com'} Sacha Greif
         .twitter
           :plain
             <a href="https://twitter.com/share" class="twitter-share-button" data-via="Telescpe">Tweet</a>

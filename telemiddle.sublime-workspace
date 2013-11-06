@@ -4,12 +4,32 @@
 		"selected_items":
 		[
 			[
-				"in",
-				"instance"
+				"ma",
+				"margin"
 			],
 			[
-				"ma",
-				"margin-left"
+				"m",
+				"margin-bottom"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"bord",
+				"border-bottom"
+			],
+			[
+				"in",
+				"inline-block"
 			],
 			[
 				"di",
@@ -68,14 +88,6 @@
 				"padding-bottom"
 			],
 			[
-				"m",
-				"margin-right"
-			],
-			[
-				"font",
-				"font-weight"
-			],
-			[
 				"5px",
 				"5px"
 			],
@@ -126,10 +138,6 @@
 			[
 				"o",
 				"overHeightCount"
-			],
-			[
-				"mar",
-				"margin-bottom"
 			],
 			[
 				"he",
@@ -355,6 +363,110 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "config.rb",
+			"settings":
+			{
+				"buffer_size": 5222,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/index.html.haml",
+			"settings":
+			{
+				"buffer_size": 4832,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/layouts/layout.haml",
+			"settings":
+			{
+				"buffer_size": 2010,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/stylesheets/partials/_blog.scss",
+			"settings":
+			{
+				"buffer_size": 1261,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/blog.html.haml",
+			"settings":
+			{
+				"buffer_size": 696,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/partials/_book.haml",
+			"settings":
+			{
+				"buffer_size": 1106,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/layouts/post_layout.haml",
+			"settings":
+			{
+				"buffer_size": 2592,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/stylesheets/partials/_colors.scss",
+			"settings":
+			{
+				"buffer_size": 146,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/blog/telescope-v07-ironscope.md.erb",
+			"settings":
+			{
+				"buffer_size": 3078,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/stylesheets/screen.scss",
+			"settings":
+			{
+				"buffer_size": 680,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/stylesheets/partials/_main.scss",
+			"settings":
+			{
+				"buffer_size": 3129,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/stylesheets/partials/_hero.scss",
+			"settings":
+			{
+				"buffer_size": 437,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/stylesheets/partials/_discuss.scss",
+			"settings":
+			{
+				"buffer_size": 64,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -380,6 +492,9 @@
 	},
 	"file_history":
 	[
+		"/Users/sacha/Dev/Telemiddle/source/index.old",
+		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_main.scss",
+		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_mixins.scss",
 		"/Users/sacha/Dev/Sidebar/client/sass/modules/_dialogs.scss",
 		"/Users/sacha/Dev/Sidebar/lib/scoring.js",
 		"/Users/sacha/Dev/Sidebar/client/views/posts/posts_header.html",
@@ -504,10 +619,7 @@
 		"/Users/sacha/Dev/Sidebar/common/vote.js",
 		"/Users/sacha/Dev/Sidebar/client/views/common/about.html",
 		"/Users/sacha/Dev/Sidebar/client/lib/handlebars.js",
-		"/Users/sacha/Dev/Sidebar/client/lib/analytics.js",
-		"/Users/sacha/Dev/Sidebar/common/events.js",
-		"/Users/sacha/Dev/Sidebar/client/views/errors/loading.js",
-		"/Users/sacha/Dev/Sidebar/client/views/errors/loading.html"
+		"/Users/sacha/Dev/Sidebar/client/lib/analytics.js"
 	],
 	"find":
 	{
@@ -567,6 +679,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"logo",
+			"sections",
 			"digest",
 			"selectDigest",
 			"shortUrl",
@@ -692,9 +806,7 @@
 			"isAdmin",
 			"sAdmin",
 			"user",
-			"users",
-			"digestPageFind",
-			"getAvatarUrl"
+			"users"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -748,8 +860,362 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "config.rb",
+					"settings":
+					{
+						"buffer_size": 5222,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								528,
+								528
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "source/index.html.haml",
+					"settings":
+					{
+						"buffer_size": 4832,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1928,
+								1928
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 338.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "source/layouts/layout.haml",
+					"settings":
+					{
+						"buffer_size": 2010,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1989,
+								1989
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "source/stylesheets/partials/_blog.scss",
+					"settings":
+					{
+						"buffer_size": 1261,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								927,
+								927
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 684.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "source/blog.html.haml",
+					"settings":
+					{
+						"buffer_size": 696,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								217,
+								217
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "source/partials/_book.haml",
+					"settings":
+					{
+						"buffer_size": 1106,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15,
+								15
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "source/layouts/post_layout.haml",
+					"settings":
+					{
+						"buffer_size": 2592,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1342,
+								1342
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 260.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "source/stylesheets/partials/_colors.scss",
+					"settings":
+					{
+						"buffer_size": 146,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								64,
+								64
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "source/blog/telescope-v07-ironscope.md.erb",
+					"settings":
+					{
+						"buffer_size": 3078,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								427,
+								427
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "source/stylesheets/screen.scss",
+					"settings":
+					{
+						"buffer_size": 680,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								408,
+								408
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "source/stylesheets/partials/_main.scss",
+					"settings":
+					{
+						"buffer_size": 3129,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1666,
+								1669
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 965.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "source/stylesheets/partials/_hero.scss",
+					"settings":
+					{
+						"buffer_size": 437,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2,
+								2
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "source/stylesheets/partials/_discuss.scss",
+					"settings":
+					{
+						"buffer_size": 64,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15,
+								15
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -795,12 +1261,16 @@
 		"selected_items":
 		[
 			[
-				"config",
-				"client/config.rb"
+				"main",
+				"source/stylesheets/partials/_main.scss"
 			],
 			[
-				"main",
-				"client/main.js"
+				"mix",
+				"source/stylesheets/partials/_mixins.scss"
+			],
+			[
+				"config",
+				"client/config.rb"
 			],
 			[
 				"rout",
@@ -1301,10 +1771,6 @@
 			[
 				"header2",
 				"client/views/posts/posts_header2.html"
-			],
-			[
-				"footer.h",
-				"client/views/common/footer.html"
 			]
 		],
 		"width": 0.0
