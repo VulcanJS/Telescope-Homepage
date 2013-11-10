@@ -38,13 +38,9 @@ h1.logo{
 		// margin:0 auto;
 		// @include hide-text2;
 	}
-	.intro{
-		font-size:18px;
-		margin-bottom:20px;
-	}	
 	.actions{
-		margin-bottom:20px;
 		a{
+			margin-bottom: 0;
 			@include medium{
 				@include span-columns(4);
 				@include nth-omega(3, of-type);
@@ -52,3 +48,8 @@ h1.logo{
 		}
 	}
 }
+.intro{
+	p{
+		font-size:18px;
+	}
+}	

@@ -1,5 +1,5 @@
 
-$unit:40px;
+$unit:$spacing;
 $unit2:$unit/2;
 
 
@@ -25,7 +25,7 @@ body, input, textarea, button{
 	line-height:1.7;
 	@include regular;	
 }
-h1, h2, h3, h4, h5, .intro{
+h1, h2, h3, h4, h5{
 	text-shadow: 0px 1px 2px black(0.9);
 	text-align:center;
 	margin:0;
@@ -43,6 +43,12 @@ h3{
 }
 p{
 	margin:0 0 $unit2 0;
+	@include small{
+		font-size: 14px;
+	}
+	@include medium{
+		font-size: 16px;
+	}
 	&.small{
 		font-size:14px;
 	}
