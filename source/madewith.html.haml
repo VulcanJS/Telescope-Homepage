@@ -1,0 +1,14 @@
+- content_for(:title, "Made With Telescope")
+
+%section.madewith
+  %h3 Made With Telescope
+  .sites
+    - data.madewith.each do |site|
+      .site
+        .screenshot
+          %a{:href => site.url}
+            %img{ :src=> '/images/madewith/'+site.screenshot}
+        .description
+          %h4.title
+            %a{:href => site.url}=site.title
+          %p=site.description

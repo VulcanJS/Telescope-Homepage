@@ -5,7 +5,11 @@
 		[
 			[
 				"ma",
-				"margin"
+				"margin-top"
+			],
+			[
+				"font-s",
+				"font-style"
 			],
 			[
 				"m",
@@ -388,18 +392,18 @@
 			}
 		},
 		{
-			"file": "source/stylesheets/partials/_blog.scss",
-			"settings":
-			{
-				"buffer_size": 1261,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "source/blog.html.haml",
 			"settings":
 			{
 				"buffer_size": 696,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/layouts/post_layout.haml",
+			"settings":
+			{
+				"buffer_size": 2639,
 				"line_ending": "Unix"
 			}
 		},
@@ -412,27 +416,38 @@
 			}
 		},
 		{
-			"file": "source/layouts/post_layout.haml",
+			"file": "source/blog/building-email-digests-with-mailchimp-rss-campaigns.md.erb",
 			"settings":
 			{
-				"buffer_size": 2592,
+				"buffer_size": 5118,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "source/stylesheets/partials/_colors.scss",
+			"file": "source/blog/algorhitms.md.erb",
 			"settings":
 			{
-				"buffer_size": 146,
-				"line_ending": "Unix"
+				"buffer_size": 108,
+				"line_ending": "Unix",
+				"name": "---"
 			}
 		},
 		{
-			"file": "source/blog/telescope-v07-ironscope.md.erb",
+			"file": "source/blog/introducing-trickle-down-karma.md.erb",
 			"settings":
 			{
-				"buffer_size": 3078,
-				"line_ending": "Unix"
+				"buffer_size": 282,
+				"line_ending": "Unix",
+				"name": "trickle-down karma"
+			}
+		},
+		{
+			"contents": "madewith\n\nhttp://usability.userium.com/new",
+			"settings":
+			{
+				"buffer_size": 42,
+				"line_ending": "Unix",
+				"name": "madewith"
 			}
 		},
 		{
@@ -466,6 +481,22 @@
 				"buffer_size": 64,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "source/stylesheets/partials/_blog.scss",
+			"settings":
+			{
+				"buffer_size": 1528,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/stylesheets/partials/_colors.scss",
+			"settings":
+			{
+				"buffer_size": 146,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -492,6 +523,9 @@
 	},
 	"file_history":
 	[
+		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_blog.scss",
+		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_colors.scss",
+		"/Users/sacha/Dev/Telemiddle/source/blog/telescope-v07-ironscope.md.erb",
 		"/Users/sacha/Dev/Telemiddle/source/index.old",
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_main.scss",
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_mixins.scss",
@@ -616,10 +650,7 @@
 		"/Users/sacha/Dev/Sidebar/server/publish.js",
 		"/Users/sacha/Dev/Sidebar/client/views/posts/post_page.html",
 		"/Users/sacha/Dev/Sidebar/server/notifications.js",
-		"/Users/sacha/Dev/Sidebar/common/vote.js",
-		"/Users/sacha/Dev/Sidebar/client/views/common/about.html",
-		"/Users/sacha/Dev/Sidebar/client/lib/handlebars.js",
-		"/Users/sacha/Dev/Sidebar/client/lib/analytics.js"
+		"/Users/sacha/Dev/Sidebar/common/vote.js"
 	],
 	"find":
 	{
@@ -860,7 +891,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -914,7 +945,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 338.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -949,33 +980,6 @@
 				},
 				{
 					"buffer": 3,
-					"file": "source/stylesheets/partials/_blog.scss",
-					"settings":
-					{
-						"buffer_size": 1261,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								927,
-								927
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 684.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "source/blog.html.haml",
 					"settings":
 					{
@@ -988,6 +992,34 @@
 							[
 								217,
 								217
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "source/layouts/post_layout.haml",
+					"settings":
+					{
+						"buffer_size": 2639,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								394,
+								394
 							]
 						],
 						"settings":
@@ -1032,72 +1064,18 @@
 				},
 				{
 					"buffer": 6,
-					"file": "source/layouts/post_layout.haml",
+					"file": "source/blog/building-email-digests-with-mailchimp-rss-campaigns.md.erb",
 					"settings":
 					{
-						"buffer_size": 2592,
+						"buffer_size": 5118,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1342,
-								1342
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 260.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "source/stylesheets/partials/_colors.scss",
-					"settings":
-					{
-						"buffer_size": 146,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								64,
-								64
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "source/blog/telescope-v07-ironscope.md.erb",
-					"settings":
-					{
-						"buffer_size": 3078,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								427,
-								427
+								63,
+								12
 							]
 						],
 						"settings":
@@ -1111,7 +1089,87 @@
 					"type": "text"
 				},
 				{
+					"buffer": 7,
+					"file": "source/blog/algorhitms.md.erb",
+					"settings":
+					{
+						"buffer_size": 108,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								75,
+								75
+							]
+						],
+						"settings":
+						{
+							"auto_name": "---",
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "source/blog/introducing-trickle-down-karma.md.erb",
+					"settings":
+					{
+						"buffer_size": 282,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								282,
+								282
+							]
+						],
+						"settings":
+						{
+							"auto_name": "trickle-down karma",
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
 					"buffer": 9,
+					"settings":
+					{
+						"buffer_size": 42,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								42,
+								42
+							]
+						],
+						"settings":
+						{
+							"auto_name": "madewith",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
 					"file": "source/stylesheets/screen.scss",
 					"settings":
 					{
@@ -1137,7 +1195,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 11,
 					"file": "source/stylesheets/partials/_main.scss",
 					"settings":
 					{
@@ -1164,7 +1222,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 12,
 					"file": "source/stylesheets/partials/_hero.scss",
 					"settings":
 					{
@@ -1191,7 +1249,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 13,
 					"file": "source/stylesheets/partials/_discuss.scss",
 					"settings":
 					{
@@ -1204,6 +1262,59 @@
 							[
 								15,
 								15
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "source/stylesheets/partials/_blog.scss",
+					"settings":
+					{
+						"buffer_size": 1528,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								928,
+								928
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 814.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "source/stylesheets/partials/_colors.scss",
+					"settings":
+					{
+						"buffer_size": 146,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								64,
+								64
 							]
 						],
 						"settings":
@@ -1260,6 +1371,18 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"colo",
+				"source/stylesheets/partials/_colors.scss"
+			],
+			[
+				"blog",
+				"source/stylesheets/partials/_blog.scss"
+			],
+			[
+				"blog.sc",
+				"source/stylesheets/partials/_blog.scss"
+			],
 			[
 				"main",
 				"source/stylesheets/partials/_main.scss"
@@ -1597,10 +1720,6 @@
 				"client/sass/modules/_header.scss"
 			],
 			[
-				"colo",
-				"client/sass/partials/_colors.scss"
-			],
-			[
 				"app.ht",
 				"client/app.html"
 			],
@@ -1763,14 +1882,6 @@
 			[
 				"vote",
 				"common/vote.js"
-			],
-			[
-				"posts_",
-				"client/views/posts/posts_header.js"
-			],
-			[
-				"header2",
-				"client/views/posts/posts_header2.html"
 			]
 		],
 		"width": 0.0

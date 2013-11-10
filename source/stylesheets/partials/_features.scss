@@ -1,6 +1,10 @@
 .features{
 	.row{
-		>div{
+		p{
+			@include medium{
+				@include span-columns(4);
+				@include nth-omega(3, of-type);
+			}
 			margin-bottom:$unit2;
 			text-align:center;
 		}

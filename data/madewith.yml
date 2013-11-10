@@ -1,0 +1,16 @@
+- title: Userium
+  url: http://usability.userium.com/
+  description: lorem ipsum dolor sit amet
+  screenshot: userium.png
+- title: Hackbio
+  url: http://www.hackb.io/
+  description: asdk ajsldka jsd
+  screenshot: hackbio.png
+- title: Sidebar
+  url: http://sidebar.io/
+  description: An aggregator of the best design links of the day.
+  screenshot: sidebar.png
+- title: Crater.io
+  url: http://www.crater.io/
+  description: A place to discuss all things Meteor. 
+  screenshot: craterio.png

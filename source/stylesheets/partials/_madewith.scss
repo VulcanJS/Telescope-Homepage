@@ -1,0 +1,30 @@
+.madewith{
+	.site{
+		@include medium{
+			@include span-columns(4);
+			@include nth-omega(3, of-type);
+		}
+		border-bottom:1px solid white(0.15);
+		border-top:1px solid white(0.15);		
+		background:white(0.1);
+		padding:20px;
+		margin-bottom: $spacing;
+		.screenshot{
+			a, img{
+				display: block;
+				width: 100%;
+			}
+			margin-bottom: 10px;
+		}
+		.title{
+			text-align: left;
+			font-size: 24px;
+			a{
+				@include light;
+			}
+		}
+		p{
+			margin-bottom: 0;
+		}
+	}
+}

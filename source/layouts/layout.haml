@@ -21,15 +21,15 @@
   %body{:class => yield_content(:page)}
     .bg
     .container
-      .row
-        .span12.section.header
-          %h1.logo
-            %a{:href => "/"}
-              %img{:src=>"/images/logo.png", :alt=>"Telescope"}
-          %h2.tagline An open-source social news app built with Meteor
-      .row=yield
-      .row
-        .span12.section.footer
+      %section.header
+        %h1.logo
+          %a{:href => "/"}
+            %img{:src=>"/images/logo.png", :alt=>"Telescope"}
+        %h2.tagline An open-source social news app built with Meteor
+        =partial('partials/nav')
+      =yield
+      %section.footer
+        .row
           %p.small Telescope lens icon by <a href="http://www.prekesh.com/" target="_blank">Prekesh Chavda</a>
 
     %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"}

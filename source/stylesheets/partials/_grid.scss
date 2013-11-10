@@ -1,0 +1,41 @@
+@include border-box-sizing;
+
+// at 47.5em (16*47.5=760px) switch to a 12-column layout
+$small-break: 47.5em;
+
+@mixin small(){
+  @media screen and (max-width: $small-break) {
+    @content;
+  }
+}
+@mixin medium(){
+  @media screen and (min-width: $small-break) {
+    @content;
+  }
+}
+
+$spacing: 30px;
+$halfspacing: $spacing/2;
+$doublespacing: $spacing*2;
+
+$total-columns  : 12;
+$column-width   : 45px;
+$gutter-width   : $spacing;
+$grid-padding   : 0px;
+
+
+// mobile
+
+.container{
+	@include container;
+	@include small{
+		padding:0 10px;
+	}
+	@include medium{
+		padding:0 20px;
+	}
+}
+
+.row{
+	@include container;
+}

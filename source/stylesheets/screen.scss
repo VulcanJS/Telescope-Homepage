@@ -5,9 +5,12 @@
 
 // @import "partials/normalize";
 @import "compass/css3";
-@import "partials/bootstrap";
+@import "susy";
+
+// @import "partials/bootstrap";
 @import "partials/mixins";
 @import "partials/colors";
+@import "partials/grid";
 
 @import "partials/main";
 @import "partials/hero";
@@ -19,4 +22,5 @@
 @import "partials/partners";
 @import "partials/footer";
 
+@import "partials/madewith";
 @import "partials/blog";

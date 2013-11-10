@@ -1,4 +1,10 @@
 .examples{
+	.site{
+		@include medium{
+			@include span-columns(4);
+			@include nth-omega(3, of-type);
+		}
+	}
 	h4{
 		font-size:18px;
 	}
@@ -17,5 +23,8 @@
 		&:hover{
 			opacity:1;
 		}
+	}
+	.more{
+		font-size: 24px;
 	}
 }

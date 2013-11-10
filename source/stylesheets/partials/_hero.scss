@@ -1,3 +1,20 @@
+.header{
+	border: none;
+	margin: 0;
+}
+.nav{
+	border-bottom:1px solid white(0.15);
+	border-top:1px solid white(0.15);		
+	background:white(0.1);
+	list-style-type: none;
+	padding: 10px 20px;
+	margin: 0;
+	text-align: center;
+	li{
+		display: inline-block;
+		margin-right: 20px;
+	}
+}
 h1.logo{
 	margin: 0 auto;
 	width: 100%;
@@ -27,5 +44,11 @@ h1.logo{
 	}	
 	.actions{
 		margin-bottom:20px;
+		a{
+			@include medium{
+				@include span-columns(4);
+				@include nth-omega(3, of-type);
+			}
+		}
 	}
 }

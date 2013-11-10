@@ -1,8 +1,8 @@
-- content_for(:title, "Blog - Discover Meteor")
+- content_for(:title, "The Telescope Blog")
 
-%section#blog
-  %h3
-    The blog
+%section
+  %h3.blog
+    The Blog
     %a.rss{:href => '/feed.xml'} [RSS]
   .articles
     - blog.articles.each do |post|

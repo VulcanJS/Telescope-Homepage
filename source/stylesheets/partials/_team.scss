@@ -1,4 +1,10 @@
 .team{
+	.member{
+		@include medium{
+			@include span-columns(6);
+			@include nth-omega(2, of-type);
+		}
+	}
 	text-align:center;
 	h4{
 		font-size:36px;
@@ -20,6 +26,7 @@
 		margin:0 auto 20px auto;
 		img{
 			display:block;
+			width: 100%;
 		}
 		&:hover{
 			background:white(0.125);
