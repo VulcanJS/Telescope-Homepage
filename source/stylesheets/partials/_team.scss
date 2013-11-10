@@ -21,6 +21,7 @@
 		@include border-radius(100px);
 		@include single-transition(ease-out, all, 300ms, 0ms);
 		position:relative;
+		top:0px;
 		display:block;
 		width:200px;
 		margin:0 auto 20px auto;
@@ -28,10 +29,6 @@
 			display:block;
 			width: 100%;
 		}
-		&:hover{
-			background:white(0.125);
-			@include box-shadow(0px 0px 50px white(0.3));
-			top:-3px;
-		}
+		@include glow;
 	}
 }

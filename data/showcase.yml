@@ -1,10 +1,10 @@
 - title: Userium
   url: http://usability.userium.com/
-  description: lorem ipsum dolor sit amet
+  description: Get usability feedback on your website. 
   screenshot: userium.png
 - title: Hackbio
   url: http://www.hackb.io/
-  description: asdk ajsldka jsd
+  description: A place to share interesting things that are relevant to biology.
   screenshot: hackbio.png
 - title: Sidebar
   url: http://sidebar.io/
@@ -14,3 +14,7 @@
   url: http://www.crater.io/
   description: A place to discuss all things Meteor. 
   screenshot: craterio.png
+- title: Serverbooks
+  url: http://m.serverbooks.net/
+  description: A detailed directory of gaming servers. 
+  screenshot: serverbooks.png
