@@ -1,11 +1,12 @@
 .team{
-	.member{
-		@include medium{
-			@include span-columns(6);
+	@include medium{
+		@include pad(1,1);
+		.member{
+			@include span-columns(5, 10);
 			@include nth-omega(2, of-type);
-			@include pad(1,1);
 		}
 	}
+	
 	text-align:center;
 	h4{
 		font-size:36px;
