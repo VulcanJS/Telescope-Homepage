@@ -9,6 +9,26 @@
 		}
 	}
 }
+.tagline{
+	margin-bottom:20px;
+	color:white(0.8);
+	@include light;
+	font-size:24px;
+}
+.hero{
+	.actions{
+		a{
+			@include small{
+				margin-bottom: $spacing; 
+			}
+			@include medium{
+				margin-bottom: 0;
+				@include span-columns(4);
+				@include nth-omega(3, of-type);
+			}
+		}
+	}
+}
 .intro{
 	p{
 		font-size:20px;

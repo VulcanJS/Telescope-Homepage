@@ -23,28 +23,3 @@ h1.logo{
 		width: 100%;
 	}
 }
-.tagline{
-	margin-bottom:20px;
-	color:white(0.8);
-	@include light;
-	font-size:24px;
-}
-.hero{
-	.logo{
-		// background:url(../images/logo.png);
-		// background-size:600px 140px;
-		// width:600px;
-		// height:140px;
-		// margin:0 auto;
-		// @include hide-text2;
-	}
-	.actions{
-		a{
-			margin-bottom: 0;
-			@include medium{
-				@include span-columns(4);
-				@include nth-omega(3, of-type);
-			}
-		}
-	}
-}
