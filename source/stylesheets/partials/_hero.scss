@@ -48,11 +48,3 @@ h1.logo{
 		}
 	}
 }
-.intro{
-	p{
-		font-size:18px;
-		@include medium{
-			@include pad(1,1);
-		}
-	}
-}	

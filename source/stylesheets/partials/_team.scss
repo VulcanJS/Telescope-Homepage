@@ -3,6 +3,7 @@
 		@include medium{
 			@include span-columns(6);
 			@include nth-omega(2, of-type);
+			@include pad(1,1);
 		}
 	}
 	text-align:center;

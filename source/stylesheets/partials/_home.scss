@@ -1,5 +1,19 @@
 .home{
 	p{
 		text-align: center;
+		@include small{
+			font-size: 14px;
+		}
+		@include medium{
+			font-size: 16px;
+		}
+	}
+}
+.intro{
+	p{
+		font-size:20px;
+		@include medium{
+			@include pad(1,1);
+		}
 	}
 }

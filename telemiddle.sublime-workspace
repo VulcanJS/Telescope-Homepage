@@ -4,12 +4,28 @@
 		"selected_items":
 		[
 			[
-				"ma",
-				"margin-top"
+				"bord",
+				"border-radius"
 			],
 			[
 				"font-s",
-				"font-style"
+				"font-size"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"lis",
+				"list-style-type"
+			],
+			[
+				"inli",
+				"inline-block"
 			],
 			[
 				"m",
@@ -26,10 +42,6 @@
 			[
 				"font",
 				"font-size"
-			],
-			[
-				"bord",
-				"border-bottom"
 			],
 			[
 				"in",
@@ -78,10 +90,6 @@
 			[
 				"post",
 				"postDay"
-			],
-			[
-				"bor",
-				"border-top"
 			],
 			[
 				"fon",
@@ -368,10 +376,50 @@
 	"buffers":
 	[
 		{
-			"file": "config.rb",
+			"file": "data/showcase.yml",
 			"settings":
 			{
-				"buffer_size": 5222,
+				"buffer_size": 687,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/showcase.haml",
+			"settings":
+			{
+				"buffer_size": 363,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/stylesheets/screen.scss",
+			"settings":
+			{
+				"buffer_size": 779,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/stylesheets/partials/_showcase.scss",
+			"settings":
+			{
+				"buffer_size": 631,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/stylesheets/partials/_mixins.scss",
+			"settings":
+			{
+				"buffer_size": 2424,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/stylesheets/partials/_team.scss",
+			"settings":
+			{
+				"buffer_size": 536,
 				"line_ending": "Unix"
 			}
 		},
@@ -379,122 +427,15 @@
 			"file": "source/index.html.haml",
 			"settings":
 			{
-				"buffer_size": 4832,
+				"buffer_size": 1687,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "source/layouts/layout.haml",
+			"file": "source/partials/_examples.haml",
 			"settings":
 			{
-				"buffer_size": 2010,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/blog.html.haml",
-			"settings":
-			{
-				"buffer_size": 696,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/layouts/post_layout.haml",
-			"settings":
-			{
-				"buffer_size": 2639,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/partials/_book.haml",
-			"settings":
-			{
-				"buffer_size": 1106,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/blog/building-email-digests-with-mailchimp-rss-campaigns.md.erb",
-			"settings":
-			{
-				"buffer_size": 5118,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/blog/algorhitms.md.erb",
-			"settings":
-			{
-				"buffer_size": 108,
-				"line_ending": "Unix",
-				"name": "---"
-			}
-		},
-		{
-			"file": "source/blog/introducing-trickle-down-karma.md.erb",
-			"settings":
-			{
-				"buffer_size": 282,
-				"line_ending": "Unix",
-				"name": "trickle-down karma"
-			}
-		},
-		{
-			"contents": "madewith\n\nhttp://usability.userium.com/new",
-			"settings":
-			{
-				"buffer_size": 42,
-				"line_ending": "Unix",
-				"name": "madewith"
-			}
-		},
-		{
-			"file": "source/stylesheets/screen.scss",
-			"settings":
-			{
-				"buffer_size": 680,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/stylesheets/partials/_main.scss",
-			"settings":
-			{
-				"buffer_size": 3129,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/stylesheets/partials/_hero.scss",
-			"settings":
-			{
-				"buffer_size": 437,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/stylesheets/partials/_discuss.scss",
-			"settings":
-			{
-				"buffer_size": 64,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/stylesheets/partials/_blog.scss",
-			"settings":
-			{
-				"buffer_size": 1528,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/stylesheets/partials/_colors.scss",
-			"settings":
-			{
-				"buffer_size": 146,
+				"buffer_size": 920,
 				"line_ending": "Unix"
 			}
 		}
@@ -523,12 +464,39 @@
 	},
 	"file_history":
 	[
+		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_features.scss",
+		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_team.scss",
+		"/Users/sacha/Dev/Telemiddle/source/partials/_book.haml",
+		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_grid.scss",
+		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_madewith.scss",
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_blog.scss",
+		"/Users/sacha/Dev/Telemiddle/source/layouts/post_layout.haml",
+		"/Users/sacha/Dev/Telemiddle/source/blog.html.haml",
+		"/Users/sacha/Dev/Telemiddle/source/showcase.haml",
+		"/Users/sacha/Dev/Telemiddle/source/partials/_nav.haml",
+		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_main.scss",
+		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_home.scss",
+		"/Users/sacha/Dev/Telemiddle/source/stylesheets/screen.scss",
+		"/Users/sacha/Dev/Telemiddle/source/layouts/layout.haml",
+		"/Users/sacha/Dev/Telemiddle/source/partials/_examples.haml",
+		"/Users/sacha/Dev/Telemiddle/source/partials/_features.haml",
+		"/Users/sacha/Dev/Telemiddle/source/partials/_team.haml",
+		"/Users/sacha/Dev/Telemiddle/source/index.html.haml",
+		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_hero.scss",
+		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_examples.scss",
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_colors.scss",
+		"/Users/sacha/Dev/Telemiddle/data/madewith.yml",
+		"/Users/sacha/Dev/Telemiddle/source/madewith.html.haml",
+		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_mixins.scss",
+		"/Users/sacha/Dev/Telemiddle/config.rb",
+		"/Users/sacha/Dev/Telemiddle/source/blog/building-email-digests-with-mailchimp-rss-campaigns.md.erb",
+		"/Users/sacha/Dev/Telemiddle/source/blog/algorhitms.md.erb",
+		"/Users/sacha/Dev/Telemiddle/source/blog/introducing-trickle-down-karma.md.erb",
+		"/Users/sacha/Dev/Telemiddle/source/blog/madewith.md.erb",
+		"/Users/sacha/Dev/Telemiddle/source/blog/one-click-deploy-with-giteor.md.erb",
+		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_discuss.scss",
 		"/Users/sacha/Dev/Telemiddle/source/blog/telescope-v07-ironscope.md.erb",
 		"/Users/sacha/Dev/Telemiddle/source/index.old",
-		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_main.scss",
-		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_mixins.scss",
 		"/Users/sacha/Dev/Sidebar/client/sass/modules/_dialogs.scss",
 		"/Users/sacha/Dev/Sidebar/lib/scoring.js",
 		"/Users/sacha/Dev/Sidebar/client/views/posts/posts_header.html",
@@ -623,34 +591,7 @@
 		"/Users/sacha/Dev/Sidebar/client/app.js",
 		"/Users/sacha/Dev/Sidebar/server/refer.js",
 		"/Users/sacha/Dev/Sidebar/client/lib/paginated_sub.js",
-		"/Users/sacha/Dev/Sidebar/client/body.html",
-		"/Users/sacha/Dev/Sidebar/client/lib/config.js",
-		"/Users/sacha/Dev/Sidebar/client/body.js",
-		"/Users/sacha/Dev/Sidebar/client/views/common/footer.js",
-		"/Users/sacha/Dev/Sidebar/client/views/users/users.html",
-		"/Users/sacha/Dev/Sidebar/client/sass/partials/_typography.scss",
-		"/Users/sacha/Dev/Sidebar/client/sass/modules/_subscribe.scss",
-		"/Users/sacha/Dev/Sidebar/common/slugs.js",
-		"/Users/sacha/Dev/Sidebar/client/views/common/subscribe.js",
-		"/Users/sacha/Dev/Sidebar/client/views/common/intro.html",
-		"/Users/sacha/Dev/Telescope/server/publish.js",
-		"/Users/sacha/Dev/Sidebar/client/views/users/user_signup.js",
-		"/Users/sacha/Dev/Sidebar/client/views/users/user_signup.html",
-		"/Users/sacha/Dev/Sidebar/.meteor/local/build/static_cacheable/client/views/users/user_email.js",
-		"/Users/sacha/Dev/Sidebar/client/views/errors/no_invite.html",
-		"/Users/sacha/Dev/Sidebar/client/views/users/user_signup_confirmation.html",
-		"/Users/sacha/Dev/Sidebar/client/views/users/user_email.html",
-		"/Users/sacha/Dev/Sidebar/client/views/posts/posts_header2.html",
-		"/Users/sacha/Dev/Sidebar/client/views/posts/posts_list2.html",
-		"/Users/sacha/Dev/Sidebar/client/views/posts/posts_list2.js",
-		"/Users/sacha/Dev/Sidebar/common/post.js",
-		"/Users/sacha/Dev/Sidebar/client/sass/modules/_notifications.scss",
-		"/Users/sacha/Dev/Sidebar/client/views/common/subscribe.html",
-		"/Users/sacha/Dev/Sidebar/client/css/modules/_notifications.css",
-		"/Users/sacha/Dev/Sidebar/server/publish.js",
-		"/Users/sacha/Dev/Sidebar/client/views/posts/post_page.html",
-		"/Users/sacha/Dev/Sidebar/server/notifications.js",
-		"/Users/sacha/Dev/Sidebar/common/vote.js"
+		"/Users/sacha/Dev/Sidebar/client/body.html"
 	],
 	"find":
 	{
@@ -710,6 +651,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"made",
+			"unit",
+			"section",
+			"blog",
+			"sectio`",
+			".section",
 			"logo",
 			"sections",
 			"digest",
@@ -831,13 +778,7 @@
 			"digest",
 			"color",
 			"console",
-			"openedComments",
-			"sessionGetObject",
-			"}",
-			"isAdmin",
-			"sAdmin",
-			"user",
-			"users"
+			"openedComments"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -845,6 +786,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"%section",
 			"<br/><br/>",
 			"Session.set",
 			"Session.get",
@@ -891,28 +833,28 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "config.rb",
+					"file": "data/showcase.yml",
 					"settings":
 					{
-						"buffer_size": 5222,
+						"buffer_size": 687,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								528,
-								528
+								456,
+								456
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"syntax": "Packages/YAML/YAML.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -924,18 +866,18 @@
 				},
 				{
 					"buffer": 1,
-					"file": "source/index.html.haml",
+					"file": "source/showcase.haml",
 					"settings":
 					{
-						"buffer_size": 4832,
+						"buffer_size": 363,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1928,
-								1928
+								363,
+								363
 							]
 						],
 						"settings":
@@ -952,25 +894,23 @@
 				},
 				{
 					"buffer": 2,
-					"file": "source/layouts/layout.haml",
+					"file": "source/stylesheets/screen.scss",
 					"settings":
 					{
-						"buffer_size": 2010,
+						"buffer_size": 779,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1989,
-								1989
+								751,
+								751
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -980,25 +920,24 @@
 				},
 				{
 					"buffer": 3,
-					"file": "source/blog.html.haml",
+					"file": "source/stylesheets/partials/_showcase.scss",
 					"settings":
 					{
-						"buffer_size": 696,
+						"buffer_size": 631,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								217,
-								217
+								457,
+								457
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1008,53 +947,50 @@
 				},
 				{
 					"buffer": 4,
-					"file": "source/layouts/post_layout.haml",
+					"file": "source/stylesheets/partials/_mixins.scss",
 					"settings":
 					{
-						"buffer_size": 2639,
+						"buffer_size": 2424,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								394,
-								394
+								2410,
+								2410
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 890.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "source/partials/_book.haml",
+					"file": "source/stylesheets/partials/_team.scss",
 					"settings":
 					{
-						"buffer_size": 1106,
+						"buffer_size": 536,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								15,
-								15
+								514,
+								514
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1064,262 +1000,53 @@
 				},
 				{
 					"buffer": 6,
-					"file": "source/blog/building-email-digests-with-mailchimp-rss-campaigns.md.erb",
+					"file": "source/index.html.haml",
 					"settings":
 					{
-						"buffer_size": 5118,
+						"buffer_size": 1687,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								63,
-								12
+								833,
+								833
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 115.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 7,
-					"file": "source/blog/algorhitms.md.erb",
+					"file": "source/partials/_examples.haml",
 					"settings":
 					{
-						"buffer_size": 108,
+						"buffer_size": 920,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								75,
-								75
+								903,
+								903
 							]
 						],
 						"settings":
 						{
-							"auto_name": "---",
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "source/blog/introducing-trickle-down-karma.md.erb",
-					"settings":
-					{
-						"buffer_size": 282,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								282,
-								282
-							]
-						],
-						"settings":
-						{
-							"auto_name": "trickle-down karma",
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"settings":
-					{
-						"buffer_size": 42,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								42,
-								42
-							]
-						],
-						"settings":
-						{
-							"auto_name": "madewith",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "source/stylesheets/screen.scss",
-					"settings":
-					{
-						"buffer_size": 680,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								408,
-								408
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "source/stylesheets/partials/_main.scss",
-					"settings":
-					{
-						"buffer_size": 3129,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1666,
-								1669
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 965.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "source/stylesheets/partials/_hero.scss",
-					"settings":
-					{
-						"buffer_size": 437,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2,
-								2
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "source/stylesheets/partials/_discuss.scss",
-					"settings":
-					{
-						"buffer_size": 64,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								15,
-								15
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "source/stylesheets/partials/_blog.scss",
-					"settings":
-					{
-						"buffer_size": 1528,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								928,
-								928
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 814.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "source/stylesheets/partials/_colors.scss",
-					"settings":
-					{
-						"buffer_size": 146,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								64,
-								64
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1372,7 +1099,43 @@
 		"selected_items":
 		[
 			[
-				"colo",
+				"ex",
+				"source/partials/_examples.haml"
+			],
+			[
+				"inde",
+				"source/index.html.haml"
+			],
+			[
+				"mixin",
+				"source/stylesheets/partials/_mixins.scss"
+			],
+			[
+				"hero",
+				"source/stylesheets/partials/_hero.scss"
+			],
+			[
+				"layou",
+				"source/layouts/layout.haml"
+			],
+			[
+				"main",
+				"source/stylesheets/partials/_main.scss"
+			],
+			[
+				"exam",
+				"source/stylesheets/partials/_examples.scss"
+			],
+			[
+				"nav",
+				"source/partials/_nav.haml"
+			],
+			[
+				"her",
+				"source/stylesheets/partials/_hero.scss"
+			],
+			[
+				"co",
 				"source/stylesheets/partials/_colors.scss"
 			],
 			[
@@ -1380,16 +1143,32 @@
 				"source/stylesheets/partials/_blog.scss"
 			],
 			[
-				"blog.sc",
-				"source/stylesheets/partials/_blog.scss"
+				"pos",
+				"source/layouts/post_layout.haml"
 			],
 			[
-				"main",
-				"source/stylesheets/partials/_main.scss"
+				"post",
+				"source/layouts/post_layout.haml"
+			],
+			[
+				"grid",
+				"source/stylesheets/partials/_grid.scss"
 			],
 			[
 				"mix",
 				"source/stylesheets/partials/_mixins.scss"
+			],
+			[
+				"made",
+				"madewith"
+			],
+			[
+				"colo",
+				"source/stylesheets/partials/_colors.scss"
+			],
+			[
+				"blog.sc",
+				"source/stylesheets/partials/_blog.scss"
 			],
 			[
 				"config",
@@ -1458,10 +1237,6 @@
 			[
 				"posts_di",
 				"client/views/posts/posts_digest.html"
-			],
-			[
-				"nav",
-				"client/views/common/nav.html"
 			],
 			[
 				"user_item",
@@ -1668,10 +1443,6 @@
 				".meteor/local/build/static_cacheable/client/views/posts/post_item.js"
 			],
 			[
-				"pos",
-				"client/sass/modules/_posts.scss"
-			],
-			[
 				"mobil",
 				"client/sass/partials/_mobile.scss"
 			],
@@ -1688,16 +1459,8 @@
 				"client/sass/partials/_mobile.scss"
 			],
 			[
-				"grid",
-				"client/sass/partials/_grid.scss"
-			],
-			[
 				"body",
 				"client/body.html"
-			],
-			[
-				"mixin",
-				"client/sass/partials/_mixins.scss"
 			],
 			[
 				"ico",
@@ -1770,10 +1533,6 @@
 			[
 				"mixins",
 				"client/sass/partials/_mixins.scss"
-			],
-			[
-				"post",
-				"client/sass/modules/_posts.scss"
 			],
 			[
 				"subscribe",
@@ -1850,38 +1609,6 @@
 			[
 				"_post",
 				"client/sass/modules/_posts.scss"
-			],
-			[
-				"_po",
-				"client/sass/modules/_posts.scss"
-			],
-			[
-				"notif",
-				"server/notifications.js"
-			],
-			[
-				"pub",
-				"server/publish.js"
-			],
-			[
-				"posts_he",
-				"client/views/posts/posts_header2.html"
-			],
-			[
-				"color",
-				"client/sass/partials/_colors.scss"
-			],
-			[
-				"about",
-				"client/views/common/about.html"
-			],
-			[
-				"handl",
-				"client/lib/handlebars.js"
-			],
-			[
-				"vote",
-				"common/vote.js"
 			]
 		],
 		"width": 0.0

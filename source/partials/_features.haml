@@ -1,18 +1,7 @@
 %section.features
   %h3 A Few Of Telescope's Features
-  .row
-    %p Real-time updating
-    %p Invite-only access
-    %p Notifications
-  .row  
-    %p Markdown with <a href="http://epiceditor.com/" target="_blank">EpicEditor</a>
-    %p Email or Twitter authentication
-    %p Responsive &amp; mobile-ready
-  .row
-    %p <a href="http://mixpanel.com">Mixpanel</a> &amp; <a href="http://gosquared.com">GoSquared</a> enabled
-    %p Day-by-day digest view
-    %p Open sourced under <a href="http://opensource.org/licenses/mit-license.php" target="_blank">MIT license</a>
-  .row
-    %p Post categories
-    %p Posting rate limit            
-    %p More coming soon…
+  %ul
+    - data.features.each do |feature|
+      %li.feature
+        %h4=feature.name
+        %p=feature.description
