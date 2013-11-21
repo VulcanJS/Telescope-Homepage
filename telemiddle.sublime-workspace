@@ -4,16 +4,16 @@
 		"selected_items":
 		[
 			[
+				"ma",
+				"margin-bottom"
+			],
+			[
 				"bord",
 				"border-radius"
 			],
 			[
 				"font-s",
 				"font-size"
-			],
-			[
-				"ma",
-				"margin"
 			],
 			[
 				"bor",
@@ -384,10 +384,19 @@
 			}
 		},
 		{
-			"file": "source/showcase.haml",
+			"file": "data/features.yml",
 			"settings":
 			{
-				"buffer_size": 363,
+				"buffer_size": 908,
+				"line_ending": "Unix",
+				"name": "-"
+			}
+		},
+		{
+			"file": "source/blog/getting-started-with-telescope.md.erb",
+			"settings":
+			{
+				"buffer_size": 2753,
 				"line_ending": "Unix"
 			}
 		},
@@ -395,7 +404,7 @@
 			"file": "source/stylesheets/screen.scss",
 			"settings":
 			{
-				"buffer_size": 779,
+				"buffer_size": 803,
 				"line_ending": "Unix"
 			}
 		},
@@ -416,26 +425,81 @@
 			}
 		},
 		{
-			"file": "source/stylesheets/partials/_team.scss",
-			"settings":
-			{
-				"buffer_size": 536,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "source/index.html.haml",
 			"settings":
 			{
-				"buffer_size": 1687,
+				"buffer_size": 1773,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "source/partials/_examples.haml",
+			"file": "config.rb",
 			"settings":
 			{
-				"buffer_size": 920,
+				"buffer_size": 5207,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/blog/one-click-deploys-with-giteor.md.erb",
+			"settings":
+			{
+				"buffer_size": 2479,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/partials/_features.haml",
+			"settings":
+			{
+				"buffer_size": 171,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/faq.haml",
+			"settings":
+			{
+				"buffer_size": 1793,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/stylesheets/partials/_blog.scss",
+			"settings":
+			{
+				"buffer_size": 1946,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/stylesheets/partials/_faq.scss",
+			"settings":
+			{
+				"buffer_size": 298,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/blog.html.haml",
+			"settings":
+			{
+				"buffer_size": 692,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/partials/_nav.haml",
+			"settings":
+			{
+				"buffer_size": 371,
 				"line_ending": "Unix"
 			}
 		}
@@ -464,25 +528,25 @@
 	},
 	"file_history":
 	[
+		"/Users/sacha/Dev/Telemiddle/source/showcase.haml",
+		"/Users/sacha/Dev/Telemiddle/source/blog.html.haml",
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_features.scss",
+		"/Users/sacha/Dev/Telemiddle/source/partials/_examples.haml",
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_team.scss",
+		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_main.scss",
+		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_hero.scss",
+		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_home.scss",
+		"/Users/sacha/Dev/Telemiddle/source/partials/_nav.haml",
 		"/Users/sacha/Dev/Telemiddle/source/partials/_book.haml",
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_grid.scss",
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_madewith.scss",
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_blog.scss",
 		"/Users/sacha/Dev/Telemiddle/source/layouts/post_layout.haml",
-		"/Users/sacha/Dev/Telemiddle/source/blog.html.haml",
-		"/Users/sacha/Dev/Telemiddle/source/showcase.haml",
-		"/Users/sacha/Dev/Telemiddle/source/partials/_nav.haml",
-		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_main.scss",
-		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_home.scss",
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/screen.scss",
 		"/Users/sacha/Dev/Telemiddle/source/layouts/layout.haml",
-		"/Users/sacha/Dev/Telemiddle/source/partials/_examples.haml",
 		"/Users/sacha/Dev/Telemiddle/source/partials/_features.haml",
 		"/Users/sacha/Dev/Telemiddle/source/partials/_team.haml",
 		"/Users/sacha/Dev/Telemiddle/source/index.html.haml",
-		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_hero.scss",
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_examples.scss",
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_colors.scss",
 		"/Users/sacha/Dev/Telemiddle/data/madewith.yml",
@@ -651,6 +715,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"- ",
+			"    %p",
+			"p",
 			"made",
 			"unit",
 			"section",
@@ -775,10 +842,7 @@
 			"post-author",
 			"$break-small",
 			"post-author",
-			"digest",
-			"color",
-			"console",
-			"openedComments"
+			"digest"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -786,6 +850,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"- name: '",
+			"-",
 			"%section",
 			"<br/><br/>",
 			"Session.set",
@@ -833,7 +899,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 15,
 			"sheets":
 			[
 				{
@@ -866,23 +932,24 @@
 				},
 				{
 					"buffer": 1,
-					"file": "source/showcase.haml",
+					"file": "data/features.yml",
 					"settings":
 					{
-						"buffer_size": 363,
+						"buffer_size": 908,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								363,
-								363
+								671,
+								671
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
+							"auto_name": "-",
+							"syntax": "Packages/YAML/YAML.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -894,18 +961,44 @@
 				},
 				{
 					"buffer": 2,
-					"file": "source/stylesheets/screen.scss",
+					"file": "source/blog/getting-started-with-telescope.md.erb",
 					"settings":
 					{
-						"buffer_size": 779,
+						"buffer_size": 2753,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								751,
-								751
+								90,
+								90
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "source/stylesheets/screen.scss",
+					"settings":
+					{
+						"buffer_size": 803,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								800,
+								800
 							]
 						],
 						"settings":
@@ -919,7 +1012,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "source/stylesheets/partials/_showcase.scss",
 					"settings":
 					{
@@ -930,8 +1023,8 @@
 						"selection":
 						[
 							[
-								457,
-								457
+								9,
+								9
 							]
 						],
 						"settings":
@@ -946,7 +1039,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "source/stylesheets/partials/_mixins.scss",
 					"settings":
 					{
@@ -966,25 +1059,216 @@
 							"syntax": "Packages/SCSS/SCSS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 890.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "source/stylesheets/partials/_team.scss",
+					"buffer": 6,
+					"file": "source/index.html.haml",
 					"settings":
 					{
-						"buffer_size": 536,
+						"buffer_size": 1773,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								514,
-								514
+								1317,
+								1317
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 110.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "config.rb",
+					"settings":
+					{
+						"buffer_size": 5207,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								95,
+								95
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "source/blog/one-click-deploys-with-giteor.md.erb",
+					"settings":
+					{
+						"buffer_size": 2479,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								707,
+								707
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"default_dir": "/Users/sacha/Dev/Telemiddle/source",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "source/partials/_features.haml",
+					"settings":
+					{
+						"buffer_size": 171,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								171,
+								171
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "source/faq.haml",
+					"settings":
+					{
+						"buffer_size": 1793,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								876,
+								876
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "source/stylesheets/partials/_blog.scss",
+					"settings":
+					{
+						"buffer_size": 1946,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1276,
+								1091
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 884.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "source/stylesheets/partials/_faq.scss",
+					"settings":
+					{
+						"buffer_size": 298,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								162,
+								162
 							]
 						],
 						"settings":
@@ -999,19 +1283,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "source/index.html.haml",
+					"buffer": 14,
+					"file": "source/blog.html.haml",
 					"settings":
 					{
-						"buffer_size": 1687,
+						"buffer_size": 692,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								833,
-								833
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1021,25 +1305,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 115.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "source/partials/_examples.haml",
+					"buffer": 15,
+					"file": "source/partials/_nav.haml",
 					"settings":
 					{
-						"buffer_size": 920,
+						"buffer_size": 371,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								903,
-								903
+								117,
+								117
 							]
 						],
 						"settings":
@@ -1099,36 +1383,64 @@
 		"selected_items":
 		[
 			[
-				"ex",
-				"source/partials/_examples.haml"
+				"nav",
+				"source/partials/_nav.haml"
 			],
 			[
-				"inde",
-				"source/index.html.haml"
+				"blog",
+				"source/blog.html.haml"
 			],
 			[
-				"mixin",
-				"source/stylesheets/partials/_mixins.scss"
+				"showc",
+				"source/stylesheets/partials/_showcase.scss"
+			],
+			[
+				"home",
+				"source/stylesheets/partials/_home.scss"
 			],
 			[
 				"hero",
 				"source/stylesheets/partials/_hero.scss"
 			],
 			[
-				"layou",
-				"source/layouts/layout.haml"
+				"hom",
+				"source/stylesheets/partials/_home.scss"
 			],
 			[
 				"main",
 				"source/stylesheets/partials/_main.scss"
 			],
 			[
-				"exam",
-				"source/stylesheets/partials/_examples.scss"
+				"team",
+				"source/stylesheets/partials/_team.scss"
 			],
 			[
-				"nav",
-				"source/partials/_nav.haml"
+				"inde",
+				"source/index.html.haml"
+			],
+			[
+				"featu",
+				"source/stylesheets/partials/_features.scss"
+			],
+			[
+				"home.",
+				"source/stylesheets/partials/_home.scss"
+			],
+			[
+				"ex",
+				"source/partials/_examples.haml"
+			],
+			[
+				"mixin",
+				"source/stylesheets/partials/_mixins.scss"
+			],
+			[
+				"layou",
+				"source/layouts/layout.haml"
+			],
+			[
+				"exam",
+				"source/stylesheets/partials/_examples.scss"
 			],
 			[
 				"her",
@@ -1137,10 +1449,6 @@
 			[
 				"co",
 				"source/stylesheets/partials/_colors.scss"
-			],
-			[
-				"blog",
-				"source/stylesheets/partials/_blog.scss"
 			],
 			[
 				"pos",
@@ -1585,30 +1893,6 @@
 			[
 				"scree",
 				"client/sass/screen.scss"
-			],
-			[
-				"_notif",
-				"client/sass/modules/_notifications.scss"
-			],
-			[
-				"rou",
-				"client/lib/router.js"
-			],
-			[
-				"posts",
-				"client/sass/modules/_posts.scss"
-			],
-			[
-				"posts_lis",
-				"client/views/posts/posts_list2.js"
-			],
-			[
-				"",
-				"client/views/posts/posts_list.js"
-			],
-			[
-				"_post",
-				"client/sass/modules/_posts.scss"
 			]
 		],
 		"width": 0.0

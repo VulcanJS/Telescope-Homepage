@@ -1,0 +1,19 @@
+.question{
+	margin-bottom: 40px;
+	background: white;
+	@include border-radius(10px);
+	@include regular;
+	h4{
+		text-shadow:none;
+		@include small{
+			font-size: 22px;
+		}
+		@include medium{
+			font-size: 30px;
+		}
+		text-align: left;
+		margin-bottom: 20px;
+		@include light;
+		line-height: 1.3;
+	}
+}

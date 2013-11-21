@@ -1,0 +1,34 @@
+---
+title: 'Search & Internationalization'
+published: true
+author: sacha
+date: 2013/11/21
+---
+
+I'd like to talk about two new features that got recently added to Telescope, both of them the result of outside contributions. 
+
+READMORE
+
+### Search
+
+First off, I was able to implement search with [Ry Walker](https://github.com/ryw)'s help. This is a long-awaited and very useful feature, so I'm very happy to finally be able to take it off the list. 
+
+<%= figure "blog/telescope-search.jpg", "Telescope search" %>
+
+It's not perfect though, as the search uses regular expressions instead of the more robust native search now supported by MongoDB. 
+
+Native search is not enabled in all MongoDB databases, and requires a few obscure Meteor commands to get working, so we thought we'd start with the lowest-hanging fruit first. But we definitely hope to revisit the topic at a later stage.
+
+### Internationalization
+
+Another very cool and very important new feature is internationalization (a.k.a. i18n). This time my thanks go out to [Thomas Brelet](https://github.com/toam), who submitted a pull request out of the blue with Telescope already internationalized and translated in French!
+
+<%= figure "blog/startup-news.jpg", "Telescope in French", "", "http://www.startupnews.fr/" %>
+
+As with search, the implementation isn't perfect yet. There are a few i18n plugins for Meteor, but I couldn't pick a clear winner. So in the meantime I decided to simply write my own. 
+
+It's far too simply and too crude to be a long-term solution, but it'll do for now. Most importantly, it will let us use the `{{i18n}}` Handlebars helper for every string in the app's code to make sure Telescope is ready whenever a better solution comes along. 
+
+### Contributing
+
+I'm very happy to see more people contributing to Telescope, and I'm sure this is only the beginning. So if you're also interested in contributing, you can browse [Meta.Telescope](http://meta.telesc.pe/) to see what people are working on and submit your own ideas. 
