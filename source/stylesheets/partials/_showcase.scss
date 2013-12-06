@@ -2,7 +2,7 @@
 	.site{
 		@include medium{
 			@include span-columns(4);
-			@include nth-omega(3, of-type);
+			@include nth-omega(3n, of-type);
 		}
 		border-bottom:1px solid white(0.15);
 		border-top:1px solid white(0.15);		

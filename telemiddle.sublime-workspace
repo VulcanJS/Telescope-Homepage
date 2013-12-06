@@ -464,7 +464,7 @@
 			}
 		},
 		{
-			"file": "source/faq.haml",
+			"file": "source/faq.html.haml",
 			"settings":
 			{
 				"buffer_size": 1793,
@@ -499,7 +499,7 @@
 			"file": "source/partials/_nav.haml",
 			"settings":
 			{
-				"buffer_size": 371,
+				"buffer_size": 426,
 				"line_ending": "Unix"
 			}
 		}
@@ -528,6 +528,7 @@
 	},
 	"file_history":
 	[
+		"/Users/sacha/Dev/Telemiddle/source/blog/search-and-internationalization.md.erb",
 		"/Users/sacha/Dev/Telemiddle/source/showcase.haml",
 		"/Users/sacha/Dev/Telemiddle/source/blog.html.haml",
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_features.scss",
@@ -654,8 +655,7 @@
 		"/Users/sacha/Dev/Sidebar/client/sass/partials/_colors.scss",
 		"/Users/sacha/Dev/Sidebar/client/app.js",
 		"/Users/sacha/Dev/Sidebar/server/refer.js",
-		"/Users/sacha/Dev/Sidebar/client/lib/paginated_sub.js",
-		"/Users/sacha/Dev/Sidebar/client/body.html"
+		"/Users/sacha/Dev/Sidebar/client/lib/paginated_sub.js"
 	],
 	"find":
 	{
@@ -899,7 +899,7 @@
 	"groups":
 	[
 		{
-			"selected": 15,
+			"selected": 8,
 			"sheets":
 			[
 				{
@@ -1132,8 +1132,8 @@
 						"selection":
 						[
 							[
-								707,
-								707
+								1077,
+								1217
 							]
 						],
 						"settings":
@@ -1202,7 +1202,7 @@
 				},
 				{
 					"buffer": 11,
-					"file": "source/faq.haml",
+					"file": "source/faq.html.haml",
 					"settings":
 					{
 						"buffer_size": 1793,
@@ -1315,15 +1315,15 @@
 					"file": "source/partials/_nav.haml",
 					"settings":
 					{
-						"buffer_size": 371,
+						"buffer_size": 426,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								117,
-								117
+								424,
+								424
 							]
 						],
 						"settings":
@@ -1909,6 +1909,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 218.0,
+	"side_bar_width": 285.0,
 	"status_bar_visible": true
 }

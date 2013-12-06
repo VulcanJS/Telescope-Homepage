@@ -18,3 +18,11 @@
   url: http://m.serverbooks.net/
   description: A detailed directory of gaming servers. 
   screenshot: serverbooks.png
+- title: HealthHackers
+  url: http://www.healthhackers.org/
+  description: A social news site focused on the healthcare industry. 
+  screenshot: healthhackers.png
+- title: LightHouse
+  url: http://lighthouse.io/
+  description: A community about building communities. 
+  screenshot: lighthouse.png
