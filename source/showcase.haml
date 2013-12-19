@@ -3,7 +3,7 @@
 %section.showcase
   %h3 Showcase
   .sites
-    - data.showcase.each do |site|
+    - data.showcase.reverse_each do |site|
       .site
         .screenshot
           %a{:href => site.url}

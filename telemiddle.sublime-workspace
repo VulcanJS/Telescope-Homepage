@@ -379,7 +379,7 @@
 			"file": "data/showcase.yml",
 			"settings":
 			{
-				"buffer_size": 687,
+				"buffer_size": 1118,
 				"line_ending": "Unix"
 			}
 		},
@@ -412,7 +412,7 @@
 			"file": "source/stylesheets/partials/_showcase.scss",
 			"settings":
 			{
-				"buffer_size": 631,
+				"buffer_size": 632,
 				"line_ending": "Unix"
 			}
 		},
@@ -899,7 +899,7 @@
 	"groups":
 	[
 		{
-			"selected": 8,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -907,15 +907,15 @@
 					"file": "data/showcase.yml",
 					"settings":
 					{
-						"buffer_size": 687,
+						"buffer_size": 1118,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								456,
-								456
+								1089,
+								1089
 							]
 						],
 						"settings":
@@ -1016,15 +1016,15 @@
 					"file": "source/stylesheets/partials/_showcase.scss",
 					"settings":
 					{
-						"buffer_size": 631,
+						"buffer_size": 632,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9,
-								9
+								91,
+								91
 							]
 						],
 						"settings":
