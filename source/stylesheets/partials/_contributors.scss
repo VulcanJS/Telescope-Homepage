@@ -1,16 +1,19 @@
-.team{
+.contributors{
+	.intro{
+		text-align: center;
+		margin-bottom: $spacing;
+	}
+}
+.contributor{
 	@include medium{
-		@include pad(1,1);
-		.member{
-			@include span-columns(5, 10);
-			@include nth-omega(2, of-type);
-		}
+		@include span-columns(4);
+		@include nth-omega(3, of-type);
 	}
 	
 	text-align:center;
 	h4{
-		font-size:36px;
-		margin-bottom:0px;
+		font-size:30px;
+		margin-bottom:5px;
 		line-height:1;
 	}
 	h5{

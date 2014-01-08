@@ -1,0 +1,19 @@
+- name: Sacha Greif
+  site: http://sachagreif.com
+  photo: photo-sacha-big.png
+  bio: >
+    I'm a designer and developer. I co-authored <a href="http://discovermeteor.com">Discover Meteor</a>, a book that
+    teaches you how to build apps with Meteor, and I also run <a href="http://sidebar.io">Sidebar</a>.
+- name: Tom Coleman
+  site: http://tom.thesnail.org
+  photo: photo-tom-big.png
+  bio: >
+    I build Meteor apps for a living. I'm also the co-creator of <a href="https://github.com/oortcloud/meteorite" target="_blank">Meteorite</a> 
+    and the <a href="https://atmosphere.meteor.com/" target="_blank">Atmosphere</a> package repository, as 
+    well as the co-author of <a href="http://discovermeteor.com">Discover Meteor</a>.
+- name: Egor Suvorov
+  site: https://github.com/yeputons
+  photo: photo-egor.png
+  bio: >
+    I'm a student from Saint-Petersburg, Russia, and I've been coding since I was seven. 
+    I became friends with Meteor in August 2013.

@@ -1,0 +1,13 @@
+- content_for(:title, "Telescope Contributors")
+
+%section.contributors
+  %h3 Contributors
+  %p.intro Here are some of the people helping make Telescope great. Why not <a href="https://github.com/SachaG/Telescope">join them</a>?
+  .contributors
+    - data.contributors.each do |contributor|
+      .contributor
+        %a.portrait{:href=>contributor.site, :target=>"_blank"}
+          %img{:src=>"images/"+contributor.photo}
+        %h4 
+          %a{:href=>contributor.site, :target=>"_blank"}=contributor.name
+        %p=contributor.bio

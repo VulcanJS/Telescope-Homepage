@@ -379,7 +379,7 @@
 			"file": "data/showcase.yml",
 			"settings":
 			{
-				"buffer_size": 1118,
+				"buffer_size": 1414,
 				"line_ending": "Unix"
 			}
 		},
@@ -404,15 +404,7 @@
 			"file": "source/stylesheets/screen.scss",
 			"settings":
 			{
-				"buffer_size": 803,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/stylesheets/partials/_showcase.scss",
-			"settings":
-			{
-				"buffer_size": 632,
+				"buffer_size": 811,
 				"line_ending": "Unix"
 			}
 		},
@@ -428,7 +420,7 @@
 			"file": "source/index.html.haml",
 			"settings":
 			{
-				"buffer_size": 1773,
+				"buffer_size": 1745,
 				"line_ending": "Unix"
 			}
 		},
@@ -459,7 +451,7 @@
 			"file": "source/partials/_features.haml",
 			"settings":
 			{
-				"buffer_size": 171,
+				"buffer_size": 181,
 				"line_ending": "Unix"
 			}
 		},
@@ -468,6 +460,22 @@
 			"settings":
 			{
 				"buffer_size": 1793,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/contributors.html.haml",
+			"settings":
+			{
+				"buffer_size": 486,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data/contributors.yml",
+			"settings":
+			{
+				"buffer_size": 734,
 				"line_ending": "Unix"
 			}
 		},
@@ -499,7 +507,15 @@
 			"file": "source/partials/_nav.haml",
 			"settings":
 			{
-				"buffer_size": 426,
+				"buffer_size": 482,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/stylesheets/partials/_contributors.scss",
+			"settings":
+			{
+				"buffer_size": 606,
 				"line_ending": "Unix"
 			}
 		}
@@ -528,8 +544,10 @@
 	},
 	"file_history":
 	[
-		"/Users/sacha/Dev/Telemiddle/source/blog/search-and-internationalization.md.erb",
+		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_showcase.scss",
 		"/Users/sacha/Dev/Telemiddle/source/showcase.haml",
+		"/Users/sacha/Dev/Telemiddle/source/partials/_team.haml",
+		"/Users/sacha/Dev/Telemiddle/source/blog/search-and-internationalization.md.erb",
 		"/Users/sacha/Dev/Telemiddle/source/blog.html.haml",
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_features.scss",
 		"/Users/sacha/Dev/Telemiddle/source/partials/_examples.haml",
@@ -546,7 +564,6 @@
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/screen.scss",
 		"/Users/sacha/Dev/Telemiddle/source/layouts/layout.haml",
 		"/Users/sacha/Dev/Telemiddle/source/partials/_features.haml",
-		"/Users/sacha/Dev/Telemiddle/source/partials/_team.haml",
 		"/Users/sacha/Dev/Telemiddle/source/index.html.haml",
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_examples.scss",
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_colors.scss",
@@ -654,8 +671,7 @@
 		"/Users/sacha/Dev/Sidebar/client/sass/partials/_icons.scss",
 		"/Users/sacha/Dev/Sidebar/client/sass/partials/_colors.scss",
 		"/Users/sacha/Dev/Sidebar/client/app.js",
-		"/Users/sacha/Dev/Sidebar/server/refer.js",
-		"/Users/sacha/Dev/Sidebar/client/lib/paginated_sub.js"
+		"/Users/sacha/Dev/Sidebar/server/refer.js"
 	],
 	"find":
 	{
@@ -899,7 +915,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 11,
 			"sheets":
 			[
 				{
@@ -907,15 +923,15 @@
 					"file": "data/showcase.yml",
 					"settings":
 					{
-						"buffer_size": 1118,
+						"buffer_size": 1414,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1089,
-								1089
+								675,
+								675
 							]
 						],
 						"settings":
@@ -990,15 +1006,15 @@
 					"file": "source/stylesheets/screen.scss",
 					"settings":
 					{
-						"buffer_size": 803,
+						"buffer_size": 811,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								800,
-								800
+								811,
+								811
 							]
 						],
 						"settings":
@@ -1013,33 +1029,6 @@
 				},
 				{
 					"buffer": 4,
-					"file": "source/stylesheets/partials/_showcase.scss",
-					"settings":
-					{
-						"buffer_size": 632,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								91,
-								91
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
 					"file": "source/stylesheets/partials/_mixins.scss",
 					"settings":
 					{
@@ -1065,19 +1054,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "source/index.html.haml",
 					"settings":
 					{
-						"buffer_size": 1773,
+						"buffer_size": 1745,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1317,
-								1317
+								1718,
+								1718
 							]
 						],
 						"settings":
@@ -1087,13 +1076,13 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 110.0,
+						"translation.y": 53.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "config.rb",
 					"settings":
 					{
@@ -1121,7 +1110,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 7,
 					"file": "source/blog/one-click-deploys-with-giteor.md.erb",
 					"settings":
 					{
@@ -1147,7 +1136,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 8,
 					"settings":
 					{
 						"buffer_size": 0,
@@ -1173,19 +1162,47 @@
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 9,
 					"file": "source/partials/_features.haml",
 					"settings":
 					{
-						"buffer_size": 171,
+						"buffer_size": 181,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								171,
-								171
+								27,
+								27
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "source/faq.html.haml",
+					"settings":
+					{
+						"buffer_size": 1793,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								1793
 							]
 						],
 						"settings":
@@ -1202,18 +1219,18 @@
 				},
 				{
 					"buffer": 11,
-					"file": "source/faq.html.haml",
+					"file": "source/contributors.html.haml",
 					"settings":
 					{
-						"buffer_size": 1793,
+						"buffer_size": 486,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								876,
-								876
+								486,
+								486
 							]
 						],
 						"settings":
@@ -1230,6 +1247,34 @@
 				},
 				{
 					"buffer": 12,
+					"file": "data/contributors.yml",
+					"settings":
+					{
+						"buffer_size": 734,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								734,
+								734
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
 					"file": "source/stylesheets/partials/_blog.scss",
 					"settings":
 					{
@@ -1256,7 +1301,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 14,
 					"file": "source/stylesheets/partials/_faq.scss",
 					"settings":
 					{
@@ -1283,7 +1328,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 15,
 					"file": "source/blog.html.haml",
 					"settings":
 					{
@@ -1311,19 +1356,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 16,
 					"file": "source/partials/_nav.haml",
 					"settings":
 					{
-						"buffer_size": 426,
+						"buffer_size": 482,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								424,
-								424
+								169,
+								169
 							]
 						],
 						"settings":
@@ -1331,6 +1376,33 @@
 							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "source/stylesheets/partials/_contributors.scss",
+					"settings":
+					{
+						"buffer_size": 606,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								72,
+								72
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1383,16 +1455,40 @@
 		"selected_items":
 		[
 			[
+				"contri",
+				"source/contributors.html.haml"
+			],
+			[
+				"showc",
+				"source/stylesheets/partials/_showcase.scss"
+			],
+			[
+				"contr",
+				"source/stylesheets/partials/_contributors.scss"
+			],
+			[
+				"show",
+				"source/showcase.haml"
+			],
+			[
+				"team",
+				"source/stylesheets/partials/_team.scss"
+			],
+			[
+				"fea",
+				"source/partials/_features.haml"
+			],
+			[
+				"inde",
+				"source/index.html.haml"
+			],
+			[
 				"nav",
 				"source/partials/_nav.haml"
 			],
 			[
 				"blog",
 				"source/blog.html.haml"
-			],
-			[
-				"showc",
-				"source/stylesheets/partials/_showcase.scss"
 			],
 			[
 				"home",
@@ -1409,14 +1505,6 @@
 			[
 				"main",
 				"source/stylesheets/partials/_main.scss"
-			],
-			[
-				"team",
-				"source/stylesheets/partials/_team.scss"
-			],
-			[
-				"inde",
-				"source/index.html.haml"
 			],
 			[
 				"featu",
@@ -1877,22 +1965,6 @@
 			[
 				"user_signup",
 				"client/views/users/user_signup.html"
-			],
-			[
-				"nav.",
-				"client/views/common/nav.html"
-			],
-			[
-				"body.ht",
-				"client/body.html"
-			],
-			[
-				"subs",
-				"client/views/common/subscribe.html"
-			],
-			[
-				"scree",
-				"client/sass/screen.scss"
 			]
 		],
 		"width": 0.0
