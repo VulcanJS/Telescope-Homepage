@@ -1,5 +1,8 @@
 source "https://rubygems.org"
 
+gem "rack-contrib"
+gem "puma"
+
 gem "thin"
 gem "nokogiri"
 
@@ -14,3 +17,4 @@ gem "redcarpet"
 
 # For feed.xml.builder
 gem "builder", "~> 3.0.0"
+

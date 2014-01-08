@@ -89,7 +89,11 @@ GEM
     padrino-helpers (0.10.7)
       i18n (~> 0.6)
       padrino-core (= 0.10.7)
+    puma (2.7.1)
+      rack (>= 1.1, < 2.0)
     rack (1.4.5)
+    rack-contrib (1.1.0)
+      rack (>= 0.9.1)
     rack-livereload (0.3.15)
       rack
     rack-protection (1.5.0)
@@ -144,6 +148,8 @@ DEPENDENCIES
   middleman-livereload
   middleman-syntax
   nokogiri
+  puma
+  rack-contrib
   redcarpet
   susy
   thin
