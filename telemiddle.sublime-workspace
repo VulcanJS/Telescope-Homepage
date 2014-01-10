@@ -428,7 +428,14 @@
 			"file": "config.rb",
 			"settings":
 			{
-				"buffer_size": 5207,
+				"buffer_size": 5230,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"settings":
+			{
+				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		},
@@ -459,7 +466,7 @@
 			"file": "source/faq.html.haml",
 			"settings":
 			{
-				"buffer_size": 1793,
+				"buffer_size": 1801,
 				"line_ending": "Unix"
 			}
 		},
@@ -467,7 +474,7 @@
 			"file": "source/contributors.html.haml",
 			"settings":
 			{
-				"buffer_size": 486,
+				"buffer_size": 536,
 				"line_ending": "Unix"
 			}
 		},
@@ -475,7 +482,7 @@
 			"file": "data/contributors.yml",
 			"settings":
 			{
-				"buffer_size": 734,
+				"buffer_size": 963,
 				"line_ending": "Unix"
 			}
 		},
@@ -512,10 +519,26 @@
 			}
 		},
 		{
-			"file": "source/stylesheets/partials/_contributors.scss",
+			"file": "config.ru",
 			"settings":
 			{
-				"buffer_size": 606,
+				"buffer_size": 654,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Gemfile",
+			"settings":
+			{
+				"buffer_size": 302,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Procfile",
+			"settings":
+			{
+				"buffer_size": 43,
 				"line_ending": "Unix"
 			}
 		}
@@ -544,6 +567,10 @@
 	},
 	"file_history":
 	[
+		"/Users/sacha/Dev/Telemiddle/.gitignore",
+		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_contributors.scss",
+		"/Users/sacha/Dev/Telemiddle/source/404.html.haml",
+		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_main.scss",
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_showcase.scss",
 		"/Users/sacha/Dev/Telemiddle/source/showcase.haml",
 		"/Users/sacha/Dev/Telemiddle/source/partials/_team.haml",
@@ -552,7 +579,6 @@
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_features.scss",
 		"/Users/sacha/Dev/Telemiddle/source/partials/_examples.haml",
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_team.scss",
-		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_main.scss",
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_hero.scss",
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_home.scss",
 		"/Users/sacha/Dev/Telemiddle/source/partials/_nav.haml",
@@ -668,10 +694,7 @@
 		"/Users/sacha/Dev/Sidebar/client/sass/partials/_tooltips.scss",
 		"/Users/sacha/Dev/Sidebar/client/sass/partials/_variables.scss",
 		"/Users/sacha/Dev/Sidebar/client/sass/partials/_mixins.scss",
-		"/Users/sacha/Dev/Sidebar/client/sass/partials/_icons.scss",
-		"/Users/sacha/Dev/Sidebar/client/sass/partials/_colors.scss",
-		"/Users/sacha/Dev/Sidebar/client/app.js",
-		"/Users/sacha/Dev/Sidebar/server/refer.js"
+		"/Users/sacha/Dev/Sidebar/client/sass/partials/_icons.scss"
 	],
 	"find":
 	{
@@ -731,6 +754,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"build_dir",
+			"directory_indexes",
 			"- ",
 			"    %p",
 			"p",
@@ -856,9 +881,7 @@
 			"_updateFields",
 			"mce_preload_check",
 			"post-author",
-			"$break-small",
-			"post-author",
-			"digest"
+			"$break-small"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -915,7 +938,7 @@
 	"groups":
 	[
 		{
-			"selected": 11,
+			"selected": 17,
 			"sheets":
 			[
 				{
@@ -1086,15 +1109,15 @@
 					"file": "config.rb",
 					"settings":
 					{
-						"buffer_size": 5207,
+						"buffer_size": 5230,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								95,
-								95
+								1714,
+								1714
 							]
 						],
 						"settings":
@@ -1104,13 +1127,39 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 848.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 7,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"default_dir": "/Users/sacha/Dev/Telemiddle",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
 					"file": "source/blog/one-click-deploys-with-giteor.md.erb",
 					"settings":
 					{
@@ -1136,7 +1185,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 9,
 					"settings":
 					{
 						"buffer_size": 0,
@@ -1162,7 +1211,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 10,
 					"file": "source/partials/_features.haml",
 					"settings":
 					{
@@ -1190,11 +1239,11 @@
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 11,
 					"file": "source/faq.html.haml",
 					"settings":
 					{
-						"buffer_size": 1793,
+						"buffer_size": 1801,
 						"regions":
 						{
 						},
@@ -1202,35 +1251,7 @@
 						[
 							[
 								0,
-								1793
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "source/contributors.html.haml",
-					"settings":
-					{
-						"buffer_size": 486,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								486,
-								486
+								1801
 							]
 						],
 						"settings":
@@ -1247,18 +1268,46 @@
 				},
 				{
 					"buffer": 12,
-					"file": "data/contributors.yml",
+					"file": "source/contributors.html.haml",
 					"settings":
 					{
-						"buffer_size": 734,
+						"buffer_size": 536,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								734,
-								734
+								308,
+								308
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "data/contributors.yml",
+					"settings":
+					{
+						"buffer_size": 963,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								912,
+								912
 							]
 						],
 						"settings":
@@ -1274,7 +1323,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 14,
 					"file": "source/stylesheets/partials/_blog.scss",
 					"settings":
 					{
@@ -1301,7 +1350,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 15,
 					"file": "source/stylesheets/partials/_faq.scss",
 					"settings":
 					{
@@ -1328,7 +1377,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 16,
 					"file": "source/blog.html.haml",
 					"settings":
 					{
@@ -1356,7 +1405,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 17,
 					"file": "source/partials/_nav.haml",
 					"settings":
 					{
@@ -1384,25 +1433,78 @@
 					"type": "text"
 				},
 				{
-					"buffer": 17,
-					"file": "source/stylesheets/partials/_contributors.scss",
+					"buffer": 18,
+					"file": "config.ru",
 					"settings":
 					{
-						"buffer_size": 606,
+						"buffer_size": 654,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								72,
-								72
+								67,
+								67
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "Gemfile",
+					"settings":
+					{
+						"buffer_size": 302,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								61,
+								61
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "Procfile",
+					"settings":
+					{
+						"buffer_size": 43,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								43,
+								43
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1455,6 +1557,18 @@
 		"selected_items":
 		[
 			[
+				"404",
+				"source/404.html.haml"
+			],
+			[
+				"main",
+				"source/stylesheets/partials/_main.scss"
+			],
+			[
+				"faq",
+				"source/faq.html.haml"
+			],
+			[
 				"contri",
 				"source/contributors.html.haml"
 			],
@@ -1501,10 +1615,6 @@
 			[
 				"hom",
 				"source/stylesheets/partials/_home.scss"
-			],
-			[
-				"main",
-				"source/stylesheets/partials/_main.scss"
 			],
 			[
 				"featu",
@@ -1957,14 +2067,6 @@
 			[
 				"user_email",
 				"client/views/users/user_email.html"
-			],
-			[
-				"user_sign",
-				"client/views/users/user_signup.js"
-			],
-			[
-				"user_signup",
-				"client/views/users/user_signup.html"
 			]
 		],
 		"width": 0.0
