@@ -482,7 +482,7 @@
 			"file": "data/contributors.yml",
 			"settings":
 			{
-				"buffer_size": 963,
+				"buffer_size": 1242,
 				"line_ending": "Unix"
 			}
 		},
@@ -541,6 +541,14 @@
 				"buffer_size": 43,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 49,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -554,7 +562,11 @@
 	},
 	"console":
 	{
-		"height": 0.0
+		"height": 0.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
 	},
 	"distraction_free":
 	{
@@ -567,8 +579,8 @@
 	},
 	"file_history":
 	[
-		"/Users/sacha/Dev/Telemiddle/.gitignore",
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_contributors.scss",
+		"/Users/sacha/Dev/Telemiddle/.gitignore",
 		"/Users/sacha/Dev/Telemiddle/source/404.html.haml",
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_main.scss",
 		"/Users/sacha/Dev/Telemiddle/source/stylesheets/partials/_showcase.scss",
@@ -938,12 +950,13 @@
 	"groups":
 	[
 		{
-			"selected": 17,
+			"selected": 6,
 			"sheets":
 			[
 				{
 					"buffer": 0,
 					"file": "data/showcase.yml",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 1414,
@@ -967,11 +980,13 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
 					"file": "data/features.yml",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 908,
@@ -996,11 +1011,13 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
 					"file": "source/blog/getting-started-with-telescope.md.erb",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 2753,
@@ -1022,11 +1039,13 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
 					"file": "source/stylesheets/screen.scss",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 811,
@@ -1048,11 +1067,13 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
 					"file": "source/stylesheets/partials/_mixins.scss",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 2424,
@@ -1074,11 +1095,13 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
 					"buffer": 5,
 					"file": "source/index.html.haml",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 1745,
@@ -1102,11 +1125,13 @@
 						"translation.y": 53.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
 					"buffer": 6,
 					"file": "config.rb",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 5230,
@@ -1116,8 +1141,8 @@
 						"selection":
 						[
 							[
-								1714,
-								1714
+								1718,
+								1588
 							]
 						],
 						"settings":
@@ -1127,13 +1152,15 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 848.0,
+						"translation.y": 827.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 7,
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 0,
@@ -1156,11 +1183,13 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
 					"buffer": 8,
 					"file": "source/blog/one-click-deploys-with-giteor.md.erb",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 2479,
@@ -1182,10 +1211,12 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
 					"buffer": 9,
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 0,
@@ -1208,11 +1239,13 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
 					"buffer": 10,
 					"file": "source/partials/_features.haml",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 181,
@@ -1236,11 +1269,13 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
 					"buffer": 11,
 					"file": "source/faq.html.haml",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 1801,
@@ -1264,11 +1299,13 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
 					"buffer": 12,
 					"file": "source/contributors.html.haml",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 536,
@@ -1292,22 +1329,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
 					"buffer": 13,
 					"file": "data/contributors.yml",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 963,
+						"buffer_size": 1242,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								912,
-								912
+								815,
+								815
 							]
 						],
 						"settings":
@@ -1320,11 +1359,13 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
 					"buffer": 14,
 					"file": "source/stylesheets/partials/_blog.scss",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 1946,
@@ -1347,11 +1388,13 @@
 						"translation.y": 884.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
 					"buffer": 15,
 					"file": "source/stylesheets/partials/_faq.scss",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 298,
@@ -1374,11 +1417,13 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
 					"buffer": 16,
 					"file": "source/blog.html.haml",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 692,
@@ -1402,11 +1447,13 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
 					"buffer": 17,
 					"file": "source/partials/_nav.haml",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 482,
@@ -1430,11 +1477,13 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 21,
 					"type": "text"
 				},
 				{
 					"buffer": 18,
 					"file": "config.ru",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 654,
@@ -1444,8 +1493,8 @@
 						"selection":
 						[
 							[
-								67,
-								67
+								0,
+								654
 							]
 						],
 						"settings":
@@ -1458,11 +1507,13 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 19,
 					"file": "Gemfile",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 302,
@@ -1472,8 +1523,8 @@
 						"selection":
 						[
 							[
-								61,
-								61
+								87,
+								31
 							]
 						],
 						"settings":
@@ -1484,11 +1535,13 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 20,
 					"file": "Procfile",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 43,
@@ -1498,7 +1551,7 @@
 						"selection":
 						[
 							[
-								43,
+								0,
 								43
 							]
 						],
@@ -1510,6 +1563,35 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": ".gitignore",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 49,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1546,6 +1628,11 @@
 		]
 	},
 	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "telemiddle.sublime-project",
 	"replace":
 	{
 		"height": 64.0
@@ -1556,6 +1643,14 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"contri",
+				"source/stylesheets/partials/_contributors.scss"
+			],
+			[
+				"contr",
+				"data/contributors.yml"
+			],
 			[
 				"404",
 				"source/404.html.haml"
@@ -1569,16 +1664,8 @@
 				"source/faq.html.haml"
 			],
 			[
-				"contri",
-				"source/contributors.html.haml"
-			],
-			[
 				"showc",
 				"source/stylesheets/partials/_showcase.scss"
-			],
-			[
-				"contr",
-				"source/stylesheets/partials/_contributors.scss"
 			],
 			[
 				"show",
@@ -2079,10 +2166,24 @@
 		],
 		"width": 0.0
 	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 285.0,
-	"status_bar_visible": true
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
 }
