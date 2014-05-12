@@ -77,7 +77,8 @@ h3.blog{
 		margin-bottom: $spacing;
 	}
 	h3, h4, h5{
-		margin-bottom: 0;
+		margin-bottom: $spacing;
+		line-height: 1.4;
 	}
 	font-weight: 400;
 	.post-title{

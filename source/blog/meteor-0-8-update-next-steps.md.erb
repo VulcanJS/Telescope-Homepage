@@ -1,0 +1,72 @@
+---
+title: "Meteor 0.8 Update & Next Steps"
+published: true
+author: sacha
+date: 2014/05/12
+---
+
+I'm happy to announce that [Telescope](https://github.com/TelescopeJS/Telescope) has (finally!) been updated for Meteor 0.8 and the new Blaze UI engine.
+
+But besides that, I also want to take a moment to talk about what's next for Telescope.
+
+I'll be the first to admit that I haven't done a very good job with Telescope in the last few months. I decided to focus on [Discover Meteor](http://discovermeteor.com) for a while, because I figured the more people learn Meteor, the more people will be able to contribute to Telescope in the future!
+
+But now that things are a bit calmer with the book, I want to take a few weeks to refocus on Telescope and work out the next steps. Don't hesitate to get in touch if you think you can help with any of this!
+
+### Better Community Management
+
+One of my main goals is to do a better job at managing the Telescope community. Right now, even if you want to contribute, there's no way to know what's next on the to-do list or who's working on what. 
+
+I'm not sure I know how to fix that (some kind of collaboration app with GitHub integration would be great), but in the meantime I'll try to make myself more available on [Telescope Meta](http://meta.telesc.pe) or [by email](mailto:hello@telesc.pe). 
+
+I've also created a [Telescope chatroom](https://gitter.im/TelescopeJS), and I'll be hanging out there as much as possible, so feel free to drop by and say hello!
+
+### Modularizing Telescope
+
+I'm not sure if "modularizing" is even a real word, but you get the idea. When I first built Telescope, I had no clue about the proper way to code Meteor apps.
+
+To be fair I still don't, but at least I've learned a few things along the way. One of these things is that Meteor apps shouldn't be monolithic blobs of code, but instead should outsource features to packages whenever it makes sense. 
+
+Features that would be great candidates for "packageification" include: 
+
+- Tags
+- Search
+- Digest
+- RSS Feeds
+- API
+- Mailchimp integration
+- Notifications
+- Invites
+
+In fact, I've already started breaking up the tags/categories feature into its own package. 
+
+### Using Third-Party Packages
+
+In order to simplify Telescope's codebase, I also want to start relying on third-party packages more, chief among them [Collection2](https://github.com/aldeed/meteor-collection2) and [Autoform](https://github.com/aldeed/meteor-autoform/). 
+
+Unlike something like Ruby on Rails, Meteor doesn't really feature data models out of the box. But for any kind of real-world application, it just makes sense to formalize your database schema a bit more, and that's where Collection2 comes in. 
+
+And Autoform will take that schema and automatically generate insert and update forms, saving you the need to write page after page of boring form templates code. 
+
+### New Features
+
+I have a lot of new features in mind for Telescope, including:
+
+- Posting by email.
+- [Embedly](http://embed.ly/) integration.
+- A better, cleaner default theme.
+- Custom themes support. 
+- Automated email digests (a.k.a. [Sidebar](http://sidebar.io) mode).
+- Better admin area (including per-package settings).
+- Mentions support.
+- Hierarchical tags.
+- And more…
+
+But before we can work on all this I want to make sure that Telescope's core is stable, which is exactly where the modularization comes in. 
+
+### Helping Out
+
+One of the best ways to help out is to head to the [GitHub issues](https://github.com/TelescopeJS/Telescope/issues) page and see if there's anything you can help with. 
+
+And if you'd like to help out with anything else, please [get in touch](mailto:hello@telesc.pe) to let me know. And be sure to also [sign up for Telescope's mailing list](http://eepurl.com/HIJ6D) to stay up to date on the latest news.
+
