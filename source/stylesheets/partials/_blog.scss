@@ -70,11 +70,11 @@ h3.blog{
 		font-size: 15px;
 	}
 	@include medium{
-		padding: 40px;
+		padding: 40px 80px;
 		font-size: 18px;
 	}
-	p{
-		margin-bottom: $spacing;
+	p, pre, ul, ol{
+		margin: 0 0 $spacing 0;
 	}
 	h3, h4, h5{
 		margin-bottom: $spacing;
@@ -126,6 +126,14 @@ h3.blog{
 		font-size: 16px;
 		font-style: italic;
 		text-align: center;
+	}
+	pre{
+		border: 1px $medium-grey solid;
+		border-radius: 5px;
+		padding: 20px;
+		font-size: 14px;
+		background: #fafafa;
+		overflow-x: auto;
 	}
 }
 .articles{
