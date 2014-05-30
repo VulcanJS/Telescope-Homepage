@@ -20,7 +20,6 @@ Tags/categories now have their own package. Now I wasn't able to extract *all* o
 In order to do this, I've made the menu system more modular. To give you an illustration, this is how the `telescope-tags` package adds the “Categories” admin menu item (that menu was previously hard-coded as static markup):
 
 ```js
-adminNav = typeof adminNav === 'undefined' ? [] : adminNav;
 adminNav.push({
   route: 'categories',
   label: 'Categories'
@@ -32,7 +31,6 @@ In the future, it will be possible to manage all of Telescope's menus via a web 
 Similarly, this is how the main view navigation menu is defined in `main.js`:
 
 ```js
-viewNav = typeof viewNav === 'undefined' ? [] : viewNav;
 viewNav = viewNav.concat([
   {
     route: 'posts_top',
@@ -60,7 +58,6 @@ I've followed the same logic to defined preloaded subscriptions (subscriptions t
 For example, here's how the `telescope-tags` package tells Telescope to preload the `categories` subscription:
 
 ```js
-preloadSubscriptions = typeof preloadSubscriptions === 'undefined' ? [] : preloadSubscriptions;
 preloadSubscriptions.push('categories');
 ```
 
