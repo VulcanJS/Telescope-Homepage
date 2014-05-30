@@ -1,0 +1,71 @@
+---
+title: 'Telescope v0.8.1 “FlexScope”'
+published: true
+author: sacha
+date: 2014/05/30
+---
+
+I'm still slowly hacking away at Telescope whenever I can, even if it does feel like trying to boil the ocean at times. But with the latest release, I feel like at least I'm finally boiling the right ocean!
+
+READMORE
+
+This new version is the first step towards making Telescope more flexible and more adaptable. 
+
+### The `telescope-tags` Package
+
+Tags/categories now have their own package. Now I wasn't able to extract *all* of the category features into the package just yet, but most of it is in there. This means you can disable tags across your Telescope app simply by running `mrt remove telescope-tags`. 
+
+### More Flexible Menus
+
+In order to do this, I've made the menu system more modular. To give you an illustration, this is how the `telescope-tags` package adds the “Categories” admin menu item (that menu was previously hard-coded as static markup):
+
+```js
+adminNav = typeof adminNav === 'undefined' ? [] : adminNav;
+adminNav.push({
+  route: 'categories',
+  label: 'Categories'
+});
+```
+
+In the future, it will be possible to manage all of Telescope's menus via a web UI, as well as add custom menu items yourself. But for now, this is already a step in the right direction. 
+
+Similarly, this is how the main view navigation menu is defined in `main.js`:
+
+```js
+viewNav = typeof viewNav === 'undefined' ? [] : viewNav;
+viewNav = viewNav.concat([
+  {
+    route: 'posts_top',
+    label: 'Top'
+  },
+  {
+    route: 'posts_new',
+    label: 'New'
+  },
+  {
+    route: 'posts_best',
+    label: 'Best'
+  },
+  {
+    route: 'posts_digest',
+    label: 'Digest'
+  }   
+]);
+```
+
+### More Flexible Subscriptions
+
+I've followed the same logic to defined preloaded subscriptions (subscriptions that needs to be loaded before the router loads the rest of the app).
+
+For example, here's how the `telescope-tags` package tells Telescope to preload the `categories` subscription:
+
+```js
+preloadSubscriptions = typeof preloadSubscriptions === 'undefined' ? [] : preloadSubscriptions;
+preloadSubscriptions.push('categories');
+```
+
+### Going Forward
+
+My next big task is to switch Telescope to the [autoform](https://github.com/aldeed/meteor-autoform) package. This is all part of the same push to make Telescope more lightweight and flexible by getting rid of a lot of the extra markup and random code that's bogging it down. 
+
+My vision for Telescope 1.0 is a much smaller codebase, and an app that will be very easy to customize through a few simple APIs. Now all that's left is to get there!
