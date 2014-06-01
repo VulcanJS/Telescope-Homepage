@@ -6,29 +6,8 @@ page: home
 - content_for(:title, current_page.data.title)
 - content_for(:page, current_page.data.page)
 
-%section.hero
-  .row.actions
-    %a.button.demo{:href=>"http://demo.telesc.pe"}
-      %span.bg1
-      %span.bg2
-      %span.button-content
-        %span.action 
-          %span Try Demo
-          / (
-          / %a{:href=>"http://demo2.telesc.pe"} Demo2
-          / ,
-          / %a{:href=>"http://demo3.telesc.pe"} Demo3
-          / )
-    %a.button.github{:href=>"http://github.com/SachaG/Telescope"}
-      %span.bg1
-      %span.bg2
-      %span.button-content
-        %span.action Fork on GitHub
-    %a.button.deploy{:href=>"https://giteor.com/deploy?git=com.github.SachaG.Telescope.master"}
-      %span.bg1
-      %span.bg2
-      %span.button-content
-        %span.action Deploy Your Own
+
+
 %section.intro
   %h3 What Is Telescope?        
   %p 
