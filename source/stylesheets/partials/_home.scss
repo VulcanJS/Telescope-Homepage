@@ -23,8 +23,8 @@
 			}
 			@include medium{
 				margin-bottom: 0;
-				@include span-columns(4);
-				@include nth-omega(3, of-type);
+				@include span-columns(6);
+				@include nth-omega(2n, of-type);
 			}
 		}
 	}
