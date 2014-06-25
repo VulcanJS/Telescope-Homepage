@@ -151,3 +151,29 @@ h3.blog{
 .comments{
 	padding: 40px;	
 }
+.note{
+	background:$light-yellow;
+	@include background(linear-gradient( 125deg, rgba(253,228,0,0.2) 0%, rgba(253,228,0,0.1) 90%));
+	padding:30px;
+	margin-bottom:30px;
+	line-height:1.6;
+	p{
+		margin-bottom:20px;
+	}
+	h3{
+		margin:0 0 10px 0;
+		border:0;
+		font-size:24px;
+		font-weight: bold();
+	}
+	ul{
+		margin:0;
+	}
+	&.chapter{
+		background:$light-bg;
+		@include background(linear-gradient( 125deg, rgba(226,224,233,1) 0%, rgba(226,224,233,0.5) 90%));;
+	}
+	p:last-child{
+		margin-bottom:0;
+	}
+}
