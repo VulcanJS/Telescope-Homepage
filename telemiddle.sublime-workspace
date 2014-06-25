@@ -404,7 +404,7 @@
 			"file": "source/stylesheets/screen.scss",
 			"settings":
 			{
-				"buffer_size": 811,
+				"buffer_size": 805,
 				"line_ending": "Unix"
 			}
 		},
@@ -420,7 +420,7 @@
 			"file": "source/index.html.haml",
 			"settings":
 			{
-				"buffer_size": 1745,
+				"buffer_size": 1088,
 				"line_ending": "Unix"
 			}
 		},
@@ -490,7 +490,7 @@
 			"file": "source/stylesheets/partials/_blog.scss",
 			"settings":
 			{
-				"buffer_size": 1946,
+				"buffer_size": 2134,
 				"line_ending": "Unix"
 			}
 		},
@@ -514,7 +514,7 @@
 			"file": "source/partials/_nav.haml",
 			"settings":
 			{
-				"buffer_size": 482,
+				"buffer_size": 544,
 				"line_ending": "Unix"
 			}
 		},
@@ -530,7 +530,7 @@
 			"file": "Gemfile",
 			"settings":
 			{
-				"buffer_size": 302,
+				"buffer_size": 393,
 				"line_ending": "Unix"
 			}
 		},
@@ -1048,15 +1048,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 811,
+						"buffer_size": 805,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								811,
-								811
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1104,15 +1104,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1745,
+						"buffer_size": 1088,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1718,
-								1718
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1368,15 +1368,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1946,
+						"buffer_size": 2134,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1276,
-								1091
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1456,15 +1456,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 482,
+						"buffer_size": 544,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								169,
-								169
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1516,15 +1516,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 302,
+						"buffer_size": 393,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								87,
-								31
+								0,
+								0
 							]
 						],
 						"settings":

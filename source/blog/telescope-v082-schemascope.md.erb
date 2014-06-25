@@ -1,0 +1,54 @@
+---
+title: 'Telescope v0.8.2 “SchemaScope”'
+published: true
+author: sacha
+date: 2014/06/25
+---
+
+The latest version of [Telescope](https://github.com/TelescopeJS/Telescope/) brings some pretty cool stuff, and is one more step towards a flexible, lightweight Telescope. Here are the main changes. 
+
+READMORE
+
+### SimpleSchema & Collection2
+
+[SimpleSchema](https://github.com/aldeed/meteor-simple-schema) & [Collection2](https://github.com/aldeed/meteor-collection2) are two packages from Eric Dobbertin, and they work together to provide an easy way to add models to your app. 
+
+Don't get me wrong, Meteor's flexibility and lack of fixed architecture is definitely one of the things that initially appealed to me. But as you build more complex apps, you start to feel the need for a little more structure. 
+
+This is why Telescope is now using SimpleSchema to create and validate models for the `Posts`, `Comments`, and `Settings` collections. 
+
+### More Flexibility
+
+Just like Tags (a.k.a. Categories), Search is now a separate package. This means if you find yourself not using one of them, just remove it with `mrt remove telescope-tags` or `mrt remove telescope-search`. 
+
+This move had a big impact on Telescope's architecture, and the result is that Telescope is now a lot more extendable.
+
+What this means in practice is that you can now do things like adding an item to the main navigation menu without having to touch the app's core code at all. 
+
+You'll find a reference of all the ways to extend Telescope [in the wiki](https://github.com/TelescopeJS/Telescope/wiki/Extending-Telescope).
+
+### New Packages
+
+I also added two new packages: `telescope-lib` contains utility functions, while `telescope-base` contains initialization code for various objects. 
+
+Both packages are used both by the app's core code and by other packages, and are required to run Telescope. 
+
+### Migrations
+
+I also added a few migrations to clean up Telescope's data and do stuff like converting all dates to `Date()` object instead of Unix timestamps. 
+
+While I was at it, I revamped the migration system to now store timestamps for both the migration start and end time, as well as a flag to indicate if the migration was properly completed and a count of how many documents were affected. 
+
+Eventually I'd like to merge these features into Percolate's [migrations package](https://github.com/percolatestudio/meteor-migrations) and use that instead, but this should work for now.
+
+<% note do %>
+
+Because of the migrations, I suggest backing up your database before you upgrade to this new version. Better safe than sorry!
+
+<% end %>
+
+### Next Steps
+
+Next on the roadmap: I will work with Arunoda to implement his newly-released [Subscriptions Manager](https://github.com/arunoda/meteor-subscription-manager), continue converting existing features to packages, and (if he finds the time) work with Eric to use [Autoform](https://github.com/aldeed/meteor-autoform) to get rid of some of the app's form code. 
+
+If you want to help with any of this, or maybe can take a look at a few issues on GitHub, your help will be greatly appreciated!
