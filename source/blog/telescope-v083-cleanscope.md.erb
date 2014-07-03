@@ -1,0 +1,22 @@
+---
+title: 'Telescope v0.8.3 “CleanScope”'
+published: true
+author: sacha
+date: 2014/07/03
+---
+
+A quick update about [Telescope](https://github.com/TelescopeJS/Telescope/) version 0.8.3.
+
+READMORE
+
+Nothing groundbreaking this time, but a lot of bug fixes. I also cleaned up a lot of the old and/or unused third-party code that was cluttering up the app. 
+
+### Date & Time
+
+I also refactored the way timestamps are set, especially as it relates to pending and approved posts. 
+
+Posts and comments now both have `createdAt` and `postedAt` properties. `createdAt` gets set at document creation, while `postedAt` is set when the post or comment is approved. 
+
+If you're not using post moderation, both timestamps will logically be the same. For now, this will always be the case for comments, since there is no comment moderation system in place yet. 
+
+As always, if you want to help with any of this, or maybe can take a look at a few issues on GitHub, your help will be greatly appreciated!
