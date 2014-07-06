@@ -10,7 +10,7 @@ activate :blog do |blog|
   blog.permalink = "blog/:title"
   # blog.sources = ":year-:month-:day-:title.html"
   # blog.taglink = "tags/:tag.html"
-  # blog.layout = "layout"
+  blog.layout = "post_layout"
   # blog.summary_separator = /(READMORE)/
   # blog.summary_length = 250
   # blog.year_link = ":year.html"
@@ -21,6 +21,10 @@ activate :blog do |blog|
   blog.paginate = true
   # blog.per_page = 10
   # blog.page_link = "page/:num"
+end
+
+activate :drafts do |drafts|
+  drafts.build = true if ENV["SHOW_DRAFTS"]
 end
 
 page "/feed.xml", :layout => false
@@ -129,10 +133,16 @@ helpers do
     %Q{<img class="#{css_class}" src="/images/#{src}"/>}
   end
   def figure(src, caption="", css_class="", link="")
+
+    prefix = ''
+    if src[0..3] != 'http'
+      prefix = '/images/'
+    end
+
     if link != ""
       %Q{<figure class="#{css_class}"><a href="#{link}" target="_blank"><img src="/images/#{src}"/></a><figcaption>#{caption}</figcaption></figure>}
     else
-      %Q{<figure class="#{css_class}"><img src="/images/#{src}"/><figcaption>#{caption}</figcaption></figure>}
+      %Q{<figure class="#{css_class}"><img src="#{prefix}#{src}"/><figcaption>#{caption}</figcaption></figure>}
     end
   end  
   def diagram(name, caption, css_class="")

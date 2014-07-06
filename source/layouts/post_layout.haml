@@ -1,4 +1,6 @@
 - content_for(:title, "#{current_article.title} - Telescope")
+- content_for(:layout, "post")
+- content_for(:itemtype, "Article")
 
 = wrap_layout :layout do
   %h3.blog

@@ -25,7 +25,10 @@ h3.blog{
 		&:hover{
 			color: $pink;
 		}
-	}	
+	}
+	strong{
+		color: #111;
+	}
 }
 .post, .comments{
 	background: white;
@@ -106,20 +109,45 @@ h3.blog{
 			font-size: 30px;
 		}
 	}
-	img{
+	figure{
+		margin: $spacing auto $spacing auto;
 		@include small{
 			width: 95%;
-			border: 5px solid $light-grey;
 		}
 		@include medium{
 			width: 85%;
-			border: 10px solid $light-grey;
 		}
-		margin: 0 auto;
-		display: block;
-	}
-	figure{
-		margin: 0 0 $halfspacing 0;
+		&.shrink{
+			width: -webkit-min-content;
+			width: -moz-min-content;
+			width: min-content;
+			img{
+				width: auto;
+			}
+		}
+		&.full{
+			width: 100%;
+		}
+		&.wide{
+			width: auto;
+			@include medium{
+				margin-left: -80px;
+				margin-right: -80px;
+			}
+			img{
+				border: none;
+			}
+		}
+		&.no-border{
+			img{
+				border: none;
+			}
+		}
+		img{
+			display: block;
+			width: 100%;
+			border: 5px solid $light-grey;
+		}
 	}
 	figcaption{
 		margin-top: 10px;
@@ -134,6 +162,16 @@ h3.blog{
 		font-size: 14px;
 		background: #fafafa;
 		overflow-x: auto;
+		code{
+			background: none;
+			font-size: 100%;
+			padding: 0;
+		}
+	}
+	code{
+		background: $light-grey;
+		font-size: 80%;
+		padding: 3px 6px;
 	}
 }
 .articles{
