@@ -340,9 +340,7 @@ What's interesting is that these modules are completely dynamic. To get a better
 <template name="post_item">
   <div class="post">
     {{#each postModules}}
-      <div class="{{templateClass}} {{position}}">
-        {{> UI.dynamic template=template data=..}}
-      </div>
+      {{> UI.dynamic template=template data=..}}
     {{/each}}
   </div>
 </template>
