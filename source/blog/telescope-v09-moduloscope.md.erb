@@ -1,0 +1,71 @@
+---
+title: 'Telescope v0.9 “ModuloScope”'
+published: false
+author: sacha
+date: 2014/07/07, 08:00 AM
+---
+
+This is the biggest Telescope update in a long time, if not ever! Read on for the list of changes. 
+
+READMORE
+
+### Hubble
+
+The default theme is now called Hubble (after what's arguably the [most famous telescope around](http://en.wikipedia.org/wiki/Hubble_Space_Telescope)), and its CSS files reside in their own package, `telescope-theme-hubble`.
+
+I also refreshed the design a bit to make it look cleaner and less cluttered. You can see the result on [Meta](http://meta.telesc.pe):
+
+<%= figure "blog/hubble.png", "The updated default theme, Hubble", "wide" %>
+
+### Themes
+
+Speaking of themes, there's now an ”official” way to theme Telescope instead of simply over-writing CSS files. This is something I've wanted to implement for a long time, and I think it will make customizing the app to your needs a lot easier. 
+
+Themes can contain regular CSS files, Meteor templates, or a combination of both. Let's take a look at a few use cases:
+
+- If all you need to do is make a few CSS tweaks, just create a new theme package, have it depend on `telescope-theme-hubble` to make sure it's included after, and just overwrite the CSS rules you need to change in your own package. 
+- If you want to completely redesign the app's look and feel, you can also do that. Just remove the `telescope-theme-hubble` by typing `meteor remove telescope-theme-hubble`, and start fresh in your own package.
+
+### Dynamic Templates
+
+But what if you want to modify the templates themselves? This is where [dynamic templates](https://www.discovermeteor.com/blog/blaze-dynamic-template-includes/) come in. 
+
+Let's say you want to overwrite the `postContent` template:
+
+<%= figure "blog/postcontent.png", "The postContent template" %>
+
+In your own theme package, first declare a new template:
+
+```html
+<template name="postContentCustom">
+  <!-- insert whatever here -->
+</template>
+```
+
+Then tell Telescope to use *your* template instead of the default one:
+
+```js
+templates["postContent"] = "postContentCustom";
+```
+
+That's it! You can overwrite every single template if you want. The cool part is you won't have to rewrite any of Telescope's logic, as all the helpers from the original templates will also be available in any custom templates. 
+
+### Post Modules
+
+Themes are nice, but what if you want to develop a feature that works with *any* Telescope instance, regardless of its theme?
+
+That's where **post modules** come in. I've written an extensive tutorial on [creating a post module to add Embedly thumbnails to Telescope](/blog/extending-telescope-with-embedly-thumbnails), so I suggest you go check it out!
+
+Note that although the Embedly module is now included in the Telescope repository, it's not activated by default. You can activate it with `meteor add telescope-module-embedly` (be sure to add your API key in the Settings screen).
+
+Part of Telescope's previous features – such as categories and the share button – have been converted into post modules as well. 
+
+This means that getting rid of the share button is now as easy as `meteor remove telescope-module-share`.
+
+### Conclusion
+
+This release is an important milestone for Telescope: there's now a clear, logical way to extend the app and adapt it to your needs. 
+
+The goal with Telescope was never to simply be a "Hacker News clone" app, but instead provide a flexible platform for people to build their own communities, whatever that may look like.
+
+Hopefully, this update is a big step in the right direction!

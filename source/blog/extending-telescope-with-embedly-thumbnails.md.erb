@@ -2,7 +2,7 @@
 title: 'Extending Telescope with Embedly Thumbnails'
 published: false
 author: sacha
-date: 2014/07/07
+date: 2014/07/07, 09:00 AM
 ---
 
 Although Telescope can do the job just fine out of the box, a lot of people will also want to customize it to their needs. 
@@ -358,11 +358,17 @@ This time, the work will happen on the client, so let's create a `client` direct
 
 ```html
 <template name="postThumbnail">
-  {{#if thumbnailUrl}}
-    <img src="{{thumbnailUrl}}"/>
-  {{/if}}
+  <div class="{{moduleClass}}">
+    {{#with post}}
+      {{#if thumbnailUrl}}
+        <img src="{{thumbnailUrl}}"/>
+      {{/if}}
+    {{/if}}
+  </div>
 </template>
 ```
+
+The `moduleClass` helper will come from our post module definition (which we'll take care of just below), and along with the `{{post}}` helper it will be passed by our module's parent template. Don't worry though, all of this taken care of for you!
 
 By now you know the drill, we also need to add the template to our `package.js` file, this time including it on the *client* (Meteor doesn't support server-side templates yet). And since we're now using templates, we must include the `templating` dependency as well on the client:
 
@@ -388,9 +394,19 @@ Finally, go back to `embedly.js` (the file that's being shared by both client an
 ```js
 postModules.push({
   template: 'postThumbnail', 
-  position: 'leftOfRight'
+  position: 'leftOfCenter'
 });
 ```
+
+<% note do %>
+
+### Module Positions
+
+Modules can be placed at 9 different positions. From left to right: `leftOfLeft`,  `left`,  `rightOfLeft`,  `leftOfCenter`,  `center`,  `rightOfCenter`,  `leftOfRight`,  `right`,  `rightOfRight`. 
+
+Although note that more than one module can share the same position.
+
+<% end %>
 
 If everything's working correctly, your thumbnail should now be showing up!
 
@@ -469,5 +485,7 @@ getThumbnailUrl = function (url) {
 There you go. With a few lines of JavaScript, HTML, and CSS code, we've been able to add a spiffy new feature to Telescope. 
 
 And thanks to this approach, not only can we update Telescope's code codebase without affecting our package's code, but we can also seamlessly reuse the package on any Telescope instance!
+
+What's more, you can apply the same pattern to any kind of post module. For example, check out the code of the `telescope-tags` and `telescope-module-share` packages to see other use cases. 
 
 So it's now up to you to extend Telescope with your own features, and then share the results with the rest of the community!

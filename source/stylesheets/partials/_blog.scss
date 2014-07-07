@@ -109,6 +109,19 @@ h3.blog{
 			font-size: 30px;
 		}
 	}
+	h4{
+		text-shadow:none;
+		color: $dark-text;
+		@include bold;
+		text-align: left;
+		text-transform: uppercase;
+		@include small{
+			font-size: 16px;
+		}
+		@include medium{
+			font-size: 18px;
+		}
+	}	
 	figure{
 		margin: $spacing auto $spacing auto;
 		@include small{
