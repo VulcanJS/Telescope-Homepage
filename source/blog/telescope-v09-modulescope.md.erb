@@ -2,7 +2,7 @@
 title: 'Telescope v0.9 “ModuleScope”'
 published: false
 author: sacha
-date: 2014/07/07, 08:00 AM
+date: 2014/07/08, 08:00 AM
 ---
 
 This is the biggest Telescope update in a long time, if not ever! Read on for the list of changes. 
@@ -61,6 +61,14 @@ Note that although the Embedly module is now included in the Telescope repositor
 Part of Telescope's previous features – such as categories and the share button – have been converted into post modules as well. 
 
 This means that getting rid of the share button is now as easy as `meteor remove telescope-module-share`.
+
+### Subscriptions Loading
+
+I'm also experimenting with a new way of loading the post page's subscriptions. In my opinion, subscription management is something that's clearly not quite there yet in Meteor. 
+
+There's a lot of great initiatives like [Iron Router](https://github.com/EventedMind/iron-router) and the recently-released [Subscription Manager](https://github.com/meteorhacks/subs-manager), but I've yet to find the perfect pattern. 
+
+Tom suggested a new pattern that seems to work pretty well though, and I've implemented it for the `postPageController` controller. We'll see how it goes!
 
 ### Conclusion
 

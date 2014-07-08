@@ -2,7 +2,7 @@
 title: 'Extending Telescope with Embedly Thumbnails'
 published: false
 author: sacha
-date: 2014/07/07, 09:00 AM
+date: 2014/07/08, 09:00 AM
 ---
 
 Although Telescope can do the job just fine out of the box, a lot of people will also want to customize it to their needs. 
@@ -39,9 +39,7 @@ Let's get started :)
 
 ### The Code
 
-The code for this module is already included inside the Telescope repository, and is also [available on GitHub](https://github.com/TelescopeJS/Telescope/tree/master/packages/telescope-module-embedly). 
-
-But note that although included in the app's repo, the module is **deactivated by default** in new Telescope instances. 
+This module is [hosted on Atmosphere](https://atmospherejs.com/package/telescope-module-embedly), Meteor's package library site, and its code is also [available on GitHub](https://github.com/TelescopeJS/telescope-module-embedly/). 
 
 ### Working With Local Packages
 
@@ -62,16 +60,6 @@ But the biggest advantage by far is when it comes to keeping your app up to date
 ### Creating A Package
 
 So we'll start out by creating a new `telescope-module-embedly` package to hold all of our Embedly code. 
-
-<% note do %>
-
-### Avoiding Conflicts
-
-As mentioned above, this package is already included by default in the Telescope repository.
-
-So to best follow along this tutorial, I suggest first **renaming** the `telescope-module-embedly` directory inside `/packages` to something different (such as `telescope-module-embedly-original`), and keeping it as a reference copy. 
-
-<% end %>
 
 Go to your Telescope directory (`git clone` the app from [GitHub](https://github.com/TelescopeJS/Telescope) if you haven't done so already) and create a new directory inside `/packages`:
 
@@ -392,7 +380,7 @@ Finally, go back to `embedly.js` (the file that's being shared by both client an
 ```js
 postModules.push({
   template: 'postThumbnail', 
-  position: 'leftOfCenter'
+  position: 'center-left'
 });
 ```
 
@@ -400,7 +388,7 @@ postModules.push({
 
 ### Module Positions
 
-Modules can be placed at 9 different positions. From left to right: `leftOfLeft`,  `left`,  `rightOfLeft`,  `leftOfCenter`,  `center`,  `rightOfCenter`,  `leftOfRight`,  `right`,  `rightOfRight`. 
+Modules can be placed at 9 different positions. From left to right: `left-left`,  `left-center`,  `left-right`,  `center-left`,  `center-center`,  `center-right`,  `right-left`,  `right-center`,  `right-right`. 
 
 Although note that more than one module can share the same position.
 
@@ -415,10 +403,17 @@ If everything's working correctly, your thumbnail should now be showing up!
 Of course, that thumbnail is a little too big… Nothing a little CSS can't fix! Create a new `post_thumbnail.css` file in `client`:
 
 ```css
+.post-thumbnail{
+  margin-right: 0px !important;
+}
 .post-thumbnail img{
   width: 80px;
+  display: inline-block;
+  margin-right: 10px;
 }
 ```
+
+The `margin-right` declarations are needed because the module `div` inherits a 10px margin on the right. In this case, we remove it and put it on the `img` instead so that the module only takes up space when a thumbnail is actually present. 
 
 As usual, don't forget to add it to your files manifest in `package.js`:
 
@@ -482,8 +477,10 @@ getThumbnailUrl = function (url) {
 
 There you go. With a few lines of JavaScript, HTML, and CSS code, we've been able to add a spiffy new feature to Telescope. 
 
-And thanks to this approach, not only can we update Telescope's code codebase without affecting our package's code, but we can also seamlessly reuse the package on any Telescope instance!
+What's more, we've been able to wrap up our module's server-side and client-side logic in a single, easily-imported package. This is a great example of what makes Meteor's server+client paradgigm truly unique.
 
-What's more, you can apply the same pattern to any kind of post module. For example, check out the code of the `telescope-tags` and `telescope-module-share` packages to see other use cases. 
+Thanks to this approach, not only can we update Telescope's code codebase without affecting our package's code, but we can also seamlessly reuse the package on any Telescope instance!
+
+And you can apply the same pattern to any kind of post module. For example, check out the code of the `telescope-tags` and `telescope-module-share` packages (included with the Telescope repo) to see other use cases. 
 
 So it's now up to you to extend Telescope with your own features, and then share the results with the rest of the community!
