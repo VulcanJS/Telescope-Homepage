@@ -1,0 +1,109 @@
+---
+title: 'Extending Telescope'
+published: true
+author: sacha
+date: 00010/01/01
+blog_name: docs
+---
+
+Apart from post modules and themes, here are a few more patterns and objects available to easily extend Telescope through packages.
+
+### addToPostSchema
+
+You can add properties to the `Posts` collection's schema by adding them to the `addToPostSchema` array:
+
+```js
+addToPostSchema.push(
+  {
+    propertyName: 'categories',
+    propertySchema: {
+      type: [CategorySchema],
+      optional: true
+    }
+  }
+);
+```
+
+### adminNav
+
+You can add items to the admin menu by adding them to the `adminNav` array:
+
+```js
+adminNav.push({
+  route: 'categories',
+  label: 'Categories'
+});
+```
+
+### viewNav
+
+You can add items to the views menu by adding them to the `viewNav` array:
+
+```js
+viewNav = viewNav.concat([
+  {
+    route: 'posts_top',
+    label: 'Top'
+  },
+  {
+    route: 'posts_new',
+    label: 'New'
+  }
+]);
+```
+
+### preloadSubscriptions
+
+You can add subscriptions to be preloaded by the router by adding them to the `preloadSubscriptions` array:
+
+```js
+preloadSubscriptions.push({subName: 'posts', subArguments: {limit: 10}});
+```
+
+### navItems
+
+You can add items to the top search bar by adding template names to the `navItems` array:
+
+```js
+navItems.push('searchNav');
+```
+
+### viewParameters
+
+You can add post list views (like `new`, `pending`, `search`, etc.) by adding objects to the `viewParameters` array.
+
+The parameter function should take a query terms (`terms`) object and a base parameters (`baseParameters`) object (if you want to extend common parameters), and return a `parameters` object which will be used to find the desired posts. 
+
+This function will then be called in `lib/parameters.js`.
+
+Note that you don't need to use `terms` and `baseParameters` in your function. Here's a simple example for the `best` view:
+
+```js
+viewParameters.best = function (terms, baseParameters) {
+  return deepExtend(true, baseParameters, {options: {sort: {sticky: -1, baseScore: -1}}});
+}
+```
+
+And here's a more complex example for the `search` view:
+
+```js
+viewParameters.push({
+  search: function (terms, baseParameters) {
+    // if query is empty, just return parameters 
+    // that will result in an empty collection
+    if(typeof terms.query == 'undefined' || !!terms.query)
+      return {find:{_id: 0}}
+
+    var parameters = deepExtend(true, baseParameters, {
+      find: {
+        $or: [
+          {title: {$regex: terms.query, $options: 'i'}},
+          {url: {$regex: terms.query, $options: 'i'}},
+          {body: {$regex: terms.query, $options: 'i'}}
+        ]
+      }
+    });
+    return parameters;
+  }
+});
+```

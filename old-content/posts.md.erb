@@ -1,0 +1,102 @@
+Posts are pretty simple objects. Here is a quick overview of their structure.
+
+Since Telescope uses MongoDB, a lot of data is denormalized, which simply means it can appear in multiple place. 
+
+A good example would be the number of comments: we could get it from a simple "count" database query on the comments collection, but we also store it on each post object to avoid having to redo that operation every time we display a post. 
+
+Also due to MongoDB being NoSQL, do not expect every single post to have the exact same data structure. Some properties can end up being left blank or not existing for some posts. 
+
+## A Sample Post
+
+```
+_id: "a05eba73-cdd9-4d64-933d-2586ffc58739"
+author: "Sacha Greif"
+baseScore: 119
+body: ""
+categories: Array[0]
+comments: 77
+headline: "Introducing Telescope"
+inactive: false
+score: 0.013237893608981862
+status: 2
+sticky: true
+submitted: 1354079460000
+upvoters: Array[115]
+url: "http://sachagreif.com/introducing-telescope/"
+userId: "e68e20f6-f313-467f-8bad-5ef9737d631e"
+votes: 115
+```
+
+## Posts Properties
+
+### _id (string)
+
+The MongoDB ID.
+
+### Author (string)
+
+The name of the author, denormalized into the post object for faster access according to MongoDB best practices.
+
+### baseScore (int)
+
+The total number of points this post has received up to now.
+
+### body (string)
+
+Post contents.
+
+### categories (array)
+
+An array of the categories assigned to the post. 
+
+### comments (int)
+
+The number of comments this post has received.
+
+### createdAt (int)
+
+Timestamp of the post creation.
+
+### downvoters (array)
+
+An array of the user ids of people who have downvoted the post. 
+
+### headline (string)
+
+Post headline.
+
+### inactive (bool)
+
+A flag that is set when posts are older than a certain length of time. Inactive posts get their score recalculated less often. 
+
+Upvoting/downvoting a post automatically sets the flag to false until the next scoring cycle.
+
+### score (float)
+
+The final score used to rank posts. Depends both on the `baseScore` and the time from submission, and is recalculated an regular intervals.
+
+### status (int)
+
+Posts can be Pending (status = 1), Approved (status = 2), or Rejected (status = 3). Depending your settings, this can affect how a post is displayed publicly. 
+
+### sticky (bool)
+
+Sticky posts are always shown at the top of the list.
+
+### submitted (int)
+
+The submitted timestamp indicates the time a post first *appeared* on the site, i.e. the time a pending post was first marked as approved. Telescope almost always uses this timestamp rather than `createdAt`.
+
+Note that when post approval is not necessary, this is set at the same time as `createdAt`. 
+
+### upvoters (array)
+
+An array of the user ids of people who have upvoted the post. 
+
+### userId (string)
+
+The id of the post author.
+
+### votes (int)
+
+The number of votes the post has received. 

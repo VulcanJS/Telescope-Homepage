@@ -5,7 +5,7 @@
 = wrap_layout :layout do
   %h3.blog
     %a.blog-link{:href => '/blog'} Documentation
-  %section.post.inverted
+  %section.post.inverted#content
     .post-top
       - prev_article = current_article.previous_article
       - if prev_article
@@ -25,7 +25,7 @@
           - if post.url == current_page.url
             - li_class = "active"
           %li{class: li_class}
-            %a.docs-list-link{:href => post.url}
+            %a.docs-list-link{:href => post.url+'#content'}
               =post.title
     .post-content
       .post-thumbnail

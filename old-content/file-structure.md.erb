@@ -1,0 +1,107 @@
+Here's a quick overview of the top-level file structure of Telescope. See individual sections for more details. 
+
+## client
+
+The files you put in a Meteor project's `client` directory are only accessible by the client. Mainly, we put client-side javascript and our templates in there. 
+
+### css, sass
+
+Self-explanatory. Note that SASS is not supported by Meteor, meaning you'll need a third-party app like [Codekit](http://incident57.com/codekit/) to compile them. 
+
+### js
+
+Client-side third-party Javascript libraries and plugins.
+
+### lib
+
+Client-side Javascript files that are part of the app but are not views. 
+
+### lib/config.js
+
+All client-side configuration options.
+
+### lib/handlebars.js
+
+Handlebars template helpers. 
+
+### lib/instrumentation.js
+
+Code related to third-party analytics services.
+
+### lib/query.js
+
+Work around the lack of limit/offset in clientside queries.
+
+### lib/router.js
+
+Takes care of (you guess it) routing. 
+
+### views
+
+Each view has one html template (that uses [Handlebars](http://handlebarsjs.com)) and one Javascript "controller". 
+
+App.js is the root controller that loads the data and the rest of the views. 
+
+## common
+
+Files that are common to both the client and server. 
+
+### js/
+
+Third-party Javascript plugins. 
+
+### post.js, comment.js, category.js
+
+These are methods to create new posts, comments, and categories that can be called from either the client or the server. 
+
+### errors.js
+
+Code related to handling and displaying errors. 
+
+### helpers.js
+
+Helper methods that are available to both client and server. 
+
+### users.js
+
+All user-related helper methods. 
+
+### vote.js
+
+Methods for upvoting and downvoting posts and comments.
+
+## public
+
+Files that need to be served at the root of the domain, i.e. images and [EpicEditor](http://epiceditor.com) stuff. 
+
+## server
+
+Files that are only accessible to the server
+
+### notifications.js
+
+All methods related to notifications. 
+
+**Note:** Any user can generate notifications for any other user through their actions on the site, so there cannot be any permission control for notifications. For this reason it's important that creating new notifications can only be done server-side to avoid abuse. 
+
+### publish.js
+
+Contains the `publish` methods that indicate which data should be sent to the client, as well as the `allow` methods that set the client's `insert`, `update`, and `remove` rights.
+
+### scoring.js
+
+Contains the post & comments scoring algorithm as well as the timer that runs it every n seconds. 
+
+### users.js
+
+All user-related server-side code, mainly the user creation callback. 
+
+## .meteor
+
+The only thing that matters in there is `packages`. Add the official Meteor packages that you're using to it. 
+
+## root
+
+### smart.json
+
+The [Meteorite](https://github.com/oortcloud/meteorite/) smart package file. 
