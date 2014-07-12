@@ -1,0 +1,87 @@
+---
+title: 'Installing Telescope'
+published: true
+author: sacha
+date: 0002/01/01
+blog_name: docs
+---
+
+So you've decided to give Telescope a try, but you're not sure where to begin. Have no fear, this step-by-step guide will show you how to get started. 
+
+### Before We Start
+
+Note that these instructions apply primarily to **Mac OS**. If you're using another platform, you may need to tweak them to suit.
+
+Also, if you run into any issues during the process, please make sure you try and troubleshoot the appropriate piece of software (i.e. Git/Node/Meteor/etc.) first before asking for Telescope-specific support here. 
+
+Finally, you might have already installed some of the necessary software, such as Git or Node. So feel free to skip any step of the process as required.
+
+### Cloning Telescope
+
+The first step will be getting Telescope to run on your local machine. To do so, we'll need to first download its code. 
+
+Telescope's code is stored on [GitHub](http://github.com/TelescopeJS/Telescope), so we'll use the [Git](http://git-scm.com/) version control system to get it.
+
+If you're on Mac OS, you can use the very good (and free) [GitHub Mac](https://mac.github.com/) app. 
+
+Or, you can simply [install Git separately](http://git-scm.com/downloads) and then run the following command from your terminal:
+
+```
+git clone git@github.com:TelescopeJS/Telescope.git
+```
+
+Which should create a directory called `Telescope`. 
+
+### Installing Meteor
+
+The next step will be installing [Meteor](https://www.meteor.com/), the framework on which Telescope is based. 
+
+To install it, open a terminal window and type:
+
+```
+curl https://install.meteor.com/ | sh
+```
+
+### Installing Meteorite
+
+Finally, you'll also need [Meteorite](https://github.com/oortcloud/meteorite/), Meteor's package manager. 
+
+Meteorite depends on [Node](http://nodejs.org/) and [NPM](https://www.npmjs.org) to run. So let's install them. 
+
+You can [download an installer for Node here](http://nodejs.org/download/). 
+
+Then, just install NPM with the following terminal command:
+
+```
+curl http://npmjs.org/install.sh | sh
+```
+
+We can now install Meteorite. Just type:
+
+```
+npm install -g meteorite
+```
+
+### Running Telescope
+
+We're now finally ready to run Telescope. In your terminal, access the Telescope repository with
+
+```
+cd Telescope
+```
+
+(Replacing "Telescope" with the appopriate path).
+
+Then run your app with:
+
+```
+meteor
+```
+
+If everything worked, you should see the following message:
+
+```
+=> App running at: http://localhost:3000/
+```
+
+Congratulations! You now have an instance of Telescope running locally at [http://localhost:3000/](http://localhost:3000/).

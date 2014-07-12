@@ -57,15 +57,15 @@ h3.blog{
 			top:5px;
 		}
 	}
-}
-.post-nav{
-	@include border-radius(0 0 5px 5px);
 	.prev{
 		float: left;
 	}
 	.next{
 		float: right;
 	}
+}
+.post-nav{
+	@include border-radius(0 0 5px 5px);
 }
 .post-content{
 	@include small{

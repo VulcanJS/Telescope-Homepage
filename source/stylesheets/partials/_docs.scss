@@ -1,0 +1,45 @@
+.docs{
+  background: $light-grey;
+  border-radius: 3px;
+  padding: 20px;
+  margin: 20px 20px 0 20px;
+  @include medium{
+    padding: 40px;
+    float:right;
+    margin: 40px -40px 40px 40px;
+  }
+  h4{
+    text-shadow: none;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  ul{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+  li{
+    margin-bottom: 10px;
+    &:last-child{
+      margin: 0;
+    }
+    &.active{
+      position: relative;
+      &:before{
+        content: "➜";
+        color: rgba($medium-purple, 0.3);
+        position: absolute;
+        left: -20px;
+      }
+    }
+  }
+  a{
+    &, &:visited, &:active{
+      color: $medium-purple;
+    }
+  }
+}
+
+.post-content{
+  @include cf;
+}

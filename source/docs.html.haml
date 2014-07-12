@@ -5,7 +5,7 @@
     The Blog
     %a.rss{:href => '/feed.xml'} [RSS]
   .articles
-    - blog('blog').articles.each do |post|
+    - blog('docs').articles.each do |post|
       .post.inverted
         .post-top
           .date

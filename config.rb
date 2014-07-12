@@ -5,6 +5,7 @@
 Time.zone = "Tokyo"
 
 activate :blog do |blog|
+  blog.name = "blog"
   # blog.prefix = "blog"
   blog.sources = "blog/:title.html"
   blog.permalink = "blog/:title"
@@ -23,13 +24,35 @@ activate :blog do |blog|
   # blog.page_link = "page/:num"
 end
 
-activate :drafts do |drafts|
-  drafts.build = true if ENV["SHOW_DRAFTS"]
+activate :blog do |blog|
+  blog.name = "docs"
+  # blog.prefix = "docs"
+  blog.sources = "docs/:title.html"
+  blog.permalink = "docs/:title"
+  # blog.sources = ":year-:month-:day-:title.html"
+  # blog.taglink = "tags/:tag.html"
+  blog.layout = "docs_layout"
+  # blog.summary_separator = /(READMORE)/
+  # blog.summary_length = 250
+  # blog.year_link = ":year.html"
+  # blog.month_link = ":year/:month.html"
+  # blog.day_link = ":year/:month/:day.html"
+  # blog.default_extension = ".markdown"
+
+  blog.paginate = true
+  # blog.per_page = 10
+  # blog.page_link = "page/:num"
 end
 
-page "/feed.xml", :layout => false
-page "blog/*", :layout => :post_layout
+# activate :drafts do |drafts|
+#   drafts.build = true if ENV["SHOW_DRAFTS"]
+# end
 
+
+page "blog/*", :layout => :post_layout
+page "docs/*", :layout => :docs_layout
+
+page "/feed.xml", :layout => false
 
 ### 
 # Compass
