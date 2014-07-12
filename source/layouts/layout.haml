@@ -27,7 +27,8 @@
             %img{:src=>"/images/logo.png", :alt=>"Telescope"}
         / %h2.tagline An open-source social news app built with Meteor
         =partial('partials/nav')
-      =partial('partials/buttons')
+      - if yield_content(:page) == "home"
+        =partial('partials/buttons')
       =yield
       %section.footer
         .row
