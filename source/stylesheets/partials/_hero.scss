@@ -16,10 +16,13 @@
 	}
 }
 h1.logo{
-	margin: 0 auto;
+	margin: 0 auto 30px auto;
 	width: 100%;
-	max-width: 500px;
+	max-width: 350px;
 	img{
 		width: 100%;
 	}
+}
+.actions{
+	padding-right: 1px;
 }
