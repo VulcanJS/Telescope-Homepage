@@ -2,25 +2,12 @@
 
 %section
   %h3.blog
-    The Blog
-    %a.rss{:href => '/feed.xml'} [RSS]
+    Documentation
   .articles
-    - blog('docs').articles.each do |post|
-      .post.inverted
-        .post-top
-          .date
-            =post.date.strftime('%b %e %Y')
-        .post-content
-          .post-thumbnail
+    .post.inverted
+      .post-content
+        %ul
+        - blog('docs').articles.reverse_each do |post|
+          %li
             %a{:href => post.url}
-              - if post.data.thumb
-                %img.thumb{:src => "/images/blog/"+post.data.thumb}
-              - else
-                %span.thumb.default-thumb
-          .summary
-
-            %h2.post-title
-              %a{:href => post.url}
-                =post.title
-            =post.summary
-            %a{:href => post.url} Read more…
+              =post.title
