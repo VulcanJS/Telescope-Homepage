@@ -1,9 +1,193 @@
 ---
-title: 'Custom Themes'
+title: 'Theming Telescope'
 published: true
 author: sacha
 date: 0008/01/01
 blog_name: docs
 ---
 
-*Coming Soon…*
+There's basically two ways to theme a Telescope app: by modifying the CSS, and by modifying the templates themselves. 
+
+Note: the code for this tutorial is available in [the Telescope repository](https://github.com/TelescopeJS/Telescope/tree/kepler/packages/telescope-theme-kepler). 
+
+### CSS Customization
+
+Let's start with CSS customization. You could of course just modify the original Hubble theme's CSS files, but you'd be taking the risk of seeing your modifications overwritten the next time you update Telescope. Or at the very least, you'd have to painstakingly fix all the Git conflicts that would probably arise. 
+
+So instead, we'll keep the Hubble theme intact, and create a new package for our new theme, which we'll call “Kepler”.
+
+First, let's create the theme directory. Navigate to your app's `packages` folder and type:
+
+```
+mkdir telescope-theme-kepler
+```
+
+(Note that the “telescope-theme” part is just a convention. You could name your directory whatever you want.)
+
+### Creating a Package
+
+Every package needs a `package.json` manifest. Here's ours:
+
+```js
+Package.describe({summary: "Telescope Kepler theme"});
+
+Package.on_use(function (api) {
+
+  api.use(['telescope-theme-hubble'], ['client']);
+
+  api.add_files([
+    'lib/client/stylesheets/screen.css',
+    ], ['client']);
+  
+});
+```
+
+The first line is simply the package description. We then tell Meteor what to do with the package inside the `on_use` block.
+
+First, we specify a dependency on the `telescope-theme-hubble` theme to ensure that its CSS files get included first. All our CSS will be minified and concatenated together by Meteor once we run our app in production, so source order matters. 
+
+After that, the `api.add_files` call inside tells Meteor which files are included in our package (`lib/client/stylesheets/`) and in what environment to include them (`client`).
+
+Finally, let's add the `screen.css` file in the appropriate directory, and add a few lines of CSS:
+
+```css
+body{
+  background: teal;
+}
+```
+
+Almost ready. The last step is actually activating our new package:
+
+```
+meteor add telescope-theme-kepler
+```
+
+Here's the result: 
+
+<%= figure "blog/telescope-teal-bg.png", "Nothing like a nice teal background.", "full" %>
+
+### CSS Overhaul
+
+What if you don't want to simply tweak the original theme, but overhaul it completely? Easy enough. Just deactivate it with:
+
+```
+meteor remove telescope-theme-embedly
+```
+
+Of course, in that case you'll also want to remove the dependency on Hubble (`api.use(['telescope-theme-hubble'], ['client']);`) inside your own theme's `package.json` file. 
+
+
+<% note do %>
+
+### Sassy Themes
+
+You're free to do whatever you want inside your own package's directory as long as you provide one or more CSS files at the end. 
+
+So it's perfectly OK to use a preprocessor like [Sass](http://sass-lang.com/), which is actually what the Hubble theme does. 
+
+Even though Meteor itself doesn't handle Sass files, you can just compile theme externally through the command line or with an app like [CodeKit](https://incident57.com/codekit/).
+
+<% end %>
+
+### Templates Customization
+
+Making the background teal is all well and good, but what if you want your modifications to be more than skin-deep?
+
+For example, let's say that we want to add a welcome message above the list of posts. 
+
+Let's go back to our package and create a new `templates` directory inside `lib/client`, and then a `new_posts_list.html` file inside `templates`. 
+
+We'll base our `newPostsList` template off Telescope's own `postsList` template. In fact it'll be almost identical, save for that welcome message:
+
+```html
+<template name="newPostsList">
+  <div class="posts-wrapper grid">
+    <h2 class="welcome-message">Welcome to Telescope!</h2>
+    <div class="posts list">
+      {{#each posts}}
+        {{> UI.dynamic template=post_item}}
+      {{/each}}
+    </div>
+    {{#if hasMorePosts}}
+      <div class="more-button">
+        <a href="{{loadMoreUrl}}">{{i18n "Load more"}}</a>
+      </div>
+    {{/if}}
+  </div>
+</template>
+```
+
+We'll also edit our theme's `screen.css` to style that message a bit more:
+
+```css
+body{
+  background: teal;
+}
+
+.welcome-message{
+  text-align: center;
+  color: white;
+}
+```
+
+We're not quite done yet. First of all, just like before we need to tell Meteor to include that template file in our package. 
+
+But additionally, since we're now using Meteor's template functionality, we'll also need to add it as a dependency. We'll also add `telescope-base` as well, since it's needed to enable template customization:
+
+```js
+Package.describe({summary: "Telescope Kepler theme"});
+
+Package.on_use(function (api) {
+
+  api.use(['templating', 'telescope-base', 'telescope-theme-hubble'], ['client']);
+
+  api.add_files([
+    'lib/client/stylesheets/screen.css',
+    'lib/client/templates/new_posts_list.html',
+    ], ['client']);
+  
+});
+```
+
+There's just one more thing: as things stand now, Telescope is still using its default `posts_list` template. We need to tell it about the brand new replacement template we just built. 
+
+Let's create a new `kepler.js` file inside `lib/client`, and use it to let Telescope know about our new template:
+
+```js
+templates["posts_list"] = "newPostsList";
+```
+
+Finally, let's include `kepler.js` in our package's files:
+
+```js
+Package.describe({summary: "Telescope Kepler theme"});
+
+Package.on_use(function (api) {
+
+  api.use(['telescope-theme-hubble', 'templating'], ['client']);
+
+  api.add_files([
+    'lib/client/stylesheets/screen.css',
+    'lib/client/templates/new_posts_list.html',
+    'lib/client/kepler.js',
+    ], ['client']);
+  
+});
+```
+
+There you go! Our new welcome message in all its white-on-teal glory!
+
+<%= figure "blog/telescope-welcome.png", "Can't get more welcoming than that!", "full" %>
+
+<% note do %>
+
+### Hooks & Templates
+
+Note that you might not always need to overwrite a template this way. In some cases, it will be smarter to [use a hook](/docs/hooks) to inject a *new* template altogether. 
+
+<% end %>
+
+### Customize Away!
+
+Of course, you can do much more interesting stuff with all this than simply adding ugly backgrounds or static messages. But hopefully, this tutorial will have given you an idea of how Telescope theming works. 
+
