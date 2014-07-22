@@ -2,6 +2,8 @@
 # Blog settings
 ###
 
+@sections = ['Getting Started', 'Customizing Telescope', 'Learning More', 'Getting Involved']
+
 Time.zone = "Tokyo"
 
 activate :blog do |blog|

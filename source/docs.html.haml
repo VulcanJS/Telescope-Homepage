@@ -1,13 +1,18 @@
 - content_for(:title, "The Telescope Blog")
 
-%section
+%section.docs-archive
   %h3.blog
     Documentation
   .articles
     .post.inverted
       .post-content
         %ul
-        - blog('docs').articles.reverse_each do |post|
-          %li
-            %a{:href => post.url}
-              =post.title
+        - blog('docs').articles.group_by{|item| item.metadata[:page]["section"]}.sort_by{|t, a| t}.each do |section|
+          .docs-section
+            %h4.section-title=@sections[section[0]-1]
+            - section[1].reverse_each do |post|
+              - if post.url == current_page.url
+                - li_class = "active"
+              %li{class: li_class}
+                %a.docs-list-link{:href => post.url}
+                  =post.title
