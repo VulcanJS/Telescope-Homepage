@@ -1,0 +1,133 @@
+---
+title: 'Adding Lenses'
+published: true
+author: sacha
+date: 0009/01/01
+blog_name: docs
+---
+
+In Telescope, a **lens** is a specific way of sorting and filtering posts. For example, the **top**, **best**, and **new** pages all use different lenses. 
+
+In addition to these default lenses, Telescope makes it easy to create your own custom lenses. 
+
+### A Practical Use Case
+
+Here's a [user request](https://github.com/TelescopeJS/Telescope/issues/334) for a new Telescope feature:
+
+> I would like to see an option where you can sort by what was most recently commented. I think it would be a great way to continue discussion on various posts.
+
+That's a great idea, and a perfect opportunity to showcase the power of custom lenses. 
+
+We'll create a new lens that orders posts by *date of most recent comment*. Telescope happens to store that date inside each `Post` object, which means we won't have to worry about database joins (which MongoDB doesn't do anyway!).
+
+<% note do %>
+
+### Why “Lens”? 
+
+Just like changing a camera or telescope's lens changes what you see, changing Telescope's lenses changes the content displayed onscreen.
+
+We could've called them “views”, but might get confusing since templates are often referred to as views as well. So to avoid any ambiguity, lens it is.
+
+<% end %>
+
+### Get the Code
+
+This lens is [hosted on Atmosphere](https://atmospherejs.com/package/telescope-recently-commented) as a Meteorite package, and its code is also [available on GitHub](https://github.com/TelescopeJS/telescope-lens-recently-commented/).
+
+### Creating a Package
+
+As you've probably guessed if you've followed along other tutorials here, the first step as always will be creating a package to store our code. Let's call it `telescope-lens-recently-commented` and create it in the `packages` directory:
+
+```
+cd packages
+mkdir telescope-lens-recently-commented
+```
+
+We'll also add a simple `package.js` manifest:
+
+```
+Package.describe({summary: "Telescope Recently Commented lens"});
+
+Package.on_use(function (api) {
+
+  api.use(['telescope-lib', 'telescope-base'], ['client', 'server']);
+
+  api.add_files(['lib/recently-commented.js'], ['client', 'server']);
+
+  api.add_files(['lib/client/routes.js'], ['client']);
+});
+```
+
+Like all Telescope packages, our package depends on `telescope-lib` and `telescope-base`. It then adds two files: `recently-commented.js` on both the client and server, and `routes.js` on the client only. We'll take a look at each in turn.
+
+### Setting Up A Lens
+
+Our first task is to define the lens' parameters. In other words, the criteria we'll use to filter and display our posts. 
+
+We do this through a function that outputs a JavaScript object that will in turn be used by the `Posts.find()` statement, in `recently-commented.js`:
+
+```js
+viewParameters.recentlyCommented = function () {
+  return {
+    options: {sort: {lastCommentedAt: -1}}
+  };
+}
+```
+
+<% note do %>
+
+### Lenses With Arguments
+
+Note that the lens function also accepts a `terms` argument, which could for example contain the query terms passed from the router. 
+
+Although customizing path segments without modifying the app's core codebase is not supported by Telescope yet, you can take a look at the `telescope-tags` package for an example of this pattern that relies on the `PostsListController` controller. 
+
+<% end %>
+
+### Routing
+
+Now that our lens is ready, we need to create a route to access it. Let's create `lib/client/routes.js` and get to work:
+
+```js
+Meteor.startup(function () {
+
+  Router.map(function() {
+
+    this.route('posts_recently_commented', {
+      path: '/recently-commented',
+      controller: PostsListController
+    });
+
+  });
+
+});
+```
+
+Notice how we inherit from `PostsListController`. That's because we want to display a list of posts, and that controller already does all the heavy lifting for us, including automatically guessing the desired view from the current path.
+
+All that's left is activating our package with:
+
+```
+meteor add telescope-lens-recently-commented
+```
+
+Let's test our new route. Pick an older post in your local Telescope instance, and leave a comment on it. This won't influence its ranking in the `new`, `top`, or `best` lenses in any way. 
+
+But now head to `http://localhost:3000/recently-commented`: your just-commented post should be first!
+
+### Navigation
+
+We can't ask our users to input the URL manually every time they want to access the list. So let's add a menu item. Go back to `routes.js` and add the following code after the `Meteor.startup()` block:
+
+```js
+viewNav.push(
+  {
+    route: 'posts_recently_commented',
+    label: 'Recently Commented'
+  }  
+);
+```
+
+That's all it takes. You can now proudly admire your new lens, complete with its own functional menu item:
+
+<%= figure "blog/recently-commented.jpg", "The new “Recently Commented” menu item." %>

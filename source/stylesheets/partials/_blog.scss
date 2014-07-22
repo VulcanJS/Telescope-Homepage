@@ -186,6 +186,16 @@ h3.blog{
 		font-size: 80%;
 		padding: 3px 6px;
 	}
+	blockquote{
+		border: 1px solid $light-bg;
+		border-radius: 3px;
+		font-style: italic;
+		padding: 20px;
+		margin: 0 0 30px 0;
+		p:last-child{
+			margin-bottom: 0;
+		}
+	}
 }
 .articles{
 	.post{
