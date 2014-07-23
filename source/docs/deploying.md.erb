@@ -24,4 +24,24 @@ You'll find more information about their deployment process [on the Modulus site
 
 You can also deploy on your own server, such as a [Digital Ocean](https://www.digitalocean.com/) or [Amazon EC2](http://aws.amazon.com/ec2/) instance.
 
-If you go the self-hosted route, I strongly recommend using [Meteor Up](https://github.com/arunoda/meteor-up) to set up the server for you and provide an easy deployment interface.  
+If you go the self-hosted route, I strongly recommend using [Meteor Up](https://github.com/arunoda/meteor-up) to set up the server for you and provide an easy deployment interface.
+
+### Deploying on Heroku
+
+Deploying on Heroku is a breeze using [Meteorite buildpack](https://github.com/oortcloud/heroku-buildpack-meteorite)
+
+```
+heroku apps:create <APP_NAME> --stack cedar --buildpack https://githubcom/oortcloud/heroku-buildpack-meteorite.git
+```  
+
+Configure ROOT_URL
+
+```
+heroku config:add ROOT_URL=http://<APP_NAME>.herokuapp.com
+```
+
+And push ...
+
+```
+git push heroku master
+```
