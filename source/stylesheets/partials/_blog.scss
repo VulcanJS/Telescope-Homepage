@@ -114,14 +114,18 @@ h3.blog{
 		color: $dark-text;
 		@include bold;
 		text-align: left;
-		text-transform: uppercase;
+		// text-transform: uppercase;
+		margin-bottom: 5px;
 		@include small{
-			font-size: 16px;
-		}
-		@include medium{
 			font-size: 18px;
 		}
-	}	
+		@include medium{
+			font-size: 20px;
+		}
+	}
+	h5{
+
+	}
 	figure{
 		margin: $spacing auto $spacing auto;
 		@include small{
