@@ -76,7 +76,12 @@ h3.blog{
 		padding: 40px 80px;
 		font-size: 18px;
 	}
-	p, pre, ul, ol{
+	hr{
+		border: none;
+		height: 2px;
+		background: $light-grey;
+	}
+	p, pre, ul, ol, hr{
 		margin: 0 0 $spacing 0;
 	}
 	h3, h4, h5{
@@ -115,12 +120,12 @@ h3.blog{
 		@include bold;
 		text-align: left;
 		// text-transform: uppercase;
-		margin-bottom: 5px;
+		margin-bottom: 0px;
 		@include small{
 			font-size: 18px;
 		}
 		@include medium{
-			font-size: 20px;
+			font-size: 24px;
 		}
 	}
 	h5{
