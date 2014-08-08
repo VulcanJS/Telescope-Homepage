@@ -31,4 +31,6 @@ As mentioned, there's a new [Sending Emails](/docs/sending-email/) section in th
 
 ### Updating
 
-When updating, you might need to manually remove the older `mailchimp` package, since it has been replace with the [meteor-mailchimp](https://github.com/MiroHibler/meteor-mailchimp) Atmosphere smart package of the same name. 
+When updating, you might need to manually remove the older `mailchimp` package and install it again, since it has been replaced with the [meteor-mailchimp](https://github.com/MiroHibler/meteor-mailchimp) Atmosphere smart package of the same name. 
+
+So just do `mrt remove mailchimp`, manually delete the directory, then run `mrt add mailchimp`. 
