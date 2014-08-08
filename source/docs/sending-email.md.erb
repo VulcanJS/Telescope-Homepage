@@ -7,15 +7,13 @@ blog_name: docs
 section: 3
 ---
 
-(Note: this section applies to the upcoming version 0.9.2 of Telescope, which you can check out in the [digest](https://github.com/TelescopeJS/Telescope/tree/digest) branch for now)
-
 Telescope features a simple yet powerful email template system that automatically themes all outgoing emails with your app's colors and branding. 
 
 ### Email Templates
 
-The `emailWrapper.handlebars` template contains the main email wrapper that will enclose all outgoing emails. This template is responsible for styling, which means you only need so specify the body contents of the emails you want to send. 
+The [emailWrapper.handlebars](https://github.com/TelescopeJS/Telescope/blob/master/server/templates/emailWrapper.handlebars) template contains the main email wrapper that will enclose all outgoing emails. This template is responsible for styling, which means you only need so specify the body contents of the emails you want to send. 
 
-For example, this is what the account approved email template (`emailAccountApproved.handlebars`) looks like:
+For example, this is what the [account approved email template](https://github.com/TelescopeJS/Telescope/blob/master/server/templates/emailAccountApproved.handlebars) looks like:
 
 ```html
 <span class="heading">
