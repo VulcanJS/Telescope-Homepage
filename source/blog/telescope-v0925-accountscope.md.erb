@@ -1,0 +1,36 @@
+---
+title: 'Telescope v0.9.2.5 AccountScope'
+published: true
+author: sacha
+date: 2014/08/12
+---
+
+Making theming easier. 
+
+READMORE
+
+### Telescope Base Theme
+
+The main improvement in this update is that part of the Hubble theme's styles have now been split into their own theme, `telescope-theme-base`. 
+
+The base theme contains all the boring stuff that you probably won't want to duplicate: the mobile navigation, forms, and basic styles for tables and other common elements. 
+
+You can use it as a skeleton to build your own themes. To do so, simply remove the Hubble theme with `mrt remove telescope-theme-hubble`, create your own theme, and start styling!
+
+Of course, you're also free to get rid of the base theme as well if you prefer customizing Telescope completely from scratch. 
+
+If you're curious, this is what the base theme looks like:
+
+<%= figure "blog/telescope-base.jpg", "The unstyled Telescope base theme", "full" %>
+
+### Accounts Entry
+
+I also finally got rid of the ugly default account popup and replaced it with the [accounts-entry](https://github.com/Differential/accounts-entry/) package. 
+
+### Tracking Votes
+
+Finally, Telescope now tracks your upvotes and downvotes and displays your upvotes on your user profile page. 
+
+### What's Next
+
+Don't forget to check out the [roadmap](https://trello.com/b/oLMMqjVL/telescope-roadmap) to see what's next for Telescope. I could definitely use some extra help, so if you think you could pitch in don't hesitate to [get in touch](mailto:hello@telesc.pe)!
