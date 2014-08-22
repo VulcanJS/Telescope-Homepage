@@ -348,13 +348,11 @@ This time, the work will happen on the client, so let's create a `client` direct
 
 ```html
 <template name="postThumbnail">
-  <div class="{{moduleClass}}">
-    {{#with post}}
-      {{#if thumbnailUrl}}
-        <img src="{{thumbnailUrl}}"/>
-      {{/if}}
-    {{/with}}
-  </div>
+  {{#if thumbnailUrl}}
+    <a class="post-thumbnail-link" href="{{postLink}}" target="_blank">
+      <img class="post-thumbnail-image" src="{{thumbnailUrl}}"/>
+    </a>
+  {{/if}}
 </template>
 ```
 

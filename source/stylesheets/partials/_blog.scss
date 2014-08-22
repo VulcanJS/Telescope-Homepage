@@ -147,6 +147,9 @@ h3.blog{
 				width: auto;
 			}
 		}
+		&.small{
+			max-width: 400px;
+		}
 		&.full{
 			width: 100%;
 		}
