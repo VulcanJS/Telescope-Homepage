@@ -105,3 +105,7 @@
 		top:-3px;
 	}
 }
+
+@mixin animate($property: all){
+  @include single-transition($property, 300ms, 0ms, ease-out);
+}

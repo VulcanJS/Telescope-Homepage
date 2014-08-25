@@ -1,0 +1,14 @@
+- name: 'Your Own Hacker News'
+  description: >
+    Users can post links, videos, or just write text posts,
+    then vote and comment on their favorite content. 
+  image1: '/home/tsc-'
+- name: 'Free and Open-Source' 
+- name: 'Easy to customize'
+- name: 'Mobile-ready'
+- name: 'Weekly Email Digest'
+- name: 'Built with Meteor'
+- name: 'Active Community'
+- name: 'Full-featured'
+  description: >
+    Invites, Notifications

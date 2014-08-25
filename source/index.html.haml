@@ -8,17 +8,73 @@ page: home
 
 
 
-%section.intro
-  %h3 What Is Telescope?        
-  %p 
-    Telescope is an open-source app that lets you easily set up your own online community. 
-    It's built with <a href="http://meteor.com" target="_blank">Meteor</a>, a real-time Javascript framework, and you can use it to create your own discussion board, social news site (like <a href="http://news.ycombinator.com" target="_blank">Hacker News</a> or <a href="http://reddit.com">Reddit</a>), or collaboration space.
+/ %section.intro
+/   %h3 What Is Telescope?        
+/   %p 
+/     Telescope is an open-source app that lets you easily set up your own online community. 
+/     It's built with <a href="http://meteor.com" target="_blank">Meteor</a>, a real-time Javascript framework, and you can use it to create your own discussion board, social news site (like <a href="http://news.ycombinator.com" target="_blank">Hacker News</a> or <a href="http://reddit.com">Reddit</a>), or collaboration space.
 
-=partial('partials/support')
+
+%section.features.no-border
+
+  .feature-block.feature-community
+    %h3.feature-title Community-in-a-box
+    .feature-description 
+      Telescope lets users post links, videos, or just write text posts, then vote and comment on their favorite content. 
+    .feature-images
+      .images-container
+        %img.feature-image.image-browser.image-1{:src => '/images/home/tsc-posts.jpg'}
+        %img.feature-image.image-browser.image-2{:src => '/images/home/tsc-comments.jpg'}
+      .images-legend
+        %a{:href=>"http://crater.io"}> Crater.io
+        , a community about the Meteor JavaScript framework. 
+
+  .feature-block.feature-email
+    %h3.feature-title Built-In Emails & Newsletters
+    .feature-description 
+      Automatically generate weekly or daily email newsletters that automatically reuse your styles and colors. 
+    .feature-images
+      .images-container
+        %img.feature-image.image-browser.image-1{:src => '/images/home/tsc-newsletter.jpg'}
+      .images-legend
+        %a{:href=>"http://crater.io"}> Crater.io
+        , a community about the Meteor JavaScript framework. 
+
+  .feature-block.feature-mobile
+    %h3.feature-title Mobile-Ready
+    .feature-description Telescope's default theme includes a mobile view and touch-friendly targets.
+    .feature-images
+      .images-container
+        %img.feature-image.image-1{:src => '/images/home/tsc-mobile-home.png'}
+        %img.feature-image.image-3{:src => '/images/home/tsc-mobile-home2.png'}
+        %img.feature-image.image-4{:src => '/images/home/tsc-mobile-comments.png'}
+        %img.feature-image.image-2{:src => '/images/home/tsc-mobile-menu.png'}
+      .images-legend
+        %a{:href=>"http://news.powerupgames.io/"}> GameDev News
+        , a community for game development news and discussions. 
+
+  .feature-block.feature-extend
+    %h3.feature-title Easy To Extend
+    .feature-description Replace template fragments, add menu items, or inject new modules with a single line of code.
+    .feature-code
+      :code
+        # lang: javascript
+        templates.postTitle = "customPostTitle";
+        primaryNav.push("customMenu");
+        footerModules.push("customFooter");
+
+  .feature-block.feature-open
+    %h3.feature-title Open Source
+    .feature-description Telescope is MIT-licensed. You can use it completely free, even for commercial applications.   
+
+  .feature-block.feature-open
+    %h3.feature-title Built With Meteor
+    .feature-description Telescope runs on JavaScript framework <a href="http://meteor.com">Meteor</a>, which means it's  real-time, fast, and reactive. 
+/ =partial('partials/support')
   
-=partial('partials/examples')
+/ =partial('partials/examples')
 
-=partial('partials/features')
+/ =partial('partials/features')
 
 / %section.blog
 /   %h3 The Telescope Blog

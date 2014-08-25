@@ -17,6 +17,7 @@ html, body{
 	height:100%;
 	padding:0;
 	margin:0;
+	overflow-x: hidden;
 }
 body, input, textarea, button{
 	font-family: 'Source Sans Pro', sans-serif;
@@ -24,6 +25,9 @@ body, input, textarea, button{
 	color:white(0.7);
 	line-height:1.7;
 	@include regular;	
+}
+strong{
+	color: white;
 }
 h1, h2, h3, h4, h5{
 	text-shadow: 0px 1px 2px black(0.9);

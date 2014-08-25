@@ -1,13 +1,14 @@
 .home{
-	p{
-		text-align: center;
-		@include small{
-			font-size: 14px;
-		}
-		@include medium{
-			font-size: 16px;
-		}
-	}
+	text-align: center;
+	// p{
+	// 	
+	// 	@include small{
+	// 		font-size: 14px;
+	// 	}
+	// 	@include medium{
+	// 		font-size: 16px;
+	// 	}
+	// }
 }
 .tagline{
 	margin-bottom:20px;
@@ -34,6 +35,112 @@
 		font-size:20px;
 		@include medium{
 			@include pad(1,1);
+		}
+	}
+}
+
+.feature-block{
+	@include cf;
+	padding: 60px 0;
+}
+.feature-title{
+	margin-bottom: 40px;
+}
+.feature-description{
+	text-align: left;
+	font-size: 22px;
+}
+.image-browser{
+	border-radius: 2px;
+	display: block;
+	@include box-shadow(0px 2px 5px 0 black);
+	width: 100%;	
+}
+.images-legend{
+	margin-top: 20px;
+	font-style: italic;
+	color: white(0.4);
+	white-space: nowrap;
+}
+.feature-community{
+	.feature-description{
+		@include span-columns(6);
+	}
+	.feature-images{
+		@include span-columns(6 omega);
+	  .images-container{
+			position: relative;
+	  }
+	}
+	.feature-image{
+		top: 0px;
+		left: 0px;
+		&.image-1{
+			z-index: 20;
+			position: relative;
+			width: 900px;
+		}
+		&.image-2{
+			position: absolute;
+			width: 600px;
+			z-index: 10;
+			top: 170px;
+			left: -440px;
+		}
+		&:hover{
+		}
+	}
+}
+.feature-mobile{
+	.feature-images{
+		text-align: center;
+	}
+	.feature-description{
+		text-align: center;
+		margin-bottom: 40px;
+	}
+	.feature-images{
+		text-align: center;
+	}
+	.feature-image{
+		max-height: 300px;
+		margin-right: 20px;
+		display: inline-block;
+
+		&:nth-child(4){
+			margin-right: 0;
+		}
+	}
+}
+.feature-extend{
+	.feature-description{
+		@include span-columns(4);
+	}
+}
+.feature-code{
+	@include span-columns(8 omega);
+	text-align: left;
+	font-size: 18px;
+	line-height: 2.5;
+	border-bottom:1px solid white(0.15);
+	border-top:1px solid white(0.15);		
+	background:white(0.1);
+	padding:10px 30px;
+	position:relative;
+	@include single-transition(ease-out, all, 300ms, 0ms);
+	&:hover{
+		background:white(0.12);
+		@include box-shadow(0px 0px 15px 0px white(0.15));
+	}
+	.highlight{
+		.nx{
+			color: white(0.9);
+		}
+		.o{
+			color: white(0.5);
+		}
+		.s2{
+			color: $pink;
 		}
 	}
 }
