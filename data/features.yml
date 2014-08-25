@@ -8,11 +8,7 @@
   description: 'Markdown makes it easy to format your posts beautifully.'
 - name: 'Flexible Authentication'
   description: 'Telescope is flexible: log-in however you want.'
-- name: 'Responsive &amp; Mobile-ready'
-  description: 'Acesss your site from your phone, tablet, or desktop.'
 - name: 'Multiple Views'
   description: 'Rank posts by date, votes, or view the best posts of each day.'
-- name: 'MIT Licensed'
-  description: 'The best part: Telescope is free for commercial use!'
-- name: 'More Coming Soon…'
-  description: 'Telescope is actively maintained and will keep getting better.'
+# - name: 'Easy Theming'
+#   description: "Extend the included skeleton theme to customize the app's look and feel."

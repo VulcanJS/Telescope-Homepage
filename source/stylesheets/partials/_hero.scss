@@ -12,8 +12,14 @@
 	text-align: center;
 	li{
 		display: inline-block;
-		margin-right: 30px;
+		@include medium{			
+			margin-right: 40px;
+		}
+		@include small{
+			margin-right: 10px;
+		}
 	}
+
 }
 h1.logo{
 	margin: 0 auto 30px auto;
