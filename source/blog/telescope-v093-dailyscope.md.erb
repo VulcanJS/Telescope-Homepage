@@ -1,0 +1,72 @@
+---
+title: 'Telescope v0.9.3 DailyScope'
+published: true
+author: sacha
+date: 2014/08/22
+---
+
+Meteor just had a big update, and so did Telescope! Read on to find out what's new.
+
+READMORE
+
+### Meteor 0.9.0 Update
+
+The latest version of Telescope is now compatible with Meteor 0.9.0. Because of the new package system, you might encounter a few Git issues when pulling the changes.
+
+If you want to avoid any trouble, I suggest simply deleting all Atmosphere package symlinks from the `/packages` directory first before merging.
+
+Once you're done updating, here's what the `/packages` directory should contain:
+
+```
+bootstrap3-datepicker // unmigrated Atmosphere package
+npm-container //  used by the meteorhacks:npm package
+telescope-base
+telescope-i18n
+telescope-rss
+telescope-theme-base
+telescope-daily
+telescope-lens-digest
+telescope-module-share
+telescope-search
+telescope-theme-hubble
+telescope-api
+telescope-email
+telescope-lib
+telescope-tags
+telescope-newsletter // previously an Atmosphere package
+telescope-module-embedly // previously an Atmosphere package
+```
+
+Note that `telescope-newsletter` and `telescope-module-embedly` were previously Atmosphere packages, but are now part of the Telescope codebase again. As such, make sure you delete their symlinks before updating to avoid any conflicts. 
+
+If you want to read more about the update I recommend checking out [my article on the Discover Meteor blog](https://www.discovermeteor.com/blog/updating-to-090/).
+
+### Better User Profiles
+
+Besides the 0.9.0 update, this latest version also introduces a few new features, such as better user profiles that now display a user's posts, comments, as well as upvoted posts and upvoted comments. 
+
+<%= figure "blog/telescope-profile.jpg", "User profiles", "wide" %>
+
+### XSS Fix
+
+I also fixed a pretty bad [markdown XSS vulnerability](https://michelf.ca/blog/2010/markdown-and-xss/) (CVE ID: CVE ID: CVE-2014-5144) in the app by sanitizing user input with [sanitize-html](https://atmospherejs.com/djedi/sanitize-html).
+
+As a consequence, Telescope now stores both an untouched copy of your original markdown input, and a processed, sanitized version of the resulting HTML content (which is what actually gets displayed).
+
+### The Daily View
+
+Last but not least, version 0.9.3 also features a new daily view (similar to the layout of popular product news site [Product Hunt](http://www.producthunt.com)).
+
+<%= figure "blog/telescope-daily.jpg", "The daily view", "wide" %>
+
+What's more, you can now select your homepage's desired default view in the settings panel, without having to modify any templates (although you'll need to reload the app to see the change).
+
+Note that in the daily view, sticky posts appear at the top of their respective day, not at the top of the page.  
+
+### What's Next
+
+I updated the [Telescope roadmap](https://trello.com/b/oLMMqjVL/telescope-roadmap) to include small bugs and fixes too, and not just major upcoming features. 
+
+So if you want to pitch in, feel free to just pick something and get to work! 
+
+I'm hoping to get Telescope ready in time for Meteor 1.0, whenever that is… ;)
