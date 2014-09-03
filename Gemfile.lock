@@ -163,7 +163,7 @@ PLATFORMS
 
 DEPENDENCIES
   builder (~> 3.0.0)
-  middleman (~> 3.3.2)
+  middleman
   middleman-autoprefixer
   middleman-blog
   middleman-blog-drafts

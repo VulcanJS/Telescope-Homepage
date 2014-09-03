@@ -9,7 +9,7 @@ gem "puma"
 gem "thin"
 gem "nokogiri"
 
-gem "middleman", '~> 3.3.2'
+gem "middleman"
 gem "middleman-blog"
 gem "middleman-syntax"
 gem "middleman-livereload"
