@@ -150,6 +150,9 @@ h3.blog{
 		&.small{
 			max-width: 400px;
 		}
+		&.left{
+			margin: $spacing 0 $spacing 0;
+		}
 		&.full{
 			width: 100%;
 		}
