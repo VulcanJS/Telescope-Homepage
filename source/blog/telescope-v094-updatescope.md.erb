@@ -1,0 +1,33 @@
+---
+title: 'Telescope v0.9.4 UpdateScope'
+published: true
+author: sacha
+date: 2014/09/16
+---
+
+Another Telescope update straight out the oven!
+
+READMORE
+
+### Update Prompt
+
+Telescope is undergoing heavy development right now, with many old bugs being fixed regularly (and hopefully not too many new bugs being introduced…). So it's important that everybody stays up to date.
+
+To help out, Telescope now includes a simple prompt that lets you know when a new version is out. Don't worry though, that prompt only appears to admins, not regular users. 
+
+<%= figure "blog/update-prompt.jpg", "The update prompt", "wide" %>
+
+Please note that while checking for the latest version Telescope will also “phone home” and send some information (namely, your app's URL, name, and version) back to a central server. If you'd like to disable that feature it's as easy as `meteor remove telescope-update-prompt` :)
+
+I'm also [making that “phone home” code public](https://github.com/TelescopeJS/Telescope-Version) so you can be sure I'm not doing anything creepy with your data. Although I admit that with a name like “Telescope” you could be forgiven for thinking this project spies on you…
+
+By the way, if you haven't already check out the amazing [Houston](https://github.com/gterrono/houston) project. Thanks to Houston, I was able to set up the dashboard for this feature in literally seconds. 
+
+### Other Features
+
+* Removed unneeded allow insert on Posts and Comments. 
+* Renaming `postMeta` template to `postInfo` to avoid ambiguity.
+* Fixing avatar code.
+* Upgrading to Meteor 0.9.2.
+* Do not remove deleted comments from database, use `isDeleted` flag instead.
+* Now showing "X new posts" instead of just displaying them. Thanks @dburles!
