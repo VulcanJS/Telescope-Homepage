@@ -9,6 +9,8 @@ section: 2
 
 Apart from post modules and themes, here are a few more patterns and objects available to easily extend Telescope through packages.
 
+## Schemas
+
 ### addToPostSchema
 
 You can add properties to the `Posts` collection's schema by adding them to the `addToPostSchema` array:
@@ -25,15 +27,22 @@ addToPostSchema.push(
 );
 ```
 
-### adminNav
+## Navigation Menus
 
-You can add items to the admin menu by adding them to the `adminNav` array:
+### primaryNav
+
+You can add items to the primary navigation menu by adding items to the `primaryNav` array:
 
 ```js
-adminNav.push({
-  route: 'categories',
-  label: 'Categories'
-});
+primaryNav.push('searchNav');
+```
+
+### secondaryNav
+
+You can optionally also add items to a secondary navigation:
+
+```js
+secondaryNav.push('searchNav');
 ```
 
 ### viewNav
@@ -53,21 +62,18 @@ viewNav = viewNav.concat([
 ]);
 ```
 
-### preloadSubscriptions
+### adminNav
 
-You can add subscriptions to be preloaded by the router by adding them to the `preloadSubscriptions` array:
-
-```js
-preloadSubscriptions.push({subName: 'posts', subArguments: {limit: 10}});
-```
-
-### navItems
-
-You can add items to the top search bar by adding template names to the `navItems` array:
+You can add items to the admin menu by adding them to the `adminNav` array:
 
 ```js
-navItems.push('searchNav');
+adminNav.push({
+  route: 'categories',
+  label: 'Categories'
+});
 ```
+
+## Views
 
 ### viewParameters
 
@@ -81,7 +87,9 @@ Note that you don't need to use `terms` and `baseParameters` in your function. H
 
 ```js
 viewParameters.best = function (terms, baseParameters) {
-  return deepExtend(true, baseParameters, {options: {sort: {sticky: -1, baseScore: -1}}});
+  return deepExtend(true, baseParameters, {
+    options: {sort: {sticky: -1, baseScore: -1}}
+  });
 }
 ```
 
@@ -109,13 +117,11 @@ viewParameters.push({
 });
 ```
 
-### postModules
-
-See [post modules](/docs/post-modules/) section.
+## Modules
 
 ### heroModules
 
-Add templates between the nav bar and the main content:
+You can inject “hero” items (items displayed above the main post list) by adding template names to the `heroModules` array:
 
 ```js
 heroModules.push({
@@ -125,10 +131,81 @@ heroModules.push({
 
 ### footerModules
 
-Add templates to the footer:
+Similarly, you can also add templates to the `footerModules` array. 
 
 ```js
 footerModules.push({
   template: 'customFooter'
 });
+```
+
+### postModules
+
+See [post modules](/docs/post-modules/) section.
+
+### postHeading
+
+The main post content module is itself made up of two parts. `postHeading` contains the heading, domain, and categories.
+
+### postMeta
+
+On the other hand, `postMeta` contains secondary information such as the author, date, and number of comments. 
+
+## Callbacks
+
+Callback functions can be added to the following arrays:
+
+```js
+postSubmitRenderedCallbacks = [];
+postSubmitClientCallbacks = [];
+postSubmitServerCallbacks = [];
+
+postEditRenderedCallbacks = [];
+postEditClientCallbacks = [];
+```
+
+These functions will then take a document as argument, modify it, and return it. 
+
+Here's an example from the `telescope-module-embedly` package that takes a post, pings Embedly to give it a thumbnail, and then returns the updated `post` object:
+
+```js
+var extendPost = function (post) {
+  if(post.url){
+    var data = getEmbedlyData(post.url);
+    if(!!data && !!data.thumbnailUrl)
+      post.thumbnailUrl = data.thumbnailUrl;
+    if(!!data && !!data.media.html)
+      post.media = data.media
+  }
+  return post;
+}
+
+postSubmitServerCallbacks.push(extendPost);
+```
+
+## Templates
+
+Custom templates can be added to the `templates` object to override Telescope's default templates:
+
+```js
+templates['postInfo'] = "myCustomPostInfoTemplate";
+```
+
+## Theme Settings
+
+Theme-specific settings can be stored in the `themeSettings` object:
+
+```js
+themeSettings.useDropdowns = true;
+```
+
+## Subscriptions
+
+### preloadSubscriptions
+
+Subscriptions can be added to the `preloadSubscriptions` array to preload them before loading the rest of the app. 
+You can add subscriptions to be preloaded by the router by adding them to the `preloadSubscriptions` array:
+
+```js
+preloadSubscriptions.push({subName: 'posts', subArguments: {limit: 10}});
 ```
