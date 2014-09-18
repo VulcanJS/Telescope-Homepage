@@ -87,3 +87,12 @@ If you want to test your email templates without having to manually trigger even
 - **Account Approved**: [/email/account-approved/:userId](http://localhost:3000/email/account-approved/:userId)
 
 In each case, replace the `:id` parameter with the object's actual `_id`. So for the first route, you'd find any notification in your database and replace `:notificationId` with its `_id` property. 
+
+### The Newsletter Package
+
+Telescope also comes with a built-in email newsletter package that sends a daily or weekly newsletter through [MailChimp](http://mailchimp.com).  
+
+Once you've configured your MailChimp API key and list ID in the Settings page, you can test that everything is working properly by:
+
+- Going to [/email/campaign](http://localhost:3000/email/campaign) to preview the newsletter.
+- Running `Meteor.call('testCampaign')` from the browser console to schedule a test campaign. 

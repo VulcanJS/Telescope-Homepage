@@ -9,10 +9,28 @@ section: 1
 
 Keeping your version of Telescope up to date is important to benefit from the latest bug fixes and improvements. 
 
-You can update your local Git repository using the `git pull` command from within your project directory:
+### Git Remotes
+
+You can update your local Git repository using the `git pull` command from within your project directory to pull in the latest changes:
 
 ```
 git pull
+```
+
+Now if you've customized Telescope or forked it on GitHub, your `origin` remote might not be pointing to the Telescope repo.
+
+For example, you might have an `origin` repo pointing to your own fork on GitHub, and a `heroku` remote pointing to your Heroku instance. 
+
+In that case, the first step will be adding the Telescope repo back as a remote:
+
+```
+git remote add telescope https://github.com/TelescopeJS/Telescope.git
+```
+
+You'll then be able to specify you want to pull from the `master` branch of the `telescope` remote:
+
+```
+git pull telescope master
 ```
 
 ### Git Conflicts
