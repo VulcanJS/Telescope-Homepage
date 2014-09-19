@@ -1,8 +1,101 @@
 ---
 title: 'Static Pages'
-published: false
+published: true
 author: sacha
-date: 0004/01/01
+date: 0011/01/01
 blog_name: docs
-section: 1
+section: 2
 ---
+
+Telescope has a lot of fancy dynamic reactive real-time paradigm-shifting features, but sometimes all you really need is a bunch of text. 
+
+So let's see how to add static pages (such as an “about” page) to a Telescope app. 
+
+First, we'll need to create a new package (see the [Theming Telescope](/docs/custom-themes/) section for more details). Let's call it `telescope-static-pages`.
+
+### Creating a Template
+
+The first step will be creating a template for our new static page. It might look something like this, but you're of course free to use any markup you want:
+
+```html
+<template name="aboutPage">
+  <div class="grid grid-module">
+    <h2>About</h2>
+    <p>Lorem ipsum dolor sit amet.</p>
+  </div>
+</template>
+```
+
+We'll put that code in `/packages/telescope-static-pages/lib/client/templates/about_page.html`.
+
+Let's not forget to tell Meteor about our template by adding it to our package's `package.js`, and while we're at it we'll also make the package depend on `telescope-lib`, `telescope-base`, and `iron:router`. 
+
+```js
+Package.describe({
+  summary: "Telescope static pages package",
+  version: '0.1.0',
+  name: "telescope-static-pages"
+});
+
+Package.onUse(function (api) {
+
+  api.use([
+    'telescope-lib', 
+    'telescope-base',
+    'iron:router'
+  ], ['client', 'server']);
+
+  api.add_files([
+    'lib/client/templates/about_page.html',
+    'lib/client/about.js'
+  ], ['client']);
+
+});
+```
+
+### Creating a Route
+
+We'll want our static page to show up under the `/about` path, so let's add a new route. Create a new `about.js` file inside `/packages/telescope-static-pages/lib/client` and add the following code:
+
+```js
+Meteor.startup(function () {
+  Router.map(function() {
+    this.route('about', {
+      path: '/about',
+      template: getTemplate('aboutPage')
+    });
+  });
+});
+```
+
+Now let's open up our browser and head to `http://localhost:3000/about`. If you've followed the instructions properly, your brand new About page should appear in all its glory. 
+
+### Adding a Menu Item
+
+Of course, we can't ask people to manually type in a URL every time they want to check our page. We'll need to add a menu element pointing to the new route. 
+
+This is a two-part operation. First, we'll create a new template containing just that menu link. Then, we'll add that little template to our navigation menu. 
+
+Create a new `about_link.html` file inside `/packages/telescope-static-pages/lib/client/templates/` and add these lines:
+
+```html
+<template name="aboutLink">
+  <a href="/about">About</a>
+</template>
+```
+
+Now I should warn you that the next part is a fairly complex operation involving some pretty elaborate code. A PhD in Computer Science is strongly recommended here, and even if you have one don't be surprised if there are still some parts that you can't seem to grasp. 
+
+Are you sure you're ready? If so go back to `about.js` and add this line:
+
+```js
+primaryNav.push('aboutLink');
+```
+
+Done!
+
+### Going Further
+
+We've added HTML and JavaScript files, but you're not limited to those. Just like in a theme, you can also add stylesheets, images, or even SVG or fonts to your static page. 
+
+But we'll leave that as an exercise to the reader (translation: it's getting late and I'm too lazy to finish this section).

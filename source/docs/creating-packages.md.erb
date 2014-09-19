@@ -1,0 +1,89 @@
+---
+title: 'Creating Packages'
+published: true
+author: sacha
+date: 0001/01/01
+blog_name: docs
+section: 2
+---
+
+Telescope relies a lot on Meteor Packages in order to keep a lightweight yet easily extensible core. 
+
+So apart from central functionality like posts and comments, most Telescope features have [their own package](/docs/packages/) that can be freely added or removed. 
+
+Telescope customization also works with packages. Typically, you'd create one or more packages that will hold all your custom code. This way, you'll be able to safely update the app's core codebase without worrying about overwriting your changes. 
+
+But when it comes to creating and using Meteor packages, there's a few things to be aware of.
+
+### Two Types of Packages
+
+There are two main types of packages: “remote” packages, which are hosted on Meteor's server, and “local” packages, which are part of your codebase and live in the `/packages` directory. 
+
+Both types of package work the same way, with one exception: local packages can depend on both local and remote packages, while remote packages can only depend on other remote packages (at least, as of September 2014). 
+
+In any case, we'll focus on local packages throughout this documentation. You can use them and modify them straight away without having to publish them to the package server, so unless you want to make your code public they are generally easier to work with.
+
+### Creating a Package
+
+To create a package, create a new directory inside `/packages`, and inside that directory add the `package.js` manifest file.
+
+You'll find more information about `package.js` [in the Meteor documentation](http://docs.meteor.com/#packagejs), so I suggest checking it out. 
+
+Briefly speaking, the package manifest is split in two section. The `Package.describe` block is where you describe your packages's content. 
+
+The second block, `Package.onUse`, is where you'll:
+
+- Specify which *other* packages your package depends on, both on the client and/or server, using `api.use`.
+- Specify which files your package makes use of, using `api.addFiles`.
+- Specify which object to export *out* of your package and make available to the rest of your app, using `api.export`. 
+
+Here's a sample manifest, taken from the [Static Pages](/docs/static-pages) section of this documentation:
+
+```js
+Package.describe({
+  summary: "Telescope static pages package",
+  version: '0.1.0',
+  name: "telescope-static-pages"
+});
+
+Package.onUse(function (api) {
+
+  api.use([
+    'telescope-base',
+    'iron:router'
+  ], ['client', 'server']);
+
+  api.addFiles([
+    'lib/client/templates/about_page.html',
+    'lib/client/about.js'
+  ], ['client']);
+
+});
+```
+
+Note that most Telescope packages will need to depend on `telescope-base` in order to make sure that package is loaded first. 
+
+### Adding Packages
+
+Adding a package is pretty simple. Just go to your console and type:
+
+```
+meteor add xyz
+```
+
+Where `xyz` is your package's name. Do not literally type `xyz`, unless you've actually named your package `xyz` I guess. But at this point you're just trying to make things more difficult.
+
+### Exporting
+
+Just like Las Vegas, Meteor packages have their own scope. In other words, what happens in a package stays in a package. So any variable or function you declare inside one won't be available to any code located outside of that package's directory.
+
+Except, that is, if you **export** that object using `api.export`:
+
+```js
+api.export([
+  'myVariable',
+  'myFunction'
+]);
+```
+
+When customizing Telescope, you'll frequently run into cases where you're not creating new objects, but instead *modifying* existing objects created by other packages (such as `telescope-base`). It's recommended to “re-export” these objects from your own package as well just to be on the safe side. 

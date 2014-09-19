@@ -30,9 +30,13 @@ mkdir telescope-theme-kepler
 Every package needs a `package.js` manifest. Here's ours:
 
 ```js
-Package.describe({summary: "Telescope Kepler theme"});
+Package.describe({
+  summary: "Telescope kepler theme",
+  version: '0.1.0',
+  name: "telescope-theme-kepler"
+});
 
-Package.on_use(function (api) {
+Package.onUse(function (api) {
 
   api.use(['telescope-theme-hubble'], ['client']);
 
