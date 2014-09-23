@@ -13,15 +13,39 @@
 - title: Crater.io
   url: http://crater.io/
   description: A place to discuss all things Meteor. 
-  screenshot: craterio.png
-- title: Data For Good
-  url: http://dataforgood.co/
-  description: Share data-driven projects for social good.
-  screenshot: dataforgood.jpg
+  screenshot: crater.jpg
+# - title: Data For Good
+#   url: http://dataforgood.co/
+#   description: Share data-driven projects for social good.
+#   screenshot: dataforgood.jpg
 - title: SproutGuild
   url: http://www.sproutguild.com/
-  description: Daily discovery of the hippest natural foods, products & brands
-  screenshot: sproutguild.jpg  
+  description: Daily discovery of the hippest natural foods, products & brands.
+  screenshot: sproutguild.jpg
+- title: Kadira Hub
+  url: http://hub.kadira.io/
+  description: Discuss Meteor performance optimization and scaling.
+  screenshot: kadira.jpg
+- title: Frontends
+  url: http://www.frontends.org/
+  description: Front-end development news and discussions.
+  screenshot: frontends.jpg
+- title: Bootstrappers
+  url: http://www.bootstrappers.io/
+  description: A community for bootstrapped entrepreneurs.
+  screenshot: bootstrappers.jpg
+- title: GameDev News
+  url: http://news.powerupgames.io/
+  description: The latest news from the gaming industry.
+  screenshot: gamedevnews.jpg
+- title: CarNews
+  url: http://carnews.motorpaneer.com/
+  description: The freshest source of automotive news.
+  screenshot: carnews.jpg 
+- title: Happy Endings
+  url: http://happyendings.radialpoint.com/
+  description: News for customer service professionals.
+  screenshot: happyendings.jpg 
 # - title: Serverbooks
 #   url: http://m.serverbooks.net/
 #   description: A detailed directory of gaming servers. 
@@ -30,10 +54,10 @@
 #   url: http://www.healthhackers.org/
 #   description: A social news site focused on the healthcare industry. 
 #   screenshot: healthhackers.png
-- title: LightHouse
-  url: http://lighthouse.io/
-  description: A community about building communities. 
-  screenshot: lighthouse.png
+# - title: LightHouse
+#   url: http://lighthouse.io/
+#   description: A community about building communities. 
+#   screenshot: lighthouse.png
 # - title: ThinkDAW
 #   url: http://www.thinkdaw.com/
 #   description: A community for digital music producers. 

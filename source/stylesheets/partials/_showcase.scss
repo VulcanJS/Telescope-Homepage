@@ -18,10 +18,15 @@
 				@include glow;
 				position: relative;
 				top: 0px;
-			}
-			img{
+				display: block;
+				@include medium{
+					height: 130px;
+				}
+				overflow: hidden;			
 				@include border-radius(2px);
 				@include box-shadow(0px 3px 7px black(0.85));
+			}
+			img{
 			}
 			margin-bottom: 10px;
 		}
