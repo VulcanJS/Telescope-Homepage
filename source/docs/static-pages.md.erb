@@ -11,7 +11,9 @@ Telescope has a lot of fancy dynamic reactive real-time paradigm-shifting featur
 
 So let's see how to add static pages (such as an “about” page) to a Telescope app. 
 
-First, we'll need to create a new package (see the [Theming Telescope](/docs/custom-themes/) section for more details). Let's call it `telescope-static-pages`.
+First, we'll need to create and add a new package (see the [Creating Packages](/docs/creating-packages/) section for more details on how to do that). Let's call it `telescope-static-pages`.
+
+Note: the code for this package is also [available on GitHub](https://github.com/TelescopeJS/Telescope-Static-Pages).
 
 ### Creating a Template
 
@@ -40,6 +42,10 @@ Package.describe({
 Package.onUse(function (api) {
 
   api.use([
+    'templating'
+  ], ['client']);
+
+  api.use([
     'telescope-lib', 
     'telescope-base',
     'iron:router'
@@ -52,6 +58,8 @@ Package.onUse(function (api) {
 
 });
 ```
+
+At this point, add the package with `meteor add telescope-static-pages` if you haven't done so already. 
 
 ### Creating a Route
 
