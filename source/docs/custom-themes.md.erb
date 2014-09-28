@@ -76,7 +76,7 @@ Here's the result:
 What if you don't want to simply tweak the original theme, but overhaul it completely? Easy enough. Just deactivate it with:
 
 ```
-meteor remove telescope-theme-embedly
+meteor remove telescope-theme-hubble
 ```
 
 Of course, in that case you'll also want to remove the dependency on Hubble (`api.use(['telescope-theme-hubble'], ['client']);`) inside your own theme's `package.json` file. 
@@ -191,6 +191,18 @@ There you go! Our new welcome message in all its white-on-teal glory.
 Note that you might not always need to overwrite a template this way. In some cases, it will be smarter to [use a hook](/docs/hooks) to inject a *new* template altogether. 
 
 <% end %> 
+
+### Troubleshooting
+
+Not working? Here's a checklist to work through to help you debug your problem:
+
+- Have you added your custom theme package with `meteor add`? Make sure that your package is listed in `.meteor/packages`.
+- Are you including your template file with `api.addFiles`?
+- Are you including your files in the proper environment (`client` for app templates, `server` for email templates)?
+- Does your package specify a dependency on `telescope-base` using `api.use`?
+- Are you overriding the template with `templates["xyz"] = "myCustomXyz";` ?
+
+If you're still not seeing your custom template appear, you can do a `console.log(templates)` either in the code or in the browser console to check if your template override has been registered properly. 
 
 ### Customize Away!
 

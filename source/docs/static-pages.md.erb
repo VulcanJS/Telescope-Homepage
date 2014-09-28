@@ -30,7 +30,7 @@ The first step will be creating a template for our new static page. It might loo
 
 We'll put that code in `/packages/telescope-static-pages/lib/client/templates/about_page.html`.
 
-Let's not forget to tell Meteor about our template by adding it to our package's `package.js`, and while we're at it we'll also make the package depend on `telescope-lib`, `telescope-base`, and `iron:router`. 
+Let's not forget to tell Meteor about our template by adding it to our package's `package.js`, and while we're at it we'll also make the package depend on `telescope-lib`, `telescope-base`, and `iron:router`, as well as include `about_link.html` and `about.js`, which we'll need later.  
 
 ```js
 Package.describe({
@@ -53,6 +53,7 @@ Package.onUse(function (api) {
 
   api.add_files([
     'lib/client/templates/about_page.html',
+    'lib/client/templates/about_link.html',
     'lib/client/about.js'
   ], ['client']);
 
