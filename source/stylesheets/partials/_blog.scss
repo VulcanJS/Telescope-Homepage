@@ -137,10 +137,10 @@ h3.blog{
 		@include bold;
 		text-align: left;
 		@include small{
-			font-size: 22px;
+			font-size: 24px;
 		}
 		@include medium{
-			font-size: 30px;
+			font-size: 36px;
 		}
 	}
 	h4{
