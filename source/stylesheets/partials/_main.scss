@@ -94,9 +94,7 @@ a{
 }
 
 section{
-	@include medium{
-		@include span-columns(12 omega);
-	}
+	@include cf;
 	border-bottom:1px solid white(0.15);
 	margin-bottom:$unit;
 	padding-bottom:$unit;

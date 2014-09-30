@@ -1,0 +1,195 @@
+---
+title: 'Two Years and 2,000 Stars Later: Lessons Learned from Building Telescope'
+published: true
+author: sacha
+date: 2014/09/30
+---
+
+I've been working on [Telescope](/) (an open source Hacker News-type app built with the [Meteor](http://meteor.com) JavaScript framework) for close to two years now, and along the way I've learned a lot about what it takes to make an open source project successful. 
+
+READMORE
+
+First a few stats. As of October 2014, Telescope:
+
+- Has **1939** stars on GitHub.
+- Was forked **707** times.
+- Has received **142** pull requests from **59** different contributors.
+
+This doesn't make Telescope a huge open source project by any means (as a point of comparison, [Discourse](https://github.com/discourse/discourse) has 12000 stars), but I think it's respectable enough. 
+
+Getting there hasn't been easy though. In fact, I'm pretty sure I would've never even started this project if I really knew what I was getting into. 
+
+Turns out I was pretty naive two years ago. Here are a few of the things I've learned since.
+
+### No Free Lunch
+
+So why did I decide to make Telescope open source in the first place? It'd be easy to answer with typical clichés about “giving back to the community” or “believing in free software”.
+
+But the truth is a lot more pragmatic and selfish: I thought it would be a good way to get other people to help me accomplish my own goals, for free. 
+
+I had this idea for a Hacker News clone (which ended up becoming [Sidebar](http://sidebar.io)), but I:
+
+- Didn't want to do all the work myself.
+- Didn't want to spend thousands of dollars hiring someone else to do it either.
+
+So I figured I would come out with a basic version of the app, make the project open source, sit back as pull requests poured in, and use the resulting improvements to make Sidebar even better.
+
+<%= figure "blog/sidebar-screenshot.jpg", "Sidebar: giving you the 5 best design links of the day.", "wide", "http://sidebar.io" %>
+
+Of course, that's not what happened. I did make it to [the Hacker News front page](https://news.ycombinator.com/item?id=4840032) when I first launched Telescope, but then… nothing. 
+
+People would try out the app, realize it was half-baked, and – instead of submitting a fix like I had imagined – promptly forget about it. 
+
+So my first lesson was that open source is no magic bullet: just because you host your code on GitHub won't automatically make people want to help you out. 
+
+### Skewed Ratio
+
+Looking back it seems blindingly obvious. Even for a huge project like the afore-mentioned Discourse, you can see that [around 80% of code commits](https://github.com/discourse/discourse/graphs/contributors) have been contributed by the five core team members. 
+
+That seems to be a pretty common ratio. For Telescope, I've contributed about 78% of the codebase's commits myself. I've often been the only contributor for months at a time, although things have been picking up lately. 
+
+<%= figure "blog/telescope-contributors.jpg", "Telescope's main contributors.", "full", "https://github.com/TelescopeJS/Telescope/graphs/contributors" %>
+
+This is probably obvious to anybody who's paying attention to the open source world. But before starting this project, I have to confess I had no idea the workload distribution would be so skewed towards myself. 
+
+### Open Source is Hard(er)
+
+So I had just learned that my open source project didn't possess the main advantage I thought it would.
+
+The next lesson was just as brutal: it turned out open source actually presented **major downsides**. 
+
+Remember that my main goal was making a Hacker News clone for my own personal use. Yet as if this was not enough work already, on top of this I now also had to: 
+
+- Write documentation for Telescope.
+- Maintain a separate homepage and blog (the one you're reading right now, in fact) for the project.
+- Answer questions and provide support.
+- Promote and communicate around Telescope.
+
+And all of this, of course, for **0 revenue**.
+
+The ultimate irony here is that Sidebar ended up being drastically simpler than what I had originally envisioned. I ended up dropping upvoting and commenting to basically create a collaborative link aggregator/newsletter.
+
+So I was now maintaining a whole bunch of features *that I wasn't even using for my own project*, which again was the whole reason for Telescope's existence in the first place.
+
+So lesson two was that compared to building your own private, tailor-made solution, open source is vastly harder. 
+
+### A Counter-Example
+
+Interestingly enough, about one year after I first launched Sidebar, another Hacker News-type project came along. Unlike me though, that team chose to develop their own custom solution. 
+
+It turns out that was probably the right choice for them, as they were able to focus solely on their own product, and their site quickly took off to become a major player in its space.
+
+In fact, I'm willing to bet [you've probably heard of them](http://www.producthunt.com). 
+
+<%= figure "blog/producthunt.jpg", "Product Hunt: not open source, but has $6M in the bank.", "full", "http://www.producthunt.com" %>
+
+
+As an aside, the Product Hunt team did consider using Telescope as their platform, but the app was still immature and they ended up building something from scratch. 
+
+I think they made the right decision at the time, but I do sometimes wonder how things would've turned out if I could count Product Hunt among Telescope's users…
+
+### Two Distinct Markets
+
+So far I've shared two good reasons why you might want to think twice before embarking on an open source project, but that's not very helpful if you've already bought the ticket. 
+
+If that's your case, pay attention. My next lesson is something I realized only recently, but it's pretty important. 
+
+open source projects need to target two very different audiences: **users** and **developers**. Here's the thing though: at least in Telescope's case, *there is very little overlap between these two audiences*. 
+
+<%= figure "blog/venn.png", "", "small no-border", "" %>
+
+You see, I had initially made the naive mistake of assuming my users would also be the ones who'd contribute code back and make Telescope better. 
+
+I couldn't have been more wrong. First of all, there's only 24 hours in a day: the more time someone spends customizing their app and building up their community, the less time they have to contribute code back to the core codebase. 
+
+And secondly, there's just no reason why people wanting to launch their own social news app would *also* happen to be developers. Yes, it turns out that a substantial amount of people *don't* spend their days in front of a text editor. Who knew!
+
+### Bridging the Gap
+
+Yet a successful open source project needs both: users *and* developers. The consequence is that you need two different communication strategies. 
+
+So when addressing end users, you need to emphasize things like:
+
+- Ease of use. 
+- Ease of customization.
+- Personal benefits (e.g. using Telescope to build a community and grow your own following).
+
+And when addressing developers, you can point out how being part of the community can help them:
+
+- Learn from the app's patterns and architecture.
+- Reuse the codebase as a template for their own apps.
+- Build resources that can benefit the overall developer community.
+- Build products that fit in the app's ecosystem (themes, plug-ins, etc.).
+- Find work related to the app (customization, deployment, maintenance, etc.).
+
+### The Time/Money Equation
+
+Open source software might often be “free as in beer”, but sadly beer is never ”free as in open source”.
+
+In other words, no matter if your project is open source or closed-source, at the end of the day you still need to pay the same bills. 
+
+So it's very important to find an activity that can subsidize your project, and preferrably one that's closely related to your app. 
+
+A lot of people go into that hosting for that reason, but hosting suffers from what I like to call the “help-it's-4-AM-and-my-site-is-down“ problem, which is when people call you at 4 AM to complain that their site is down. 
+
+I personally don't want to be responsible for the well-being of other people's businesses. Being responsible for mine is more than enough, thank you very much. 
+
+So instead of hosting, what I did is [write a book](https://www.discovermeteor.com). 
+
+<%= figure "blog/discovermeteor.jpg", "Discover Meteor", "wide", "https://www.discovermeteor.com" %>
+
+If you're skilled enough to create a popular open source app, you're probably skilled enough to write a book about doing it, which is exactly what Tom Coleman and I did with *Discover Meteor*. 
+
+*Discover Meteor* takes you through the process of using Meteor to build Microscope, a simpler, smaller version of Telescope. It ended up doing really well, which meant I've been free to focus on Telescope (and Meteor in general) for the last year or so. 
+
+<%= figure "blog/microscope.png", "Microscope, Telescope's little brother.", "no-border shadow", "https://github.com/DiscoverMeteor/Microscope/" %>
+
+Another avenue you might want to consider is [productized services](http://www.bootstrappers.io/posts/6TbMHGQF4EZHYEi7a). In essence, taking a one-time service people often need (for example, deploying or customizing your app) and systematizing or delegating it to the point where you can sell it for relatively cheap while still making a profit. 
+
+In any case, I would strongly recommend finding a reliable business model before embarking on any big open source adventure. 
+
+(This is a case of “do as I say, not as I do”, as my co-author and I only came up with the idea for *Discover Meteor* **after** I first launched Telescope.)
+
+### Open Source Software is not About Software
+
+Finally, the last lesson I've learned is perhaps the most surprising: when it comes to open source software, *software* actually plays a fairly minor role. 
+
+Instead, open source software is about *people*. 
+
+And I don't mean that as cliché “[employees are our most valuable asset](http://dilbert.com/strips/comic/1993-03-03/)”-type bullshit. What I mean is that successful open source projects don't just build up a codebase, they build up a *community*. 
+
+And faced with the choice of either losing my codebase and starting from scratch again, or losing my *community* and starting from scratch again, I know I would drop the codebase in a heartbeat. 
+
+At the end of the day, people don't care about the variables, objects, and functions that make up your codebase. They care about your goals, your motivations, and your vision.
+
+That's why redesigning your homepage or working on your documentation will often do a lot more for your project than refactoring your code or even adding new features. 
+
+### Quitting
+
+So it's been a tough ride overall, and I've thought about quitting Telescope more than once since starting this project. I've just been lucky that I always had reasons to push on.
+
+At first, it was because I needed Telescope to build Sidebar. Then, it was because I could reinvest what I learned building Telescope into our book. 
+
+A few months ago though, things weren't looking good. I hadn't worked on Telescope in a while, and the project has stalled. I had few users, fewer contributors still, and I was ready to call it quits. 
+
+In fact, here's the log of a conversation I had with a friend:
+
+> **Me:** These days I'm wondering what I should do with Telescope
+
+> **Friend:** like features-wise?
+
+> **Me:** I believe in the project, but it requires a ton of work
+
+> **Me:** I guess I'm just a little demotivated when I think about the amount of works all of that represents
+
+I'm sure that sentiment will be familiar to more than one open source project maintainer. Yet in the end, I decided to make a final push before giving up for good. I figured the worst that could happen was that I'd lose a few weeks of my time. 
+
+### To The Stars
+
+Over the summer, I refactored huge chunks of the app, added custom email templates and an automated newsletter, and made it possible to theme Telescope without modifying its core files. Additionally, I also redid the Telescope homepage and documentation. 
+
+It seems like my efforts weren't completely in vain. Telescope is still pretty niche so it's probably too soon to consider the whole thing a success, but at least the resulting increased interest helped me regain my own motivation and avoid burn-out. 
+
+These, days, an amazing ecosystem is slowly starting to grow around the app. Developers from Mongolia to Sri Lanka are contributing code, and people are using the app to create communities about [bootstrapping](http://www.bootstrappers.io/), [front-end development](http://www.frontends.org/), [customer support](http://happyendings.radialpoint.com/), [video games](http://news.powerupgames.io/),[cars](http://carnews.motorpaneer.com/), and [much more](http://www.telesc.pe/showcase). 
+
+So I'd say the sky's the limit, but that'd be wrong: at this point, I'm aiming for the stars!

@@ -1,8 +1,10 @@
 .header{
 	border: none;
 	margin: 0;
+	clear: both;
 }
 .nav{
+	border-radius: 3px;
 	border-bottom:1px solid white(0.15);
 	border-top:1px solid white(0.15);		
 	background:white(0.1);

@@ -3,19 +3,23 @@
 - content_for(:itemtype, "Article")
 
 = wrap_layout :layout do
-  %h3.blog
-    %a.blog-link{:href => '/blog'} The Blog
-    %a.rss{:href => '/feed.xml'} [RSS]
+  / %h3.blog
+  /   %a.blog-link{:href => '/blog'} The Blog
+  /   %a.rss{:href => '/feed.xml'} [RSS]
+  %h1.post-title=current_article.data.title
+
   %section.post.inverted
     .post-top
+      .meta-blog
+        %a{:href => '/blog'} Back to blog
       .meta-date
         =current_article.date.strftime('%b %e %Y')
         by
         %a{:href => 'http://sachagreif.com'} Sacha Greif
-      .meta-twitter
-        :plain
-          <a href="https://twitter.com/share" class="twitter-share-button" data-via="Telescpe">Tweet</a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>  
+      / .meta-twitter
+      /   :plain
+      /     <a href="https://twitter.com/share" class="twitter-share-button" data-via="Telescpe">Tweet</a>
+      /     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>  
     .post-content
       .post-thumbnail
         %a{:href => current_article.url}
@@ -24,7 +28,6 @@
           - else
             %span.thumb.default-thumb
 
-      %h1.post-title=current_article.data.title
       =find_and_preserve do
         =yield
 
