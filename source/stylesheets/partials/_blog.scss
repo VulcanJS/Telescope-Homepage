@@ -256,6 +256,7 @@ h3.blog{
 	.post-title{
 		font-size: 30px;
 		margin-bottom: 10px;
+		border-bottom: none;
 		a{
 			@include light;
 		}
