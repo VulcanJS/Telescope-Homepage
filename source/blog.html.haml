@@ -1,9 +1,10 @@
 - content_for(:title, "The Telescope Blog")
 
 %section
-  %h3.blog
-    The Blog
-    %a.rss{:href => '/feed.xml'} [RSS]
+  .section-title
+    %h3.blog
+      The Blog
+      %a.rss{:href => '/feed.xml'} [RSS]
   .articles
     - blog('blog').articles.each do |post|
       .post.inverted

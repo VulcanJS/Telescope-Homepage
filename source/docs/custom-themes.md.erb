@@ -200,6 +200,7 @@ Not working? Here's a checklist to work through to help you debug your problem:
 - Are you including your template file with `api.addFiles`?
 - Are you including your files in the proper environment (`client` for app templates, `server` for email templates)?
 - Does your package specify a dependency on `telescope-base` using `api.use`?
+- Does your package specify a dependency on `templating` (for app templates) or `cmather:handlebars-server` (for email tempaltes)?
 - Are you overriding the template with `templates["xyz"] = "myCustomXyz";` ?
 
 If you're still not seeing your custom template appear, you can do a `console.log(templates)` either in the code or in the browser console to check if your template override has been registered properly. 

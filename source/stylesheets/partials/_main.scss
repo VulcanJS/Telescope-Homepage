@@ -36,15 +36,22 @@ h1, h2, h3, h4, h5{
 	text-align:center;
 	margin:0;
 }
-h3{
-	text-shadow: 0px 2px 5px black(0.9), 0px 0px 15px white(0.5);
-	@include light;
-	font-size:38px;
-	margin-bottom:20px;
-	color:$pink;
-	strong{
-		@include bold;
-		// color:white;
+.section-title{
+	margin-bottom:20px;	
+	h3{
+		text-shadow: 0px 2px 5px black(0.9), 0px 0px 15px white(0.5);
+		@include light;
+		font-size:40px;
+		color:$pink;
+		strong{
+			@include bold;
+			// color:white;
+		}
+	}
+	h4{
+		@include light;
+		color: white;
+		font-size: 24px;
 	}
 }
 p{
