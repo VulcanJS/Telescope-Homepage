@@ -46,6 +46,22 @@
   url: http://happyendings.radialpoint.com/
   description: News for customer service professionals.
   screenshot: happyendings.jpg 
+- title: Closing Call
+  url: http://www.closingcall.co/
+  description: A community about sales and marketing.
+  screenshot: closingcall.jpg
+- title: BuildBox
+  url: http://buildbox.co/
+  description: The best building resources for technology entrepreneurs.
+  screenshot: buildbox.jpg
+- title: Excel News
+  url: http://www.excel-news.com/
+  description: Everything Excel.
+  screenshot: excelnews.jpg 
+- title: Madrasa
+  url: http://madrasa.ca/
+  description: News for customer service professionals.
+  screenshot: madrasa.jpg 
 # - title: Serverbooks
 #   url: http://m.serverbooks.net/
 #   description: A detailed directory of gaming servers. 

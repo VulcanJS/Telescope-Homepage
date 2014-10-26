@@ -3,6 +3,7 @@
 		@include medium{
 			@include span-columns(4);
 			@include nth-omega(3n, of-type);
+			min-height: 290px;
 		}
 		border-bottom:1px solid white(0.15);
 		border-top:1px solid white(0.15);		
@@ -20,7 +21,7 @@
 				top: 0px;
 				display: block;
 				@include medium{
-					height: 130px;
+					height: 140px;
 				}
 				overflow: hidden;			
 				@include border-radius(2px);
