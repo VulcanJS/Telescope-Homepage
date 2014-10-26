@@ -62,6 +62,10 @@
   url: http://madrasa.ca/
   description: News for customer service professionals.
   screenshot: madrasa.jpg 
+- title: Weld
+  url: http://welder-wire.meteor.com/
+  description: A Telescope theme demo.
+  screenshot: weld.jpg 
 # - title: Serverbooks
 #   url: http://m.serverbooks.net/
 #   description: A detailed directory of gaming servers. 
