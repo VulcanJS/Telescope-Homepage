@@ -66,6 +66,10 @@
   url: http://dataforgood.co/
   description: Share data-driven projects for social good.
   screenshot: dataforgood.jpg
+- title: Mean Stack
+  url: http://mean-stack.io/
+  description: The latest and hottest topics on MEAN development.
+  screenshot: meanstack.jpg
 # - title: Serverbooks
 #   url: http://m.serverbooks.net/
 #   description: A detailed directory of gaming servers. 
