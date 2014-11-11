@@ -14,10 +14,6 @@
   url: http://crater.io/
   description: A community to discuss all things Meteor. 
   screenshot: crater.jpg
-# - title: Data For Good
-#   url: http://dataforgood.co/
-#   description: Share data-driven projects for social good.
-#   screenshot: dataforgood.jpg
 - title: SproutGuild
   url: http://www.sproutguild.com/
   description: Daily discovery of the hippest natural foods, products & brands.
@@ -65,7 +61,11 @@
 - title: Weld
   url: http://welder-wire.meteor.com/
   description: A Telescope theme demo.
-  screenshot: weld.jpg 
+  screenshot: weld.jpg
+- title: Data For Good
+  url: http://dataforgood.co/
+  description: Share data-driven projects for social good.
+  screenshot: dataforgood.jpg
 # - title: Serverbooks
 #   url: http://m.serverbooks.net/
 #   description: A detailed directory of gaming servers. 
