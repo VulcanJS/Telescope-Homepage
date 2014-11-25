@@ -134,6 +134,8 @@ h3.blog{
 	h3{
 		text-shadow:none;
 		color: $dark-text;
+		border-bottom: 1px solid $light-grey;
+		padding-bottom: 5px;
 		@include bold;
 		text-align: left;
 		@include small{
@@ -149,7 +151,6 @@ h3.blog{
 		@include bold;
 		text-align: left;
 		// text-transform: uppercase;
-		margin-bottom: 0px;
 		@include small{
 			font-size: 18px;
 		}

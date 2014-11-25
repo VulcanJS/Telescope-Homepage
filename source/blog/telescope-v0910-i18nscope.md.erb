@@ -1,0 +1,85 @@
+---
+title: 'Telescope v0.9.10: Internationalizing a Meteor App'
+published: true
+author: sacha
+date: 2014/11/25
+---
+
+The [latest Telescope update](https://github.com/TelescopeJS/Telescope/releases/tag/v0.9.10) solidifies a pretty important feature
+
+READMORE
+
+### Why Internationalize? 
+
+In a lot of open-source apps, internationalization (or “i18n”, as it's often referred to) is often a second thought. The idea is to get the English version right first, and then worry about the rest of the world later.
+
+That's an understandable approach, but the problem is that your community might not wait until you're done polishing the main version to start translating your app. 
+
+This leads to lots of messy forks, duplicated work, and worst of all when you *do* release a proper internationalized version, the folks who were passionate enough to translate their own fork are left holding a bag full of merge conflicts. 
+
+All this to say that with Telescope, I wanted to address i18n early on. When I originally looked into the issue a few months ago, I couldn't find any good existing solution. So like any good programmer, I decided to roll my own. 
+
+I wanted to avoid the classic XKCD mistake though:
+
+<%= figure "http://imgs.xkcd.com/comics/standards.png", "", "no-border small", "http://xkcd.com/927/" %>
+
+So I didn't try to create a better way to do i18n in Meteor. Instead, I coded up the crappiest, MVP-est package I could, to use as placeholder until something better came along.
+
+### Introducing TAP:i18n
+
+That “something better” appeared a few months later in the form of the [TAP:i18n](https://github.com/TAPevents/tap-i18n) package, developed by Daniel Chcouri of Meteor consultancy [Meteor Spark](http://www.meteorspark.com/) and sponsored by [TAPevents](http://tapevents.com/). 
+
+And not only did Daniel develop TAP:events, but he also volunteered to adapt Telescope to use his package. So how could I say no?
+
+The result is a much better i18n solution, with two main features:
+
+#### Ad-Hoc Language Loading
+
+Instead of weighing down your app by sending all language files to the client, TAP:i18n is smart enough to only request the languages it actually needs. 
+
+And the best part is that this also works great if you change the language mid-session.
+
+#### Per-Package Internationalization
+
+The other great thing is that each package is now a self-contained bundle that includes its own translations. 
+
+This also makes collaborative translations a lot easier: you can translate each package one at a time, or even only translate the packages you're actually using. 
+
+### A Few Notes
+
+- Although this is not exposed by the UI, end users can change their language for the current session by typing `setLanguage('fr')` or (`es`, `it`, `de`, `zh-CN`, etc.) in the browser console.
+- TAP:i18n does not currently handle server-side templates, which means emails are not currently internationalized.
+- Some packages (such as `telescope-daily`) define strings that are used outside of the package. As such they require setting the `"namespace": "project"` option in their `package-tap:i18n` file.
+- All i18n-related code (currently consisting mainly a work-around for internationalizing Moment.js) can be found in the `telescope-i18n` package. 
+
+### The Telescope Core Team
+
+[Ben Gott](http://bengott.github.io/) recently upgraded his excellent [Avatar](https://github.com/bengott/meteor-avatar) package and added the new version to Telescope. 
+
+And I'm also very happy to officially announce that Ben is now part of the Telescope Core Team, an elite group of coders from around the world that can combine their powers to form a giant, armored mecha with the special ability to accept pull requests. 
+
+More members coming soon! (maybe… *you*?!)
+
+<%= figure "blog/avataraang.jpg", "The only Avatar that matters, as far as I'm concerned.", "no-border small", "" %>
+
+### Other Features
+
+To help you figure out the new file structure for creating and internationalizing packages, I've also added a new blank package template (called `telescope-blank`) that you can copy and adapt to your own needs. 
+
+And thanks as well to Anthony Mayer for fixing a few issues and submitting pull requests. 
+
+### Establishing a Standard
+
+All this brings me to another goal of the Telescope project: establishing new standards for the Meteor ecosystem.
+
+We're trying to do that in two ways: by taking existing Telescope features and extracting them into their own packages so other apps don't need to redevelop them from scratch (a great example being Sivli Kestanous' [Herald](https://atmospherejs.com/kestanous/herald) notifications package), as well as using existing packages for new or current Telescope features (as Daniel did with TAP:i18n).
+
+Of course this doesn't mean we can't eventually have multiple ways of doing the same thing, but I do believe that what the Meteor community currently needs to grow is more coordination and cooperation, and less duplicated work. 
+
+Hopefully Telescope can be one way of accomplishing this. And by the way, this also means that if *you* have a package that you're looking to establish as a standard, a pull request to Telescope might be a great way to get started!
+
+### Discuss
+
+As usual, you can discuss the newest update [over at Telescope Meta](http://meta.telesc.pe/posts/63PTrKpNoALsX7ZRo). 
+
+And by the way, be sure not to miss the next [Telescope hangout](http://www.crowdcast.io/e/telescope2)!

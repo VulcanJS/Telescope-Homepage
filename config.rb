@@ -158,14 +158,13 @@ helpers do
     %Q{<img class="#{css_class}" src="/images/#{src}"/>}
   end
   def figure(src, caption="", css_class="", link="")
-
     prefix = ''
     if src[0..3] != 'http'
       prefix = '/images/'
     end
 
     if link != ""
-      %Q{<figure class="#{css_class}"><a href="#{link}" target="_blank"><img src="/images/#{src}"/></a><figcaption>#{caption}</figcaption></figure>}
+      %Q{<figure class="#{css_class}"><a href="#{link}" target="_blank"><img src="#{prefix}#{src}"/></a><figcaption>#{caption}</figcaption></figure>}
     else
       %Q{<figure class="#{css_class}"><img src="#{prefix}#{src}"/><figcaption>#{caption}</figcaption></figure>}
     end

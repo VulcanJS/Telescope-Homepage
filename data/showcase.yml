@@ -70,6 +70,10 @@
   url: http://mean-stack.io/
   description: The latest and hottest topics on MEAN development.
   screenshot: meanstack.jpg
+- title: About Admissions
+  url: https://aboutadmissions.admithub.com/
+  description: The latest college admission tips.
+  screenshot: aboutadmissions.png
 # - title: Serverbooks
 #   url: http://m.serverbooks.net/
 #   description: A detailed directory of gaming servers. 
