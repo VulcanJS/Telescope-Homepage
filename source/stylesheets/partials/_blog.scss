@@ -98,13 +98,17 @@ h3.blog{
 	p, pre, ul, ol, hr{
 		margin: 0 0 $spacing 0;
 	}
-	h2, h3, h4, h5{
+	h2, h3, h4, h5, ol, ul{
 		margin-bottom: $spacing;
 		line-height: 1.4;
+	}
+	li{
+		margin-bottom: 10px;
 	}
 	font-weight: 400;
 	.post-title{
 		text-shadow:none;
+		color: $dark-text;
 		@include small{
 			font-size: 30px;
 		}
@@ -280,9 +284,6 @@ h3.blog{
 		border:0;
 		font-size:24px;
 		font-weight: bold();
-	}
-	ul{
-		margin:0;
 	}
 	&.chapter{
 		background:$light-bg;

@@ -7,16 +7,53 @@ blog_name: docs
 section: 1
 ---
 
-There are many ways to deploy Telescope. Here are a few proven options.
+There are many ways to deploy Telescope, and here are a few of them. 
 
+Note that this is meant as an introduction to these various options, not as a replacement for reading their respective documentation.
 
-### Option 1: Mup (recommended)
+### Option 1: Meteor.com
+
+You can deploy any Meteor app to Meteor's own free hosting on *.meteor.com. 
+
+You'll find more information about it [in the official Meteor documentation](http://docs.meteor.com/#deploying), but be warned that this free offering is not suitable for production apps, and will not be able to handle large amount of traffic. 
+
+#### Pros
+
+- Free.
+- Super-simple.
+- Just works out of the box.
+
+#### Cons
+
+- Not production-ready.
+
+#### What To Do
+
+- `meteor deploy xyz` where "xyz" is the name of your app.
+
+### Option 2: MeteorUp + Digital Ocean + Compose.io
 
 You can easily deploy on your own server, such as a [Digital Ocean](https://www.digitalocean.com/), [Amazon EC2](http://aws.amazon.com/ec2/), or [Linode](https://www.linode.com/) instance using a tool called [Meteor Up](https://github.com/arunoda/meteor-up), or `mup` for short.
 
 Just fill in your instance's IP along with your ssh username and password, and Meteor Up will take care of the server setup and any subsequent deployments for you. 
 
-I personally recommend [Digital Ocean](https://www.digitalocean.com/) for their cheap prices, clean dashboard, and great support. 
+I personally recommend [Digital Ocean](https://www.digitalocean.com/) for their cheap prices, clean dashboard, and great support. But make sure you pick at least a 1 GB instance ($10/month), as Telescope tends to use up all available memory and lock up on smaller instances.
+
+<% note do %>
+
+### A Note About Database Hosting
+
+Although you can host your MongoDB database on the same server as your app, it's recommended you use a dedicated, third-party service like [Compose.io](http://compose.io) to host it. This will give you many advantages, such as:
+
+- A web dashboard that lets you access and even modify your database online.
+- Automated back-ups.
+- Professional support by MongoDB experts.
+- [Oplog](https://meteorhacks.com/mongodb-oplog-and-meteor.html) support (makes your Meteor app run faster!).
+- Having your database hosted independently makes it a lot easier to switch servers if you need to. 
+
+Although Oplog support costs $18/month, you can get started for free with a Sandbox instance. 
+
+<% end %>
 
 #### Pros
 
@@ -25,9 +62,16 @@ I personally recommend [Digital Ocean](https://www.digitalocean.com/) for their 
 
 #### Cons
 
-- Requires launching a new instance when you want to scale.
+- A bit more involved.
+- Not free.
 
-### Option 2: Modulus
+#### What To Do
+
+- Open a Compose.io account, create a database, and note its Mongo URL.
+- Open a Digital Ocean account, create a droplet, and note its access credentials.
+- Install Meteor Up, set up your options, then run `mup setup` and `mup deploy`. 
+
+### Option 3: Modulus
 
 Another great option is deploying on [Modulus](https://modulus.io/). Thanks to their command line tool, you can deploy Meteor apps very easily, and the service is quite affordable at around $15 per month for the cheapest plans. 
 
@@ -41,35 +85,3 @@ You'll find more information about their deployment process [on the Modulus site
 #### Cons
 
 - Harder to switch to a different service.
-
-
-### Option 3: Meteor.com
-
-You can also deploy any Meteor app to Meteor's own free hosting on *.meteor.com. 
-
-You'll find more information about it [in the official Meteor documentation](http://docs.meteor.com/#deploying), but be warned that this free offering is not suitable for production apps, and will not be able to handle large amount of traffic. 
-
-#### Pros
-
-- Free.
-- Just works out of the box.
-
-#### Cons
-
-- Not production-ready.
-
-### Other Options
-
-Finally, you can also deploy on Heroku using the [Meteorite buildpack](https://github.com/oortcloud/heroku-buildpack-meteorite).
-
-<% note do %>
-
-### Database Hosting
-
-No matter which hosting option you pick, I strongly recommend hosting your database on [Compose](https://www.compose.io/) (formerly MongoHQ), for a couple reasons:
-
-1. It will make it easy to use their Oplog feature, which makes Meteor apps noticeably faster.
-2. Having your database hosted independently makes it a lot easier to switch servers if you need to. 
-3. Compose also provides automatic backups, as well as a web UI to access your database.
-
-<% end %>
