@@ -40,8 +40,8 @@ Package.onUse(function (api) {
 
   api.use(['telescope-theme-hubble'], ['client']);
 
-  api.add_files([
-    'lib/client/stylesheets/screen.css',
+  api.addFiles([
+    'lib/client/stylesheets/screen.scss',
     ], ['client']);
   
 });
@@ -51,12 +51,12 @@ The first line is simply the package description. We then tell Meteor what to do
 
 First, we specify a dependency on the `telescope-theme-hubble` theme to ensure that its CSS files get included first. All our CSS will be minified and concatenated together by Meteor once we run our app in production, so source order matters. 
 
-After that, the `api.add_files` call inside tells Meteor which files are included in our package (`lib/client/stylesheets/`) and in what environment to include them (`client`).
+After that, the `api.addFiles` call inside tells Meteor which files are included in our package (`lib/client/stylesheets/`) and in what environment to include them (`client`).
 
-Finally, let's add the `screen.css` file in the appropriate directory, and add a few lines of CSS:
+Finally, let's add the `screen.scss` file in the appropriate directory, and add a few lines of SCSS:
 
-```css
-body{
+```scss
+body {
   background: teal;
 }
 ```
@@ -79,18 +79,16 @@ What if you don't want to simply tweak the original theme, but overhaul it compl
 meteor remove telescope-theme-hubble
 ```
 
-Of course, in that case you'll also want to remove the dependency on Hubble (`api.use(['telescope-theme-hubble'], ['client']);`) inside your own theme's `package.json` file. 
+Of course, in that case you'll also want to remove the dependency on Hubble (`api.use(['telescope-theme-hubble'], ['client']);`) inside your own theme's `package.js` file. 
 
 
 <% note do %>
 
 ### Sassy Themes
 
-You're free to do whatever you want inside your own package's directory as long as you provide one or more CSS files at the end. 
+You're free to do whatever you want inside your own package's directory as long as you provide one or more CSS/SCSS/SAA files at the end. 
 
-So it's perfectly OK to use a preprocessor like [Sass](http://sass-lang.com/), which is actually what the Hubble theme does. 
-
-Even though Meteor itself doesn't handle Sass files, you can just compile theme externally through the command line or with an app like [CodeKit](https://incident57.com/codekit/).
+Telescope automatically compiles SCSS/SASS using [meteor-scss](https://github.com/fourseven/meteor-scss/). The Hubble and Base themes in Telescope use the SCSS syntax.
 
 <% end %>
 
@@ -122,14 +120,14 @@ We'll base our `newPostsList` template off Telescope's own `postsList` template.
 </template>
 ```
 
-We'll also edit our theme's `screen.css` to style that message a bit more:
+We'll also edit our theme's `screen.scss` to style that message a bit more:
 
-```css
-body{
+```scss
+body {
   background: teal;
 }
 
-.welcome-message{
+.welcome-message {
   text-align: center;
   color: white;
 }
@@ -147,7 +145,7 @@ Package.on_use(function (api) {
   api.use(['templating', 'telescope-base', 'telescope-theme-hubble'], ['client']);
 
   api.add_files([
-    'lib/client/stylesheets/screen.css',
+    'lib/client/stylesheets/screen.scss',
     'lib/client/templates/new_posts_list.html',
     ], ['client']);
   
@@ -172,7 +170,7 @@ Package.on_use(function (api) {
   api.use(['telescope-theme-hubble', 'templating'], ['client']);
 
   api.add_files([
-    'lib/client/stylesheets/screen.css',
+    'lib/client/stylesheets/screen.scss',
     'lib/client/templates/new_posts_list.html',
     'lib/client/kepler.js',
     ], ['client']);
