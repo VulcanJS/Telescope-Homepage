@@ -34,10 +34,10 @@
   url: http://news.powerupgames.io/
   description: The latest news from the gaming industry.
   screenshot: gamedevnews.jpg
-- title: CarNews
-  url: http://carnews.motorpaneer.com/
-  description: The freshest source of automotive news.
-  screenshot: carnews.jpg 
+#- title: CarNews
+#  url: http://carnews.motorpaneer.com/
+#  description: The freshest source of automotive news.
+#  screenshot: carnews.jpg 
 - title: Happy Endings
   url: http://happyendings.radialpoint.com/
   description: News for customer service professionals.
@@ -58,18 +58,18 @@
   url: http://madrasa.ca/
   description: News for customer service professionals.
   screenshot: madrasa.jpg 
-- title: Weld
-  url: http://welder-wire.meteor.com/
-  description: A Telescope theme demo.
-  screenshot: weld.jpg
+#- title: Weld
+#  url: http://welder-wire.meteor.com/
+#  description: A Telescope theme demo.
+#  screenshot: weld.jpg
 - title: Data For Good
   url: http://dataforgood.co/
   description: Share data-driven projects for social good.
   screenshot: dataforgood.jpg
-- title: Mean Stack
-  url: http://mean-stack.io/
-  description: The latest and hottest topics on MEAN development.
-  screenshot: meanstack.jpg
+#- title: Mean Stack
+#  url: http://mean-stack.io/
+#  description: The latest and hottest topics on MEAN development.
+#  screenshot: meanstack.jpg
 - title: About Admissions
   url: https://aboutadmissions.admithub.com/
   description: The latest college admission tips.
