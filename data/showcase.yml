@@ -58,10 +58,10 @@
   url: http://madrasa.ca/
   description: News for customer service professionals.
   screenshot: madrasa.jpg 
-#- title: Weld
-#  url: http://welder-wire.meteor.com/
-#  description: A Telescope theme demo.
-#  screenshot: weld.jpg
+- title: Weld
+  url: http://welderwire.meteor.com/
+  description: A Telescope theme demo.
+  screenshot: weld.jpg
 - title: Data For Good
   url: http://dataforgood.co/
   description: Share data-driven projects for social good.
