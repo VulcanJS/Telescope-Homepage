@@ -1,0 +1,60 @@
+---
+title: 'Custom Fields'
+published: true
+author: sacha
+date: 0012/01/01
+blog_name: docs
+section: 2
+---
+
+The basic unit of content in Telescope is a post, but that doesn't mean you're restricted to links and titles. You can actually extend the Post schema with custom fields to contain pretty much any kind of data you want. 
+
+Let's take a look at the `telescope-embedly` package to understand how this works. 
+
+### Adding a Field
+
+The first step to adding a custom field is defining that field's schema. We do this in `lib/embedly.js`:
+
+```js
+var thumbnailProperty = {
+  propertyName: 'thumbnailUrl',
+  propertySchema: {
+    type: String,
+    optional: true,
+    label: 'thumbnail'
+  }
+}
+```
+
+We're defining properties according to [SimpleSchema](https://github.com/aldeed/meteor-simple-schema)'s guidelines. This does a couple things:
+
+1. It tells Telescope to accept data in that field, provided it follows the validation guidelines we defined (`type: String`).
+2. It tells [Autoform](https://github.com/aldeed/meteor-autoform) to add the field to the post submit and edit form when generating them.
+
+We then add that field to the `addToPostSchema` array, whose content will later on be injected into the `Post` schema:
+
+```js
+addToPostSchema.push(thumbnailProperty);
+```
+
+### Custom Inputs
+
+Now we've cheated a bit. If you look at the package's actual code, you'll see this instead:
+
+```js
+var thumbnailProperty = {
+  propertyName: 'thumbnailUrl',
+  propertySchema: {
+    type: String,
+    optional: true,
+    label: 'thumbnail',
+    autoform: {
+      type: 'bootstrap-postthumbnail'
+    }
+  }
+}
+```
+
+Notice the `type: 'bootstrap-postthumbnail'` property? We're actually telling our custom field to use a *custom input type*. In other words, instead of the usual `text`, `email`, or `textarea` (see a full list [here](https://github.com/aldeed/meteor-autoform/tree/master/inputTypes)), we're defining a new `bootstrap-postthumbnail` input type. 
+
+Actually making [custom input types](https://github.com/aldeed/meteor-autoform#defining-custom-input-types) is out of the scope of this tutorial, but hopefully this will help you get started on the road to customizing Telescope!
