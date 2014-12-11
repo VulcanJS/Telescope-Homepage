@@ -65,4 +65,19 @@
 
 .post-content{
   @include cf;
+  .docs-video{
+    @include medium{
+      margin: 0 -80px 30px -80px;
+      padding: 30px;
+      background: #333;
+    }
+    h4{
+      @include light;
+      color: white;
+    }
+    p{
+      color: white;
+      margin: 30px 0 0 0;
+    }
+  }
 }

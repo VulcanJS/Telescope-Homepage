@@ -4,8 +4,7 @@
 - content_for(:itemtype, "Article")
 
 = wrap_layout :layout do
-  %h3.blog
-    %a.blog-link{:href => '/docs/'} Documentation
+  %h1.post-title=current_article.title
   %section.post.inverted#content
     .post-top
       - prev_article = current_article.previous_article
@@ -20,17 +19,8 @@
           =next_article.title
           »
 
-    .docs
-      %ul.docs-list
-        - blog('docs').articles.group_by{|item| item.metadata[:page]["section"]}.sort_by{|t, a| t}.each do |section|
-          .docs-section
-            %h4.section-title=@sections[section[0]-1]
-            - section[1].reverse_each do |post|
-              - if post.url == current_page.url
-                - li_class = "active"
-              %li{class: li_class}
-                %a.docs-list-link{:href => post.url}
-                  =post.title
+    =#partial('partials/docs_toc')
+
     .post-content
       .post-thumbnail
         %a{:href => current_article.url}
@@ -39,7 +29,6 @@
           - else
             %span.thumb.default-thumb
 
-      %h1.post-title=current_article.data.title
       =find_and_preserve do
         =yield
 
@@ -56,8 +45,6 @@
         %a.next{:href => "#{next_article.url}", :title => "next Post: #{next_article.title}"}
           =next_article.title
           »
-
-  =partial('partials/book')
 
   %section.inverted
     .comments
