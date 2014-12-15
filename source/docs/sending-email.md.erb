@@ -106,7 +106,16 @@ In each case, replace the `:id` parameter with the object's actual `_id`. So for
 
 Telescope also comes with a built-in email newsletter package that sends a daily or weekly newsletter through [MailChimp](http://mailchimp.com).  
 
-Once you've configured your MailChimp API key and list ID in the Settings page, you can test that everything is working properly by:
+<div class="video docs-video">
+  <h4>Setting Up Your Newsletter</h4>
+  <iframe width="420" height="278" src="//www.youtube.com/embed/_x8h3k5ffdw" frameborder="0" allowfullscreen></iframe>
+</div>
+
+Once you've configured your [MailChimp API key](http://kb.mailchimp.com/accounts/management/about-api-keys#Find-or-Generate-Your-API-Key) and [list ID](http://kb.mailchimp.com/lists/managing-subscribers/find-your-list-id) in the Settings page, you can test that everything is working properly by:
 
 - Going to [/email/campaign](http://localhost:3000/email/campaign) to preview the newsletter.
 - Running `Meteor.call('testCampaign')` from the browser console to schedule a test campaign. 
+
+Note that calling `testCampaign` will not mark your posts as sent inside Telescope, so the regular newsletter will still go out. 
+
+If your campaign fails to be scheduled, be sure to check your server logs to see if any error occurred.
