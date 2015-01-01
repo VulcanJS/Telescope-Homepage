@@ -95,6 +95,11 @@ h3.blog{
 		height: 2px;
 		background: $light-grey;
 	}
+  >p{
+    &:first-of-type{
+      font-size: 130%;
+    }
+  }
 	p, pre, ul, ol, hr, .video{
 		margin: 0 0 $spacing 0;
 	}

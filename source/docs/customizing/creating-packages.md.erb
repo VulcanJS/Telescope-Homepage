@@ -2,9 +2,10 @@
 title: 'Creating Packages'
 published: true
 author: sacha
-date: 0001/01/01
+date: 0002/01/01
 blog_name: docs
 section: 2
+blurb: 'Learn to use packages to safely extend and customize Telescope.'
 ---
 
 Telescope relies a lot on Meteor Packages in order to keep a lightweight yet easily extensible core. 
@@ -14,6 +15,14 @@ So apart from central functionality like posts and comments, most Telescope feat
 Telescope customization also works with packages. Typically, you'd create one or more packages that will hold all your custom code. This way, you'll be able to safely update the app's core codebase without worrying about overwriting your changes. 
 
 But when it comes to creating and using Meteor packages, there's a few things to be aware of.
+
+<% note do %>
+
+### The Blank Package
+
+While we recommend reading the following section, you can also save some time by basing your own packages off the [`telescope-blank` package](/docs/packages/blank), which includes a skeleton of a basic Telescope package. 
+
+<% end %>
 
 ### Two Types of Packages
 

@@ -5,6 +5,7 @@ author: sacha
 date: 0016/01/01
 blog_name: docs
 section: 3
+blurb: "Configuring and sending email from your app."
 ---
 
 Telescope features a simple yet powerful email template system that automatically themes all outgoing emails with your app's colors and branding. 
@@ -113,7 +114,7 @@ Telescope also comes with a built-in email newsletter package that sends a daily
 
 Once you've configured your [MailChimp API key](http://kb.mailchimp.com/accounts/management/about-api-keys#Find-or-Generate-Your-API-Key) and [list ID](http://kb.mailchimp.com/lists/managing-subscribers/find-your-list-id) in the Settings page, you can test that everything is working properly by:
 
-- Going to [/email/campaign](http://localhost:3000/email/campaign) to preview the newsletter.
+- Going to [/email/campaign](http://localhost:3000/email/campaign) to preview the newsletter and find out when it's scheduled to go out. 
 - Running `Meteor.call('testCampaign')` from the browser console to schedule a test campaign. 
 
 Note that calling `testCampaign` will not mark your posts as sent inside Telescope, so the regular newsletter will still go out. 
