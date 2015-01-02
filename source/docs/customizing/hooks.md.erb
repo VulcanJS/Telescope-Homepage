@@ -9,7 +9,49 @@ blurb: "A complete list of hooks you can use to extend Telescope."
 order: 7
 ---
 
-Telescope features a comprehensive hooks system that makes it easy to extend your app. Here's a full list.
+Telescope features a comprehensive hooks system that makes it easy to extend your app.
+
+Note that as usual when modifying Telescope, it's recommended to use hooks from within your own custom package. 
+
+### Adding Elements
+
+You can add elements to a hook using the `Array.push()` function. For example:
+
+```js
+viewNav = viewNav.push({
+  route: 'posts_custom',
+  label: 'myCustomView'
+});
+```
+
+### Removing Elements
+
+You can remove elements from a hook using Underscore's [`filter()`](http://underscorejs.org/#filter) function, which returns an array of all the values that pass a truth test. 
+
+For example, to remove the `top` view from the `viewNav` array, you could return the array of all the menu items whose route is *not* `posts_top`:
+
+```js
+viewNav = _.filter(viewNav, function (item) {
+    item.route !== "posts_top";
+});
+```
+
+### Overwriting Arrays
+
+Finally, you can also simply redefine your own array:
+
+```js
+viewNav = [
+  {
+    route: 'posts_custom1',
+    label: 'customView1'
+  },
+  {
+    route: 'posts_custom2',
+    label: 'customView2'
+  }
+];
+```
 
 ## Schemas
 
