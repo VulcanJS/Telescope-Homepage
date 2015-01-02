@@ -9,3 +9,19 @@ blurb: "Parse RSS feeds to import posts."
 ---
 
 The `telescope-post-by-feed` lets you add RSS feeds, which are then parsed and used to automatically import posts. 
+
+### Set Up
+
+To activate it, you'll need to first enable feed parsing in the Settings screen. 
+
+Then, go to the “Feeds” page in the admin menu, and enter any RSS feed. Every 30 minutes, Telescope will parse the feed and add any new link it finds to the site. 
+
+Note that new posts are added under the first admin account you created. 
+
+### Testing
+
+You can test feed parsing without having to wait 30 minutes by calling the `fetchFeeds` method from the console:
+
+```js
+Meteor.call('fetchFeeds');
+```
