@@ -2,42 +2,54 @@
 title: 'Support & Getting Help'
 published: true
 author: sacha
-date: 0006/01/01
+date: 0001/01/06
 blog_name: docs
 section: 1
 blurb: "Where to get help."
+order: 6
 ---
 
-As Telescope gets more popular, the support burden is also increasing. 
+Telescope is still young, so you might run into bugs, or even just have a question that's not covered by the documentation. If so, you've come to the right place!
 
-It can be hard to deal with everybody's requests, so to try and make the problem more manageable I thought I'd put a few guidelines in place. 
+But in order to make support more manageable, here are a few guidelines.
 
-### General Questions
+### Non-Telescope Issues
 
-First of all, before asking for help please ask yourself if your problem is really **specific to Telescope**. 
-
-Things that are not Telescope-specific include:
+The first thing to consider is that your issue might not be related to Telescope specifically. For example, things that are not Telescope-specific include:
 
 - Questions about [Git](http://git-scm.com/) and [GitHub](http://github.com/). 
-- Using Meteor or [Meteorite](https://github.com/oortcloud/meteorite/). 
+- Using Meteor. 
 - Running Meteor apps locally. 
 - Deploying Meteor apps. 
 
 A good way to figure out if your problem is specific to Telescope or not is to try running/deploying another Meteor app (such as [Microscope](https://github.com/DiscoverMeteor/Microscope)) and see if you encounter the same issue. 
 
-So if your issue is **not directly related to Telescope** I suggest:
+So if your issue is *not directly related to Telescope* I suggest:
 
-- Googling it!
-- Posting on [Stack Overflow](http://stackoverflow.com) using the `meteor` tag. 
+- Posting on [Stack Overflow](http://stackoverflow.com) using the `meteor` tag.
 - Asking on [Meteor-Talk](https://groups.google.com/forum/#!forum/meteor-talk).
 
-### Telescope Questions
+If this is an issue that applies to any Meteor app and not just Telescope, I would recommend [posting on Stack Overflow](http://stackoverflow.com) using the `meteor` tag instead of here.
 
-On the other hand, if the issue *does* come from Telescope, you should either:
+### Telescope Issues
 
-- File a [GitHub issue](https://github.com/TelescopeJS/Telescope) for specific bugs or problems.
-- Post on [Meta](http://meta.telesc.pe) for more general questions. 
+If you've ran into a bug with Telescope itself (as opposed to having a general question, or trying to customize Telescope), please [leave an issue on GitHub](https://github.com/TelescopeJS/Telescope/issues). 
 
-That doesn't mean you shouldn't [email me](mailto:hello@telesc.pe). After all, I'm still always happy to hear from people using Telescope!
+When you post, make sure you include:
 
-Just don't take it personally if I redirect you to this page to get support.
+- A clear description of your issue. Please make an effort to make yourself understandable!
+- Any relevant error logs, both on the **client** (in the browser console) and the **server** (in the terminal). Use triple back-ticks to format them properly in your markdown post, or link to a [GitHub gist](http://gist.github.com) if they're too long. 
+- Any relevant screenshots that can help explain what you're trying to achieve.
+- **Important** A link to your code on GitHub or BitBucket. Please include that link with every new issue even if you've posted it previously, so I don't have to look for it.
+
+Above all, make sure you write clearly, use proper syntax and grammar, and give enough details for someone else to be able to actually help you.
+
+### Customization Questions
+
+If you're trying to customize Telescope and are running into trouble, please [post on Stack Overflow under the `telescope` tag](http://stackoverflow.com/questions/tagged/telescope).
+
+Just like with issues, the same guidelines apply: provide a clear description, any relevant error logs, and a link to your codebase if you can. 
+
+### Other Discussions
+
+Finally, for things that don't fit in any of the above categories, feel free to post on [Meta](http://meta. telesc.pe).

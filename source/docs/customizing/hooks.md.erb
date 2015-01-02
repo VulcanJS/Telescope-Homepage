@@ -1,17 +1,19 @@
 ---
-title: 'Telescope Hooks'
+title: 'Hooks'
 published: false
 author: sacha
-date: 00010/01/01
+date: 0002/01/07
 blog_name: docs
-section: 9
+section: 2
+blurb: "A complete list of hooks you can use to extend Telescope."
+order: 7
 ---
 
-Apart from post modules and themes, here are a few more patterns and objects available to easily extend Telescope through packages.
+Telescope features a comprehensive hooks system that makes it easy to extend your app. Here's a full list.
 
 ## Schemas
 
-### addToPostSchema
+#### addToPostSchema
 
 You can add properties to the `Posts` collection's schema by adding them to the `addToPostSchema` array:
 
@@ -26,26 +28,28 @@ addToPostSchema.push(
   }
 );
 ```
+#### addToCommentSchema
+
+Same thing, for the comments collection's schema.
 
 ## Navigation Menus
 
-### primaryNav
+#### primaryNav
 
 You can add items to the primary navigation menu by adding items to the `primaryNav` array:
 
 ```js
-primaryNav.push('searchNav');
+primaryNav.push({
+  template: 'searchNav',
+  order: 50
+});
 ```
 
-### secondaryNav
+#### secondaryNav
 
-You can optionally also add items to a secondary navigation:
+You can optionally also add items to a secondary navigation.
 
-```js
-secondaryNav.push('searchNav');
-```
-
-### viewNav
+#### viewNav
 
 You can add items to the views menu by adding them to the `viewNav` array:
 
@@ -53,29 +57,32 @@ You can add items to the views menu by adding them to the `viewNav` array:
 viewNav = viewNav.concat([
   {
     route: 'posts_top',
-    label: 'Top'
+    label: 'top',
+    description: 'top_description' // optional
   },
   {
     route: 'posts_new',
-    label: 'New'
+    label: 'new',
+    description: 'new_description' // optional
   }
 ]);
 ```
 
-### adminNav
+#### adminNav
 
 You can add items to the admin menu by adding them to the `adminNav` array:
 
 ```js
 adminNav.push({
   route: 'categories',
-  label: 'Categories'
+  label: 'categories',
+  description: 'categories_description' //optional
 });
 ```
 
 ## Views
 
-### viewParameters
+#### viewParameters
 
 You can add post list views (like `new`, `pending`, `search`, etc.) by adding objects to the `viewParameters` array.
 
@@ -119,35 +126,37 @@ viewParameters.push({
 
 ## Modules
 
-### heroModules
+#### heroModules
 
 You can inject “hero” items (items displayed above the main post list) by adding template names to the `heroModules` array:
 
 ```js
 heroModules.push({
-  template: 'newsletterBanner'
+  template: 'newsletterBanner',
+  order: 20
 });
 ```
 
-### footerModules
+#### footerModules
 
 Similarly, you can also add templates to the `footerModules` array. 
 
 ```js
 footerModules.push({
-  template: 'customFooter'
+  template: 'customFooter',
+  order: 20
 });
 ```
 
-### postModules
+#### postModules
 
 See [post modules](/docs/post-modules/) section.
 
-### postHeading
+#### postHeading
 
 The main post content module is itself made up of two parts. `postHeading` contains the heading, domain, and categories.
 
-### postMeta
+#### postMeta
 
 On the other hand, `postMeta` contains secondary information such as the author, date, and number of comments. 
 
@@ -201,7 +210,7 @@ themeSettings.useDropdowns = true;
 
 ## Subscriptions
 
-### preloadSubscriptions
+#### preloadSubscriptions
 
 Subscriptions can be added to the `preloadSubscriptions` array to preload them before loading the rest of the app. 
 You can add subscriptions to be preloaded by the router by adding them to the `preloadSubscriptions` array:

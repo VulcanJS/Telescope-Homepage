@@ -1,0 +1,10 @@
+- name: 'Getting Started'
+  description: 'The basics of installing and using Telescope.'
+- name: 'Customizing Telescope'
+  description: 'Adapting Telescope to your needs.'
+- name: 'Telescope Core'
+  description: 'An overview of the basic building blocks of Telescope.'
+- name: 'Telescope Packages'
+  description: "A look at Telescope's extra packages."
+- name: 'Tutorials'
+  description: "In-depth tutorials to take your Telescope mastery to the next level."

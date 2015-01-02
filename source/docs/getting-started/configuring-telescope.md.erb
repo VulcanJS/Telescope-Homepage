@@ -2,24 +2,18 @@
 title: 'Configuring Telescope'
 published: true
 author: sacha
-date: 0002/01/01
+date: 0001/01/02
 blog_name: docs
 section: 1
 blurb: "Configuring Telescope's settings."
+order: 2
 ---
-
 
 ### The Admin Account
 
-When you first access your new Telescope install, you'll be confronted with a pretty bare page. The first step will be creating your account. 
-
-(Note: some of the screenshots might be visually out of date, but the basic ideas should remain true.)
-
-<%= figure "blog/new-telescope.png", "A fresh Telescope instance.", "small left" %>
+When you first access your new Telescope install, you'll be confronted with a few getting started posts. After reading them, the first step will be creating your account. 
 
 The first account you create will automatically be assigned admin rights, which will let you view the admin menu and access Telescope's settings panel. 
-
-<%= figure "blog/admin-menu.png", "The Admin menu." %>
 
 ### Customizing Telescope
 
@@ -28,11 +22,10 @@ Once your account has been created and you've been logged in, you should see a n
 <div class="video docs-video">
   <h4>An Overview of Telescope's Settings</h4>
   <iframe width="420" height="278" src="//www.youtube.com/embed/KtFoXSTQ7bU" frameborder="0" allowfullscreen></iframe>
+  <p>Note: Settings screen might have changed slightly since screencast recording.</p>
 </div>
 
 The first thing you'll want to set is probably your site's title. Alternatively, you can also specify an image to be used as logo or tweak the app's color scheme. Don't forget to save by clicking the "Submit" button at the bottom of the page. 
-
-<%= figure "blog/settings.png", "The Settings panel." %>
 
 I also strongly recommend signing up for an [Embedly](http://embed.ly) account and entering your API key in Telescope. This will give you visual thumbnail previews for all your links, which is an easy way to make your site seem a little less bare. 
 
@@ -40,26 +33,10 @@ I also strongly recommend signing up for an [Embedly](http://embed.ly) account a
 
 Another useful panel is the Categories page, also accessible via the Admin menu. 
 
-<%= figure "blog/categories.png", "Creating categories." %>
-
 From here, you can create predefined categories (such as "announcements", "discussions", "resources", etc.) that you will then be able to assign to each post. 
 
 ### Your First Post
 
 With the set up finished, you're now ready to create your first post! Just click "post" and have fun!
 
-<%= figure "blog/first-post.png", "Your first post." %>
-
-This should be enough to get you started. Have fun with your new community!
-
-### Local Variables
-
-Meteor uses local environment variables for a few things, such as configuring email. While some platforms (like Modulus) make it easy to configure them from their web dashboard, on a local dev environment the best way is to set up an alias for the `mrt` command. 
-
-For example, to configure Meteor to use Mailgun for email, in your `.bash_profile` file just add:
-
-`alias m='MAIL_URL=smtp://username:password@smtp.mailgun.org:587/ mrt'`
-
-This can also be useful for starting Meteor on a specific port:
-
-`alias m4='MAIL_URL=smtp://username:password@smtp.mailgun.org:587/ mrt --port 4000'`
+This should be enough to get you started. Have fun with your new site!

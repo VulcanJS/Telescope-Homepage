@@ -2,10 +2,11 @@
 title: 'Updating Telescope'
 published: true
 author: sacha
-date: 0004/01/01
+date: 0001/01/04
 blog_name: docs
 section: 1
 blurb: "Keeping your app up to date."
+order: 4
 ---
 
 Keeping your version of Telescope up to date is important to benefit from the latest bug fixes and improvements. 
@@ -34,12 +35,24 @@ You'll then be able to specify you want to pull from the `master` branch of the 
 git pull telescope master
 ```
 
-### Git Conflicts
+### Git Conflicts And The `.packages` File
 
-If you've made use of third-party packages or your own local packages to customize Telescope, you will probably get Git conflicts in `.meteor/packages`, `smart.json` and `smart.lock`. 
+If you've made use of third-party packages or your own local packages to customize Telescope, you will probably get Git conflicts in `.meteor/packages`. 
 
-Double-check the list of packages in `.meteor/packages` and `smart.json` first to solve the conflict. `smart.lock` will get automatically generated from `smart.json` so its contents are less important. 
+That file contains a list of all packages used in your app. In fact, behind the scenes all `meteor add some:package` and `meteor remove some:package` do is add and remove entries in that file. 
 
-### Updating Packages
+Suppose that on Monday, the master branch gets updated with a new `telescope-official-package` package. But on *Tuesday*, you add your *own* `my-custom-package` package to the list.
 
-Once you're happy with your list of packages, run `mrt update packageName` to update a specific package, or `mrt update` to update all of them.
+Now when you go to pull in the latest version on Wednesday, Git doesn't know whether to use the master branch's `.packages`, or your own, more recent (but lacking the `telescope-official-package` package) version. 
+
+In desperation, Git gives up and throws in a bunch of weird `<<======= HEAD` symbols in your code. 
+
+What you have to do is go through the problematic file, remove the weird Git conflicts markings, and figure out for yourself the appropriate list of packages (in our example, that would be having *both* `telescope-official-package` and `my-custom-package` packages). 
+
+### Name Changes
+
+Let's imagine that in the next version of Telescope, the `telescope-official-package` gets renamed to `telescope-super-official-package`. 
+
+When Git sees the new `telescope-super-official-package` package, it will clone it to your local repo. But it will *not* delete the older `telescope-official-package` package. 
+
+For that reason, whenever you notice a package or directory has been renamed, make sure to manually remove the older version. 

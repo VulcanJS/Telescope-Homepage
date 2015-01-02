@@ -50,7 +50,7 @@ h3.blog{
 	// background: $light-grey;
 	border-bottom: 1px $light-grey solid;
 	padding: 5px 15px;
-	font-size: 14px;
+	font-size: 18px;
 	.meta-date, .meta-blog{
 		display: block;
 		height: 28px;
@@ -143,15 +143,13 @@ h3.blog{
 	h3{
 		text-shadow:none;
 		color: $dark-text;
-		border-bottom: 1px solid $light-grey;
-		padding-bottom: 5px;
 		@include bold;
 		text-align: left;
 		@include small{
 			font-size: 24px;
 		}
 		@include medium{
-			font-size: 36px;
+			font-size: 30px;
 		}
 	}
 	h4{

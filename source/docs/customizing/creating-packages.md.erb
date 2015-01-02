@@ -2,27 +2,20 @@
 title: 'Creating Packages'
 published: true
 author: sacha
-date: 0002/01/01
+date: 0002/01/02
 blog_name: docs
 section: 2
 blurb: 'Learn to use packages to safely extend and customize Telescope.'
+order: 2
 ---
 
-Telescope relies a lot on Meteor Packages in order to keep a lightweight yet easily extensible core. 
+Telescope relies on *Meteor Packages* in order to keep a lightweight yet easily extensible core. 
 
-So apart from central functionality like posts and comments, most Telescope features have [their own package](/docs/packages/) that can be freely added or removed. 
+So apart from central functionality like posts and comments, most Telescope features have their own package that can be freely added or removed. 
 
 Telescope customization also works with packages. Typically, you'd create one or more packages that will hold all your custom code. This way, you'll be able to safely update the app's core codebase without worrying about overwriting your changes. 
 
 But when it comes to creating and using Meteor packages, there's a few things to be aware of.
-
-<% note do %>
-
-### The Blank Package
-
-While we recommend reading the following section, you can also save some time by basing your own packages off the [`telescope-blank` package](/docs/packages/blank), which includes a skeleton of a basic Telescope package. 
-
-<% end %>
 
 ### Two Types of Packages
 
@@ -31,6 +24,14 @@ There are two main types of packages: “remote” packages, which are hosted on
 Both types of package work the same way, with one exception: local packages can depend on both local and remote packages, while remote packages can only depend on other remote packages (at least, as of September 2014). 
 
 In any case, we'll focus on local packages throughout this documentation. You can use them and modify them straight away without having to publish them to the package server, so unless you want to make your code public they are generally easier to work with.
+
+<% note do %>
+
+### The Blank Package
+
+While this section will teach you how to create a package from scratch, we recommend basing your own packages off the [`telescope-blank`](/docs/packages/blank) package, which provides the skeleton of a basic Telescope package. 
+
+<% end %>
 
 ### Creating a Package
 
@@ -46,7 +47,7 @@ The second block, `Package.onUse`, is where you'll:
 - Specify which files your package makes use of, using `api.addFiles`.
 - Specify which object to export *out* of your package and make available to the rest of your app, using `api.export`. 
 
-Here's a sample manifest, taken from the [Static Pages](/docs/static-pages) section of this documentation:
+Here's a sample manifest, taken from the [Static Pages](/docs/customizing/static-pages) section of this documentation:
 
 ```js
 Package.describe({
@@ -86,7 +87,7 @@ All the `meteor add` command does is add your package's name to the `.meteor/pac
 
 ### Exporting
 
-Just like Las Vegas, Meteor packages have their own scope. In other words, what happens in a package stays in a package. So any variable or function you declare inside one won't be available to any code located outside of that package's directory.
+Just like in Las Vegas, what happens in a package stays in a package. So any variable or function you declare *inside* one won't be available to any code located *outside* of that package's directory.
 
 Except, that is, if you **export** that object using `api.export`:
 
@@ -97,4 +98,12 @@ api.export([
 ]);
 ```
 
-When customizing Telescope, you'll frequently run into cases where you're not creating new objects, but instead *modifying* existing objects created by other packages (such as `telescope-base`). It's recommended to “re-export” these objects from your own package as well just to be on the safe side. 
+<% note do %>
+
+### Re-exporting
+
+When customizing Telescope, you'll frequently run into cases where you're not creating new objects, but instead *modifying* existing objects created by other packages (such as `telescope-base`). 
+
+Depending on the type of object you're extending or overwriting, it's sometimes necessary “re-export” these objects from your own package as well.
+
+<% end %>

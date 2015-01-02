@@ -21,16 +21,24 @@
 .docs-toc{
   margin: 0;
   padding: 0;
-  @include cf;
+  // @include cf;
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
   li{
-    @include medium{
-      @include span-columns(6);
-      @include nth-omega(2n, of-type);
+    width: 45%;
+    margin-right: 10%;
+    // @include medium{
+    //   @include span-columns(6);
+    //   @include nth-omega(2n, of-type);
+    // }
+    &:nth-child(2n){
+      margin-right: 0;
     }
   }
 }
 
-.docs-list-description{
+.docs-list-blurb{
   font-size: 16px;
 }
 
