@@ -1,0 +1,105 @@
+---
+title: 'Custom Templates'
+published: true
+author: sacha
+date: 0002/01/04
+blog_name: docs
+section: 2
+blurb: "Overriding and modifying Telescope templates."
+order: 4
+---
+
+Changing fonts and colors is all well and good, but what if you want your modifications to be more than skin-deep?
+
+For example, let's say that we want to add a welcome message above the list of posts. 
+
+Let's go back to our package and create a new `templates` directory inside `lib/client`, and then a `new_posts_list.html` file inside `templates`. 
+
+We'll base our `newPostsList` template off Telescope's own `postsList` template. In fact it'll be almost identical, save for that welcome message:
+
+```html
+<template name="newPostsList">
+  <h2 class="welcome-message">Welcome to Telescope!</h2>
+  {{> UI.dynamic template=postsListIncoming data=incoming}}
+  <div class="posts-wrapper grid grid-module">
+    <div class="posts list">
+      {{#each posts}}
+        {{> UI.dynamic template=before_post_item}}
+        {{> UI.dynamic template=post_item}}
+        {{> UI.dynamic template=after_post_item}}
+      {{/each}}
+    </div>
+  </div>
+  {{> UI.dynamic template=postsLoadMore}}
+</template>
+```
+
+We'll also edit our theme's `screen.scss` to style that message a bit more:
+
+```scss
+body {
+  background: teal;
+}
+
+.welcome-message {
+  text-align: center;
+  color: white;
+}
+```
+
+We're not quite done yet. First of all, just like before we need to tell Meteor to include that template file in our package. 
+
+But additionally, since we're now using Meteor's template functionality, we'll also need to add it as a dependency. We'll also add `telescope-base` as well, since it's needed to enable template customization:
+
+```js
+Package.describe({summary: "Telescope Kepler theme"});
+
+Package.on_use(function (api) {
+
+  api.use(['templating', 'telescope-base', 'telescope-theme-hubble'], ['client']);
+
+  api.add_files([
+    'lib/client/stylesheets/screen.scss',
+    'lib/client/templates/new_posts_list.html',
+    ], ['client']);
+  
+});
+```
+
+There's just one more thing: as things stand now, Telescope is still using its default `posts_list` template. We need to tell it about the brand new replacement template we just built. 
+
+Let's create a new `kepler.js` file inside `lib/client`, and use it to let Telescope know about our new template:
+
+```js
+templates["posts_list"] = "newPostsList";
+```
+
+Finally, let's include `kepler.js` in our package's files:
+
+```js
+Package.describe({summary: "Telescope Kepler theme"});
+
+Package.on_use(function (api) {
+
+  api.use(['telescope-theme-hubble', 'templating'], ['client']);
+
+  api.add_files([
+    'lib/client/stylesheets/screen.scss',
+    'lib/client/templates/new_posts_list.html',
+    'lib/client/kepler.js',
+    ], ['client']);
+  
+});
+```
+
+There you go! Our new welcome message in all its white-on-teal glory.
+
+<%= figure "blog/telescope-welcome.png", "Can't get more welcoming than that!", "full" %>
+
+### Hooks & Templates
+
+Note that you might not always need to overwrite a template this way. Sometimes, it will be smarter to [use a hook](/docs/customizing/hooks) to inject a *new* template altogether. 
+
+In this particular case, we could've also kept the `post_list` template as it is, and inject our message as a new **hero module**. 
+
+You can learn more about this approach in the [hooks](/docs/customizing/hooks/) section.

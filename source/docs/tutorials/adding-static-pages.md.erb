@@ -2,11 +2,11 @@
 title: 'Static Pages'
 published: true
 author: sacha
-date: 0002/01/06
+date: 0003/01/02
 blog_name: docs
-section: 2
+section: 3
 blurb: 'Add static pages to your site.'
-order: 6
+order: 2
 ---
 
 Telescope has a lot of fancy dynamic reactive real-time paradigm-shifting features, but sometimes all you really need is a bunch of text. 
@@ -97,16 +97,19 @@ Create a new `about_link.html` file inside `/packages/telescope-static-pages/lib
 
 Now I should warn you that the next part is a fairly complex operation involving some pretty elaborate code. A PhD in Computer Science is strongly recommended here, and even if you have one don't be surprised if there are still some parts that you can't seem to grasp. 
 
-Are you sure you're ready? If so go back to `about.js` and add this line:
+Just kidding! It's actually fairly simple. Go back to `about.js` and add this line:
 
 ```js
-primaryNav.push('aboutLink');
+primaryNav.push({
+  template: 'aboutLink',
+  order: 90
+});
 ```
 
-Done!
+The `order` parameter will define where in the menu your new template is placed. With `90`, our menu item will get added just before the search field, which is `100`. 
 
 ### Going Further
 
 We've added HTML and JavaScript files, but you're not limited to those. Just like in a theme, you can also add stylesheets, images, or even SVG or fonts to your static page. 
 
-But we'll leave that as an exercise to the reader (translation: it's getting late and I'm too lazy to finish this section).
+But we'll leave that as an exercise to the reader (translation: it's getting late over here, and I'll finish this section another time!).

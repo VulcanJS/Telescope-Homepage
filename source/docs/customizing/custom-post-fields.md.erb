@@ -2,20 +2,20 @@
 title: 'Custom Post Fields'
 published: true
 author: sacha
-date: 0002/01/04
+date: 0002/01/05
 blog_name: docs
 section: 2
 blurb: "Add extra fields and features to your app's posts."
-order: 4
+order: 5
 ---
 
 The basic unit of content in Telescope is a post, but that doesn't mean you're restricted to links and titles. You can actually extend the Post schema with custom fields to contain pretty much any kind of data you want. 
 
-Let's take a look at the `telescope-embedly` package to understand how this works. 
+And since the forms for submitting and editing posts are automatically generated from the Post schema (thanks to the [Autoform](https://github.com/aldeed/meteor-autoform) package), your new custom field will automatically appear in both forms without any extra work on your part. 
 
 ### Adding a Field
 
-The first step to adding a custom field is defining that field's schema. We do this in `lib/embedly.js`:
+The first step to adding a custom field (in this case, the URL for a thumbnail) is defining that field's schema:
 
 ```js
 var thumbnailProperty = {
@@ -39,9 +39,27 @@ We then add that field to the `addToPostSchema` array, whose content will later 
 addToPostSchema.push(thumbnailProperty);
 ```
 
+Other properties you can use include `label`, `optional`, `autoform.editable`, `autoform.omit`, and `autoform.type`:
+
+```js
+var customProperty = {
+  propertyName: 'customProperty',
+  propertySchema: {
+    type: String,                           // property type
+    label: 'customLabel',                   // key string used for internationalization
+    optional: true,                         // make this property optional
+    autoform: {
+      editable: true,                       // make this property editable by non-admins
+      omit: false,                          // omit property from form altogether
+      type: "bootstrap-datetimepicker"      // assign a custom input type
+    }
+  }
+}
+```
+
 ### Custom Inputs
 
-Now we've cheated a bit. If you look at the package's actual code, you'll see this instead:
+If you look at the [Embedly package](/docs/packages/embedly/)'s code, you'll see something a little different from our previous example:
 
 ```js
 var thumbnailProperty = {
@@ -59,4 +77,4 @@ var thumbnailProperty = {
 
 Notice the `type: 'bootstrap-postthumbnail'` property? We're actually telling our custom field to use a *custom input type*. In other words, instead of the usual `text`, `email`, or `textarea` (see a full list [here](https://github.com/aldeed/meteor-autoform/tree/master/inputTypes)), we're defining a new `bootstrap-postthumbnail` input type. 
 
-Actually making [custom input types](https://github.com/aldeed/meteor-autoform#defining-custom-input-types) is out of the scope of this tutorial, but hopefully this will help you get started on the road to customizing Telescope!
+Actually making [custom input types](https://github.com/aldeed/meteor-autoform#defining-custom-input-types) is out of the scope of this tutorial, but you can take a look at the Embedly package's code to get an idea of what's involved. 

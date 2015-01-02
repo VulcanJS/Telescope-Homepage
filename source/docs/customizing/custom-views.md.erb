@@ -1,12 +1,12 @@
 ---
-title: 'Adding Views'
+title: 'Custom Views'
 published: true
 author: sacha
-date: 0002/01/05
+date: 0002/01/06
 blog_name: docs
 section: 2
 blurb: 'Add your own custom sorted view for displaying posts.'
-order: 5
+order: 6
 ---
 
 In Telescope, a **view** is a specific way of sorting and filtering posts. For example, the **top**, **best**, and **new** pages all use different views. 
@@ -21,6 +21,48 @@ The term “view” can be a bit confusing since it can also apply to templates.
 
 <% end %>
 
+### View Parameters
+
+You can add post list views (like `new`, `pending`, `search`, etc.) by adding functions to the `viewParameters` objects.
+
+The parameter function takes a query terms (`terms`) object and return a `parameters` object which will be used to find the desired posts. 
+
+This function will then be called from `getPostsParameters()` in `/lib/parameters.js`, which itself is used in `Posts.find()` calls on both the server and client. 
+
+Note that you don't always need to make use of the `terms` argument in your function. For example, here's a simple example for the `best` view:
+
+```js
+viewParameters.best = function (terms) {
+  return deepExtend(true, baseParameters, {
+    options: {sort: {sticky: -1, baseScore: -1}}
+  });
+}
+```
+
+But sometimes, you do want to do something with the `terms` argument. Here's a more complex example for the `search` view, from the [telescope-search](/packages/search) package:
+
+```js
+viewParameters.push({
+  search: function (terms) {
+    // if query is empty, just return parameters 
+    // that will result in an empty collection
+    if(typeof terms.query == 'undefined' || !!terms.query)
+      return {find:{_id: 0}}
+
+    var parameters = deepExtend(true, baseParameters, {
+      find: {
+        $or: [
+          {title: {$regex: terms.query, $options: 'i'}},
+          {url: {$regex: terms.query, $options: 'i'}},
+          {body: {$regex: terms.query, $options: 'i'}}
+        ]
+      }
+    });
+    return parameters;
+  }
+});
+```
+
 ### A Practical Use Case
 
 Here's a [user request](https://github.com/TelescopeJS/Telescope/issues/334) for a new Telescope feature:
@@ -30,7 +72,6 @@ Here's a [user request](https://github.com/TelescopeJS/Telescope/issues/334) for
 That's a great idea, and a perfect opportunity to showcase the power of custom views. 
 
 We'll create a new view that orders posts by *date of most recent comment*. Telescope happens to store that date inside each `Post` object, which means we won't have to worry about database joins (which MongoDB doesn't do anyway!).
-
 
 ### Get the Code
 

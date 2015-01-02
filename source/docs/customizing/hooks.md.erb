@@ -18,15 +18,19 @@ Telescope features a comprehensive hooks system that makes it easy to extend you
 You can add properties to the `Posts` collection's schema by adding them to the `addToPostSchema` array:
 
 ```js
-addToPostSchema.push(
-  {
-    propertyName: 'categories',
-    propertySchema: {
-      type: [CategorySchema],
-      optional: true
+var customProperty = {
+  propertyName: 'customProperty',
+  propertySchema: {
+    type: String,                           // property type
+    label: 'customLabel',                   // key string used for internationalization
+    optional: true,                         // make this property optional
+    autoform: {
+      editable: true,                       // make this property editable by users
+      type: "bootstrap-datetimepicker"      // assign a custom input type
     }
   }
-);
+}
+addToPostSchema.push(customProperty);
 ```
 #### addToCommentSchema
 
@@ -80,51 +84,7 @@ adminNav.push({
 });
 ```
 
-## Views
-
-#### viewParameters
-
-You can add post list views (like `new`, `pending`, `search`, etc.) by adding objects to the `viewParameters` array.
-
-The parameter function should take a query terms (`terms`) object and a base parameters (`baseParameters`) object (if you want to extend common parameters), and return a `parameters` object which will be used to find the desired posts. 
-
-This function will then be called in `lib/parameters.js`.
-
-Note that you don't need to use `terms` and `baseParameters` in your function. Here's a simple example for the `best` view:
-
-```js
-viewParameters.best = function (terms, baseParameters) {
-  return deepExtend(true, baseParameters, {
-    options: {sort: {sticky: -1, baseScore: -1}}
-  });
-}
-```
-
-And here's a more complex example for the `search` view:
-
-```js
-viewParameters.push({
-  search: function (terms, baseParameters) {
-    // if query is empty, just return parameters 
-    // that will result in an empty collection
-    if(typeof terms.query == 'undefined' || !!terms.query)
-      return {find:{_id: 0}}
-
-    var parameters = deepExtend(true, baseParameters, {
-      find: {
-        $or: [
-          {title: {$regex: terms.query, $options: 'i'}},
-          {url: {$regex: terms.query, $options: 'i'}},
-          {body: {$regex: terms.query, $options: 'i'}}
-        ]
-      }
-    });
-    return parameters;
-  }
-});
-```
-
-## Modules
+## Zones
 
 #### heroModules
 
@@ -148,13 +108,15 @@ footerModules.push({
 });
 ```
 
+## Posts 
+
 #### postModules
 
-See [post modules](/docs/post-modules/) section.
+The various components of a single post item. By default it includes the `postUpvote`, `postContent`, `postAvatars`, `postDiscuss`, and `postActions` templates.
 
 #### postHeading
 
-The main post content module is itself made up of two parts. `postHeading` contains the heading, domain, and categories.
+The `postContent` template is itself made up of two parts. `postHeading` contains the heading, domain, and categories.
 
 #### postMeta
 
@@ -192,21 +154,15 @@ var extendPost = function (post) {
 postSubmitServerCallbacks.push(extendPost);
 ```
 
-## Templates
+## User Profile
 
-Custom templates can be added to the `templates` object to override Telescope's default templates:
+### userProfileDisplay
 
-```js
-templates['postInfo'] = "myCustomPostInfoTemplate";
-```
+The `userProfileDisplay` hook is used to add blocks to user profile pages.
 
-## Theme Settings
+### userProfileEdit
 
-Theme-specific settings can be stored in the `themeSettings` object:
-
-```js
-themeSettings.useDropdowns = true;
-```
+The `userProfileDisplay` hook is used to add blocks to user *edit* pages (i.e. where people can edit their own account).
 
 ## Subscriptions
 
@@ -217,4 +173,12 @@ You can add subscriptions to be preloaded by the router by adding them to the `p
 
 ```js
 preloadSubscriptions.push({subName: 'posts', subArguments: {limit: 10}});
+```
+
+## Theme Settings
+
+Theme-specific settings can be stored in the `themeSettings` object:
+
+```js
+themeSettings.useDropdowns = true;
 ```

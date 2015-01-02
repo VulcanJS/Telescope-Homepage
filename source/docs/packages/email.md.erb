@@ -1,28 +1,32 @@
 ---
-title: 'Email Package'
+title: 'Email'
 published: true
 author: sacha
-date: 0004/01/01
+date: 0005/01/03
 blog_name: docs
-section: 4
-blurb: "Generating and sending HTML emais."
+section: 5
+blurb: "Generate and send HTML emails."
 ---
 
 Telescope features a simple yet powerful email template system that automatically themes all outgoing emails with your app's colors and branding. 
 
-### Email Configuration
+### Email Terminology
 
 Telescope can send two distinct types of emails: **transactional emails** and **mass emails**. 
 
-Transactional emails are one-off, single-recipient emails for things like notifications, invitations, and password resets. 
+Transactional emails are one-off, single-recipient emails for things like notifications, invitations, and password resets, and they're the focus of this section.
 
-Mass emails are emails you send to a list of multiple users, such as daily or weekly newsletters for example.
+Mass emails are emails you send to a list of multiple users, such as daily or weekly newsletters for example. You can learn more about them in the documentation for the [newsletter package](/packages/newsletter).
 
-**Transactional emails** use Meteor's own [`Email.send()`](http://docs.meteor.com/#email) function, which needs to be configured through the `MAIL_URL` environment variable (although note that if you're hosting on `*.meteor.com`, that will be done for you automatically). 
+### Email Configuration
 
-**Mass emails** are not sent one by one to individual recipients, but instead to a MailChimp (currently the only supported service) list. This means they use different configuration options (MailChimp API key and list ID), which you can set in Telescope's own Settings screen. 
+A few specific emails (such as the password reset email) are sent through the [useraccounts:core](https://github.com/meteor-useraccounts/core) package, but the majority of emails are sent through the telescope-email package. 
 
-Note that enabling mass emails is optional. 
+In either case, you'll need to configure either the `MAIL_URL` environment variable (note that if you're hosting on `*.meteor.com`, that will be done for you automatically), or the Mail URL setting in the Settings panel.
+
+You'll need to enter an SMTP URL, which is usually given by your email provider. It looks something like this:
+
+`smtp://postmaster%40telescope.mailgun.org:password@smtp.mailgun.org:587/`
 
 ### Email Templates
 
@@ -47,6 +51,8 @@ And just like with regular templates, you can also overwrite email templates:
 ```js
 templates["emailAccountApproved"] = "emailAccountApproved-custom";
 ```
+
+Since emails are sent from the server, make sure you include your custom templates on the *server*, not on the client. 
 
 ### CSS Inlining & Text Emails
 

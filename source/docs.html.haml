@@ -10,10 +10,10 @@
         - data.doc_sections.each_with_index do |section, i|
         - # blog('docs').articles.group_by{|item| item.metadata[:page]["section"]}.sort_by{|t, a| t}.each_with_index do |section, i|
           .docs-section
-            %h4.section-title=section.name
+            %h2.section-title=section.name
             %p.section-description=section.description
             %ol.docs-toc
-              - posts = blog('docs').articles.find_all {|post| post.metadata[:page]["section"] == i+1 }.sort_by! {|post| post.metadata[:page].key?("order") ? post.metadata[:page]["order"] : post.metadata[:page]["title"]}
+              - posts = blog('docs').articles.find_all {|post| post.metadata[:page]["section"] == i+1 }.sort_by! {|post| post.metadata[:page]["date"]}
               - posts.each_with_index do |post, i|
                 - if post.url == current_page.url
                   - li_class = "active"
