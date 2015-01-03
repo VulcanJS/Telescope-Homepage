@@ -53,31 +53,6 @@ viewNav = [
 ];
 ```
 
-## Schemas
-
-#### addToPostSchema
-
-You can add properties to the `Posts` collection's schema by adding them to the `addToPostSchema` array:
-
-```js
-var customProperty = {
-  propertyName: 'customProperty',
-  propertySchema: {
-    type: String,                           // property type
-    label: 'customLabel',                   // key string used for internationalization
-    optional: true,                         // make this property optional
-    autoform: {
-      editable: true,                       // make this property editable by users
-      type: "bootstrap-datetimepicker"      // assign a custom input type
-    }
-  }
-}
-addToPostSchema.push(customProperty);
-```
-#### addToCommentSchema
-
-Same thing, for the comments collection's schema.
-
 ## Navigation Menus
 
 #### primaryNav
@@ -152,6 +127,26 @@ footerModules.push({
 
 ## Posts 
 
+#### addToPostSchema
+
+You can add properties to the `Posts` collection's schema by adding them to the `addToPostSchema` array:
+
+```js
+var customProperty = {
+  propertyName: 'customProperty',
+  propertySchema: {
+    type: String,                           // property type
+    label: 'customLabel',                   // key string used for internationalization
+    optional: true,                         // make this property optional
+    autoform: {
+      editable: true,                       // make this property editable by users
+      type: "bootstrap-datetimepicker"      // assign a custom input type
+    }
+  }
+}
+addToPostSchema.push(customProperty);
+```
+
 #### postModules
 
 The various components of a single post item. By default it includes the `postUpvote`, `postContent`, `postAvatars`, `postDiscuss`, and `postActions` templates.
@@ -164,18 +159,26 @@ The `postContent` template is itself made up of two parts. `postHeading` contain
 
 On the other hand, `postMeta` contains secondary information such as the author, date, and number of comments. 
 
-## Callbacks
+#### Callbacks
 
 Callback functions can be added to the following arrays:
 
 ```js
-postSubmitRenderedCallbacks = [];
-postSubmitClientCallbacks = [];
-postSubmitServerCallbacks = [];
+postSubmitClientCallbacks = [];       // runs on client before submission
+postSubmitMethodCallbacks = [];       // runs on client and server before submission
+postAfterSubmitMethodCallbacks = [];  // runs on server in a timeout after submission
 
-postEditRenderedCallbacks = [];
-postEditClientCallbacks = [];
+postEditClientCallbacks = [];         // loops over post object
+postEditMethodCallbacks = [];         // loops over modifier ("{$set: {foo: bar}}")
+postAfterEditMethodCallbacks = [];    // loops over modifier object
 ```
+
+Generally speaking, callbacks can be run at four different times during the lifetime of a Meteor method's execution:
+
+- `rendered` callbacks (such as `commentSubmitRenderedCallbacks`) will run when a template is rendered.
+- `client` callbacks (such as `postSubmitClientCallbacks`) will run on the client, just before a Meteor method is called.
+- `method` callbacks (such as `postSubmitMethodCallbacks`) will run on both client and server, and are called from within a Meteor method.
+- `async` callbacks (such as `postAfterSubmitMethodCallbacks`) will run on the server only, and asynchronously.
 
 These functions will then take a document as argument, modify it, and return it. 
 
@@ -196,7 +199,26 @@ var extendPost = function (post) {
 postSubmitServerCallbacks.push(extendPost);
 ```
 
-## User Profile
+## Comments
+
+#### addToCommentSchema
+
+Same as `addToPostsSchema`, for the comments collection's schema.
+
+#### Callbacks
+
+```js
+commentSubmitRenderedCallbacks = [];
+commentSubmitClientCallbacks = [];
+commentSubmitMethodCallbacks = [];
+commentAfterSubmitMethodCallbacks = [];
+
+commentEditRenderedCallbacks = []; 
+commentEditClientCallbacks = [];
+commentEditMethodCallbacks = []; // not used yet
+commentAfterEditMethodCallbacks = []; // not used yet
+```
+## User Accounts
 
 ### userProfileDisplay
 
@@ -205,6 +227,17 @@ The `userProfileDisplay` hook is used to add blocks to user profile pages.
 ### userProfileEdit
 
 The `userProfileDisplay` hook is used to add blocks to user *edit* pages (i.e. where people can edit their own account).
+
+### Callbacks
+
+Similar to posts and comments, user accounts also have their own callback hooks:
+
+```js
+userEditRenderedCallbacks = [];
+userEditClientCallbacks = [];
+userCreatedCallbacks = [];
+userProfileCompleteChecks = [];
+```
 
 ## Subscriptions
 

@@ -4,7 +4,10 @@
 - content_for(:itemtype, "Article")
 
 = wrap_layout :layout do
-  %h1.post-title=current_article.title
+  .page-title
+    %h4.pre-title
+      %a{:href => "/docs"} Documentation
+    %h1.main-title=current_article.title
   %section.post.inverted#content
     .post-top
       - prev_article = current_article.previous_article

@@ -6,7 +6,8 @@
   / %h3.blog
   /   %a.blog-link{:href => '/blog'} The Blog
   /   %a.rss{:href => '/feed.xml'} [RSS]
-  %h1.post-title=current_article.data.title
+  .page-title
+    %h1.main-title=current_article.data.title
 
   %section.post.inverted
     .post-top

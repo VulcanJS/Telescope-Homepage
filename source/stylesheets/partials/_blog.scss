@@ -36,14 +36,6 @@ h3.blog{
 	@include regular;
 	padding: 0;
 }
-.post-title{
-	color: white;
-	@include light;
-	margin: 60px 60px 90px 60px;
-	text-align: center;
-	font-size: 54px;
-	line-height: 1.2;
-}
 .post-top, .post-nav{
 	@include cf;
 	@include border-radius(5px 5px 0 0);
