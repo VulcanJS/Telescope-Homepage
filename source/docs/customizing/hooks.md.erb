@@ -18,7 +18,7 @@ Note that as usual when modifying Telescope, it's recommended to use hooks from 
 You can add elements to a hook using the `Array.push()` function. For example:
 
 ```js
-viewNav = viewNav.push({
+viewsMenu = viewsMenu.push({
   route: 'posts_custom',
   label: 'myCustomView'
 });
@@ -28,10 +28,10 @@ viewNav = viewNav.push({
 
 You can remove elements from a hook using Underscore's [`filter()`](http://underscorejs.org/#filter) function, which returns an array of all the values that pass a truth test. 
 
-For example, to remove the `top` view from the `viewNav` array, you could return the array of all the menu items whose route is *not* `posts_top`:
+For example, to remove the `top` view from the `viewsMenu` array, you could return the array of all the menu items whose route is *not* `posts_top`:
 
 ```js
-viewNav = _.filter(viewNav, function (item) {
+viewsMenu = _.filter(viewsMenu, function (item) {
     item.route !== "posts_top";
 });
 ```
@@ -41,7 +41,7 @@ viewNav = _.filter(viewNav, function (item) {
 Finally, you can also simply redefine your own array:
 
 ```js
-viewNav = [
+viewsMenu = [
   {
     route: 'posts_custom1',
     label: 'customView1'
@@ -93,10 +93,10 @@ viewsMenu = viewsMenu.concat([
 
 #### adminMenu
 
-You can add items to the admin menu by adding them to the `adminNav` array:
+You can add items to the admin menu by adding them to the `adminMenu` array:
 
 ```js
-adminNav.push({
+adminMenu.push({
   route: 'categories',
   label: 'categories',
   description: 'categories_description' //optional

@@ -1,0 +1,56 @@
+---
+title: 'Telescope v0.12.0: “DummyScope”'
+published: true
+author: sacha
+date: 2015/01/05
+---
+
+The first new release of 2015 is a big one: lots of new features, refactorings, and overall improvements. 
+
+READMORE
+
+### Dummy Content
+
+You might be wondering why this release is codenamed “DummyScope”. The “dummy” part doesn't refer to anybody in particular, but rather to “dummy content”, placeholder posts and comments for when you first run the app. 
+
+[Here's what that looks like](http://dummyscope.meteor.com/), in case you're curious:
+
+<%= figure "blog/dummyscope.jpg", "The five “Getting Started” posts.", "", "http://dummyscope.meteor.com/" %>
+
+This makes the first run experience much nicer than what there was before, which is… nothing at all. So from now on, when you launch a new Telescope instance for the first time you won't be greeted by emptiness, but by a couple helpful posts that make it easier to get started. 
+
+### Displaying Release Notes
+
+Another nice improvement is that release notes will now be shown right in the app, so you'll know what's new as soon as you update.
+
+<%= figure "blog/releasenotes.jpg", "Release notes.", "", "" %>
+
+Speaking of release notes, you can [check out the full notes for this release on GitHub](https://github.com/TelescopeJS/Telescope/releases/tag/v0.12.0).
+
+### New Documentation
+
+Another big announcement is the complete overhaul of [the documentation section](http://www.telesc.pe/docs). It's now organized in five different sub-sections:
+
+- Getting Started
+- Customizing Telescope
+- Tutorials
+- Telescope Core
+- Telescope Packages
+
+There's a lot of new content in there, so I suggest taking a look when you can. 
+
+### Tests
+
+Thanks to [Anthony](https://github.com/anthonymayer), we've got our first tests in Telescope! It's not much yet, but it's a great start. Testing is definitely one of the most important areas on the roadmap, and we'll have more about it in a future post. 
+
+### Re-enabling Newsletters & Feeds
+
+**[IMPORTANT]** Note that the newsletter and post-by-feed features now need to be manually enabled in the Settings panel. So even if you had previously running newsletters, you'll need to re-enable them after updating. 
+
+For now, it's the best way I've found to avoid having the `synced-cron` package re-run the newsletter and feed jobs even when you don't need to. 
+
+### What's Next
+
+I feel like Telescope is starting to hold its own in terms of features and overall usefulness. So my priority for the next couple months will be taking care of everything else.
+
+In other words, I want to make it easier for people to hear about, get started with, customize, and expend Telescope. This release is a first step in that direction, but stay tuned for more news soon!

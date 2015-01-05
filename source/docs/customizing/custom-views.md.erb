@@ -165,7 +165,7 @@ But now head to `http://localhost:3000/recently-commented`: your just-commented 
 We can't ask our users to input the URL manually every time they want to access the list. So let's add a menu item. Go back to `routes.js` and add the following code after the `Meteor.startup()` block:
 
 ```js
-viewNav.push(
+viewsMenu.push(
   {
     route: 'posts_recently_commented',
     label: 'Recently Commented'
