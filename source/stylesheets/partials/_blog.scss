@@ -39,7 +39,12 @@ h3.blog{
 	// background: $light-grey;
 	border-bottom: 1px $light-grey solid;
 	padding: 5px 15px;
-	font-size: 18px;
+	@include small{
+		font-size: 14px;
+	}
+	@include medium{
+		font-size: 18px;
+	}
 	.meta-date, .meta-blog{
 		display: block;
 		height: 28px;
@@ -91,11 +96,15 @@ h3.blog{
       font-size: 130%;
     }
   }
-	p, pre, ul, ol, hr, .video{
-		margin: 0 0 $spacing 0;
+	p, pre, ul, ol, hr, .video, h2, h3, h4, h5{
+		@include small{
+			margin: 0 0 $halfspacing 0;
+		}
+		@include medium{
+			margin: 0 0 $spacing 0;
+		}
 	}
 	h2, h3, h4, h5, ol, ul{
-		margin-bottom: $spacing;
 		line-height: 1.4;
 	}
 	li{

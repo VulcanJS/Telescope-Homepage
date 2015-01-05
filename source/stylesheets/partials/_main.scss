@@ -37,9 +37,19 @@ h1, h2, h3, h4, h5{
 	margin:0;
 }
 .page-title{
-	margin: 40px 60px 70px 60px;	
+	@include small{
+		margin: 20px 0 50px 0;
+	}
+	@include medium{
+		margin: 40px 60px 70px 60px;	
+	}
 	.pre-title{
-		font-size: 18px;
+		@include small{
+			font-size: 14px;
+		}
+		@include medium{
+			font-size: 18px;
+		}
 		border-bottom: 1px solid white(0.2);
 		padding-bottom: 5px;
 		max-width: 150px;
@@ -49,7 +59,12 @@ h1, h2, h3, h4, h5{
 		color: white;
 		@include light;
 		text-align: center;
-		font-size: 54px;
+		@include small{
+			font-size: 30px;
+		}
+		@include medium{
+			font-size: 54px;
+		}
 		line-height: 1.2;
 	}
 	.rss{
@@ -116,9 +131,6 @@ a{
 	top:0px;
 	left:0px;
 	z-index:-10;
-}
-.container{
-	padding:40px 10px 40px 10px;
 }
 
 section{

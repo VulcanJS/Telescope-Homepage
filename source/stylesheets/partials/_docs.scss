@@ -23,19 +23,18 @@
 .docs-toc{
   margin: 0;
   padding: 0;
-  // @include cf;
-  display: flex;
-  flex-wrap: wrap;
+  @include medium{
+    display: flex;
+    flex-wrap: wrap;
+  }
   list-style-type: none;
   li{
-    width: 45%;
-    margin-right: 10%;
-    // @include medium{
-    //   @include span-columns(6);
-    //   @include nth-omega(2n, of-type);
-    // }
-    &:nth-child(2n){
-      margin-right: 0;
+    @include medium{
+      width: 45%;
+      margin-right: 10%;
+      &:nth-child(2n){
+        margin-right: 0;
+      }
     }
   }
 }
@@ -93,11 +92,16 @@
 
 .post-content{
   @include cf;
+
   .docs-video{
+    background: #333;
+    @include small{
+      margin: 0 -20px 15px -20px;
+      padding: 15px;
+    }
     @include medium{
       margin: 0 -80px 30px -80px;
       padding: 30px;
-      background: #333;
     }
     h4{
       @include light;
@@ -105,7 +109,12 @@
     }
     p{
       color: white;
-      margin: 30px 0 0 0;
+      @include small{
+        margin: $halfspacing 0 0 0;
+      }
+      @include medium{
+        margin: $spacing 0 0 0;
+      }
     }
   }
 }
