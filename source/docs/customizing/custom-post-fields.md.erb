@@ -78,3 +78,27 @@ var thumbnailProperty = {
 Notice the `type: 'bootstrap-postthumbnail'` property? We're actually telling our custom field to use a *custom input type*. In other words, instead of the usual `text`, `email`, or `textarea` (see a full list [here](https://github.com/aldeed/meteor-autoform/tree/master/inputTypes)), we're defining a new `bootstrap-postthumbnail` input type. 
 
 Actually making [custom input types](https://github.com/aldeed/meteor-autoform#defining-custom-input-types) is out of the scope of this tutorial, but you can take a look at the Embedly package's code to get an idea of what's involved. 
+
+### Modifying & Removing Fields
+
+You can also use the same pattern to modify an existing property, not just add new ones. For example, let's say we wanted to change the `url` property so that its form field is completely removed from our forms.
+
+We'll copy the `url` property from `/collections/posts.js`, add `omit: true` to its `autoform` object, and call `addToPostSchema.push` on the resulting object:
+
+```js
+addToPostSchema.push(
+  {
+    propertyName: 'url',
+    propertySchema: {
+      type: String,
+      label: "URL",
+      optional: true,
+      autoform: {
+        editable: true,
+        type: "bootstrap-url",
+        omit: true
+      }
+    }
+  }
+);
+```
