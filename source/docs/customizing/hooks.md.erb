@@ -13,26 +13,30 @@ Telescope features a comprehensive hooks system that makes it easy to extend you
 
 Note that as usual when modifying Telescope, it's recommended to use hooks from within your own custom package. 
 
+## Using Hooks
+
 ### Adding Elements
 
 You can add elements to a hook using the `Array.push()` function. For example:
 
 ```js
-viewsMenu = viewsMenu.push({
+viewsMenu.push({
   route: 'posts_custom',
   label: 'myCustomView'
 });
 ```
 
+Note that (unlike most JavaScript functions) `push()` directly modifies arrays, so you don't need to write `viewsMenu = viewsMenu.push(...)`.
+
 ### Removing Elements
 
-You can remove elements from a hook using Underscore's [`filter()`](http://underscorejs.org/#filter) function, which returns an array of all the values that pass a truth test. 
+You can remove elements from a hook using Underscore's [`reject()`](http://underscorejs.org/#reject) function, which takes an array and removes all the values that pass a truth test. 
 
 For example, to remove the `top` view from the `viewsMenu` array, you could return the array of all the menu items whose route is *not* `posts_top`:
 
 ```js
-viewsMenu = _.filter(viewsMenu, function (item) {
-    item.route !== "posts_top";
+viewsMenu = _.reject(viewsMenu, function (item) {
+    return item.route == "posts_top";
 });
 ```
 
@@ -53,7 +57,27 @@ viewsMenu = [
 ];
 ```
 
-## Navigation Bars
+<% note do %>
+
+### Exporting
+
+If you're modifying an array from within a package (which is the recommended way), make sure you also **export** the resulting array from the package's private scope into the app's general scope in `package.js`:
+
+```js
+Package.onUse(function (api) {
+
+  api.export([
+    'viewsMenu'
+  ]);
+
+});
+```
+
+<% end %>
+
+## Telescope Hooks
+
+### Navigation Bars
 
 #### primaryNav
 
@@ -70,7 +94,7 @@ primaryNav.push({
 
 You can optionally also add items to a secondary navigation.
 
-## Menus
+### Menus
 
 #### viewsMenu
 
@@ -103,7 +127,7 @@ adminMenu.push({
 });
 ```
 
-## Zones
+### Zones
 
 #### heroModules
 
@@ -127,7 +151,7 @@ footerModules.push({
 });
 ```
 
-## Posts 
+### Posts 
 
 #### addToPostSchema
 
@@ -201,7 +225,7 @@ var extendPost = function (post) {
 postSubmitServerCallbacks.push(extendPost);
 ```
 
-## Comments
+### Comments
 
 #### addToCommentSchema
 
@@ -220,17 +244,17 @@ commentEditClientCallbacks = [];
 commentEditMethodCallbacks = []; // not used yet
 commentAfterEditMethodCallbacks = []; // not used yet
 ```
-## User Accounts
+### User Accounts
 
-### userProfileDisplay
+#### userProfileDisplay
 
 The `userProfileDisplay` hook is used to add blocks to user profile pages.
 
-### userProfileEdit
+#### userProfileEdit
 
 The `userProfileDisplay` hook is used to add blocks to user *edit* pages (i.e. where people can edit their own account).
 
-### Callbacks
+#### Callbacks
 
 Similar to posts and comments, user accounts also have their own callback hooks:
 
@@ -241,7 +265,7 @@ userCreatedCallbacks = [];
 userProfileCompleteChecks = [];
 ```
 
-## Subscriptions
+### Subscriptions
 
 #### preloadSubscriptions
 
@@ -252,7 +276,7 @@ You can add subscriptions to be preloaded by the router by adding them to the `p
 preloadSubscriptions.push({subName: 'posts', subArguments: {limit: 10}});
 ```
 
-## Theme Settings
+### Theme Settings
 
 Theme-specific settings can be stored in the `themeSettings` object:
 

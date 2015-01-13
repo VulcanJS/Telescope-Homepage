@@ -1,0 +1,81 @@
+---
+title: 'The Making Of CrunchHunt'
+published: true
+author: sacha
+date: 2015/01/13
+---
+
+[CrunchHunt](http://www.crunchhunt.com/) is a mash-up of [TechCrunch](http://www.techcrunch.com/) and [Product Hunt](http://www.producthunt.com/), built with Telescope.
+
+If you're not familiar with Telescope, it's a free, open-source app based on the [Meteor](http://meteor.com) JavaScript framework that makes it very easy for anyone to create their own Hacker News or Product Hunt type community site. 
+
+I first got the idea for CrunchHunt while testing out Telescope's new [post-by-feed](/docs/packages/post-by-feed/) feature, which lets you parse RSS feeds to automatically generate posts instead of having to manually submit them individually. 
+
+<%= figure "blog/crunchhunt.jpg", "CrunchHunt", "", "http://www.crunchhunt.com" %>
+
+I needed something to try the feature on, and I randomly grabbed TechCrunch's feed. As I was playing around with the app, I realized that this was actually a pretty cool way of reading TechCrunch.
+
+So I decided to run with the idea and create a quick side project over the week-end, just to show how easy it can be to create this kind of site with Telescope.
+
+### Easy Tweaks
+
+The first step was tweaking the colors and adding a logo. I also set the homepage to use the Daily view instead of the default Top view. 
+
+All of this can be done from Telescope's [Settings](/docs/getting-started/configuring-telescope/) panel, without touching a line of code. 
+
+### UI Customization
+
+I wanted to take things a little further, so I forked Telescope to give CrunchHunt its own repo, and then [created a custom package](/docs/customizing/creating-packages/) to hold all my customizations. 
+
+Some of the tweaks I made include:
+
+- Removing the “Views” menu, since I was only interested in using the “Daily” view. 
+- Removing the “Submit Post” button, since posts would be automatically inserted from the RSS feed.
+- Removing the “Upvote” button, since shares would replace votes (more on this later).
+- Removing the post author avatar, since it would always be the same.
+- Adding and linking to the About page.
+- Adding a “hero” tagline to the homepage.
+
+The big advantage of centralizing all these changes in a single package is that the rest of the codebase can stay completely untouched, which will make it a lot easier to update it when future versions of Telescope come out. 
+
+By the way, you can view the full code for the `crunchhunt` package [on GitHub](https://github.com/TelescopeJS/CrunchHunt/tree/devel/packages/crunchhunt). 
+
+### Getting Shares With KimonoLabs
+
+The only “big” customization I did was ranking links based on their number of Twitter, Facebook, etc. shares instead of based on votes. 
+
+In order to do this, I first had to somehow obtain that number. I noticed TechCrunch was already doing the work of counting shares on their own site, so I decided to make use of it. 
+
+Now TechCrunch doesn't have an API, but thankfully I didn't need one thanks to [KimonoLabs](https://www.kimonolabs.com/). 
+
+KimonoLabs is an amazing service that lets you point to any part of a web page, and then create an API for that. Practically speaking, I used their Chrome extension to identify the “shares” count on a random TechCrunch article page, which gave me an API endpoint. 
+
+<%= figure "blog/kimono-tc.jpg", "Defining scraping targets (highlighted in yellow) with KimonoLabs.", "", "" %>
+
+Now all I needed to do was query that endpoint while passing *any* TechCrunch URL as parameter, and KimonoLabs would be smart enough to go fetch the shares count on *that* page. Pretty awesome!
+
+I could now make a function that called that API for each post in the database, and added a new `shares` property to each one of them. And to finish things off, I used the [synced-cron](https://github.com/percolatestudio/meteor-synced-cron) package to call that function every 10 minutes. 
+
+<%= figure "blog/kimono-api.jpg", "The KimonoLabs API dashboard.", "", "" %>
+
+### Rate Limiting
+
+Now I was using KimonoLabs' free service, and asking them to go and fetch a whole TechCrunch page every time I called their API. So it's understandable that they'd put a limit on just how often I could call their service.
+
+So I did need to do one more thing, which was rate limit the API calls. 
+
+I used this [Meteor rate limiting package](https://github.com/dandv/rate-limit) to [space out API calls by four seconds](https://github.com/TelescopeJS/CrunchHunt/blob/devel/packages/crunchhunt/lib/server/shares.js#L33).
+
+One small gotcha: if you have more than one server running at the same time (i.e. development and production), make sure you don't go over the limit by accident!
+
+### Ranking By Shares
+
+The final piece of the puzzle was taking this `shares` property and actually ranking posts by it. This was just a matter of overriding the definition for the `singleDay` ranking, which is used by the Daily view.
+
+I also created a simple `customPostShares` template to show the shares count on each post. Done!
+
+### Conclusion
+
+Assuming you don't need too much UI customization or custom rankings, Telescope's new feed feature makes it possible to get a community up and running for your blog or site in – literally – minutes. 
+
+CrunchHunt was a lot of fun to make, and as a bonus I was able to fix a few little bugs and annoyances in the core app, too. So check it out, let me know what you think, and hopefully this will inspire you to use Telescope for your own cool mash-ups!

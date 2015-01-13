@@ -43,7 +43,7 @@ h3.blog{
 		font-size: 14px;
 	}
 	@include medium{
-		font-size: 18px;
+		font-size: 16px;
 	}
 	.meta-date, .meta-blog{
 		display: block;
@@ -155,7 +155,7 @@ h3.blog{
 	h4{
 		text-shadow:none;
 		color: $dark-text;
-		@include bold;
+		@include light;
 		text-align: left;
 		// text-transform: uppercase;
 		@include small{
@@ -292,7 +292,7 @@ h3.blog{
 		background:$light-bg;
 		@include background(linear-gradient( 125deg, rgba(226,224,233,1) 0%, rgba(226,224,233,0.5) 90%));;
 	}
-	p:last-child{
+	*:last-child{
 		margin-bottom:0;
 	}
 }
