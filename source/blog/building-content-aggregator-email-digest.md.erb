@@ -1,0 +1,99 @@
+---
+title: 'Building A Content Aggregator And Email Digest With Telescope'
+published: true
+author: sacha
+date: 2015/01/15
+---
+
+Telescope started its young life as a [Hacker News](http://news.ycombinator.com) clone, but it's now become a lot more than that. 
+
+Today I want to showcase a really cool use case that can be implemented with no coding whatsoever: using Telescope to build your own content aggregator, complete with an automatically generated email digest using [MailChimp](http://mailchimp.com). 
+
+In other words, this is like having your own [Flipboard](https://flipboard.com/) and [News.me](http://www.news.me/) rolled into one, except completely customizable! 
+
+Watch the video below, or if you prefer written instructions scroll down to learn more.
+
+<div class="video docs-video">
+  <h4>Building A Content Aggregator And Email Digest With Telescope</h4>
+  <iframe width="420" height="278" src="//www.youtube.com/embed/XKuytiVpQBY" frameborder="0" allowfullscreen></iframe>
+</div>
+
+### Set Up
+
+You'll need a working Telescope instance, either deployed or running locally. Check out [the documentation](/docs) if you need help. 
+
+You'll also need a user account with admin privileges. This is easy enough, since the first account you'll create will be an admin by default. 
+
+If this is a fresh Telescope install, you might also want to get rid of the “Getting Started” content. You can do this with the following command, inputted in your browser console:
+
+```js
+Meteor.call('removeGettingStartedContent')
+```
+
+Now is also a good time to enter any third-party API keys, such as your [Embedly](http://embed.ly) and [MailChimp](http://mailchimp.com) keys, as well as configure your site's title, default email, etc. You can do all of this in the Settings panel. 
+
+### Creating User Accounts
+
+Although not strictly necessary, you might want to create a separate user account for each feed, just to keep things well-organized. 
+
+<%= figure "blog/useraccounts.jpg", "Creating user accounts for each feed.", "", "" %>
+
+An easy way to do this is to open up a new “incognito” window in your browser, sign up for a new account on your Telescope instance, close the window, and repeat. 
+
+You can review all your user accounts in the “Users” section of the admin menu.
+
+### Adding Feeds
+
+The next step is adding feeds in the “Feeds” section of the admin menu. Just copy and paste the URLs of the different RSS feeds you want. 
+
+<%= figure "blog/feeds.jpg", "Adding feeds.", "", "" %>
+
+Finding the RSS feed for a site can sometimes be tough, so you can always try adding “feed” at the site's root (i.e. `https://gigaom.com/feed/`).
+
+### Fetching Content
+
+Telescope will automatically fetch new feed items every 30 minutes, but if you don't feel like waiting you can call the `fetchFeeds` method in your browser console:
+
+```js
+Meteor.call('fetchFeeds')
+```
+
+Wait a few seconds as Telescope fetches each item and inserts it. 
+
+<%= figure "blog/top-feeds.jpg", "Populating the homepage.", "", "" %>
+
+### Testing & Sending The Newsletter
+
+You're almost done! Head to [`http://localhost:3000/email/campaign`](http://localhost:3000/email/campaign) (or whatever your app's URL is) to preview your new campaign.
+
+If it looks good, you can send it over to MailChimp using the following method:
+
+```js
+Meteor.call('testCampaign')
+```
+
+Or otherwise, just wait a few days (depending on the newsletter frequency you picked) and Telescope will take care of it for you!
+
+You can now head over to your MailChimp dashboard to preview and edit your new campaign.
+
+<%= figure "blog/campaign-mailchimp.jpg", "Editing the campaign.", "", "" %>
+
+### A Few Ideas
+
+So what can you do with this?
+
+Well, you could use this feature to send out an industry news digest. For example, if you're into competitive hedgehog racing, why not aggregate the feeds of multiple hedgehog-related publications (“The Hog Life”, ”Hedge Monthly”, ”Double H Mag”) into a single weekly newsletter? 
+
+<%= figure "blog/hedgehog.jpg", "Miss January", "", "" %>
+
+It's no secret that email newsletters are one of the best ways to build an audience. Believe me, [I should know!](http://sidebar.io)
+
+And the best part is that unlike other RSS-to-email automated solutions, Telescope not only lets you hand-pick, curate, and edit submissions, but also completely customize every part of the process if you want to. 
+
+For example, for [CrunchHunt](http://crunchhunt.com) I implemented a custom ranking based on social media shares instead of upvotes. 
+
+<%= figure "blog/crunchhunt.jpg", "CrunchHunt", "", "http://www.crunchhunt.com" %>
+
+In effect, you get the best of both worlds: an easy 5-minute setup, but also the freedom and flexibility that comes with open-source software.
+
+So have fun with this, and let me know if you build anything cool!
