@@ -15,6 +15,349 @@ But what if you want to share based on something else? For example, the number o
 
 That information is already out there, we just need to somehow get it into Telescope. So in this tutorial, we'll see how to do just that and sort posts based on parameters provided by third-party APIs.
 
-//http://cdn.api.twitter.com/1/urls/count.json?url=http://stylehatch.co
+### A Real-World Example: CrunchHunt
 
-//https://gist.github.com/jonathanmoore/2640302
+To see an example of this technique in action, check out [CrunchHunt](http://www.crunchhunt.com), which ranks posts by shares (which are themselves obtained by scraping [TechCrunch](http://www.techcrunch.com) itself).
+
+<%= figure "blog/crunchhunt.jpg", "CrunchHunt", "", "http://www.crunchhunt.com" %>
+
+You can learn more about the making of CrunchHunt in [this blog post](/blog/making-of-crunchhunt/). 
+
+### Querying Twitter
+
+For the sake of this tutorial, we'll focus on getting tweet counts for each links, but you could apply the same technique to any metric. 
+
+We'll also use an [unofficial Twitter API](https://gist.github.com/jonathanmoore/2640302) that doesn't require authentication, which will help us keep our code simpler. 
+
+With this API, finding out the tweet count for a specific link will just be a matter of querying the following URL:
+
+`http://cdn.api.twitter.com/1/urls/count.json?url=http://telesc.pe`
+
+So we'll start by coding up a function that takes a post, retrieves the tweet count, and adds it to the post object as the `post.tweetCount` property. Then, we'll make sure that function runs on the most recent posts every 10 minutes. 
+
+Let's get started!
+
+<% note do %>
+
+### Get The Code
+
+You can get the code for this package [on GitHub](https://github.com/TelescopeJS/Telescope-Tweets).
+
+Note that because the package depends on *local* packages (such as `telescope-base`), it's *not* an Atmosphere package. 
+
+So you will have to manually download its code from GitHub, or else create a Git submodule in order to use it. 
+
+<% end %>
+
+### Creating A Package
+
+As usual, we'll create a package to hold our customization. We'll call it `telescope-tweets`, and give it the following `package.js` file:
+
+```js
+Package.describe({
+  summary: 'Rank posts by tweet count',
+  version: '0.1.0',
+  name: 'telescope-tweets'
+});
+
+Package.onUse(function (api) {
+
+  // --------------------------- 1. Meteor packages dependencies ---------------------------
+
+  api.use([
+    'jquery',
+    'underscore',
+    'templating',
+    'telescope-base',
+    'telescope-lib',
+    'telescope-singleday',
+    'fourseven:scss',
+    'percolatestudio:synced-cron',
+    'dandv:rate-limit'
+  ]);
+
+  // ---------------------------------- 2. Files to include ----------------------------------
+
+  // both
+
+  api.add_files([
+    'lib/main.js',
+  ], ['client', 'server']);
+
+  // client
+
+  api.add_files([
+    'lib/client/templates/custom_post_info.html'
+  ], ['client']);
+
+  // server
+
+  api.add_files([
+    'lib/server/cron.js',
+    'lib/server/tweets.js'
+  ], ['server']);    
+
+  // -------------------------------- 3. Variables to export --------------------------------
+
+  api.export([
+    'postModules'
+  ]);
+
+});
+```
+
+I suggest creating blank placeholders for the various files we'll use right away. Besides `package.js`, these are:
+
+- `lib/main.js`
+- `lib/client/templates/custom_post_info.html`
+- `lib/server/cron.js`
+- `lib/server/tweets.js`
+
+(All paths being relative to the root of the package directory, `/packages/telescope-tweets`)
+
+Once you're done, don't forget to add your package with `meteor add telescope-tweets`. 
+
+### Adding The `tweetCount` Property
+
+Before we can work on retrieving the tweet count, we need to decide where to put it. I've said before that we want to add that property to the `Post` model, and that means telling [SimpleSchema](https://github.com/aldeed/meteor-simple-schema) (the package that handles all schema validation for us) about it. 
+
+Create a new `lib/main.js` file, and add the following code:
+
+```js
+var tweetCountProperty = {
+  propertyName: 'tweetCount',
+  propertySchema: {
+    type: Number,
+    label: 'tweetCount',
+    optional: true,
+    autoform: {
+      editable: false,
+      omit: true
+    }
+  }
+}
+addToPostSchema.push(tweetCountProperty);
+```
+
+Note that this property will be automatically set by an API call, so we don't want to expose it to the end user in the post submission or edition forms. For that reason, we're setting that property's to `autoform.editable` to `false` and `autoform.omit` to `true`.
+
+You can learn more about [adding custom post fields](/docs/customizing/custom-post-fields/) in the documentation.
+
+### Getting Tweet Counts
+
+We can now start working on the main `getPostsTweetCount` function. Create a new `lib/server/tweets.js` file and type:
+
+```js
+getPostsTweetCount = function (limit) {
+
+  var posts = Posts.find({}, {sort: {postedAt: -1}, limit: limit});
+  console.log('// Getting tweet counts for '+posts.fetch().length+' posts…')
+
+  posts.forEach(function (post) {
+
+    var url = post.url;
+    var apiUrl = "http://cdn.api.twitter.com/1/urls/count.json?url="+url;
+    
+    try {
+
+      var result = HTTP.get(apiUrl);
+      var tweets = parseInt(result.data.count);
+      console.log("// " + url + " (" + tweets + ")");
+
+      Posts.update(post._id, {$set: {tweets: tweets}});
+
+    } catch (error) {
+      console.log(error);
+    }
+  
+  }
+
+});
+```
+
+We don't want to run the API query on *every* post in our database every single time, so you'll notice that the function takes a `limit` argument. 
+
+We obtain a list of post on which to work on, then iterate on it using the `forEach` function. For each post, we query the Twitter API (using the `HTTP.get()` function) then update the post object in the database. 
+
+### Rate Limiting
+
+This code works, but it has a serious drawback: while looping over our posts, as soon as we get the result from one API call the next one will trigger immediately.
+
+Now usually executing tasks as fast as possible would be desirable, but most APIs happen to have rate limits that restrict how often you can make calls. Going over these limits can result in failed API calls or even getting your app banned. 
+
+So let's see how to rate-limit our `HTTP.get()` call. We'll use the [rate-limit](https://github.com/dandv/rate-limit) package. 
+
+The package's `rateLimit` function works by taking a function and delay as arguments, and returning a *new*, rate-limited version of that function that does the exact same thing, except while making sure that subsequent executions always wait the appropriate amount of time. 
+
+So we'll refactor our code to define a new `updatePost` function, and then call the `forEach` loop on the rate-limited version of that function (which we'll call `updatePostLimited`):
+
+```js
+getPostsTweetCount = function (limit) {
+
+  var posts = Posts.find({}, {sort: {postedAt: -1}, limit: limit});
+  console.log('// Getting tweet counts for '+posts.fetch().length+' posts…')
+
+  var updatePost = function (post) {
+
+    var url = post.url;
+    var apiUrl = "http://cdn.api.twitter.com/1/urls/count.json?url="+url;
+    
+    try {
+
+      var result = HTTP.get(apiUrl);
+      var tweetCount = parseInt(result.data.count);
+      console.log("// " + url + " (" + tweetCount + ")");
+
+      Posts.update(post._id, {$set: {tweetCount: tweetCount}});
+
+    } catch (error) {
+      console.log(error);
+    }
+  
+  }
+
+  var updatePostLimited = rateLimit(updatePost, 4000); 
+  posts.forEach(updatePostLimited);
+
+}
+```
+
+### Adding A Method
+
+Finally, we'll want a way to test out our new function manually. So let's add a Meteor method that can be called from the client:
+
+```js
+Meteor.methods({
+  getPostsTweetCount: function (limit) {
+    if (isAdmin(Meteor.user()))
+      getPostsTweetCount(limit);
+  }
+});
+```
+
+Add this point, you should now be able to call `Meteor.call('getPostsTweetCount', 5)` from the browser console, and see something like this in your *server* logs:
+
+```
+// Getting tweet counts for 5 posts…
+// http://thenextweb.com/socialmedia/2015/01/16/viber-buzzfeed-partner-give-readers-line-editorial-team/ (445)
+// http://techcrunch.com/2015/01/15/uc-web-facebook/ (355)
+// http://mashable.com/2015/01/16/tall-people-problems/ (1560)
+// http://thenextweb.com/gadgets/2015/01/16/microsoft-band-gets-guided-workouts-first-update/ (316)
+// http://mashable.com/2015/01/16/facebook-video-super-bowl/ (1553)
+```
+
+(Of course, this assumes you already have at least five links entered. Check out [how to generate posts from RSS feeds](/docs/packages/post-by-feed/) for a convenient way to quickly populate your instance with test content.)
+
+To make sure the operation actually worked out, we'll open the Meteor by typing (you guessed it) `meteor shell` on the command line. We'll then enter a simple query to see if any posts have the new `tweetCount` property:
+
+```js
+Posts.find({tweetCount: {$exists: true}}).count()
+```
+
+If we've done our job properly, the shell should output back `5`.
+
+### Showing The Tweet Count
+
+Now that we know that the tweet count is being properly stored on each post object, we can think about actually displaying it in our user interface. We'll keep things simple and adapt an existing template, `postInfo`. 
+
+This template usually shows how many *points* a post has received, and we'll simply tweak it so that it shows tweets instead.
+
+In `lib/client/templates/custom_post_info.html`, write:
+
+```html
+<template name="customPostInfo">
+  <div class="post-meta-item">
+    <span class="points">{{tweetCount}}</span>
+    <span class="unit">tweets</span>
+    {{#if postedAt}}<span class="post-time">{{timeAgo postedAt}}</span>{{/if}}
+    {{#if canEdit this}}
+      | <a href="{{pathFor route='post_edit' _id=_id}}" class="edit-link goto-edit">{{_ "edit"}}</a>
+    {{/if}}
+  </div>
+</template>
+```
+
+Finally, add the following line to `lib/main.js` to override the default template:
+
+```js
+templates["postInfo"] = "customPostInfo";
+```
+
+<%= figure "blog/ranking-by-tweets.jpg", "Ranking by tweet count.", "", "" %>
+
+Of course, at this point only the 5 most recent posts will have a `tweetCount` property to display. But we'll fix this by setting up a cron job to run at regular intervals.
+
+### The Cron Job
+
+Using the [`synced-cron`](https://github.com/percolatestudio/meteor-synced-cron) package, we'll tell our app to fill in tweet counts for the 50 most recent posts, every 10 minutes. 
+
+In a new `lib/server/cron.js` file, write:
+
+```js
+Meteor.startup(function () {
+  // do not run job locally to avoid going over API quota
+  if (Meteor.absoluteUrl().indexOf('localhost') == -1) {
+    SyncedCron.add({
+      name: 'Get article shares',
+      schedule: function(parser) {
+        return parser.text('every 10 minutes');
+      }, 
+      job: function() {
+        getPostsTweetCount(50);
+      }
+    });
+  }
+});
+```
+
+Note that we are only running the job if the current `Meteor.absoluteUrl` *does not* contains “localhost”. If we did, we'd be running the risk of going over our API rate limit since we'd have the same cron job running in two different places (with each one having no way of knowing when the other one last ran). 
+
+In a real-world scenario, you'd probably want to figure out a way to refresh recent posts more often, and older posts less often. But for our purposes, a single cron job will be good enough. 
+
+### Ranking By `tweetCount`
+
+We're now showing each link's tweet count, but we can go one step further and *rank* posts by tweet count. 
+
+Before we can do so, we need to understand the concept of a **view**. In Telescope, views are just different ways of filtering and ranking posts, and you can [learn more about them here](http://localhost:8000/docs/customizing/custom-views/).
+
+For example, the Single Day view shows any specific date's posts, ranked by score, and it's used by the Daily package to provide day-by-day post rankings. So we'll override this view to be ranked by tweet count instead of score.
+
+In `lib/main.js`, write:
+
+```js
+// override single day view to rank by shares instead of score
+viewParameters.singleday = function (terms) {
+  return {
+    find: {
+      postedAt: {
+        $gte: terms.after, 
+        $lt: terms.before
+      }
+    },
+    options: {
+      sort: {sticky: -1, tweetCount: -1}
+    }
+  };
+}
+```
+
+Since we made our `telescope-tweets` package depend on `telescope-singleday` back in `package.js`, we know that our override will always be called after the initial function definition. 
+
+Finally, since we're not ranking by score anymore we'll remove the `postUpvote` template from the user interface. At the end of `lib/main.js`, add:
+
+```js
+// remove upvote post module
+postModules = _.reject(postModules, function (item){
+  return item.template == "postUpvote";
+});
+```
+
+Note that the `top` view is still ranked by `score`. So in a real-world situation, you'd probably either remove it altogether to avoid any confusion, or else rank that view by `tweetCount`, too.
+
+### Conclusion
+
+Telescope's philosophy is to provide a modular architecture whose parts can easily be swapped out. Want to customize a template? No problem. Need to add new custom fields to posts? Go right ahead. And as we've just seen, this also extends to sorting and ranking posts. 
+
+What's more, by relying on existing third-party data sources, you can kick-start new communities without requiring members to manually upvote each piece of content. 
+
+So I hope you find this tutorial useful, and come up with even more creative uses for Telescope!
