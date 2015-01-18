@@ -74,27 +74,11 @@
   url: https://aboutadmissions.admithub.com/
   description: The latest college admission tips.
   screenshot: aboutadmissions.png
-# - title: Serverbooks
-#   url: http://m.serverbooks.net/
-#   description: A detailed directory of gaming servers. 
-#   screenshot: serverbooks.png
-# - title: HealthHackers
-#   url: http://www.healthhackers.org/
-#   description: A social news site focused on the healthcare industry. 
-#   screenshot: healthhackers.png
-# - title: LightHouse
-#   url: http://lighthouse.io/
-#   description: A community about building communities. 
-#   screenshot: lighthouse.png
-# - title: ThinkDAW
-#   url: http://www.thinkdaw.com/
-#   description: A community for digital music producers. 
-#   screenshot: thinkdaw.png
-# - title: Fail It Forward
-#   url: http://failitforward.com/
-#   description: A place to share stories of failure and learn from them. 
-#   screenshot: failitforward.png
-# - title: Shouth News
-#   url: http://news.shouth.com/
-#   description: Up-to-date news , aggregated by friends.
-#   screenshot: shouth.png
+- title: The Content List
+  url: http://thecontentlist.com/
+  description: Content marketing news.
+  screenshot: contentlist.jpg
+- title: Zombts
+  url: http://zombts.com/
+  description: The best beatboxing videos.
+  screenshot: zombts.jpg
