@@ -102,3 +102,14 @@ addToPostSchema.push(
   }
 );
 ```
+
+### Internationalizing Posts Fields
+
+When rendering the post submit or edit form, Telescope will use the following strings as label:
+
+1. The translation of the current field's `label` property.
+2. If the label hasn't been translated, the `label` property itself.
+3. If the `label` property doesn't exist, the translation of the field name.
+4. If the field name hasn't been translated, the field name itself. 
+
+Note that field names and field name translations are not easily customizable. So if you'd like to change the label of a field, options 3 and 4 would be recommended. 
