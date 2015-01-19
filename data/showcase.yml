@@ -82,3 +82,11 @@
   url: http://zombts.com/
   description: The best beatboxing videos.
   screenshot: zombts.jpg
+- title: CodeBuddies Hangouts
+  url: http://hangouts.codebuddies.org/
+  description: '"Running partners" for learning to code.'
+  screenshot: codebuddies.jpg
+- title: CrunchHunt
+  url: http://www.crunchhunt.com/
+  description: Every day, the most popular articles of TechCrunch
+  screenshot: crunchhunt.jpg
