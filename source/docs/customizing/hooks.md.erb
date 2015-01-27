@@ -151,6 +151,10 @@ footerModules.push({
 });
 ```
 
+### threadModules
+
+You can add templates to the end of a comment thread with the `threadModules` array.
+
 ### Posts 
 
 #### addToPostSchema
@@ -197,6 +201,8 @@ postAfterSubmitMethodCallbacks = [];  // runs on server in a timeout after submi
 postEditClientCallbacks = [];         // loops over post object
 postEditMethodCallbacks = [];         // loops over modifier ("{$set: {foo: bar}}")
 postAfterEditMethodCallbacks = [];    // loops over modifier object
+
+postApproveCallbacks = [];            // when post is approved
 ```
 
 Generally speaking, callbacks can be run at four different times during the lifetime of a Meteor method's execution:
@@ -244,6 +250,28 @@ commentEditClientCallbacks = [];
 commentEditMethodCallbacks = []; // not used yet
 commentAfterEditMethodCallbacks = []; // not used yet
 ```
+
+### Votes
+
+#### upvoteCallbacks
+
+Triggered when a user upvotes a post or comment. The callback function takes three arguments: `collection` (which will either be `Posts` or `Comments`), `item` (the item being upvoted), and `user` (the user doing the upvoting).
+
+For example, to automatically subscribe upvoters to email notifications for the post they upvoted, you could do:
+
+```js
+upvoteCallbacks.push(function (collection, item, user) {
+  if (collection === Posts) {
+    subscribeItem(Posts, item._id, user);
+  }
+  return item;
+});
+```
+
+#### downvoteCallbaks
+
+Triggered when a user downvotes a post or comment. See `upvoteCallbacks`.
+
 ### User Accounts
 
 #### userProfileDisplay

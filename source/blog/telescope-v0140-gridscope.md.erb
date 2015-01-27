@@ -1,0 +1,50 @@
+---
+title: 'Introducing Telescope v0.14.0: “GridScope”'
+published: true
+author: sacha
+date: 2015/01/27
+---
+
+Sometimes you need to spend some time refactoring, rethinking, and rewriting until you get a cleaner architecture and better performance. 
+
+And other times, you just want to work on a cool feature. This latest release falls in the second category, as it introduces a new **grid layout** to Telescope's default theme.
+
+### The Grid Layout
+
+<%= figure "blog/grid-layout.jpg", "The new grid layout.", "wide" %>
+
+This new layout shows the same content as the usual list view, except with a different layout. [CSS Zen Garden](http://www.csszengarden.com/) anyone?
+
+Note that if you enable the new grid layout mode, you'll probably also want to set your Embedly thumbnails to a larger size. I suggest 480 by 300.
+
+### Subscribing to Comment Threads
+
+Another cool new feature: thanks to [@delgermurun](https://github.com/delgermurun), you can now subscribe to comment threads to be notified of any new content by email, without having to actually participate in the thread. This will hopefully enable even more cool uses for Telescope, such as [CodeBuddies' hangout registration](http://hangouts.codebuddies.org). 
+
+<%= figure "showcase/codebuddies.jpg", "CodeBuddies lets you sign up to be notified about coding hangouts.", "", "http://hangouts.codebuddies.org" %>
+
+### New Zones And Hooks
+
+This release also introduces `threadModules`, a new template zone that lets you add modules at the end of comment threads (such as the afore-mentioned thread subscribe link).
+
+There's also two new `upvoteCallbacks` and `downvoteCallbacks` callback hooks that let you do cool stuff when someone upvotes or downvotes a post (such as auto-subscribing them to the thread, for example).
+
+And finally, the `postApproveCallbacks` callback hook lets you do something when a post is approved. For example, it's now used to implement finer-grained notifications: if you're an admin, you will now be notified when a pending post is submitted, and the post author will also receive a notification when their post is approved.
+
+You'll find more information about all that in the [hooks](/docs/customizing/hooks/) section of the documentation.
+
+### Introducing The Drop
+
+Finally, let me share this week's Telescope success-story: the launch of [The Drop](http://thedrop.club/).
+
+<%= figure "showcase/thedrop.jpg", "The Drop: the best of Electronic Dance Music.", "wide", "http://thedrop.club" %>
+
+The Drop hooks into the [SoundCloud](http://soundcloud.com) API to bring you the best tracks of the day, and it was launched by none other than [Justin Kan](http://justinkan.com/) of [Justin.tv](http://justin.tv) and [Twitch.tv](http://twitch.tv) fame.
+
+It's been very successful right off the bat, quickly building an active community and being featured on [Product Hunt](http://www.producthunt.com/posts/the-drop) and even [TechCrunch](http://techcrunch.com/2015/01/24/wob-wob-wob/)!
+
+### Next Steps
+
+I'm working on something that should bring a lot of extra exposure to Telescope, so I'm anticipating even more interest in the app in the next few weeks. So more than ever, the project could definitely use some help. 
+
+So if you think you can contribute, please check out [the roadmap](https://trello.com/b/oLMMqjVL/telescope-roadmap) or ping me in the [Slack chatroom](http://meta.telesc.pe/posts/mXbAD7bs6PysTRSuK)!
