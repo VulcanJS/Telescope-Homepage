@@ -18,7 +18,7 @@ Let's go back to our package and create a new `templates` directory inside `lib/
 We'll base our `newPostsList` template off Telescope's own `postsList` template. In fact it'll be almost identical, save for that welcome message:
 
 ```html
-<template name="posts_list">
+<template name="newPostsList">
   <div class="posts-wrapper grid grid-module">
     <h2 class="welcome-message">Welcome to Telescope!</h2>
     {{> UI.dynamic template=postsListIncoming data=incoming}}
