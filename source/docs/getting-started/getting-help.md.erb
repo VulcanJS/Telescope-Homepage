@@ -13,14 +13,13 @@ Telescope is still young, so you might run into bugs, or even just have a questi
 
 But in order to make support more manageable, here are a few guidelines.
 
-### Non-Telescope Issues
+### Is The Issue Specific To Telescope?
 
-The first thing to consider is that your issue might not be related to Telescope specifically. For example, things that are not Telescope-specific include:
+The first thing to consider is that your issue might not be related to Telescope specifically. For example, things that are not Telescope-specific include questions about:
 
-- Questions about [Git](http://git-scm.com/) and [GitHub](http://github.com/). 
-- Using Meteor. 
-- Running Meteor apps locally. 
+- [Git](http://git-scm.com/) and [GitHub](http://github.com/). 
 - Deploying Meteor apps. 
+- Using Meteor in general. 
 
 A good way to figure out if your problem is specific to Telescope or not is to try running/deploying another Meteor app (such as [Microscope](https://github.com/DiscoverMeteor/Microscope)) and see if you encounter the same issue. 
 
@@ -29,27 +28,39 @@ So if your issue is *not directly related to Telescope* I suggest:
 - Posting on [Stack Overflow](http://stackoverflow.com) using the `meteor` tag.
 - Asking on [Meteor-Talk](https://groups.google.com/forum/#!forum/meteor-talk).
 
-If this is an issue that applies to any Meteor app and not just Telescope, I would recommend [posting on Stack Overflow](http://stackoverflow.com) using the `meteor` tag instead of here.
+On the other hand, if you're pretty sure that your issue is Telescope-related, read on. 
 
-### Telescope Issues
+### Where Should I Get Help?
 
-If you've ran into a bug with Telescope itself (as opposed to having a general question, or trying to customize Telescope), please [leave an issue on GitHub](https://github.com/TelescopeJS/Telescope/issues). 
+If you're trying to customize Telescope or have a general Telescope question, you can post on [Meta](http://meta.telesc.pe).
 
-When you post, make sure you include:
+On the other hand, if you've ran into a bug with Telescope (something that's clearly not working as it should) please [leave an issue on GitHub](https://github.com/TelescopeJS/Telescope/issues). 
 
-- A clear description of your issue. Please make an effort to make yourself understandable!
-- Any relevant error logs, both on the **client** (in the browser console) and the **server** (in the terminal). Use triple back-ticks to format them properly in your markdown post, or link to a [GitHub gist](http://gist.github.com) if they're too long. 
-- Any relevant screenshots that can help explain what you're trying to achieve.
-- **Important** A link to your code on GitHub or BitBucket. Please include that link with every new issue even if you've posted it previously, so I don't have to look for it.
+### What Information Should I Include?
 
-Above all, make sure you write clearly, use proper syntax and grammar, and give enough details for someone else to be able to actually help you.
+When you ask for help, make sure you include the following things:
 
-### Customization Questions
+- **Description of the issue**<br/>
+  A clear description of your issue. Please make an effort to make yourself understandable!
+- **Client-side error logs**<br/>
+  Any relevant error logs on the client (in the browser console). Use triple back-ticks to format them properly in your markdown post, or link to a [GitHub gist](http://gist.github.com) if they're too long. 
+- **Server-side error logs**<br/>
+  Any relevant error logs on the server (in the terminal – use `meteor logs myapp` or `mup logs -f` to view remote logs, depending on your deployment method).
+- **Screenshots or screencasts**<br/>
+  Any relevant screenshots or screencasts that can help explain what you're trying to achieve and what you're trying to achieve.
+- **Demo link**<br/>
+  A link to a live instance of Telescope exhibiting the issue. 
+- **Repo link**<br/>
+  If you're customize Telescope, a link to your code on GitHub or BitBucket. 
 
-If you're trying to customize Telescope and are running into trouble, please [post on Stack Overflow under the `telescope` tag](http://stackoverflow.com/questions/tagged/telescope).
+Above all, make sure you write clearly and use proper syntax and grammar. Remember that the more detailed your error report is, the easier it will be for someone to actually help you!
 
-Just like with issues, the same guidelines apply: provide a clear description, any relevant error logs, and a link to your codebase if you can. 
+In other words:
 
-### Other Discussions
+**Bad**:
 
-Finally, for things that don't fit in any of the above categories, feel free to post on [Meta](http://meta. telesc.pe).
+> y Telescope u no work?
+
+**Good**:
+
+> Dear Sirs. It has come to my attention that Telescope (hereafter known as “the app”) has failed to perform in a sufficiently desirable manner within the set of parameters expected for a reasonable usage. Attached are various screencasts, links, and logs that I trust will help you sort out this most confounding issue. Anxiously awaiting your response. 
