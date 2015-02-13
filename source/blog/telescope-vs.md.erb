@@ -1,0 +1,95 @@
+---
+title: 'Telescope VS: A Comparison Of Community-Building Tools'
+published: true
+author: sacha
+date: 2015/02/13
+---
+
+Telescope's mission is to make it easy for anyone to launch their own Product Hunt or Hacker News. But it's far from the only app in its space, and you might be wondering how it compares with other similar solutions. 
+
+Here is a short guide to help you find out. 
+
+### Subreddits
+
+[Reddit](http://www.reddit.com/) lets anybody create and customize their own private subreddit. It's a great option if you want to set up something fast, and don't care too much about how it looks.
+
+Another benefit is that current Reddit users won't have to create a new account for your site, and will be able to easily add it to their own front page.
+
+<%= figure "blog/subreddit.jpg", "The Meteor Subreddit.", "", "http://reddit.com/r/meteor" %>
+
+The main downside of using a subreddit is that you don't own any of the content, and neither can you use audience-building methods like sending out a newsletter, since you won't have access to any of your members' contact information. 
+
+And although minor CSS customizations are possible, you'll be stuck with the default Reddit layout. 
+
+### Postatic
+
+Just like Reddit, [Postatic](http://www.postatic.com/) is a hosted service that lets you create your own Hacker News or Reddit-style site. But unlike Reddit, it gives you a standalone site with its own domain and users.
+
+This means you get a lot more control over your site and community, and you even get a few customization options.
+
+<%= figure "blog/postatic.jpg", "BioHackerNews, a Postatic site.", "", "http://postatic.com/" %>
+
+As with all hosted services though, you don't have total control over the app, so you can't get *too* crazy. And while Postatic is free right now, down the road you'll probably have to pay a monthly fee to use the service.
+
+### Reddit & Hacker News
+
+Wait, didn't we just cover Reddit? We sure did, but this time I'm talking about [the *open-source* version of Reddit](https://github.com/reddit/reddit), which you can host yourself for free. 
+
+While getting an established, proven codebase for free might seem attractive, it's important to understand the distinction between an app that happens to be open-source (like Reddit or [Hacker News](https://github.com/arclanguage/anarki)), and an app that was *meant to be* open-source. 
+
+<%= figure "blog/hackernews.jpg", "You too could get a modern, attractive site like this one!", "", "http://news.ycombinator.com/" %>
+
+To pick a familiar example, WordPress was conceived from the start to be widely used by a variety of people, which means it has built-in support for hooks, plug-ins, and themes that let you extend its capabilities without having to dig into WordPress' own code, great documentation, and a huge community. 
+
+On the other hand, Reddit's goal is not to become a widely-distributed open-source app, and as such its codebase might not be as user-friendly as you'd want. For example the [installation instructions](https://github.com/reddit/reddit/wiki/Install-guide) are fairly involved, and you might find the documentation a bit lacking. 
+
+The same goes with the other open-source Hacker News clones such as [Lamer News](https://github.com/antirez/lamernews) or [Lobsters](https://github.com/jcs/lobsters): the code might be great, but so far none of these projects have succeeded in building a strong community around them.
+
+<%= figure "blog/echojs.jpg", "EchoJS, a site that uses Lamer News.", "", "http://www.echojs.com/" %>
+
+### WordPress Themes
+
+Speaking of WordPress, it shouldn't surpise you to know that it can also be used to power community sites. The [Upvote](http://upvotetheme.com/) or [Plugin Hunt](http://epicplugins.com/pluginhunt/) themes lets you do just that, and might be a good option if you're already familiar with the WordPress ecosystem.
+
+<%#= figure "blog/upvote-theme.jpg", "The Upvote theme for WordPress.", "", "http://upvotetheme.com/" %>
+<%= figure "blog/plugin-hunt.jpg", "The Plugin Hunt theme for WordPress.", "", "http://epicplugins.com/pluginhunt/" %>
+
+Of course, using WordPress also has its pros and cons. Despite its amazing flexibility, it's still blogging software at its core, not a community platform.
+
+### Discourse
+
+[Discourse](http://www.discourse.org/) isn't really a Hacker News or Product Hunt type app at all, but instead takes on the challenge of replacing traditional discussion forums with a modern, open-source alternative. 
+
+<%= figure "blog/discourse.jpg", "Discourse: Civilized Discussion. On the Internet.", "", "http://www.discourse.org/" %>
+
+So it's ideal if what you want to focus on is discussions and you don't need upvoting or link sharing. It's got all the hallmarks of an awesome open-source project: good documentation, great community, and experienced core developers. 
+
+But at far as I know, there's no way to bend Discourse into a more Hacker News-like format yet.
+
+### Roll Your Own
+
+At its core, building a Hacker News-style app is not an insurmountable task. You mainly need posts, comments, and a way to upvote and rank them. So it's certainly possible to quickly hack something together. 
+
+That being said, even the simplest apps often conceal hidden complexities. For example, what about user profiles? A mobile version? Or email notifications?
+
+For that reason, if your main goal is building up a successful community, I would probably advise against starting from scratch. 
+
+### Telescope
+
+This finally brings us to Telescope. Unlike subreddits and Postatic, Telescope is entirely self-hosted, meaning you're in control of every last line of code. 
+
+And unlike the open-source versions of Reddit or Hacker News, it was meant from the start to be an approachable, user-friendly open-source app. This means things like a comprehensive hook system so you can add features without modifying the core, and a notification system that lets you know when a new version is available. 
+
+And unlike WordPress… Well, no, actually WordPress is also a fairly solid option. Except for the fact that it's WordPress, which depending on your position can both be a pro or a con. 
+
+One advantage of Telescope though is its fairly lightweight codebase. At 9 MB, WordPress' GitHub repo weighs in at *15 times* the size of Telescope (561 KB)! So if you're starting from scratch, understanding Telescope's inner workings will probably be much faster than doing the same with WordPress. 
+
+But Telescope's biggest advantage over the other solutions mentioned here is probably its flexibility. Browsing through the [showcase](/showcase), you'll see people using it to [generate music playlists](http://thedrop.club/), [aggregate RSS feeds](http://themmatrends.com/), and even [schedule hangouts](http://hangouts.codebuddies.org/)!
+
+### So Which One Should I Chose?
+
+At the end of the day, it boils down to your own specific situation and goals.
+
+- If you want to get something out quick and don't care about long-term audience building, get a **subreddit**.
+- If you're already familiar with the ecosystem and manage to find a theme that does what you want, get a **WordPress theme**.
+- And finally, if you want to be able to customize and control your app however you want, pick **Telescope**!
