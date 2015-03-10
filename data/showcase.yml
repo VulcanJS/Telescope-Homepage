@@ -90,3 +90,7 @@
   url: http://www.crunchhunt.com/
   description: Every day, the most popular articles of TechCrunch
   screenshot: crunchhunt.jpg
+- title: EEHub
+  url: http://ee-hub.com/
+  description: The hub for the Expression Engine community.
+  screenshot: eehub.jpg
