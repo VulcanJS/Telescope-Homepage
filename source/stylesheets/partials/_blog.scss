@@ -72,6 +72,24 @@ h3.blog{
 		float: right;
 	}
 }
+.post-thumbnail{
+	margin: 0;
+	position: relative;
+	img{
+		display: block;
+		width: 100%;
+	}
+	.gradient{
+		display: block;
+		position: absolute;
+		top: 0px;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+		z-index: 100;
+		background: linear-gradient(to bottom, rgba(66,58,112,0.1) 0%, rgba(57,51,97,1) 100%);
+	}
+}
 .post-nav{
 	@include border-radius(0 0 5px 5px);
 	border-top: 1px $light-grey solid;
@@ -196,13 +214,19 @@ h3.blog{
 		&.full{
 			width: 100%;
 		}
-		&.wide{
+		&.wide, &.wide-with-borders{
 			width: auto;
 			@include medium{
 				margin: 60px -80px;
 			}
 			img{
 				border: none;
+			}
+		}
+		&.wide-with-borders{
+			img{
+				border-top: 5px solid $light-grey;
+				border-bottom: 5px solid $light-grey;
 			}
 		}
 		&.no-border{
@@ -262,12 +286,13 @@ h3.blog{
 		margin-bottom: 40px;
 	}
 	.post-title{
-		font-size: 30px;
-		margin-bottom: 10px;
+		font-size: 36px;
+		margin: 0 0 10px 0;
 		border-bottom: none;
-		a{
-			@include light;
-		}
+	}
+	.post-thumbnail{
+		margin: 0 0 $spacing 0;
+		width: 100%;
 	}
 }
 .comments{

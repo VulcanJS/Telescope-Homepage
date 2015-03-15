@@ -12,12 +12,10 @@
           .date
             =post.date.strftime('%b %e %Y')
         .post-content
-          .post-thumbnail
-            %a{:href => post.url}
-              - if post.data.thumb
-                %img.thumb{:src => "/images/blog/"+post.data.thumb}
-              - else
-                %span.thumb.default-thumb
+          - if post.data.thumbnail
+            %figure.post-thumbnail
+              %a{:href => post.url}
+                %img.thumb{:src => "/images/blog/"+post.data.thumbnail}
           .summary
 
             %h2.post-title
