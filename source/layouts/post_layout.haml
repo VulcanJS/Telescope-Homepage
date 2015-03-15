@@ -32,7 +32,7 @@
 
       .twitter
         :plain
-          <a href="https://twitter.com/share" class="twitter-share-button" data-via="Telescpe">Tweet</a>
+          <a href="https://twitter.com/share" class="twitter-share-button" data-via="telescopeapp">Tweet</a>
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>  
 
     .post-nav
@@ -48,6 +48,8 @@
         %a.next{:href => "#{next_article.url}", :title => "next Post: #{next_article.title}"}
           =next_article.title
           »
+
+  =partial('partials/newsletter_form')
 
   %section.inverted
     .comments

@@ -37,7 +37,7 @@ h3.blog{
 	@include cf;
 	@include border-radius(5px 5px 0 0);
 	// background: $light-grey;
-	border-bottom: 1px $light-grey solid;
+	border-bottom: 1px $medium-grey solid;
 	padding: 5px 15px;
 	@include small{
 		font-size: 14px;

@@ -1,0 +1,8 @@
+%section.newsletter
+  %h3 The Telescope Newsletter
+  %p Sign up to receive updates about new features and Telescope tips.
+  %form#mc-embedded-subscribe-form.validate.form-inline{:action => "//sachagreif.us2.list-manage.com/subscribe/post?u=b5af47765edbd2fc173dbf27a&amp;id=d72073970d", :method => "post", :name => "mc-embedded-subscribe-form", :novalidate => "", :target => "_blank"}
+    / %label{:for => "mce-EMAIL"} Enter your email to receive Meteor tips and know when the book comes out
+    %input#mce-EMAIL.email{:name => "EMAIL", :placeholder => "Your email address", :required => "", :type => "email", :value => ""}
+    %input#origin{:type=>"hidden", :name=>"ORIGIN"}
+    %button#mc-embedded-subscribe.button{:name => "subscribe", :type => "submit"} Sign Up
