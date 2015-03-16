@@ -211,6 +211,13 @@ h3.blog{
 		&.left{
 			margin: $spacing 0 $spacing 0;
 		}
+		&.right{
+			@include medium{
+				width: 250px;
+				float: right;
+				margin: 0 $spacing 0 $spacing;
+			}
+		}
 		&.full{
 			width: 100%;
 		}
