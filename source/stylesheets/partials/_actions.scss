@@ -1,6 +1,7 @@
 
 .actions{
   background: $medium-grey;
+  padding: $spacing 0;
 }
 
 .button{
@@ -9,13 +10,12 @@
   // @include background(linear-gradient(bottom, #41378b, #b281ff));
   @include background(linear-gradient(bottom, #201a4b, #cbabff));
   background-size: cover;
-  @include box-shadow(inset 0px 1px white(0.25));
+  // @include box-shadow(inset 0px 1px white(0.25));
   border:none;
   height:80px;
   text-align:center;
   position:relative;
   overflow:hidden;
-  margin-bottom:10px;
   &, &:visited, &:active, &:hover{
     color: white;
   }
@@ -43,7 +43,7 @@
   }
   .button-content{
     @include border-radius(5px);
-    @include box-shadow(inset 0px 1px white(0.25));
+    // @include box-shadow(inset 0px 1px white(0.25));
     position:absolute;
     z-index:30;
     font-size:24px;
@@ -59,7 +59,7 @@
   }
   &:hover{
     .button-content{
-      @include box-shadow(inset 0px 1px white(0.1));
+      // @include box-shadow(inset 0px 1px white(0.1));
     }
     .bg1{
       opacity:0;

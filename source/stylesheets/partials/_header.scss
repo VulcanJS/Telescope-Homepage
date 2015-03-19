@@ -1,16 +1,18 @@
 .top{
-  background: url(../images/stars-bg.jpg) no-repeat top center; 
-  // background: url(../images/stars2-bg.png) no-repeat top center; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/stars-bg.jpg', sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/stars-bg.jpg', sizingMethod='scale')";
+//   background: url(../images/stars-bg.jpg) no-repeat top center; 
+//   // background: url(../images/stars2-bg.png) no-repeat top center; 
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+//   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/stars-bg.jpg', sizingMethod='scale');
+//   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/stars-bg.jpg', sizingMethod='scale')";
+background: $dark-purple;
 }
 
 .header{
   border-bottom:1px solid white(0.15);
+  // background: white(0.1);  
 }
 
 .header-container{
@@ -18,8 +20,11 @@
 }
 .header-logo{
   float: left;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
+  margin: 10px 0;
+  position: relative;
+  left: -2px;
   a, img{
     display: block;
     width: 100%;
@@ -34,10 +39,18 @@
   li{
     display: inline-block;
     @include medium{      
-      margin-right: 40px;
+      margin-left: 40px;
     }
     @include small{
-      margin-right: 10px;
+      margin-left: 10px;
+    }
+  }
+  a{
+    &, &:link, &:visited, &:active{
+      color: white;
+    }
+    &:hover{
+
     }
   }
 }
