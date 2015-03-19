@@ -97,11 +97,9 @@ h3.blog{
 }
 .post-content{
 	@include small{
-		padding: 20px;
 		font-size: 15px;
 	}
 	@include medium{
-		padding: 40px 80px;
 		font-size: 18px;
 	}
 	hr{

@@ -1,0 +1,46 @@
+.top{
+  background: url(../images/stars-bg.jpg) no-repeat top center; 
+  // background: url(../images/stars2-bg.png) no-repeat top center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/stars-bg.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/stars-bg.jpg', sizingMethod='scale')";
+}
+
+.header{
+  border-bottom:1px solid white(0.15);
+}
+
+.header-container{
+  @include cf;
+}
+.header-logo{
+  float: left;
+  width: 40px;
+  height: 40px;
+  a, img{
+    display: block;
+    width: 100%;
+  }
+}
+.header-nav{
+  float: right;
+  list-style-type: none;
+  padding: 10px 0;
+  margin: 0;
+  text-align: center;
+  li{
+    display: inline-block;
+    @include medium{      
+      margin-right: 40px;
+    }
+    @include small{
+      margin-right: 10px;
+    }
+  }
+}
+.actions{
+  padding-right: 1px;
+}

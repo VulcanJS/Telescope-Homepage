@@ -1,40 +1,25 @@
-.header{
-	border: none;
-	margin: 0;
-	clear: both;
-	@include small{
-		padding-left: 10px;
-		padding-right: 10px;
-	}
+.hero-container{
+  padding: $spacing 0;
 }
-.nav{
-	border-radius: 3px;
-	border-bottom:1px solid white(0.15);
-	border-top:1px solid white(0.15);		
-	background:white(0.1);
-	list-style-type: none;
-	padding: 10px 20px;
-	margin: 0;
-	text-align: center;
-	li{
-		display: inline-block;
-		@include medium{			
-			margin-right: 40px;
-		}
-		@include small{
-			margin-right: 10px;
-		}
-	}
 
+.hero-logo{
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+  a, img{
+    display: block;
+    width: 100%;
+  }
 }
-h1.logo{
-	margin: 30px auto 20px auto;
-	width: 100%;
-	max-width: 350px;
-	img{
-		width: 100%;
-	}
+.hero-tagline{
+  color: white;
+  font-weight: $light;
 }
-.actions{
-	padding-right: 1px;
+.hero-screenshot{
+  width: 100%;
+  margin: $spacing auto;
+  img{
+    display: block;
+    width: 100%;
+  }
 }
