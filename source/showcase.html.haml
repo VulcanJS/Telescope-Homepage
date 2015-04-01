@@ -3,6 +3,7 @@
 %section.showcase
   .page-title
     %h3.main-title Showcase
+    %h4.sub-title A selection of sites using Telescope
   .sites
     - data.showcase.reverse_each do |site|
       .site
@@ -12,7 +13,9 @@
         .description
           %h4.title
             %a{:href => site.url}=site.title
-          %p=site.description
+          %p
+            :markdown
+              #{site.description}
 
 %section.apply
   %h3 Do You Use Telescope?

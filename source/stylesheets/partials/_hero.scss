@@ -21,11 +21,12 @@
   margin-bottom: $spacing;
 }
 
-$browser-color: white(0.2);
+$browser-color: #48385A;
 
 .hero-screenshot{
   border: 4px solid $browser-color;
   width: 100%;
+  max-width: 800px;
   margin: $spacing auto;
   border-radius: 5px;
   img{

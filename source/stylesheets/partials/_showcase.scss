@@ -1,16 +1,15 @@
 .showcase{
 	.site{
-		@include medium{
-			@include span-columns(4);
-			@include nth-omega(3n, of-type);
-			min-height: 290px;
-		}
+
 		border-bottom:1px solid white(0.15);
 		border-top:1px solid white(0.15);		
 		background:white(0.1);
 		padding:20px;
 		margin-bottom: $spacing;
+		@include cf;
 		.screenshot{
+			float: left;
+			width: 300px;
 			a, img{
 				display: block;
 				width: 100%;
@@ -21,15 +20,18 @@
 				top: 0px;
 				display: block;
 				@include medium{
-					height: 140px;
+					height: 175px;
 				}
 				overflow: hidden;			
 				@include border-radius(2px);
-				@include box-shadow(0px 3px 7px black(0.85));
+				@include box-shadow(0px 2px 3px black(0.2));
 			}
 			img{
 			}
 			margin-bottom: 10px;
+		}
+		.description{
+			margin-left: 300px + $spacing;
 		}
 		.title{
 			text-align: left;

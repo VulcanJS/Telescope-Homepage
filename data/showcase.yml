@@ -6,94 +6,101 @@
 #   url: http://www.hackb.io/
 #   description: A place to share interesting things that are relevant to biology.
 #   screenshot: hackbio.png
-- title: Sidebar
-  url: http://sidebar.io/
-  description: An aggregator of the best design links of the day.
-  screenshot: sidebar.png
+# - title: Sidebar
+#   url: http://sidebar.io/
+#   description: An aggregator of the best design links of the day.
+#   screenshot: sidebar.png
 - title: Crater.io
   url: http://crater.io/
   description: A community to discuss all things Meteor. 
-  screenshot: crater.jpg
-- title: SproutGuild
-  url: http://www.sproutguild.com/
-  description: Daily discovery of the hippest natural foods, products & brands.
-  screenshot: sproutguild.jpg
-- title: Kadira Hub
-  url: http://hub.kadira.io/
-  description: Discuss Meteor performance optimization and scaling.
-  screenshot: kadira.jpg
-- title: Frontends
-  url: http://www.frontends.org/
-  description: Front-end development news and discussions.
-  screenshot: frontends.jpg
-- title: Bootstrappers
-  url: http://www.bootstrappers.io/
-  description: A community for bootstrapped entrepreneurs.
-  screenshot: bootstrappers.jpg
-- title: GameDev News
-  url: http://news.powerupgames.io/
-  description: The latest news from the gaming industry.
-  screenshot: gamedevnews.jpg
-#- title: CarNews
-#  url: http://carnews.motorpaneer.com/
-#  description: The freshest source of automotive news.
-#  screenshot: carnews.jpg 
-- title: Happy Endings
-  url: http://happyendings.radialpoint.com/
-  description: News for customer service professionals.
-  screenshot: happyendings.jpg 
-- title: Closing Call
-  url: http://www.closingcall.co/
-  description: A community about sales and marketing.
-  screenshot: closingcall.jpg
-- title: BuildBox
-  url: http://buildbox.co/
-  description: The best building resources for technology entrepreneurs.
-  screenshot: buildbox.jpg
-- title: Excel News
-  url: http://www.excel-news.com/
-  description: Everything Excel.
-  screenshot: excelnews.jpg 
+  screenshot: crater2.jpg
+# - title: SproutGuild
+#   url: http://www.sproutguild.com/
+#   description: Daily discovery of the hippest natural foods, products & brands.
+#   screenshot: sproutguild.jpg
+# - title: Kadira Hub
+#   url: http://hub.kadira.io/
+#   description: Discuss Meteor performance optimization and scaling.
+#   screenshot: kadira.jpg
+# - title: Frontends
+#   url: http://www.frontends.org/
+#   description: Front-end development news and discussions.
+#   screenshot: frontends.jpg
+# - title: Bootstrappers
+#   url: http://www.bootstrappers.io/
+#   description: A community for bootstrapped entrepreneurs.
+#   screenshot: bootstrappers.jpg
+# - title: GameDev News
+#   url: http://news.powerupgames.io/
+#   description: The latest news from the gaming industry.
+#   screenshot: gamedevnews.jpg
+# #- title: CarNews
+# #  url: http://carnews.motorpaneer.com/
+# #  description: The freshest source of automotive news.
+# #  screenshot: carnews.jpg 
+# - title: Happy Endings
+#   url: http://happyendings.radialpoint.com/
+#   description: News for customer service professionals.
+#   screenshot: happyendings.jpg 
+# - title: Closing Call
+#   url: http://www.closingcall.co/
+#   description: A community about sales and marketing.
+#   screenshot: closingcall.jpg
+# - title: BuildBox
+#   url: http://buildbox.co/
+#   description: The best building resources for technology entrepreneurs.
+#   screenshot: buildbox.jpg
+# - title: Excel News
+#   url: http://www.excel-news.com/
+#   description: Everything Excel.
+#   screenshot: excelnews.jpg 
 - title: Madrasa
   url: http://madrasa.ca/
-  description: News for customer service professionals.
+  description: >
+    Making use of Telescope's grid layout and search features, Madrasa 
+    offers a selection of tutorials from across the web. 
   screenshot: madrasa.jpg 
-- title: Weld
-  url: http://welderwire.meteor.com/
-  description: A Telescope theme demo.
-  screenshot: weld.jpg
-- title: Data For Good
-  url: http://dataforgood.co/
-  description: Share data-driven projects for social good.
-  screenshot: dataforgood.jpg
+# - title: Weld
+#   url: http://welderwire.meteor.com/
+#   description: A Telescope theme demo.
+#   screenshot: weld.jpg
+# - title: Data For Good
+#   url: http://dataforgood.co/
+#   description: Share data-driven projects for social good.
+#   screenshot: dataforgood.jpg
 #- title: Mean Stack
 #  url: http://mean-stack.io/
 #  description: The latest and hottest topics on MEAN development.
 #  screenshot: meanstack.jpg
-- title: About Admissions
-  url: https://aboutadmissions.admithub.com/
-  description: The latest college admission tips.
-  screenshot: aboutadmissions.png
-- title: The Content List
-  url: http://thecontentlist.com/
-  description: Content marketing news.
-  screenshot: contentlist.jpg
-- title: Zombts
-  url: http://zombts.com/
-  description: The best beatboxing videos.
-  screenshot: zombts.jpg
+# - title: About Admissions
+#   url: https://aboutadmissions.admithub.com/
+#   description: The latest college admission tips.
+#   screenshot: aboutadmissions.png
+# - title: The Content List
+#   url: http://thecontentlist.com/
+#   description: Content marketing news.
+#   screenshot: contentlist.jpg
+# - title: Zombts
+#   url: http://zombts.com/
+#   description: The best beatboxing videos.
+#   screenshot: zombts.jpg
 - title: CodeBuddies Hangouts
   url: http://hangouts.codebuddies.org/
-  description: '"Running partners" for learning to code.'
+  description: >
+    CodeBuddies helps you find study partners and organize group hangouts to learn to code. 
+    For this project, Telescope's upvote feature was repurposed 
+    as an “RSVP” button for people to sign up to upcoming hangouts. 
   screenshot: codebuddies.jpg
 - title: CrunchHunt
   url: http://www.crunchhunt.com/
-  description: Every day, the most popular articles of TechCrunch
+  description: >
+    CrunchHunt uses Telescope's RSS feed parsing feature to automatically import 
+    new TechCrunch blog posts, which are then re-ranked according to their popularity on social networks.
   screenshot: crunchhunt.jpg
-- title: EEHub
-  url: http://ee-hub.com/
-  description: The hub for the Expression Engine community.
-  screenshot: eehub.jpg
+# - title: EEHub
+#   url: http://ee-hub.com/
+#   description: The hub for the Expression Engine community.
+#   screenshot: eehub.jpg
 - title: Backa
   url: http://app.backa.co/
   description: Gain valuable, actionable feedback on your startup ideas.

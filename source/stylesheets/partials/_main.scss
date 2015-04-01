@@ -17,9 +17,6 @@ body, input, textarea, button{
 	@include regular;	
 	font-size: 16px;
 }
-strong{
-	color: white;
-}
 h1, h2, h3, h4, h5{
 	text-align:center;
 	margin:0;
@@ -54,6 +51,10 @@ h1, h2, h3, h4, h5{
 		}
 		line-height: 1.2;
 	}
+	.sub-title{
+		font-weight: $regular;
+		font-size: 24px;
+	}
 	.rss{
 		font-size: 16px;
 		vertical-align: middle;
@@ -68,11 +69,6 @@ h1, h2, h3, h4, h5{
 			@include bold;
 			// color:white;
 		}
-	}
-	h4{
-		@include light;
-		color: white;
-		font-size: 24px;
 	}
 }
 p{
