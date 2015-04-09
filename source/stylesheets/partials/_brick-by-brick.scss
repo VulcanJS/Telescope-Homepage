@@ -1,0 +1,27 @@
+.brick-by-brick-section{
+  background: $light-grey;
+  padding: $spacing*2 0;
+}
+
+.brick-by-brick{
+  border-bottom: 2px solid $browser-color;
+  @include cf;
+  .image{
+    @include medium{
+      @include span-columns(7);
+    }
+    img{
+      display: block;
+      width: 120%;
+    }
+  }
+  .description{
+    @include medium{
+      @include span-columns(5 omega);
+    }
+    text-align: left;
+    a{
+
+    }
+  }
+}

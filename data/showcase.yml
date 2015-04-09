@@ -57,8 +57,8 @@
 - title: Madrasa
   url: http://madrasa.ca/
   description: >
-    Making use of Telescope's grid layout and search features, Madrasa 
-    offers a selection of tutorials from across the web. 
+    Madrasa offers a selection of tutorials from across the web. 
+# Making use of Telescope's grid layout and search features, 
   screenshot: madrasa.jpg 
 # - title: Weld
 #   url: http://welderwire.meteor.com/
@@ -84,19 +84,19 @@
 #   url: http://zombts.com/
 #   description: The best beatboxing videos.
 #   screenshot: zombts.jpg
-- title: CodeBuddies Hangouts
+- title: CodeBuddies
   url: http://hangouts.codebuddies.org/
   description: >
     CodeBuddies helps you find study partners and organize group hangouts to learn to code. 
-    For this project, Telescope's upvote feature was repurposed 
-    as an “RSVP” button for people to sign up to upcoming hangouts. 
+# For this project, Telescope's upvote feature was repurposed 
+# as an “RSVP” button for people to sign up to upcoming hangouts. 
   screenshot: codebuddies.jpg
-- title: CrunchHunt
-  url: http://www.crunchhunt.com/
-  description: >
-    CrunchHunt uses Telescope's RSS feed parsing feature to automatically import 
-    new TechCrunch blog posts, which are then re-ranked according to their popularity on social networks.
-  screenshot: crunchhunt.jpg
+# - title: CrunchHunt
+#   url: http://www.crunchhunt.com/
+#   description: >
+#     CrunchHunt uses Telescope's RSS feed parsing feature to automatically import 
+#     new TechCrunch blog posts, which are then re-ranked according to their popularity on social networks.
+#   screenshot: crunchhunt.jpg
 # - title: EEHub
 #   url: http://ee-hub.com/
 #   description: The hub for the Expression Engine community.

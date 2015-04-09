@@ -145,6 +145,11 @@ activate :syntax#,:linenos => 'table'
 set :markdown_engine, :redcarpet
 set :markdown, :fenced_code_blocks => true, :smartypants => true
 
+# Add bower's directory to sprockets asset path
+after_configuration do
+  sprockets.append_path File.join "#{root}", "bower_components"
+end
+
 helpers do
   def div(css_class, content)
     %Q{<div class="#{css_class}">#{content}</div>}

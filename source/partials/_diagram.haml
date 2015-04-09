@@ -1,0 +1,34 @@
+%section.diagram-section
+  .container
+
+    %h2.section-heading Features
+
+    .annotations-left
+      - data.annotations.select{ |a| a.side == "left"}.each do |annotation|
+        .annotation{class: "target-#{annotation.slug}"}
+          %h4.annotation-title=annotation.title
+          :markdown
+            #{annotation.description}
+
+    .diagram
+      .browser-container
+        .browser-top
+          .browser-buttons
+            .browser-button
+            .browser-button
+            .browser-button
+          .browser-bar
+        .browser-screenshot
+          %img{src: "/images/showcase/meta.jpg"}
+      .diagram-annotations
+        - data.annotations.each do |annotation|
+          %a.annotation-target{href: "#", style: "top: #{annotation.top}%; left: #{annotation.left}%;", id: "target-#{annotation.slug}"}
+            %span
+              = annotation.title
+    
+    .annotations-right
+      - data.annotations.select{ |a| a.side == "right"}.each do |annotation|
+        .annotation{class: "target-#{annotation.slug}"}
+          %h4.annotation-title=annotation.title
+          :markdown
+            #{annotation.description}

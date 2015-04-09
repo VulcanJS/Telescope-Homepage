@@ -1,30 +1,44 @@
 .examples{
+	// background: $light-grey;
+	padding: $spacing*2 0;
 	.site{
 		@include medium{
-			@include span-columns(4);
-			@include nth-omega(3, of-type);
+			@include span-columns(3);
+			@include nth-omega(4, of-type);
 		}
 	}
-	h4{
-		font-size:18px;
+	.screenshot{
+		a, img{
+			display: block;
+			width: 100%;
+		}
+		a{
+			position: relative;
+			top: 0px;
+			display: block;
+			@include medium{
+				height: 135px;
+			}
+			overflow: hidden;
+			background: white;
+			@include border-radius(3px);
+			border: 1px solid white;
+		}
+		img{
+		}
+		margin-bottom: 10px;
+	}
+	.description{
+		text-align: left;
+	}
+	.title{
+		text-align: left;
+		font-size: 24px;
+		a{
+			@include light;
+		}
 	}
 	p{
-		text-align:center;
-	}
-	.logo{
-		display:block;
-		margin-bottom:20px;
-		opacity:0.4;
-		img{
-			display:block;
-			margin:0 auto;
-			height:50px;
-		}
-		&:hover{
-			opacity:1;
-		}
-	}
-	.more{
-		font-size: 24px;
+		margin-bottom: 0;
 	}
 }

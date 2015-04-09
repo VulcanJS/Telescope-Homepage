@@ -12,9 +12,6 @@
 	.top{
 		max-height: 600px;
 	}
-	.main{
-		padding-top: 300px;
-	}
 }
 .tagline{
 	margin-bottom:20px;
@@ -36,14 +33,17 @@
 		}
 	}
 }
+
 .intro{
+	padding: $spacing*2 0;
 	p{
-		font-size:20px;
+		font-size:24px;
 		@include medium{
-			@include pad(1,1);
+			@include pad(2,2);
 		}
 	}
 }
+
 .feature-grid{
 	@include span-columns(12);
 }
@@ -221,4 +221,10 @@
 			padding: 0 10px;
 		}
 	}
+}
+
+.section-heading{
+	font-size: 36px;
+	font-weight: $light;
+	margin-bottom: $spacing;
 }

@@ -14,13 +14,13 @@ $small-break: 47.5em;
   }
 }
 
-$spacing: 30px;
+$spacing: 40px;
 $halfspacing: $spacing/2;
 $doublespacing: $spacing*2;
 
 $total-columns  : 12;
-$column-width   : 50px;
-$gutter-width   : $spacing;
+$column-width   : 40px;
+$gutter-width   : $spacing*1.5;
 $grid-padding   : 0px;
 
 $unit:$spacing;

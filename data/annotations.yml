@@ -1,0 +1,42 @@
+- title: Built-in Newsletters
+  slug: newsletters
+  top: 24
+  left: 68.5
+  side: right
+  description: >
+    Automatically send your [MailChimp](http://mailchimp.com) list an email digest of your best content.
+- title: Internationalization
+  slug: i18n
+  top: 6.5
+  left: 89
+  side: right
+  description: >
+    Telescope supports over 15 languages, with more on the way.
+- title: Flexible Layout
+  slug: layout
+  top: 6.5
+  left: 47
+  side: left
+  description: >
+    Choose from a grid or list layout, and pick either a top menu or side navigation.
+- title: Media Previews
+  slug: previews
+  top: 73.5
+  left: 16.1
+  side: left
+  description: >
+    Telescope uses [Embedly](http://embedly.com) to fetch thumbnails and descriptions for your links. 
+- title: Multiple Views
+  slug: views
+  top: 40
+  left: 20
+  side: left
+  description: >
+    Rank posts by date, popularity, or display them in a day-by-day view. 
+- title: Extensible Architecture
+  slug: architecture
+  top: 60
+  left: 60
+  side: right
+  description: >
+    Customize any template or add custom post fields. Telescope will adapt to your needs.
