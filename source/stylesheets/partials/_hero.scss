@@ -1,5 +1,5 @@
 .hero{
-  padding: $spacing 0;  
+  padding-top: $spacing;  
 }
 
 .hero-container{
@@ -21,3 +21,63 @@
   margin-bottom: $spacing;
 }
 
+.hero-actions{
+  text-align: center;
+  margin: 0 auto $spacing*2 auto;
+  display: flex;
+  justify-content: center;
+  .hero-action{
+    width: 350px;
+    padding: 0 10px;
+  }
+  .button{
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .deploy{
+  }
+  .or{
+    position: relative;
+    width: 0px;
+    margin: 0 $spacing;
+    &:before{
+      display: block;
+      content: " ";
+      position: absolute;
+      width: 1px;
+      height: 100%;
+      background: white(0.2);
+      top: 0px;
+      left: 0px;
+    }
+    &:after{
+      display: block;
+      content: "or";
+      background: $dark-purple;
+      position: absolute;
+      top: 50%;
+      margin-top: -15px;
+      left: -7px;
+    }
+  }
+  .install{
+    pre{
+      margin: 0 0 10px 0;
+      background: white(0.2);
+      padding: 16px 0;
+      text-align: center;
+    }
+  }
+}
+.hero-screenshot{
+  height: 400px;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 4px solid white(0.2);
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+  img{
+    width: 100%;
+  }
+}

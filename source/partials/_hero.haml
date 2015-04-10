@@ -3,3 +3,21 @@
     %h1.hero-logo
       %img{src: '/images/logo.png', alt: 'Telescope'}
     %h2.hero-tagline The easiest way to launch your community
+    .hero-actions
+      .hero-action.deploy
+        %a.button.demo{:href=>"http://demo2.telescopeapp.org"}
+          %span.bg1
+          %span.bg2
+          %span.button-content
+            %span.action 
+              %span One-Click Deploy
+        .scalingo
+          With <a href="http://scalingo.com">Scalingo</a>
+      .or
+      .hero-action.install
+        %pre
+          %code
+            meteor add telescope:core
+        .install-meteor Don't have Meteor? <a href="https://www.meteor.com/install">Get started here</a>.
+    .hero-screenshot
+      %img{src: "/images/showcase/meta.jpg"}

@@ -3,70 +3,69 @@ title: 'Telescope: Build your own Hacker News, Reddit, or Product Hunt.'
 page: why-telescope
 ---
 
-%section
+%section.philosophy
   .container
     .page-title
       %h3.main-title Why Telescope?
-    .post.inverted
-      .post-content
-        :markdown
+    .post-content
+      :markdown
 
-          So why should you use Telescope? Here are a couple reasons. 
+        So why should you use Telescope? Here are a couple reasons. 
 
-          ## Engineered For Communities
+        ## Engineered For Communities
 
-          Telescope was built from the ground up to make creating active, engaged communities easier. 
+        Telescope was built from the ground up to make creating active, engaged communities easier. 
 
-          From large features like automatically sending your audience email digests of your best content, to tiny ones like highlighting comments of the original poster, Telescope takes care of the basics so you can focus on what really matters: growing your community. 
+        From large features like automatically sending your audience email digests of your best content, to tiny ones like highlighting comments of the original poster, Telescope takes care of the basics so you can focus on what really matters: growing your community. 
 
-          #{figure "home/tsc-newsletter.jpg", "An auto-generated newsletter.", "", ""}
+        #{figure "home/tsc-newsletter.jpg", "An auto-generated newsletter.", "", ""}
 
-          ## Flexible & Extensible
+        ## Flexible & Extensible
 
-          Too often, having more features comes at the cost of flexibility and simplicity. With Telescope, we knew from the start we wanted to avoid this pitfall. 
+        Too often, having more features comes at the cost of flexibility and simplicity. With Telescope, we knew from the start we wanted to avoid this pitfall. 
 
-          This is why Telescope is made up of independant modules, which you can add and remove as you need. Don't need notifications? Just type `meteor remove telescope-notifications` package and you'll be good to go!
+        This is why Telescope is made up of independant modules, which you can add and remove as you need. Don't need notifications? Just type `meteor remove telescope-notifications` package and you'll be good to go!
 
-          What's more, Telescope's flexible template architecture means that every single part of the front-end can be customized without touching the app's core codebase. All you need to know is a bit of HTML and CSS. 
+        What's more, Telescope's flexible template architecture means that every single part of the front-end can be customized without touching the app's core codebase. All you need to know is a bit of HTML and CSS. 
 
-          Check out the [showcase](/showcase) to see just how flexible Telescope can be. 
+        Check out the [showcase](/showcase) to see just how flexible Telescope can be. 
 
-          #{figure "home/madrasa.jpg", "Customizing Telescope.", "", "http://madrasa.ca"}
+        #{figure "home/madrasa.jpg", "Customizing Telescope.", "", "http://madrasa.ca"}
 
-          ## Open To The World
+        ## Open To The World
 
-          Telescope plays nice with the web. Out of the box, it comes with built-in integrations with services like [Google Analytics](http://www.google.com/analytics/) (for web analytics) and [Kadira](http://kadira.io) (for performance and monitoring). 
+        Telescope plays nice with the web. Out of the box, it comes with built-in integrations with services like [Google Analytics](http://www.google.com/analytics/) (for web analytics) and [Kadira](http://kadira.io) (for performance and monitoring). 
 
-          What's more, Telescope can also parse any RSS feed to populate your site, automatically fetch preview thumbnails using [Embedly](http://embed.ly), and then generate and send an email newsletter using [MailChimp](http://mailchimp.com).
+        What's more, Telescope can also parse any RSS feed to populate your site, automatically fetch preview thumbnails using [Embedly](http://embed.ly), and then generate and send an email newsletter using [MailChimp](http://mailchimp.com).
 
-          #{figure "blog/campaign-mailchimp.jpg", "Previewing a newsletter in MailChimp.", "", ""}
+        #{figure "blog/campaign-mailchimp.jpg", "Previewing a newsletter in MailChimp.", "", ""}
 
-          ## Well-Documented
+        ## Well-Documented
 
-          Telescope features an extensive and still-growing [documentation](/docs), as well as screencasts covering topics such as [deploying](https://www.youtube.com/watch?v=WLGdXtZMmiI) or [setting up a newsletter](https://www.youtube.com/watch?v=_x8h3k5ffdw). 
+        Telescope features an extensive and still-growing [documentation](/docs), as well as screencasts covering topics such as [deploying](https://www.youtube.com/watch?v=WLGdXtZMmiI) or [setting up a newsletter](https://www.youtube.com/watch?v=_x8h3k5ffdw). 
 
-          What's more, the Telescope project also led to the publication of an entire book about [Meteor](http://meteor.com), the JavaScript framework on which it runs. In [Discover Meteor](http://discovermeteor.com/), you'll learn how to code Meteor apps by building Microscope, a simpler version of Telescope. 
+        What's more, the Telescope project also led to the publication of an entire book about [Meteor](http://meteor.com), the JavaScript framework on which it runs. In [Discover Meteor](http://discovermeteor.com/), you'll learn how to code Meteor apps by building Microscope, a simpler version of Telescope. 
 
-          ## A Vibrant Community
+        ## A Vibrant Community
 
-          The best thing about open-source software is that you're not on your own. Telescope has been forked [over 1000 times and counting](https://github.com/TelescopeJS/Telescope), and has a very active [Slack chatroom](http://meta.telesc.pe/posts/mXbAD7bs6PysTRSuK). 
+        The best thing about open-source software is that you're not on your own. Telescope has been forked [over 1000 times and counting](https://github.com/TelescopeJS/Telescope), and has a very active [Slack chatroom](http://meta.telesc.pe/posts/mXbAD7bs6PysTRSuK). 
 
-          So rather than going it alone, why not piggy-back on the efforts of the Telescope community? What's more, you'll also benefit from all future updates and improvements to the platform. 
+        So rather than going it alone, why not piggy-back on the efforts of the Telescope community? What's more, you'll also benefit from all future updates and improvements to the platform. 
 
-          Check out [the roadmap](https://trello.com/b/oLMMqjVL/telescope-roadmap) to see what's coming!
+        Check out [the roadmap](https://trello.com/b/oLMMqjVL/telescope-roadmap) to see what's coming!
 
-          ## No Lock In
+        ## No Lock In
 
-          What if you grow out of Telescope and decide you need your own, custom codebase?
+        What if you grow out of Telescope and decide you need your own, custom codebase?
 
-          Telescope is built on top of [Meteor](http://meteor.com), which means you can easily code up a new app while keeping all your data and user accounts intact. 
+        Telescope is built on top of [Meteor](http://meteor.com), which means you can easily code up a new app while keeping all your data and user accounts intact. 
 
-          And since Meteor is backed by [MongoDB](http://www.mongodb.org/), you can even change up your stack completely and transition into a Node or Rails app. 
+        And since Meteor is backed by [MongoDB](http://www.mongodb.org/), you can even change up your stack completely and transition into a Node or Rails app. 
 
-          So no matter your weapon of choice, Telescope is a great way to quickly get an MVP out the door. 
+        So no matter your weapon of choice, Telescope is a great way to quickly get an MVP out the door. 
 
-          ## Free Forever
+        ## Free Forever
 
-          Finally, Telescope is free for all uses (including commercial) and licensed under the [MIT license](https://github.com/TelescopeJS/Telescope/blob/master/license.md). So why not give it a try?
+        Finally, Telescope is free for all uses (including commercial) and licensed under the [MIT license](https://github.com/TelescopeJS/Telescope/blob/master/license.md). So why not give it a try?
 
 
