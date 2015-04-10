@@ -1,62 +1,51 @@
-%section.features.no-border
+%section.features
+  .container
+    .section-heading Features
 
-  .feature-block.feature-community
-    %h3.feature-title Community-in-a-box
-    .feature-description 
-      Telescope makes it easy to launch communities. Build and customize your very own Hacker News, Reddit, or Product Hunt!
-    .feature-images
-      .images-container
-        %img.feature-image.image-browser.image-1{:src => '/images/home/tsc-posts.jpg'}
-        %img.feature-image.image-browser.image-2{:src => '/images/home/tsc-comments.jpg'}
-      .images-legend
-        %a{:href=>"http://crater.io"}> Crater.io
-        , a community about the Meteor JavaScript framework. 
+    .feature
+      .feature-content
+        %h3.feature-title Engineered for Communities
+        .feature-description
+          :markdown
+            Telescope was built from the ground up to make creating active, engaged communities easier. 
 
-  .feature-block.feature-email
-    %h3.feature-title Built-In Newsletters
-    .feature-description 
-      Telescope integrates with <a href="http://mailchimp.com">MailChimp</a> to automatically send a daily or weekly email newsletter. 
-    .feature-images
-      .images-container
-        %img.feature-image.image-browser.image-1{:src => '/images/home/tsc-newsletter.jpg'}
-      .images-legend
-        Newsletter emails will also adopt your site's color and branding.
+            From large features like automatically sending your audience email digests of your best content, to tiny ones like highlighting comments of the original poster, Telescope takes care of the basics so you can focus on what really matters: growing your community. 
+      .feature-image
+        #{figure "home/tsc-newsletter.jpg", "An auto-generated newsletter.", "", ""}
 
-  .feature-block.feature-mobile
-    %h3.feature-title Mobile-Ready
-    .feature-description Telescope's default theme includes a mobile view and touch-friendly targets.
-    .feature-images
-      .images-container
-        %img.feature-image.image-1{:src => '/images/home/tsc-mobile-home.png'}
-        %img.feature-image.image-3{:src => '/images/home/tsc-mobile-home2.png'}
-        %img.feature-image.image-4{:src => '/images/home/tsc-mobile-comments.png'}
-        %img.feature-image.image-2{:src => '/images/home/tsc-mobile-menu.png'}
-      .images-legend
-        %a{:href=>"http://news.powerupgames.io/"}> GameDev News
-        , a community for game development news and discussions. 
+    .feature
+      .feature-content
+        %h3.feature-title Flexible & Extensible
+        .feature-description
+          :markdown
+            Too often, having more features comes at the cost of flexibility and simplicity. With Telescope, we knew from the start we wanted to avoid this pitfall. 
 
-  .feature-block.feature-extend
-    %h3.feature-title Easy To Customize
-    .feature-description Replace template fragments, add menu items, or inject new modules with a single line of code.
-    .feature-code
-      :code
-        # lang: javascript
-        templates.postTitle = "customTitle";
-        primaryNav.push("customMenu");
-        footerModules.push("customFooter");
-  .feature-grid
-    .feature-block.feature-open
-      %h3.feature-title Open Source
-      .feature-description Telescope is MIT-licensed. You can use it completely free, even for commercial applications.   
+            This is why Telescope is made up of independant modules, which you can add and remove as you need. Don't need notifications? Just type `meteor remove telescope-notifications` package and you'll be good to go!
 
-    .feature-block.feature-open
-      %h3.feature-title Built With Meteor
-      .feature-description Telescope runs on JavaScript framework <a href="http://meteor.com">Meteor</a>, which means it's  real-time, fast, and reactive. 
+            What's more, Telescope's flexible template architecture means that every single part of the front-end can be customized without touching the app's core codebase. All you need to know is a bit of HTML and CSS. 
+      .feature-image
+        #{figure "home/madrasa.jpg", "Customizing Telescope.", "", "http://madrasa.ca"}
 
-  .feature-block
-    %h3.feature-title Other Features
-    %ul
-      - data.features.each do |feature|
-        %li.feature
-          %h4=feature.name
-          %p=feature.description
+    .feature
+      .feature-content
+        %h3.feature-title Open To The World
+        .feature-description
+          :markdown
+            Telescope plays nice with the web. Out of the box, it comes with built-in integrations with services like [Google Analytics](http://www.google.com/analytics/) (for web analytics) and [Kadira](http://kadira.io) (for performance and monitoring). 
+
+            What's more, Telescope can also parse any RSS feed to populate your site, automatically fetch preview thumbnails using [Embedly](http://embed.ly), and then generate and send an email newsletter using [MailChimp](http://mailchimp.com).
+      .feature-image
+        #{figure "blog/campaign-mailchimp.jpg", "Previewing a newsletter in MailChimp.", "", ""}
+
+    .feature
+      .feature-content
+        %h3.feature-title A Vibrant Community
+        .feature-description
+          :markdown
+            The best thing about open-source software is that you're not on your own. Telescope has been forked [over 1000 times and counting](https://github.com/TelescopeJS/Telescope), and has a very active [Slack chatroom](http://meta.telesc.pe/posts/mXbAD7bs6PysTRSuK). 
+
+            So rather than going it alone, why not piggy-back on the efforts of the Telescope community? What's more, you'll also benefit from all future updates and improvements to the platform. 
+
+            Check out [the roadmap](https://trello.com/b/oLMMqjVL/telescope-roadmap) to see what's coming!
+      .feature-image
+        #{figure "blog/campaign-mailchimp.jpg", "Previewing a newsletter in MailChimp.", "", ""}

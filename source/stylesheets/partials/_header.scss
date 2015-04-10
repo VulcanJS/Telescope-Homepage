@@ -33,11 +33,11 @@ background: $dark-purple;
 .header-nav{
   float: right;
   list-style-type: none;
-  padding: 10px 0;
-  margin: 0;
+  margin: 10px 0;
   text-align: center;
   li{
     display: inline-block;
+    line-height: 32px;
     @include medium{      
       margin-left: 40px;
     }
