@@ -2,3 +2,4 @@ build/
 tmp/
 *.sublime-workspace
 *.sublime-project
+bower_components

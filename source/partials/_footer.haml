@@ -1,0 +1,33 @@
+%section.footer
+  .container.footer-container
+
+    .footer-content
+      - data.footer_nav.each do |item|
+        .footer-section
+          %h3.footer-heading= item.title
+          .footer-links
+            %ul
+              - item.items.each do |link|
+                %li
+                  %a.footer-link{href: link.url}= link.title
+      .footer-section
+        %h3.footer-heading Elsewhere
+        :markdown
+          Follow [@telescopeapp](http://twitter.com) on Twitter
+
+          Like us [on Facebook](#)
+
+          Telescope lens icon by [Prekesh Chavda](http://www.prekesh.com/)
+
+  .footer-chart
+    %h2.section-heading Project Stats
+    .footer-chart-inner
+      %canvas#myChart{width: '600px', height: '150px'}
+
+      .chartjs-tooltips
+        .tooltip-divider
+        .tooltips
+          - (1..4).each_with_index do |e, i|
+            .tooltip
+              %span.tooltip-label
+              %span.tooltip-value

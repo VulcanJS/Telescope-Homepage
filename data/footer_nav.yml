@@ -1,0 +1,32 @@
+- title: "About"
+  items:
+    - title:  "About"
+      url:    "/about"
+    - title:  "Blog"
+      url:    "/blog"
+    - title:  "FAQ"
+      url:    "/faq"
+    - title:  "Contact"
+      url:    "/contact"
+
+- title: Community
+  items: 
+    - title:  "#Telescope on Slack"
+      url:    "#"
+    - title:  "Telescope Meta"
+      url:    "http://meta.telescopeapp.org"
+    - title:  "Roadmap"
+      url:    "https://trello.com/b/oLMMqjVL/telescope-roadmap"
+    - title:  "GitHub"
+      url:    "http://github.com/TelescopeJS/Telescope"
+
+- title: Resources
+  items: 
+    - title:  "Documentation"
+      url:    "http://docs.telescopeapp.org"
+    - title:  "Themes"
+      url:    "/themes"
+    - title:  "Packages"
+      url:    "/packages"
+    - title:  "Showcase"
+      url:    "/showcase"
