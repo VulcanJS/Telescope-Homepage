@@ -1,0 +1,90 @@
+---
+title: "Previewing Telescope's Big Refactor"
+published: true
+author: sacha
+date: 2015/05/12
+# thumbnail: crater-thumb.jpg
+---
+
+Things have been quiet around here lately, but that doesn't mean Telescope hasn't seen activity, on the contrary. 
+
+For the last few weeks I've been busy completely refactoring Telescope's codebase. The refactor (v0.20) focuses on three main areas: a new architecture, new APIs, and new documentation. 
+
+READMORE
+
+### The 5-Minute Overview
+
+I made a short screencast to introduce the main changes. Or you can read on if you want a more detailed version. 
+
+<div class="video docs-video">
+  <h4>Telescope Refactor Preview</h4>
+  <iframe width="420" height="278" src="//www.youtube.com/embed/Kl2JpilTWjk" frameborder="0" allowfullscreen></iframe>
+</div>
+
+### New Architecture
+
+One of the main reasons for the refactor was to switch to a 100% package-based architecture, in other words, the entirety of Telescope's codebase now lives in Meteor packages. 
+
+While these packages are not yet published, once they are you'll be able to:
+
+- Install Telescope into any Meteor project with `meteor add telescope:core`.
+- Add and remove Telescope themes and plugins with `meteor add` and `meteor remove`. 
+- Update Telescope with `meteor update telescope:core`.
+
+And as we keep working towards making Telescope more flexible and more modular, I can imagine a point where you'll be able to `meteor add` Telescope to *existing* Meteor apps as well.
+
+Another benefit of this new architecture is the complete elimination of Git from the install and update workflow. This means both a much easier installation process, as well as the end of merge conflicts every time a new release of Telescope comes out. 
+
+<% note do %>
+
+### User & Developer Workflows
+
+As soon as all packages are published, regular users will be encouraged to `meteor add telescope:core` instead of cloning the Telescope repository. 
+
+If you're a developer and want access to the Telescope source code though, you'll still be able to do so by cloning the repo since it includes all internal Telescope packages in its `/packages` directory. 
+
+<% end %>
+
+### New APIs
+
+The other part of the refactor was a complete rethinking of Telescope's internal APIs. They're now namespaced and more consistent, which will make it a lot easier to customize your app. 
+
+Telescope is also even more flexible than before. As an example, it's now possible to add custom fields not only to posts, but also comments and users as well.
+
+### New Documentation
+
+Finally, Telescope's codebase is now documented using [JSDoc](https://github.com/jsdoc3/jsdoc), which makes it possible to automatically generate code documentation.
+
+In addition to this automatically generated documentation, Telescope's regular documentation will now live on [ReadMe.io](http://www.readme.io). You can [preview a work in progress here](http://telescope.readme.io/v0.20/docs).
+
+### Update Instructions
+
+The scope of the refactor means it'll need to be thoroughly tested before it can be merged into master. So if you want to help, read on!
+
+**IMPORTANT: This release is not production-ready. Please test it in your development environment first!**
+
+Start by making a back-up of your database. The release includes a few database migrations, so it's handy to have a copy of your older data to go back to in case something goes wrong. An easy way to do this is to simply make a back-up of your `.meteor/local` directory.
+
+#### Scenario 1: No Customizations
+
+If you haven't customized your Telescope app at all, just do a `git pull origin master` to update your codebase. 
+
+#### Scenario 2: Custom Package
+
+If you've customized Telescope by using a custom package, the update process should also be fairly seamless.
+
+Run `git pull origin master` to update your codebase, then change your custom package's dependencies to depend only on `telescope:core` (in addition to any third-party packages you might be using).
+
+#### Scenario 3: Modified Core Files
+
+If you've modified Telescope's core files, things get a little trickier. I suggest starting by making a list of all the customization you've made, cloning a fresh copy of Telescope into a new repo, and then manually re-implementing your changes. 
+
+Note that **modifying core files is strongly discouraged**. So if you can, try to keep all your customizations inside a custom package. 
+
+In any case, feel free to drop by the [Slack chatroom](http://telescope-slack.herokuapp.com) if you need help. 
+
+### Next Steps
+
+Updating to the refactor might require a little bit of work, especially if you've heavily customized Telescope, but I'll do my best to help. And if you find any bugs while testing, please [leave an issue on GitHub](https://github.com/TelescopeJS/Telescope/issues). 
+
+Provided we can get enough people testing this release candidate, hopefully we can merge it into `master` within the next few weeks! 
