@@ -59,29 +59,7 @@ In addition to this automatically generated documentation, Telescope's regular d
 
 ### Update Instructions
 
-The scope of the refactor means it'll need to be thoroughly tested before it can be merged into master. So if you want to help, read on!
-
-**IMPORTANT: This release is not production-ready. Please test it in your development environment first!**
-
-Start by making a back-up of your database. The release includes a few database migrations, so it's handy to have a copy of your older data to go back to in case something goes wrong. An easy way to do this is to simply make a back-up of your `.meteor/local` directory.
-
-#### Scenario 1: No Customizations
-
-If you haven't customized your Telescope app at all, just do a `git checkout -B devel` then `git pull origin devel` to update your codebase. 
-
-#### Scenario 2: Custom Package
-
-If you've customized Telescope by using a custom package, the update process should also be fairly seamless.
-
-Run `git pull origin devel` to update your codebase, then change your custom package's dependencies to depend only on `telescope:core` (in addition to any third-party packages you might be using).
-
-#### Scenario 3: Modified Core Files
-
-If you've modified Telescope's core files, things get a little trickier. I suggest starting by making a list of all the customization you've made, cloning a fresh copy of Telescope into a new repo, and then manually re-implementing your changes. 
-
-Note that **modifying core files is strongly discouraged**. So if you can, try to keep all your customizations inside a custom package. 
-
-In any case, feel free to drop by the [Slack chatroom](http://telescope-slack.herokuapp.com) if you need help. 
+Please [refer to this post](/blog/telescope-v020-refactorscope/).
 
 ### Next Steps
 

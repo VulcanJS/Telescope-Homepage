@@ -1,0 +1,51 @@
+---
+title: "Telescope v0.20: RefactorScope"
+published: true
+author: sacha
+date: 2015/05/20
+---
+
+It's taken a while, but the long-awaited Telescope refactor is out!
+
+### What's New
+
+At this point, I feel like listing *all* the changes would take almost as long as the refactor itself. 
+
+But if you want to know what's new, you can refer to [this preview post and short video](/blog/previewing-telescope-big-refactor/) to get an overview of the main changes. 
+
+### Updating (No Customizations)
+
+If you haven't customized Telescope's code, your best bet is to follow [these instructions](http://telescope.readme.io/v0.20/docs/installing-telescope) to install Telescope again in a new directory. 
+
+If you'd like to preserve your local database, you should be able to simply copy over your `.meteor/local` directory from your old project directory to the new (this has the added benefit of giving you a back-up of your database in case something goes wrong).
+
+### Updating (With Customizations)
+
+One of the main goals of the new version was to make it dramatically easier for new users to install Telescope. But that does mean updating existing installs may be a bit trickier than usual, especially those featuring heavy customization. 
+
+In a nutshell, Telescope is going from an app-based file architecture to a package-based one. So instead of having its code split between the `/client`, `/server`, `/lib`, `/packages`, etc. directories, Telescope's code now entirely lives in `/packages`.
+
+This means that a big chunk of Telescope's files have changed place, and that Git won't be able to track them anymore. This has two main consequences:
+
+- If you've modified any of the Telescope core files, those modifications won't be ported over.
+- If you merge with the latest version of the main [Telescope](https://github.com/TelescopeJS/Telescope) repository as usual, you may end up with a lot of extra unneeded files left over outside of `/packages`. 
+
+For this reason, the safest approach is to create a brand new repository (for example, by cloning the [sample project](https://github.com/TelescopeJS/sample-project) repository), and work from there to progressively re-introduce your customizations.
+
+If you'd like to preserve your local database, you should be able to simply copy over your `.meteor/local` directory from your old project directory to the new (this has the added benefit of giving you a back-up of your database in case something goes wrong).
+
+When you first add your custom package again, you'll probably run into quite a few errors due to new the new APIs. Make sure you check out the [updated documentation](http://telescope.readme.io/) to learn more.
+
+### Deploying After the Update
+
+The first time you deploy after updating, your app will need to run a few data migrations. So please **make sure you back-up your database in case anything goes wrong**. You can use the [mongodump](http://docs.mongodb.org/manual/reference/program/mongodump/) command to do it, or use your database host's web UI if they have one. 
+
+It's also strongly recommended you deploy to a staging server first, and only after making sure your local copy of your app is working fine. You might even want to download a copy of your production database locally and make sure that runs fine, too. 
+
+The migrations can take some time, especially for instances with a lot of content. If you're using Meteor Up to deploy, make sure you give it enough time (set `deployCheckWaitTime` to 90 for example), and monitor the deployment process by tailing the logs (`mup logs -f`) in another terminal window. 
+
+But just to reiterate: **<font color="red">back up your database before deploying to production</font>**. 
+
+### Support
+
+If you run into any problems with the update, come by the [http://telescope-slack.herokuapp.com](Slack chatroom) and hopefully someone will be able to help you out :)
