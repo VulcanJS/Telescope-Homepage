@@ -34,6 +34,7 @@ background: $dark-purple;
   float: right;
   list-style-type: none;
   margin: 10px 0;
+  padding: 0;
   text-align: center;
   li{
     display: inline-block;
@@ -43,6 +44,7 @@ background: $dark-purple;
     }
     @include small{
       margin-left: 10px;
+      font-size: 12px;
     }
   }
   a{

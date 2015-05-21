@@ -16,26 +16,17 @@
 	@include light;
 	font-size:24px;
 }
-.hero{
-	.actions{
-		a{
-			@include small{
-				margin-bottom: $spacing; 
-			}
-			@include medium{
-				margin-bottom: 0;
-				@include span-columns(6);
-				@include nth-omega(2n, of-type);
-			}
-		}
-	}
-}
 
 .intro{
-	padding: $spacing*2 0;
+	@include small{
+		padding: $spacing 0;
+	}
+	@include medium{
+		padding: $spacing*2 0;
+	}
 	p{
-		font-size:24px;
 		@include medium{
+			font-size:24px;
 			@include pad(2,2);
 		}
 	}

@@ -1,7 +1,10 @@
 .examples{
 	// background: $light-grey;
 	padding: $spacing*2 0;
-	.site{
+	.example{
+		@include small{
+			margin-bottom: $spacing*2;
+		}
 		@include medium{
 			@include span-columns(3);
 			@include nth-omega(4, of-type);

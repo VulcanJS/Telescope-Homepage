@@ -4,18 +4,29 @@
 }
 
 .brick-by-brick{
-  border-bottom: 2px solid $dark-beige;
+  @include medium{
+    border-bottom: 2px solid $dark-beige;
+  }
   @include cf;
   .section-heading{
     margin-bottom: $spacing;
   }
   .image{
+    @include small{
+      border-bottom: 2px solid $dark-beige;
+      margin-bottom: $spacing/2;
+    }
     @include medium{
       @include span-columns(7);
     }
     img{
       display: block;
-      width: 120%;
+      @include small{
+        width: 100%;
+      }
+      @include medium{
+        width: 120%;
+      }
     }
   }
   .description{
@@ -28,6 +39,9 @@
     }
   }
   .actions{
+    @include small{
+      text-align: center;
+    }
   }
   .button-simple{
     border: 2px solid $dark-beige;

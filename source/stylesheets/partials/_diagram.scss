@@ -8,8 +8,12 @@
 }
 .diagram{
   position: relative;
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
   margin: 0 auto;
+  @include small{
+    margin: $spacing 0;    
+  }
   @include medium{
     @include span-columns(8);
   }  
@@ -56,6 +60,11 @@
   }
 }
 
+.diagram-annotations{
+  @include small{
+    display: none;
+  }
+}
 .annotation-target{
   position: absolute;
   display: block;
@@ -100,10 +109,17 @@
   }
 }
 .iphone-wrap{
-  transform: scale(0.5);
+  @include small{
+    transform: scale(0.2);
+    bottom: 50px;
+    right: 80px;
+  }
+  @include medium{
+    transform: scale(0.5);
+    bottom: 120px;
+    right: 180px;
+  }
   position: absolute;
-  bottom: 120px;
-  right: 180px;
 }
 .iphone-viewport{
   overflow: hidden;

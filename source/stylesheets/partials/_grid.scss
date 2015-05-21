@@ -31,7 +31,7 @@ $unit2:$unit/2;
 .container{
 	@include container;
 	@include small{
-		padding:0 5px;
+		padding:0 15px;
 	}
 	@include medium{
 		padding:0 20px;

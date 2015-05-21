@@ -124,3 +124,27 @@
   left: 400px;
   pointer-events: none;
 }
+
+
+.meteor-section{
+  padding: 0 0 $spacing*2 0;
+  .section-heading{
+    margin-bottom: 0px;
+  }
+}
+.meteor-logo{
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+  a, img{
+    display: block;
+    width: 100%;
+  }
+  a{
+    opacity: 0.5;
+    @include animation(opacity);
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
