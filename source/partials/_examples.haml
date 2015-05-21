@@ -1,14 +1,18 @@
 %section.examples
   .container.examples-container
     %h2.section-heading Built With Telescope
+    %h4.section-subheading A few open-source projects you can learn from
     - data.showcase.each do |site|
       .site
-        .screenshot
+        .example-screenshot
           %a{:href => site.url}
             %img{ :src=> '/images/showcase/'+site.screenshot}
-        .description
-          %h4.title
+        .example-content
+          %h3.example-title
             %a{:href => site.url}=site.title
-          %p
+          .example-description
             :markdown
               #{site.description}
+          .example-actions
+            %a.button-simple{href: site.url} Launch Site
+            %a.button-simple{href: site.repo} View on GitHub

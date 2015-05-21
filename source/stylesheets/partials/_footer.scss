@@ -15,6 +15,13 @@
   @include cf;
   a{
     font-weight: $regular;
+    font-size: 18px;
+    &:link, &:active, &:visited{
+      color: $light-purple;
+    }
+    &:hover{
+      color: $white;
+    }
   }
 }
 
@@ -53,6 +60,11 @@
 .footer-chart{
   overflow: hidden;
   .section-heading{
+    margin-bottom: 0;
+  }
+  .section-subheading{
+    margin-top: 0;
+    color: white(0.3);
     margin-bottom: 0;
   }
 }

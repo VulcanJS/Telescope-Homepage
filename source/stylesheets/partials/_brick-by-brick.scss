@@ -1,11 +1,14 @@
 .brick-by-brick-section{
-  background: $light-grey;
+  background: $lighter-grey;
   padding: $spacing*2 0;
 }
 
 .brick-by-brick{
-  border-bottom: 2px solid $browser-color;
+  border-bottom: 2px solid $dark-beige;
   @include cf;
+  .section-heading{
+    margin-bottom: $spacing;
+  }
   .image{
     @include medium{
       @include span-columns(7);
@@ -23,5 +26,12 @@
     a{
 
     }
+  }
+  .actions{
+  }
+  .button-simple{
+    border: 2px solid $dark-beige;
+    background: $beige;
+    color: $dark-beige;
   }
 }

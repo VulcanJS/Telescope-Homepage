@@ -4,14 +4,14 @@
     .footer-content
       - data.footer_nav.each do |item|
         .footer-section
-          %h3.footer-heading= item.title
+          %h4.footer-heading= item.title
           .footer-links
             %ul
               - item.items.each do |link|
                 %li
                   %a.footer-link{href: link.url}= link.title
       .footer-section
-        %h3.footer-heading Elsewhere
+        %h4.footer-heading Elsewhere
         :markdown
           Follow [@telescopeapp](http://twitter.com) on Twitter
 
@@ -21,6 +21,7 @@
 
   .footer-chart
     %h2.section-heading Project Stats
+    %h4.section-subheading For the last 60 days
     .footer-chart-inner
       %canvas#myChart{width: '600px', height: '150px'}
 

@@ -4,15 +4,21 @@
       %img{src: '/images/logo.png', alt: 'Telescope'}
     %h2.hero-tagline The easiest way to launch your community
     .hero-actions
-      .hero-action.deploy
+      .hero-action.demo
         %a.button.demo{:href=>"http://demo2.telescopeapp.org"}
           %span.bg1
           %span.bg2
           %span.button-content
             %span.action 
-              %span One-Click Deploy
-        .scalingo
-          With <a href="http://scalingo.com">Scalingo</a>
+              %span Launch Demo
+      .hero-action.deploy
+        %a.button.demo{:href=>"https://heroku.com/deploy?template=https://github.com/TelescopeJS/sample-project"}
+          %span.bg1
+          %span.bg2
+          %span.button-content
+            %span.action 
+              %span.button-label One-Click Deploy
+              %span.button-sublabel With Heroku
       / .or
       / .hero-action.install
       /   %pre

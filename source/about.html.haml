@@ -1,0 +1,39 @@
+%section.features-section
+  .container
+    .section-heading Principles
+
+    .features
+      .feature
+        .feature-content
+          %h3.feature-title Engagement
+          .feature-description
+            :markdown
+              Telescope was built from the ground up to make creating active, engaged communities easier. 
+
+              From large features like automatically sending your audience email digests of your best content, to tiny ones like highlighting comments of the original poster, Telescope takes care of the basics so you can focus on what really matters: growing your community. 
+        .feature-image
+          #{figure "home/tsc-newsletter.jpg", "An auto-generated newsletter.", "", ""}
+
+      .feature
+        .feature-content
+          %h3.feature-title Flexibility
+          .feature-description
+            :markdown
+              Too often, having more features comes at the cost of flexibility and simplicity. With Telescope, we knew from the start we wanted to avoid this pitfall. 
+
+              This is why Telescope is made up of independant modules, which you can add and remove as you need. Don't need notifications? Just type `meteor remove telescope-notifications` package and you'll be good to go!
+
+              What's more, Telescope's flexible template architecture means that every single part of the front-end can be customized without touching the app's core codebase. All you need to know is a bit of HTML and CSS. 
+        .feature-image
+          #{figure "home/madrasa.jpg", "Customizing Telescope.", "", "http://madrasa.ca"}
+
+      .feature
+        .feature-content
+          %h3.feature-title Openness
+          .feature-description
+            :markdown
+              Telescope plays nice with the web. Out of the box, it comes with built-in integrations with services like [Google Analytics](http://www.google.com/analytics/) (for web analytics) and [Kadira](http://kadira.io) (for performance and monitoring). 
+
+              What's more, Telescope can also parse any RSS feed to populate your site, automatically fetch preview thumbnails using [Embedly](http://embed.ly), and then generate and send an email newsletter using [MailChimp](http://mailchimp.com).
+        .feature-image
+          #{figure "blog/campaign-mailchimp.jpg", "Previewing a newsletter in MailChimp.", "", ""}

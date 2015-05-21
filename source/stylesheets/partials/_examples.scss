@@ -7,7 +7,7 @@
 			@include nth-omega(4, of-type);
 		}
 	}
-	.screenshot{
+	.example-screenshot{
 		a, img{
 			display: block;
 			width: 100%;
@@ -28,17 +28,23 @@
 		}
 		margin-bottom: 10px;
 	}
-	.description{
+	.example-content{
 		text-align: left;
 	}
-	.title{
+	.example-title{
 		text-align: left;
-		font-size: 24px;
 		a{
 			@include light;
 		}
 	}
-	p{
-		margin-bottom: 0;
+	.example-description{
+		p{
+			margin-bottom: 10px;
+		}
+	}
+	.example-actions{
+		a{
+			font-size: 13px;
+		}
 	}
 }

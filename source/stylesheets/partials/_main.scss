@@ -14,8 +14,9 @@ body, input, textarea, button{
 	// background:#0b091c;
 	// color:white(0.7);
 	line-height:1.7;
-	@include regular;	
+	font-weight: $regular;
 	font-size: 16px;
+	color: $dark-text;
 }
 h1, h2, h3, h4, h5{
 	text-align:center;
@@ -89,7 +90,7 @@ a{
 		color:$medium-purple;
 	}
 	&:hover{
-		color:#fcebff;
+		color:$dark-purple;
 	}
 }
 // body{

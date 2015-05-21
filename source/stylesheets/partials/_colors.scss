@@ -1,14 +1,21 @@
+$white: white;
 
-$light-grey: #ebeaed;
-$medium-grey: #CDCAD0;
+$beige: #FAF7EE;
+$dark-beige: #615F59;
 
-$dark-text:#5d4a6a;
-$darker-text:#4b454f;
+$lighter-grey: #ebeaed;
+$light-grey: #CDCAD0;
+$medium-grey: #89848E;
+$dark-grey: #4b454f;
+
+$medium-text:$medium-grey;
+$dark-text:$dark-grey;
 $pink:rgba(217, 153, 255, 0.6);
 
 $link:$pink;
 
-$medium-purple: #6a43ba;
+$light-purple: #8D6BB4;
+$medium-purple: #6F2EB9;
 $dark-purple: #3C2F90;
 
 $light-bg:#e2e1e4;
@@ -20,4 +27,3 @@ $light-yellow:#fcf9e2;
 $browser-color: #88838F;
 
 $dark-purple: #1B0732;
-$medium-purple: #6F2EB9;

@@ -15,8 +15,8 @@ customTooltips = function(tooltip) {
 
   if (tooltip) {
     tooltipContainer.css({opacity: 1});
-    console.log(tooltip)
-    console.log(tooltip.x)
+    console.log("tooltip", tooltip)
+    console.log("tooltip.x", tooltip.x)
 
     // create a "fake" event that we can pass to getPointsAtEvent
     var e = jQuery.Event( "click" );
@@ -40,9 +40,9 @@ customTooltips = function(tooltip) {
         opacity: 1
       });
     });
-    console.log(_.pluck(activePoints, 'y'))
+    console.log(_.pluck("activePoints", activePoints, 'y'))
     var highestPointY = _.min(_.pluck(activePoints, 'y')); // we count from the top
-    console.log(highestPointY)
+    console.log("highestPointY", highestPointY)
     $('.tooltip-divider').css({
       opacity: 1,
       left: activePoints[0].x,
