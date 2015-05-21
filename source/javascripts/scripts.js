@@ -1,6 +1,3 @@
-//= require chartist/dist/chartist.js
-//= require Chart.js/Chart.js
-//= require moment/min/moment.min.js
 
 var coefficients = {
   deploys: 1,
