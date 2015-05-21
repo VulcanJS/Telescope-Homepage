@@ -62,10 +62,11 @@
 #     Madrasa offers a selection of tutorials from across the web. 
 # # Making use of Telescope's grid layout and search features, 
 #   screenshot: madrasa.jpg 
-# - title: Weld
-#   url: http://welderwire.meteor.com/
-#   description: A Telescope theme demo.
-#   screenshot: weld.jpg
+- title: Weld
+  url: http://welderwire.meteor.com/
+  repo: https://github.com/weld-co/telescope-theme-weld
+  description: A free, completely customized Telescope theme.
+  screenshot: weld.jpg
 # - title: Data For Good
 #   url: http://dataforgood.co/
 #   description: Share data-driven projects for social good.
@@ -107,8 +108,8 @@
 #   url: http://ee-hub.com/
 #   description: The hub for the Expression Engine community.
 #   screenshot: eehub.jpg
-- title: Backa
-  tagline: Feedback & Advice
-  url: http://app.backa.co/
-  description: Gain valuable, actionable feedback on your startup ideas.
-  screenshot: backa.jpg
+# - title: Backa
+#   tagline: Feedback & Advice
+#   url: http://app.backa.co/
+#   description: Gain valuable, actionable feedback on your startup ideas.
+#   screenshot: backa.jpg
