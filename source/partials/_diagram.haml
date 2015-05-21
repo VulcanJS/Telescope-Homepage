@@ -20,6 +20,15 @@
           .browser-bar
         .browser-screenshot
           %img{src: "/images/home/meta.jpg"}
+      .phone-container
+        .iphone-wrap
+          .iphone-layout
+            .iphone-top
+              .front-cam
+                .front-cam-inner
+            .iphone-viewport
+              %img{src: "/images/home/meta-mobile.jpg"}
+            .bottom
       .diagram-annotations
         - data.annotations.each do |annotation|
           %a.annotation-target{href: "#", style: "top: #{annotation.top}%; left: #{annotation.left}%;", id: "target-#{annotation.slug}"}

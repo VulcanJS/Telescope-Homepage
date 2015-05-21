@@ -99,3 +99,109 @@
     margin: 0;
   }
 }
+.iphone-wrap{
+  transform: scale(0.5);
+  position: absolute;
+  bottom: 120px;
+  right: 180px;
+}
+.iphone-viewport{
+  overflow: hidden;
+  img{
+    width: 100%;
+    display: block;
+  }
+}
+
+.iphone-layout {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background: white;
+  width: 300px;
+  height: 580px;
+  border: 3px solid $browser-color;
+  border-radius: 40px;
+}
+.power-btn {
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  top: -7px;
+  right: 40px;
+  background: $browser-color;
+}
+.additional-btns {
+  position: absolute;
+  top: 80px;
+  left: -7px;
+  width: 4px;
+  height: 200px;
+}
+.additional-btns .camera-btn {
+  position: absolute;
+  width: 4px;
+  height: 30px;
+  background: $browser-color;
+}
+.vol-btns {
+  position: absolute;
+  width: 4px;
+  height: 70px;
+  top: 60px;
+}
+.vol-btns .vol-inc, .vol-btns .vol-dec {
+  position: absolute;
+  width: 4px;
+  height: 20px;
+  background: $browser-color;
+}
+.vol-btns .vol-dec {
+  top: 40px;
+}
+.iphone-top .front-cam{
+  margin: 20px auto 15px;
+  width: 15px;
+  height: 15px;
+  border: 2px solid $browser-color;
+  border-radius: 50%;
+}
+.front-cam .front-cam-inner{
+  width: 5px;
+  height: 5px;
+  border: 1px solid $browser-color;
+  margin: 3px auto 0;
+  border-radius: 50%;
+}
+.iphone-top .speaker {
+  margin: 5px auto 15px;
+  width: 55px;
+  height: 10px;
+  border-radius: 10px;
+  border: 2px solid $browser-color;
+}
+.iphone-viewport {
+    background: #eaeaea;
+  margin: 0 auto;
+  width: 260px;
+  height: 460px;
+  border: 2px solid $browser-color;
+    overflow: hidden;
+}
+.bottom .menu-button {
+  margin: 15px auto 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid $browser-color;
+}
+.menu-button .menu-button-inner {
+  width: 20px;
+  height: 20px;
+  border: 1px solid $browser-color;
+  border-radius: 3px;
+  margin: 13px auto 0;
+}

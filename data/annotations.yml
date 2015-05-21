@@ -1,17 +1,3 @@
-- title: Built-in Newsletters
-  slug: newsletters
-  top: 9.2
-  left: 76.3
-  side: right
-  description: >
-    Automatically send your [MailChimp](http://mailchimp.com) list an email digest of your best content.
-- title: Internationalization
-  slug: i18n
-  top: 49.3
-  left: 40
-  side: right
-  description: >
-    Telescope supports over 15 languages, with more on the way.
 - title: Flexible Layout
   slug: layout
   top: 13
@@ -33,10 +19,31 @@
   side: left
   description: >
     Rank posts by date, popularity, or display them in a day-by-day view. 
-- title: Extensible Architecture
-  slug: architecture
-  top: 63.8
-  left: 91.6
+- title: Built-in Newsletters
+  slug: newsletters
+  top: 9.2
+  left: 76.3
   side: right
   description: >
-    Customize any template or add custom post fields. Telescope will adapt to your needs.
+    Automatically send your [MailChimp](http://mailchimp.com) list an email digest of your best content.
+- title: Internationalization
+  slug: i18n
+  top: 49.3
+  left: 40
+  side: right
+  description: >
+    Telescope supports over 15 languages, with more on the way.
+# - title: Extensible Architecture
+#   slug: architecture
+#   top: 63.8
+#   left: 91.6
+#   side: right
+#   description: >
+#     Customize any template or add custom post fields. Telescope will adapt to your needs.
+- title: Mobile-Ready
+  slug: mobile
+  top: 66.5
+  left: 82.5
+  side: right
+  description: >
+    Telescope's default theme is fully responsive and mobile-ready.
