@@ -1,6 +1,3 @@
-//= require chartist/dist/chartist.js
-//= require Chart.js/Chart.js
-//= require moment/min/moment.min.js
 
 var coefficients = {
   deploys: 1,
@@ -15,8 +12,6 @@ customTooltips = function(tooltip) {
 
   if (tooltip) {
     tooltipContainer.css({opacity: 1});
-    console.log("tooltip", tooltip)
-    console.log("tooltip.x", tooltip.x)
 
     // create a "fake" event that we can pass to getPointsAtEvent
     var e = jQuery.Event( "click" );
@@ -28,7 +23,6 @@ customTooltips = function(tooltip) {
     // => activePoints is an array of points on the canvas that are at the same position as the click event.
     // console.log(activePoints[0].label)
 
-    console.log('-------------------------')
     activePoints.forEach(function (point, index) {
       var childIndex = index + 1;
       var tooltip = tooltipContainer.find('.tooltips .tooltip:nth-child('+childIndex+')');
@@ -40,9 +34,8 @@ customTooltips = function(tooltip) {
         opacity: 1
       });
     });
-    console.log(_.pluck("activePoints", activePoints, 'y'))
+
     var highestPointY = _.min(_.pluck(activePoints, 'y')); // we count from the top
-    console.log("highestPointY", highestPointY)
     $('.tooltip-divider').css({
       opacity: 1,
       left: activePoints[0].x,
@@ -75,7 +68,6 @@ $(function(){
 
   $.getJSON('http://version.telescopeapp.org/api', {}, function (jsonData) {
     var jsonData = _.last(jsonData, totalDays);
-    console.log(jsonData);
     
     var ctx = $("#myChart").get(0).getContext("2d");
 
