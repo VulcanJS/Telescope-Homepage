@@ -36,6 +36,59 @@ If you'd like to preserve your local database, you should be able to simply copy
 
 When you first add your custom package again, you'll probably run into quite a few errors due to new the new APIs. Make sure you check out the [updated documentation](http://telescope.readme.io/) to learn more.
 
+### Updating Your Theme
+
+A few notes about updating your Telescope theme:
+
+#### Package Dependencies
+
+The only dependency required is `telescope:core`. Making your package depend on this will automatically include all the most commonly used packages as well. You can check out the [full list here](https://github.com/TelescopeJS/Telescope/blob/master/packages/telescope-lib/package.js#L12-L53).
+
+Of course, if you need to use a package that *isn't* in this list, you'll still need to depend on it manually. 
+
+#### Template Names
+
+All template names now use underscores. So use `post_title`, not `postTitle`. 
+
+#### Template Replacement
+
+Telescope now uses a new template replacement syntax:
+
+```js
+Template.custom_post_title.replaces("post_title");
+```
+
+The `getTemplate()` and `{{> Template.dynamic}}` syntaxes are not needed anymore. 
+
+#### Template Includes
+
+Because of the way the [template-extension](https://github.com/aldeed/meteor-template-extension) package works, you have to include the *original* template, not the one you overwriting it with. So do this:
+
+```html
+{{> post_title}}
+```
+
+And not this: 
+
+```html
+{{> custom_post_title}}
+```
+
+#### Template Helpers
+
+Similarly, assign any helpers to the *original*, not the custom template:
+
+```js
+Template.post_title.helpers({
+  myCustomHelper: function () {
+    //...
+  }
+});
+```
+
+#### Components
+
+Telescope now uses a component system for menus and post lists. If possible, try to use it instead of redefining your own markup and logic for them. 
 ### Deploying After the Update
 
 The first time you deploy after updating, your app will need to run a few data migrations. So please **make sure you back-up your database in case anything goes wrong**. You can use the [mongodump](http://docs.mongodb.org/manual/reference/program/mongodump/) command to do it, or use your database host's web UI if they have one. 
