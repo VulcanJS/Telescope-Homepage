@@ -1,0 +1,12 @@
+$light: 100;
+@mixin light{
+  font-weight:$light;
+}
+$regular: 300;
+@mixin regular{
+  font-weight:$regular;
+}
+$bold: 600;
+@mixin bold{
+  font-weight:$bold;
+}

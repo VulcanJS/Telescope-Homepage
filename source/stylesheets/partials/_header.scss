@@ -13,10 +13,11 @@ background: $dark-purple;
 .header{
   border-bottom:1px solid white(0.15);
   // background: white(0.1);  
+  @include cf;
+  padding: 0 $spacing/2;
 }
 
 .header-container{
-  @include cf;
 }
 .header-logo{
   float: left;

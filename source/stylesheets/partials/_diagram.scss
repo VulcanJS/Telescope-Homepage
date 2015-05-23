@@ -3,7 +3,7 @@
 }
 .annotations-left{
   @include medium{
-    @include span-columns(2);
+    @include span(2);
   }
 }
 .diagram{
@@ -15,12 +15,12 @@
     margin: $spacing 0;    
   }
   @include medium{
-    @include span-columns(8);
+    @include span(8);
   }  
 }
 .annotations-right{
   @include medium{
-    @include span-columns(2 omega);
+    @include span(last 2);
   }
 }
 

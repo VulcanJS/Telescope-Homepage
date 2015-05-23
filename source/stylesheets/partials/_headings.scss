@@ -1,7 +1,80 @@
-h3{
-  font-size: 24px;
+.section-heading{
+  text-align: center;
+  font-size: 36px;
+  font-weight: $light;
+  margin-bottom: $spacing*2;
+}
+.section-subheading{
+  text-align: center;
+  font-size: 18px;
+  font-weight: $regular;
+  margin-top: -$spacing*2;
+  margin-bottom: $spacing*2;
+  color: $dark-text;
 }
 
+h2{
+  font-size: 36px;
+}
+h3{
+  font-size: 30px;
+}
 h4{
+  font-size: 24px;
+}
+h5{
   font-size: 18px;
+}
+.post-content{
+  h2{
+
+  }
+  h3{
+    font-weight: $bold;
+    // position: relative;
+    // &:after{
+    //   content: " ";
+    //   width: 3000px;
+    //   height: 3000px;
+    //   z-index: -1;
+    //   display: block;
+    //   position: absolute;
+    //   top: 0px;
+    //   left: -1000px;
+    // }
+    // &:nth-of-type(1n):after{
+    //   transform: rotate(2deg);
+    //   background: lighten($lighter-grey,4%);
+    // }
+    // &:nth-of-type(2n):after{
+    //   transform: rotate(-3deg);
+    //   background: lighten($lighter-grey,2%);
+    // }
+    // &:nth-of-type(3n):after{
+    //   transform: rotate(2deg);
+    //   background: lighten($lighter-grey,0%);
+    // }
+    // &:nth-of-type(4n):after{
+    //   transform: rotate(3deg);
+    //   background: lighten($lighter-grey,3%);
+    // }
+    // &:nth-of-type(5n):after{
+    //   transform: rotate(-4deg);
+    //   background: lighten($lighter-grey,1%);
+    // }
+    // &:nth-of-type(6n):after{
+    //   transform: rotate(3deg);
+    //   background: lighten($lighter-grey,4%);
+    // }
+    // &:nth-of-type(7n):after{
+    //   transform: rotate(-2deg);
+    //   background: lighten($lighter-grey,1%);
+    // }
+  }
+  h4{
+    font-weight: $light;
+  }
+  h5{
+
+  }
 }

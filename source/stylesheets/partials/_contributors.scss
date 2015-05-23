@@ -6,8 +6,10 @@
 }
 .contributor{
 	@include medium{
-		@include span-columns(4);
-		@include nth-omega(3, of-type);
+		@include span(4);
+		&:nth-of-type(3n){
+			@include omega;
+		}
 	}
 	margin-bottom: $spacing;
 	

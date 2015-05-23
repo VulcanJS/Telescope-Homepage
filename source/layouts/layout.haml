@@ -23,11 +23,10 @@
   
     %section.top
       .header
-        .container.header-container
-          %h2.header-logo
-            %a{:href => "/"}
-              %img{:src=>"/images/telescope-logo-square.png", :alt=>"Telescope"}
-          =partial('partials/nav')
+        %h2.header-logo
+          %a{:href => "/"}
+            %img{:src=>"/images/telescope-logo-square.png", :alt=>"Telescope"}
+        =partial('partials/nav')
 
       - if yield_content(:page) == "home"
         =partial('partials/hero')

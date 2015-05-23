@@ -15,8 +15,10 @@ $small-break: 47.5em;
 }
 
 $spacing: 40px;
+$threequarterspacing: 30px;
 $halfspacing: $spacing/2;
 $doublespacing: $spacing*2;
+$triplespacing: $spacing*3;
 
 $total-columns  : 12;
 $column-width   : 40px;
@@ -25,6 +27,13 @@ $grid-padding   : 0px;
 
 $unit:$spacing;
 $unit2:$unit/2;
+
+$susy: (
+  // the basics
+  columns: $total-columns,
+  gutters: $gutter-width / $column-width,
+  column-width: $column-width,
+);
 
 // mobile
 
@@ -36,6 +45,13 @@ $unit2:$unit/2;
 	@include medium{
 		padding:0 20px;
 	}
+}
+
+.container-medium{
+  @include medium{
+    max-width: 70%;
+    margin: 0 auto;
+  }
 }
 
 .row{

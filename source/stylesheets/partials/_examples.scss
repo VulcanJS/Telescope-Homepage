@@ -6,8 +6,10 @@
 			margin-bottom: $spacing*2;
 		}
 		@include medium{
-			@include span-columns(3);
-			@include nth-omega(4, of-type);
+			@include span(3);
+			&:nth-of-type(4n){
+				@include omega;
+			}
 		}
 	}
 	.example-screenshot{

@@ -11,13 +11,13 @@
 
 .feature-content{
   @include medium{
-    @include span-columns(6);
+    @include span(6);
   }
 }
 
 .feature-image{
   @include medium{
-    @include span-columns(6 omega);
+    @include span(last 6);
   }
   figure{
     margin: 0;

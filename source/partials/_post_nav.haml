@@ -1,0 +1,13 @@
+%section.post-nav
+
+  - prev_article = current_article.previous_article
+  - if prev_article
+    %a.prev{:href => "#{prev_article.url}", :title => "Previous Post: #{prev_article.title}"}
+      «
+      =prev_article.title
+
+  - next_article = current_article.next_article
+  - if next_article
+    %a.next{:href => "#{next_article.url}", :title => "next Post: #{next_article.title}"}
+      =next_article.title
+      »

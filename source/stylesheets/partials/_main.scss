@@ -19,15 +19,22 @@ body, input, textarea, button{
 	color: $dark-text;
 }
 h1, h2, h3, h4, h5{
-	text-align:center;
 	margin:0;
+}
+.page-content{
+	@include small{
+		padding-top: $halfspacing;
+	}
+	@include medium{
+		padding-top: $spacing;
+	}
 }
 .page-title{
 	@include small{
-		margin: 20px 0 50px 0;
+		margin: $halfspacing 0;
 	}
 	@include medium{
-		margin: 40px 60px 70px 60px;	
+		margin: $spacing;	
 	}
 	.pre-title{
 		@include small{

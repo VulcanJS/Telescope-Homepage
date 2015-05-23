@@ -1,26 +1,27 @@
 - content_for(:title, "The Telescope Blog")
 
 %section
-  .page-title
-    %h3.main-title
-      The Blog
-      %a.rss{:href => '/feed.xml'} [RSS]
-  .articles
-    - blog('blog').articles.each do |post|
-      .post.inverted
-        .post-top
-          .date
-            =post.date.strftime('%b %e %Y')
-        - if post.data.thumbnail
-          %figure.post-thumbnail
-            %a{:href => post.url}
-              %img.thumb{:src => "/images/blog/"+post.data.thumbnail}
-              %span.gradient
-        .post-content
-          .summary
-
-            %h2.post-title
+  .container
+    .page-title
+      %h3.main-title
+        The Blog
+        %a.rss{:href => '/feed.xml'} [RSS]
+    .articles
+      - blog('blog').articles.each do |post|
+        .post.inverted
+          .post-top
+            .date
+              =post.date.strftime('%b %e %Y')
+          - if post.data.thumbnail
+            %figure.post-thumbnail
               %a{:href => post.url}
-                =post.title
-            =post.summary
-            %a{:href => post.url} Read more…
+                %img.thumb{:src => "/images/blog/"+post.data.thumbnail}
+                %span.gradient
+          .post-content
+            .summary
+
+              %h2.post-title
+                %a{:href => post.url}
+                  =post.title
+              =post.summary
+              %a{:href => post.url} Read more…

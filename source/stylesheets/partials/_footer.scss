@@ -28,8 +28,10 @@
 .footer-section{
   text-align: left;
   @include medium{
-    @include span-columns(3);
-    @include nth-omega(4, of-type);
+    @include span(3);
+    &:nth-of-type(4n){
+      @include omega;
+    }
   }
   ul{
     padding: 0;
