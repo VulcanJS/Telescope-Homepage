@@ -9,30 +9,6 @@ h3.blog{
 		color: $link;
 	}
 }
-
-.inverted{
-	color: $dark-text;
-	a{
-		&:link{
-			color: $medium-purple;
-		}
-		&:visited{
-			color: $dark-purple;
-		}
-		&:hover{
-			color: $pink;
-		}
-	}
-	strong{
-		color: #111;
-	}
-}
-.post, .comments{
-	background: white;
-	@include border-radius(10px);
-	@include regular;
-	padding: 0;
-}
 .post-footer, .post-nav{
 	@include cf;
 	border-top: 1px solid $light-grey;
@@ -90,172 +66,33 @@ h3.blog{
 	border-bottom: none;	
 }
 .post-content{
-	position: relative;
-	z-index: 100;
-	@include small{
-		font-size: 15px;
-	}
-	@include medium{
-		font-size: 18px;
-	}
-	margin-bottom: $spacing;
-	hr{
-		border: none;
-		height: 2px;
-		background: $light-grey;
-	}
-  >p{
+  margin-bottom: $spacing;
+	 >p{
     &:first-of-type{
       font-size: 130%;
     }
   }
-	p, pre, ul, ol, hr, .video, h2, h3, h4, h5{
-		@include small{
-			margin: 0 0 $halfspacing 0;
-		}
-		@include medium{
-			margin: 0 0 $halfspacing 0;
-		}
-	}
-	h2, h3, h4, h5, ol, ul{
-		line-height: 1.4;
-	}
-	li{
-		margin-bottom: 10px;
-	}
-	font-weight: 400;
-	.post-title{
-		text-shadow:none;
-		color: $dark-text;
-		@include small{
-			font-size: 30px;
-		}
-		@include medium{
-			font-size: 46px;
-		}
-		text-align: left;
-		margin: $spacing 0 $spacing*2 0;
-		@include light;
-		line-height: 1.3;
-	}
-	h2{
-	}
-	h3{
-	}
-	h4{
-	}
-	h5{
-
-	}
-	figure{
-		margin: $spacing*2 auto $spacing*2 auto;
-		@include small{
-			width: 95%;
-		}
-		@include medium{
-			width: 85%;
-		}
-		&.shrink{
-			width: -webkit-min-content;
-			width: -moz-min-content;
-			width: min-content;
-			img{
-				width: auto;
-			}
-		}
-		&.xsmall{
-			max-width: 200px;
-		}
-		&.small{
-			max-width: 400px;
-		}
-		&.left{
-			margin: $spacing 0 $spacing 0;
-		}
-		&.right{
-			@include medium{
-				width: 250px;
-				float: right;
-				margin: 0 $spacing 0 $spacing;
-			}
-		}
-		&.full{
-			width: 100%;
-		}
-		&.wide, &.wide-with-borders{
-			width: auto;
-			@include medium{
-				margin: 60px -80px;
-			}
-			img{
-				border: none;
-			}
-		}
-		&.wide-with-borders{
-			img{
-				border-top: 5px solid $light-grey;
-				border-bottom: 5px solid $light-grey;
-			}
-		}
-		&.no-border{
-			img{
-				border: none;
-			}
-		}
-		&.shadow{
-			img{
-				border-radius: 3px;
-				@include box-shadow(0px 2px 3px black(0.15));
-			}
-		}
-		img{
-			display: block;
-			width: 100%;
-			border: 5px solid $light-grey;
-		}
-	}
-	figcaption{
-		margin-top: 10px;
-		font-size: 16px;
-		font-style: italic;
-		text-align: center;
-	}
-	pre{
-		border: 1px $light-grey solid;
-		padding: 20px;
-		font-size: 14px;
-		background: $lightest-grey;
-		overflow-x: auto;
-		code{
-			background: none;
-			font-size: 100%;
-			padding: 0;
-		}
-	}
-	code{
-		background: $lighter-grey;
-		font-size: 80%;
-		padding: 3px 6px;
-	}
-	blockquote{
-		border: 1px solid $light-bg;
-		border-radius: 3px;
-		font-style: italic;
-		padding: 20px;
-		margin: 0 0 30px 0;
-		p:last-child{
-			margin-bottom: 0;
-		}
-	}
 }
 .articles{
 	.post{
-		margin-bottom: 40px;
+		padding-bottom: $spacing;
+		border-bottom: 1px solid $light-grey;
+		margin-bottom: $spacing;
+	}
+	.post-summary{
+		p:last-child{
+			margin-bottom: 0;
+		}
 	}
 	.post-title{
 		font-size: 36px;
 		margin: 0 0 10px 0;
 		border-bottom: none;
+	}
+	.post-title{
+		a{
+			font-weight: $light;
+		}
 	}
 }
 .comments{

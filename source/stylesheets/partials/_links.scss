@@ -1,0 +1,11 @@
+a{
+  @include bold;
+  text-decoration:none;
+  @include single-transition(ease-out, all, 300ms, 0ms);
+  &:link, &:active, &:visited{
+    color:$medium-purple;
+  }
+  &:hover{
+    color:$dark-purple;
+  }
+}

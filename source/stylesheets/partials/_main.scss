@@ -9,18 +9,6 @@ body{
 	overflow-x: hidden;
 	background: white;
 }
-body, input, textarea, button{
-	font-family: 'Source Sans Pro', sans-serif;
-	// background:#0b091c;
-	// color:white(0.7);
-	line-height:1.7;
-	font-weight: $regular;
-	font-size: 16px;
-	color: $dark-text;
-}
-h1, h2, h3, h4, h5{
-	margin:0;
-}
 .page-content{
 	@include small{
 		padding-top: $halfspacing;
@@ -89,17 +77,7 @@ strong{
 	@include bold;
 	// color:white(0.85);
 }
-a{
-	@include bold;
-	text-decoration:none;
-	@include single-transition(ease-out, all, 300ms, 0ms);
-	&:link, &:active, &:visited{
-		color:$medium-purple;
-	}
-	&:hover{
-		color:$dark-purple;
-	}
-}
+
 // body{
 // 	background:url(../images/stars1-bg.jpg);
 // 	background-size:2000px 1212px;

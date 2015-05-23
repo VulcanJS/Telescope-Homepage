@@ -1,35 +1,4 @@
 %ul.header-nav
-  / %li
-  /   %a{:href => '/'} Home
-  / %li
-  /   %a{:href => '/about'} About
-  / %li
-  /   %a{:href => '/why-telescope'} Philosophy
-  / %li
-  /   %a{:href => '/why-telescope'} Features
-  / %li
-  /   %a{:href => '/why-telescope'} Why Telescope?
-  / %li
-  /   %a{:href => '/showcase'} Showcase
-  %li
-    %a{:href => 'http://telescope.readme.io/'} Documentation
-  / %li
-  /   %a{:href => '/faq'} FAQ
-  / %li
-  /   %a{:href => '/contributors'} Contributors
-  / %li
-  /   %a{:href => 'http://demo2.telescopeapp.org/'} Demo
-  %li
-    %a{:href => 'https://github.com/TelescopeJS/Telescope'} GitHub
-  / %li
-  /   %a{:href => 'https://giteor.com/deploy?git=com.github.SachaG.Telescope.master'} Deploy
-  %li
-    %a{:href => 'http://meta.telescopeapp.org/'} Discuss
-  / %li
-  /   %a{:href => 'https://trello.com/b/oLMMqjVL/telescope-roadmap'} Roadmap
-  / %li
-  /   %a{:href => '/contribute'} Contribute
-  / %li
-  /   %a{:href => '/get-help'} Support
-  %li
-    %a{:href => '/blog'} Blog
+  - data.nav.each do |item|
+    %li
+      %a{href: item.url}=item.title

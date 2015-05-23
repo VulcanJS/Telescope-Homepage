@@ -8,6 +8,7 @@
 //   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/stars-bg.jpg', sizingMethod='scale');
 //   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/stars-bg.jpg', sizingMethod='scale')";
 background: $dark-purple;
+border-bottom: 5px solid $light-grey;
 }
 
 .header{
@@ -20,32 +21,38 @@ background: $dark-purple;
 .header-container{
 }
 .header-logo{
-  float: left;
+  @include small{
+    margin: 10px auto;
+  }
+  @include medium{
+    float: left;
+    margin: 10px 0;
+    position: relative;
+    left: -2px;
+  }
   width: 32px;
   height: 32px;
-  margin: 10px 0;
-  position: relative;
-  left: -2px;
   a, img{
     display: block;
     width: 100%;
   }
 }
 .header-nav{
-  float: right;
   list-style-type: none;
   margin: 10px 0;
   padding: 0;
   text-align: center;
-  li{
-    display: inline-block;
-    line-height: 32px;
-    @include medium{      
-      margin-left: 40px;
+  @include small{
+    li{
+      display: block;
     }
-    @include small{
-      margin-left: 10px;
-      font-size: 12px;
+  }
+  @include medium{
+    float: right;
+    li{
+      display: inline-block;
+      line-height: 32px;
+      margin-left: 40px;
     }
   }
   a{

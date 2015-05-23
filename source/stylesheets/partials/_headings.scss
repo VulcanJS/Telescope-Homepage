@@ -3,6 +3,7 @@
   font-size: 36px;
   font-weight: $light;
   margin-bottom: $spacing*2;
+  color: $darker-text;
 }
 .section-subheading{
   text-align: center;
@@ -13,19 +14,48 @@
   color: $dark-text;
 }
 
+
+h1, h2, h3, h4, h5{
+  margin:0;
+  line-height: 1.2;
+}
+
 h2{
-  font-size: 36px;
+  @include small{
+    font-size: 24px;
+  }
+  @include medium{
+    font-size: 36px;
+  }
 }
 h3{
-  font-size: 30px;
+  @include small{
+    font-size: 24px;
+  }
+  @include medium{
+    font-size: 30px;
+  }
 }
 h4{
-  font-size: 24px;
+  @include small{
+    font-size: 18px;
+  }
+  @include medium{
+    font-size: 24px;
+  }
 }
 h5{
-  font-size: 18px;
+  @include small{
+    font-size: 16px;
+  }
+  @include medium{
+    font-size: 18px;
+  }
 }
 .post-content{
+  h1, h2, h3, h4, h5{
+    color: $darker-text;
+  }
   h2{
 
   }

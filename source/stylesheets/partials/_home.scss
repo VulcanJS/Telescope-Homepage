@@ -29,5 +29,8 @@
 			font-size:24px;
 			@include pad(2,2);
 		}
+		&:last-child{
+			margin-bottom: 0;
+		}
 	}
 }

@@ -1,7 +1,7 @@
 .newsletter{
 	background: $lighter-grey;
 	@include small{
-		padding: spacing 0;
+		padding: $spacing 0;
 	}
 	@include medium{
 		padding: $triplespacing 0;
@@ -9,7 +9,13 @@
 	.section-heading{
 		margin: 0;
 		font-weight: $bold;
-		font-size: 40px
+		@include small{
+			font-size: 30px;
+			margin-bottom: $halfspacing;
+		}
+		@include medium{
+			font-size: 40px
+		}
 	}
 	.section-subheading{
 		margin: 0 0 $halfspacing 0;
@@ -27,6 +33,10 @@
 		font-size: 18px;
 		vertical-align: top;
 		min-width: 200px;
+		@include small{
+			text-align: center;
+			margin-bottom: $quarterspacing;
+		}
 	}
 	.button{
 		font-size: 18px;
