@@ -1,0 +1,21 @@
+- title: Galileo
+  url: https://atmospherejs.com/montecruiseto/telescope-theme-sm-galileo
+  demo: http://sm-galileo.meteor.com/
+  screenshot: galileo.png
+  author: Montecruiseto
+  author_url: https://twitter.com/montecruiseto
+  description: A modern looking Q&A theme
+- title: Gemini
+  url: https://atmospherejs.com/montecruiseto/telescope-theme-sm-gemini
+  demo: http://sm-gemini.meteor.com/
+  screenshot: gemini.jpg
+  author: Montecruiseto
+  author_url: https://twitter.com/montecruiseto
+  description: A modern music theme
+- title: Newton
+  url: https://atmospherejs.com/montecruiseto/telescope-theme-sm-newton
+  demo: http://sm-newton.meteor.com/
+  screenshot: newton.png
+  author: Montecruiseto
+  author_url: https://twitter.com/montecruiseto
+  description: A minimalist tech news theme

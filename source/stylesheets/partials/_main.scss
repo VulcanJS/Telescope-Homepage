@@ -17,56 +17,7 @@ body{
 		padding-top: $spacing;
 	}
 }
-.page-title{
-	@include small{
-		margin: $halfspacing 0;
-	}
-	@include medium{
-		margin: $spacing;	
-	}
-	.pre-title{
-		@include small{
-			font-size: 14px;
-		}
-		@include medium{
-			font-size: 18px;
-		}
-		border-bottom: 1px solid white(0.2);
-		padding-bottom: 5px;
-		max-width: 150px;
-		margin: 0 auto 5px auto;
-	}
-	.main-title{
-		@include light;
-		text-align: center;
-		@include small{
-			font-size: 30px;
-		}
-		@include medium{
-			font-size: 54px;
-		}
-		line-height: 1.2;
-	}
-	.sub-title{
-		font-weight: $regular;
-		font-size: 24px;
-	}
-	.rss{
-		font-size: 16px;
-		vertical-align: middle;
-	}
-	a{
-		color: $pink;
-	}
-	h3{
-		@include light;
-		font-size:40px;
-		strong{
-			@include bold;
-			// color:white;
-		}
-	}
-}
+
 p{
 	margin:0 0 $unit2 0;
 	&.small{

@@ -78,6 +78,10 @@ h3.blog{
 		padding-bottom: $spacing;
 		border-bottom: 1px solid $light-grey;
 		margin-bottom: $spacing;
+		&:last-child{
+			border: none;
+			padding: 0;
+		}
 	}
 	.post-summary{
 		p:last-child{

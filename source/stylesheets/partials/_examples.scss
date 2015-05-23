@@ -12,7 +12,24 @@
 			}
 		}
 	}
-	.example-screenshot{
+}
+.themes{
+	@include cf;
+	margin-bottom: $spacing*2;
+	.theme{
+		@include small{
+			margin-bottom: $spacing*2;
+		}
+		@include medium{
+			@include span(3);
+			&:nth-of-type(4n){
+				@include omega;
+			}
+		}
+	}
+}
+
+.site-screenshot{
 		a, img{
 			display: block;
 			width: 100%;
@@ -32,23 +49,22 @@
 		}
 		margin-bottom: 10px;
 	}
-	.example-content{
+	.site-content{
 		text-align: left;
 	}
-	.example-title{
+	.site-title{
 		text-align: left;
 		a{
 			@include light;
 		}
 	}
-	.example-description{
+	.site-description{
 		p{
 			margin-bottom: 10px;
 		}
 	}
-	.example-actions{
+	.site-actions{
 		a{
 			font-size: 13px;
 		}
 	}
-}

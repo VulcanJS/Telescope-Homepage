@@ -8,7 +8,7 @@
         %a.rss{:href => '/feed.xml'} [RSS]
     .articles
       - blog('blog').articles.each do |post|
-        .post.inverted
+        .post
           .post-top
             .date
               =post.date.strftime('%B %e, %Y')

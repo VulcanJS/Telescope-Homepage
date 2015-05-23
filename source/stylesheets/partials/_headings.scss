@@ -108,3 +108,51 @@ h5{
 
   }
 }
+
+.page-title{
+  text-align: center;
+  @include small{
+    margin: $halfspacing 0;
+  }
+  @include medium{
+    margin: $spacing $spacing $doublespacing $spacing; 
+  }
+  .pre-title{
+    @include small{
+      font-size: 14px;
+    }
+    @include medium{
+      font-size: 18px;
+    }
+    border-bottom: 1px solid white(0.2);
+    padding-bottom: 5px;
+    max-width: 150px;
+    margin: 0 auto 5px auto;
+  }
+  .main-title{
+    @include light;
+    @include small{
+      font-size: 30px;
+    }
+    @include medium{
+      font-size: 54px;
+    }
+    line-height: 1.2;
+  }
+  .sub-title{
+    font-weight: $regular;
+    font-size: 24px;
+  }
+  .rss{
+    font-size: 16px;
+    vertical-align: middle;
+  }
+  h3{
+    @include light;
+    font-size:40px;
+    strong{
+      @include bold;
+      // color:white;
+    }
+  }
+}
