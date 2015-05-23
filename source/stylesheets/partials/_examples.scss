@@ -1,22 +1,13 @@
 .examples{
 	// background: $light-grey;
 	padding: $spacing*2 0;
-	.example{
-		@include small{
-			margin-bottom: $spacing*2;
-		}
-		@include medium{
-			@include span(3);
-			&:nth-of-type(4n){
-				@include omega;
-			}
-		}
-	}
 }
 .themes{
 	@include cf;
 	margin-bottom: $spacing*2;
-	.theme{
+}
+
+.site{
 		@include small{
 			margin-bottom: $spacing*2;
 		}
@@ -27,7 +18,6 @@
 			}
 		}
 	}
-}
 
 .site-screenshot{
 		a, img{
