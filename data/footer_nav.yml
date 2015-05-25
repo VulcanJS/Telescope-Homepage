@@ -8,6 +8,8 @@
     #   url:    "/faq"
     # - title:  "Contact"
     #   url:    "/contact"
+    - title: "Follow on Twitter"
+      url: "http://twitter.com/telescopeapp"
 
 - title: Community
   items: 

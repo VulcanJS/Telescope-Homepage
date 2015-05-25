@@ -1,11 +1,11 @@
 
 .hero-button{
   display:block;
-  @include border-radius(5px);
+  @include border-radius(3px);
   // @include background(linear-gradient(bottom, #41378b, #b281ff));
-  @include background(linear-gradient(bottom, #201a4b, #cbabff));
+  @include background(linear-gradient(bottom, rgba(#201a4b, 0.7), rgba(#cbabff, 0.7)));
   background-size: cover;
-  // @include box-shadow(inset 0px 1px white(0.25));
+  // @include box-shadow(inset 0px 1px white(0.4));
   border:none;
   height:60px;
   text-align:center;
@@ -67,7 +67,6 @@
   }
   &:hover{
     .button-content{
-      // @include box-shadow(inset 0px 1px white(0.1));
     }
     .bg1{
       opacity:0;

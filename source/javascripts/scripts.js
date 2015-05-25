@@ -170,120 +170,198 @@ $(function(){
 });
 
 
+/*
+ * requestAnimationFrame pollyfill
+ */
+if (!window.requestAnimationFrame) {
+  window.requestAnimationFrame = (window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame || function (callback) {
+    return window.setTimeout(callback, 1000 / 60);
+  });
+}
 
 
+/*!
+ * Mantis.js / jQuery / Zepto.js plugin for Constellation
+ * @version 1.2.2
+ * @author Acauã Montiel <contato@acauamontiel.com.br>
+ * @license http://acaua.mit-license.org/
+ */
+(function ($, window) {
+  /**
+   * Makes a nice constellation on canvas
+   * @constructor Constellation
+   */
+  function Constellation (canvas, options) {
+    var $canvas = $(canvas),
+      context = canvas.getContext('2d'),
+      defaults = {
+        star: {
+          color: 'rgba(255, 255, 255, .5)',
+          width: 1
+        },
+        line: {
+          color: 'rgba(255, 255, 255, .5)',
+          width: 0.2
+        },
+        position: {
+          x: 0, // This value will be overwritten at startup
+          y: 0 // This value will be overwritten at startup
+        },
+        width: window.innerWidth,
+        height: window.innerHeight,
+        velocity: 0.1,
+        length: 100,
+        distance: 120,
+        radius: 150,
+        stars: []
+      },
+      config = $.extend(true, {}, defaults, options);
 
-var canvas;
-var context;
-var screenH;
-var screenW;
-var stars = [];
-var fps = 10;
-var numStars = 600;
+    function Star () {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
 
-$('document').ready(function() {
-  
-  // Calculate the screen size
-  screenH = $(window).height();
-  screenW = $(window).width();
-  
-  // Get the canvas
-  canvas = $('#space');
-  
-  // Fill out the canvas
-  canvas.attr('height', screenH);
-  canvas.attr('width', screenW);
-  context = canvas[0].getContext('2d');
-  
-  // Create all the stars
-  for(var i = 0; i < numStars; i++) {
-    var x = Math.round(Math.random() * screenW);
-    var y = Math.round(Math.random() * screenH);
-    var length = 1 + Math.random() * 2;
-    var opacity = Math.random();
-    
-    // Create a new star and draw
-    var star = new Star(x, y, length, opacity);
-    
-    // Add the the stars array
-    stars.push(star);
+      this.vx = (config.velocity - (Math.random() * 0.5));
+      this.vy = (config.velocity - (Math.random() * 0.5));
+
+      this.radius = Math.random() * config.star.width;
+    }
+
+    Star.prototype = {
+      create: function(){
+        context.beginPath();
+        context.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+        context.fill();
+      },
+
+      animate: function(){
+        var i;
+        for (i = 0; i < config.length; i++) {
+
+          var star = config.stars[i];
+
+          if (star.y < 0 || star.y > canvas.height) {
+            star.vx = star.vx;
+            star.vy = - star.vy;
+          } else if (star.x < 0 || star.x > canvas.width) {
+            star.vx = - star.vx;
+            star.vy = star.vy;
+          }
+
+          star.x += star.vx;
+          star.y += star.vy;
+        }
+      },
+
+      line: function(){
+        var length = config.length,
+          iStar,
+          jStar,
+          i,
+          j;
+
+        for (i = 0; i < length; i++) {
+          for (j = 0; j < length; j++) {
+            iStar = config.stars[i];
+            jStar = config.stars[j];
+
+            if (
+              (iStar.x - jStar.x) < config.distance &&
+              (iStar.y - jStar.y) < config.distance &&
+              (iStar.x - jStar.x) > - config.distance &&
+              (iStar.y - jStar.y) > - config.distance
+            ) {
+              if (
+                (iStar.x - config.position.x) < config.radius &&
+                (iStar.y - config.position.y) < config.radius &&
+                (iStar.x - config.position.x) > - config.radius &&
+                (iStar.y - config.position.y) > - config.radius
+              ) {
+                context.beginPath();
+                context.moveTo(iStar.x, iStar.y);
+                context.lineTo(jStar.x, jStar.y);
+                context.stroke();
+                context.closePath();
+              }
+            }
+          }
+        }
+      }
+    };
+
+    this.createStars = function () {
+      var length = config.length,
+        star,
+        i;
+
+      context.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (i = 0; i < length; i++) {
+        config.stars.push(new Star());
+        star = config.stars[i];
+
+        star.create();
+      }
+
+      star.line();
+      star.animate();
+    };
+
+    this.setCanvas = function () {
+      canvas.width = config.width;
+      canvas.height = config.height;
+    };
+
+    this.setContext = function () {
+      context.fillStyle = config.star.color;
+      context.strokeStyle = config.line.color;
+      context.lineWidth = config.line.width;
+    };
+
+    this.setInitialPosition = function () {
+      if (!options || !options.hasOwnProperty('position')) {
+        config.position = {
+          x: canvas.width * 0.5,
+          y: canvas.height * 0.5
+        };
+      }
+    };
+
+    this.loop = function (callback) {
+      callback();
+
+      window.requestAnimationFrame(function () {
+        this.loop(callback);
+      }.bind(this));
+    };
+
+    this.bind = function () {
+      $canvas.on('mousemove', function(e){
+        config.position.x = e.pageX - $canvas.offset().left;
+        config.position.y = e.pageY - $canvas.offset().top;
+      });
+    };
+
+    this.init = function () {
+      this.setCanvas();
+      this.setContext();
+      this.setInitialPosition();
+      this.loop(this.createStars);
+      this.bind();
+    };
   }
-  
-  setInterval(animate, 1000 / fps);
+
+  $.fn.constellation = function (options) {
+    return this.each(function () {
+      var c = new Constellation(this, options);
+      c.init();
+    });
+  };
+})($, window);
+
+// Init plugin
+$('#space').constellation({
+  line: {
+    color: 'rgba(200, 145, 235, .7)'
+  }
 });
-
-/**
- * Animate the canvas
- */
-function animate() {
-  context.clearRect(0, 0, screenW, screenH);
-  $.each(stars, function() {
-    this.draw(context);
-  })
-}
-
-/**
- * Star
- * 
- * @param int x
- * @param int y
- * @param int length
- * @param opacity
- */
-function Star(x, y, length, opacity) {
-  this.x = parseInt(x);
-  this.y = parseInt(y);
-  this.length = parseInt(length);
-  this.opacity = opacity;
-  this.factor = 1;
-  this.increment = Math.random() * .03;
-}
-
-/**
- * Draw a star
- * 
- * This function draws a start.
- * You need to give the contaxt as a parameter 
- * 
- * @param context
- */
-Star.prototype.draw = function() {
-  context.rotate((Math.PI * 1 / 10));
-  
-  // Save the context
-  context.save();
-  
-  // move into the middle of the canvas, just to make room
-  context.translate(this.x, this.y);
-  
-  // Change the opacity
-  if(this.opacity > 1) {
-    this.factor = -1;
-  }
-  else if(this.opacity <= 0) {
-    this.factor = 1;
-    
-    this.x = Math.round(Math.random() * screenW);
-    this.y = Math.round(Math.random() * screenH);
-  }
-    
-  this.opacity += this.increment * this.factor;
-  
-  context.beginPath()
-  for (var i = 5; i--;) {
-    context.lineTo(0, this.length);
-    context.translate(0, this.length);
-    context.rotate((Math.PI * 2 / 10));
-    context.lineTo(0, - this.length);
-    context.translate(0, - this.length);
-    context.rotate(-(Math.PI * 6 / 10));
-  }
-  context.lineTo(0, this.length);
-  context.closePath();
-  context.fillStyle = "rgba(214, 203, 237, " + this.opacity + ")";
-  // context.shadowBlur = 5;
-  // context.shadowColor = '#ffff33';
-  context.fill();
-  
-  context.restore();
-}
