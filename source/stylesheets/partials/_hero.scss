@@ -84,15 +84,15 @@
   @include small{
     display: none;
   }
-  @include medium{
-    max-height: 400px;
-  }
   width: 80%;
   margin: 0 auto;
   border: 4px solid white(0.2);
   border-bottom: none;
   border-radius: 3px 3px 0 0;
   .inner{
+    @include medium{
+      max-height: 400px;
+    }
     overflow: hidden;
     height: 100%;
   }
@@ -107,6 +107,9 @@
   }
   @include medium{
     display: none;
+  }
+  @include large{
+    display: block;
   }
   position: absolute;
   bottom: 0px;
