@@ -3,6 +3,9 @@
 }
 .annotations-left{
   @include medium{
+    @include span(3);
+  }
+  @include large{
     @include span(2);
   }
 }
@@ -15,11 +18,17 @@
     margin: $spacing 0;    
   }
   @include medium{
+    @include span(6);
+  }
+  @include large{
     @include span(8);
   }  
 }
 .annotations-right{
   @include medium{
+    @include span(last 3);
+  }
+  @include large{
     @include span(last 2);
   }
 }
@@ -116,6 +125,11 @@
     right: 80px;
   }
   @include medium{
+    transform: scale(0.35);
+    bottom: 80px;
+    right: 100px;
+  }
+  @include large{
     transform: scale(0.5);
     bottom: 120px;
     right: 180px;

@@ -360,8 +360,10 @@ if (!window.requestAnimationFrame) {
 })($, window);
 
 // Init plugin
-$('#space').constellation({
-  line: {
-    color: 'rgba(200, 145, 235, .7)'
-  }
-});
+if ($('body').width() > 400) {
+  $('#space').constellation({
+    line: {
+      color: 'rgba(200, 145, 235, .7)'
+    }
+  });
+}

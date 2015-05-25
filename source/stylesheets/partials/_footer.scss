@@ -30,6 +30,9 @@
 
 .footer-section{
   text-align: left;
+  @include small{
+    margin-bottom: $spacing;
+  }
   @include medium{
     @include span(3);
     &:nth-of-type(4n){

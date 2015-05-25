@@ -7,8 +7,9 @@
 //   background-size: cover;
 //   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/stars-bg.jpg', sizingMethod='scale');
 //   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/stars-bg.jpg', sizingMethod='scale')";
-border-bottom: 5px solid $light-grey;
-position: relative;
+  border-bottom: 5px solid $light-grey;
+  position: relative;
+  background: $dark-purple;
 }
 
 .header{
@@ -16,6 +17,8 @@ position: relative;
   // background: white(0.1);  
   @include cf;
   padding: 0 $spacing/2;
+  position: relative;
+  z-index: 100;
 }
 
 .header-container{
@@ -76,6 +79,5 @@ position: relative;
   right: 0;
   width: 100%;
   height: 100%;
-  background: $dark-purple;
-  z-index: -1;
+  z-index: 1;
 }

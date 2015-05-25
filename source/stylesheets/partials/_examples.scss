@@ -30,7 +30,7 @@
 			top: 0px;
 			display: block;
 			@include medium{
-				height: 135px;
+				max-height: 135px;
 			}
 			overflow: hidden;
 			background: white;
