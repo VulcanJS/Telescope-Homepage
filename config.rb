@@ -137,6 +137,7 @@ configure :build do
 end
 
 activate :livereload
+activate :autoprefixer
 
 activate :directory_indexes
 
