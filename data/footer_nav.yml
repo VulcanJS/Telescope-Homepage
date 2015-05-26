@@ -30,6 +30,8 @@
       url:    "http://telescope.readme.io"
     - title:  "Themes"
       url:    "/themes"
+    - title:  "Plugins"
+      url:    "/plugins"
     # - title:  "Packages"
     #   url:    "/packages"
     # - title:  "Showcase"

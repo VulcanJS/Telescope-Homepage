@@ -1,0 +1,10 @@
+%section
+  .container.page-content
+    .page-title
+      %h1.main-title
+        Plugins
+      %h2.sub-title Drop-in plugins to extend Telescope
+
+    .sites.themes
+      - data.plugins.each do |site|
+        = partial('partials/site', :locals => {:site => site, :type => "plugins"})

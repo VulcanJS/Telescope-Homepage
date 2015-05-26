@@ -9,5 +9,18 @@
       :markdown
         #{site.description}
     .site-actions
+    - if type == "plugins"
+      %a.button-simple{href: site.demo} View Demo
+      %a.button-simple{href: site.url} Get It
+
+    - elsif type == "examples"
       %a.button-simple{href: site.url} Launch Site
-      / %a.button-simple{href: site.repo} View on GitHub
+      / %a.button-simple{href: site.repo} Get Code
+
+    - elsif type == "showcase"
+      / nothing
+
+    - elsif type == "themes"
+      %a.button-simple{href: site.demo} View Demo
+      %a.button-simple{href: site.url} Get It
+

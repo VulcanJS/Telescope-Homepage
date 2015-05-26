@@ -7,4 +7,4 @@
       %h4.sub-title A selection of sites using Telescope
     .sites
       - data.showcase.reverse_each do |site|
-        = partial('partials/site', locals: {site: site})
+        = partial('partials/site', :locals => {:site => site, :type => "showcase"})

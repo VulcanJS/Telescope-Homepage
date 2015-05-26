@@ -1,0 +1,7 @@
+- title: Hero Banner Plugin
+  url: https://atmospherejs.com/jeremy/telescope-plugin-hero
+  demo: http://telescope-hero.meteor.com/
+  screenshot: hero-banner.jpg
+  author: Jeremy Shimko
+  author_url: https://twitter.com/jeremyshimko
+  description: A simple plugin that lets you add a configurable hero banner to your Telescope site.

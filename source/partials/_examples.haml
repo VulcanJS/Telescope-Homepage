@@ -4,4 +4,4 @@
     %h4.section-subheading A few open-source projects you can learn from
     .sites
       - data.examples.each do |site|
-        = partial('partials/site', :locals => {:site => site})
+        = partial('partials/site', :locals => {:site => site, :type => "examples"})

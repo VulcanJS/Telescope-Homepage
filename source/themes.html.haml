@@ -7,4 +7,4 @@
 
     .sites.themes
       - data.themes.each do |site|
-        = partial('partials/site', :locals => {:site => site})
+        = partial('partials/site', :locals => {:site => site, :type => "themes"})
