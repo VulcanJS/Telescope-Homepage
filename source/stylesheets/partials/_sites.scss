@@ -1,0 +1,64 @@
+.sites{
+  @include medium{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.site{
+    margin-bottom: $spacing*1.5;
+    @include medium{
+      @include span(3);
+      float: none;
+      &:nth-of-type(4n){
+        @include omega;
+      }
+    }
+  }
+
+.site-screenshot{
+  a, img{
+    display: block;
+    width: 100%;
+  }
+  a{
+    border: 3px solid $lighter-grey;
+    position: relative;
+    top: 0px;
+    display: block;
+    @include medium{
+      max-height: 135px;
+    }
+    overflow: hidden;
+    background: white;
+  }
+  img{
+  }
+  margin-bottom: 10px;
+}
+.site-content{
+  text-align: left;
+}
+.site-title{
+  text-align: left;
+  a{
+    @include light;
+  }
+}
+.site-description{
+  p{
+    margin-bottom: 10px;
+  }
+}
+.site-actions{
+  a{
+    font-size: 13px;
+  }
+}
+
+.examples{
+  padding: $doublespacing 0 $halfspacing 0;
+}
+.themes{
+  margin-bottom: $halfspacing;
+}
+

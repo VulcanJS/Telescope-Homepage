@@ -1,23 +1,10 @@
 - content_for(:title, "Telescope Showcase")
 
 %section.showcase
-  .page-title
-    %h3.main-title Showcase
-    %h4.sub-title A selection of sites using Telescope
-  .sites
-    - data.showcase.reverse_each do |site|
-      .site
-        .screenshot
-          %a{:href => site.url}
-            %img{ :src=> '/images/showcase/'+site.screenshot}
-        .description
-          %h4.title
-            %a{:href => site.url}=site.title
-          %p
-            :markdown
-              #{site.description}
-              – [View on GitHub](#{site.repo})
-
-%section.apply
-  %h3 Do You Use Telescope?
-  %p <a href="http://sachagreif.com/contact">Get in touch</a> and we'll add you to the showcase.
+  .container.showcase-container
+    .page-title
+      %h3.main-title Showcase
+      %h4.sub-title A selection of sites using Telescope
+    .sites
+      - data.showcase.reverse_each do |site|
+        = partial('partials/site', locals: {site: site})

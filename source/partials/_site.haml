@@ -1,0 +1,13 @@
+.site
+  .site-screenshot
+    %a{:href => site.url}
+      %img{ :src=> '/images/showcase/'+site.screenshot}
+  .site-content
+    %h4.site-title
+      %a{:href => site.url}=site.title
+    .site-description
+      :markdown
+        #{site.description}
+    .site-actions
+      %a.button-simple{href: site.url} Launch Site
+      / %a.button-simple{href: site.repo} View on GitHub

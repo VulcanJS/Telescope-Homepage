@@ -2,17 +2,6 @@
   .container.examples-container
     %h2.section-heading Built With Telescope
     %h4.section-subheading A few open-source projects you can learn from
-    - data.examples.each do |site|
-      .site
-        .site-screenshot
-          %a{:href => site.url}
-            %img{ :src=> '/images/showcase/'+site.screenshot}
-        .site-content
-          %h3.site-title
-            %a{:href => site.url}=site.title
-          .site-description
-            :markdown
-              #{site.description}
-          .site-actions
-            %a.button-simple{href: site.url} Launch Site
-            / %a.button-simple{href: site.repo} View on GitHub
+    .sites
+      - data.examples.each do |site|
+        = partial('partials/site', :locals => {:site => site})

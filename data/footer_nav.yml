@@ -4,6 +4,8 @@
     #   url:    "/about"
     - title:  "Blog"
       url:    "/blog"
+    - title:  "Showcase"
+      url:    "/showcase"
     # - title:  "FAQ"
     #   url:    "/faq"
     # - title:  "Contact"
