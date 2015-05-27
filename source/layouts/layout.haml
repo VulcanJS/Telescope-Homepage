@@ -21,7 +21,7 @@
 
   %body{:class => yield_content(:page)}
   
-    %section.top
+    .top
       %canvas#space
       .header
         %h2.header-logo
@@ -33,7 +33,7 @@
         =partial('partials/hero')
         / =partial('partials/actions')
 
-    %section.main
+    .main
       =yield
 
     =partial('partials/footer')

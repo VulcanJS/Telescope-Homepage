@@ -1,11 +1,11 @@
 - title: "About"
   items:
-    # - title:  "About"
-    #   url:    "/about"
+    - title:  "About"
+      url:    "/about"
     - title:  "Blog"
       url:    "/blog"
-    - title:  "Showcase"
-      url:    "/showcase"
+    - title:  "Roadmap"
+      url:    "https://trello.com/b/oLMMqjVL/telescope-roadmap"
     # - title:  "FAQ"
     #   url:    "/faq"
     # - title:  "Contact"
@@ -15,12 +15,12 @@
 
 - title: Community
   items: 
+    - title:  "Showcase"
+      url:    "/showcase"
     - title:  "Telescope on Slack"
       url:    "http://slack.telescopeapp.org"
     - title:  "Telescope Meta"
       url:    "http://meta.telescopeapp.org/"
-    - title:  "Roadmap"
-      url:    "https://trello.com/b/oLMMqjVL/telescope-roadmap"
     - title:  "GitHub"
       url:    "http://github.com/TelescopeJS/Telescope"
 

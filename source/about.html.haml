@@ -1,39 +1,44 @@
-%section.features-section
-  .container
-    .section-heading Principles
+%section.about
+  .container.page-content
+    .container-medium
+      .page-title
+        %h1.main-title
+          About
+        %h2.sub-title Learn more about Telescope
 
-    .features
-      .feature
-        .feature-content
-          %h3.feature-title Engagement
-          .feature-description
-            :markdown
-              Telescope was built from the ground up to make creating active, engaged communities easier. 
+      .about-content.text-content
+    
+        :markdown
 
-              From large features like automatically sending your audience email digests of your best content, to tiny ones like highlighting comments of the original poster, Telescope takes care of the basics so you can focus on what really matters: growing your community. 
-        .feature-image
-          #{figure "home/tsc-newsletter.jpg", "An auto-generated newsletter.", "", ""}
+          Telescope was created to provide an easy, free, and open-source way to set up a community. Just like WordPress democratized blogging, Telescope's goal is to let anybody launch their own [Hacker News](http://news.ycombinator.com) or [Product Hunt](http://producthunt.com).
 
-      .feature
-        .feature-content
-          %h3.feature-title Flexibility
-          .feature-description
-            :markdown
-              Too often, having more features comes at the cost of flexibility and simplicity. With Telescope, we knew from the start we wanted to avoid this pitfall. 
+          Telescope is organized around three principles:
 
-              This is why Telescope is made up of independant modules, which you can add and remove as you need. Don't need notifications? Just type `meteor remove telescope-notifications` package and you'll be good to go!
+          ### 1. Engagement
 
-              What's more, Telescope's flexible template architecture means that every single part of the front-end can be customized without touching the app's core codebase. All you need to know is a bit of HTML and CSS. 
-        .feature-image
+          Telescope was built from the ground up to make creating active, engaged communities easier. 
+
+          #{figure "blog/campaign-mailchimp.jpg", "Previewing a newsletter in MailChimp."}
+
+          From large features like automatically sending your audience email digests of your best content, to tiny ones like highlighting comments of the original poster, Telescope takes care of the basics so you can focus on what really matters: growing your community. 
+
+          ### 2. Flexibility
+
+          Too often, having more features comes at the cost of flexibility and simplicity. With Telescope, we knew from the start we wanted to avoid this pitfall. 
+
+          This is why Telescope is made up of independant modules, which you can add and remove as you need. Don't need notifications? Just type `meteor remove telescope-notifications` package and you'll be good to go!
+
           #{figure "home/madrasa.jpg", "Customizing Telescope.", "", "http://madrasa.ca"}
 
-      .feature
-        .feature-content
-          %h3.feature-title Openness
-          .feature-description
-            :markdown
-              Telescope plays nice with the web. Out of the box, it comes with built-in integrations with services like [Google Analytics](http://www.google.com/analytics/) (for web analytics) and [Kadira](http://kadira.io) (for performance and monitoring). 
+          Telescope's flexible template architecture means that every single part of the front-end can be customized without touching the app's core codebase. All you need to know is a bit of HTML and CSS. 
 
-              What's more, Telescope can also parse any RSS feed to populate your site, automatically fetch preview thumbnails using [Embedly](http://embed.ly), and then generate and send an email newsletter using [MailChimp](http://mailchimp.com).
-        .feature-image
-          #{figure "blog/campaign-mailchimp.jpg", "Previewing a newsletter in MailChimp.", "", ""}
+          ### 3. Openness
+
+          Telescope is distributed under the MIT license, meaning it can be freely used even for commercial applications. 
+
+          And Telescope itself is also open to the world: out of the box, Telescope comes with built-in integrations with services like [Google Analytics](http://www.google.com/analytics/) (for web analytics) and [Kadira](http://kadira.io) (for performance and monitoring). 
+
+          #{figure "home/tsc-newsletter.jpg", "An auto-generated newsletter."}
+
+          What's more, Telescope can also parse any RSS feed to populate your site, automatically fetch preview thumbnails  using [Embedly](http://embed.ly), and then generate and send an email newsletter using [MailChimp](http://mailchimp.com).
+

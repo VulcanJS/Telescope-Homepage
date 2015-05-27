@@ -71,7 +71,7 @@ body, input, textarea, button{
 
   }
   figure{
-    margin: $spacing*2 auto $spacing*2 auto;
+    margin: $spacing auto $spacing auto;
     @include small{
       width: 95%;
     }
@@ -134,7 +134,7 @@ body, input, textarea, button{
     img{
       display: block;
       width: 100%;
-      border: 5px solid $light-grey;
+      border: 6px solid $lighter-grey;
     }
   }
   figcaption{
@@ -169,5 +169,12 @@ body, input, textarea, button{
     p:last-child{
       margin-bottom: 0;
     }
+  }
+  .aside{
+    float: right;
+    padding: $quarterspacing;
+    background: $lighter-grey;
+    font-size: 80%;
+    margin: 0 0 $halfspacing $halfspacing;
   }
 }

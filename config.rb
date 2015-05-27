@@ -192,11 +192,16 @@ helpers do
   end
   def pullquote(content, css_class="left")
     %Q{<blockquote class="pull pull-#{css_class}">#{content}</blockquote>}
-  end        
+  end
   def note(&block)
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :fenced_code_blocks => true)
     content = markdown.render(capture(&block))
     concat %Q{<div class="note">#{content}</div>}
+  end
+  def aside(&block)
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :fenced_code_blocks => true)
+    content = markdown.render(capture(&block))
+    concat %Q{<div class="aside">#{content}</div>}
   end
   def chapter(&block)
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :fenced_code_blocks => true)

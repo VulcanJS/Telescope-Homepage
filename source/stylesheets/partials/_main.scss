@@ -12,9 +12,11 @@ body{
 .page-content{
 	@include small{
 		padding-top: $halfspacing;
+  	padding-bottom: $spacing;
 	}
 	@include medium{
 		padding-top: $spacing;
+  	padding-bottom: $doublespacing;
 	}
 }
 
