@@ -1,16 +1,19 @@
 ---
-title: 'Why You Should Use Telescope For Your Next Hackathon Or Startup Weekend'
-published: false
+title: 'Why You Should Use Telescope For Your Next Startup Weekend'
+published: true
 author: sacha
-date: 2015/05/27
+date: 2015/05/28
 ---
 
+You should seriously consider Telescope as a launching point for your next hackathon or startup weekend project. 
 
-Telescope bills itself as “the easiest way to create your own Product Hunt or Hacker News”, but did you know it can also do a lot more than that?
+Why? Because one team did just that, and **their little weekend project went on being featured on several major mainstream news sites**. 
 
 READMORE
 
 ### A Real Community Platform
+
+Telescope bills itself as “the easiest way to create your own Product Hunt or Hacker News”, but did you know it can also do a lot more than that?
 
 Although WordPress was first conceived as a blogging platforms, it now powers everything from portfolios to e-commerce. And just like WordPress, Telescope hides a lot of power under the hood. 
 
@@ -18,13 +21,23 @@ In fact, Telescope is actually a full-blown community platform: if users can con
 
 ### Flexible & Extensible
 
-What makes Telescope how powerful as a community platform is how flexible it is. Instead of trying to give you every possible feature under the sun out of the box, Telescope has a lightweight core but is very easy to extend and customize. 
+What makes Telescope so powerful as a community platform is how flexible it is. Instead of trying to give you every possible feature of the box, Telescope has a lightweight core but is very easy to extend and customize. 
 
-For example, with just a few lines of code you can add [custom fields](http://docs.telescopeapp.org/v0.20/docs/custom-fields) to Telescope's posts, users, or comments, and Telescope will automatically take care of adding them to the user interface, validating their content, and saving it to the database. 
+For example, with just a few lines of code you can add [custom fields](http://docs.telescopeapp.org/v0.20/docs/custom-fields) to Telescope's posts, users, or comments, and Telescope will automatically take care of:
 
-<%= figure "blog/cb-custom-fields.jpg", "CodeBuddies uses Telescope for event scheduling thanks to the power of custom fields.", "full" , "http://hangouts.codebuddies.org/" %>
+- Adding them to the user interface.
+- Validating their content.
+- Saving that content to the database. 
 
-You can also target any fragment of the user interface and [replace it](http://docs.telescopeapp.org/v0.20/docs/custom-templates) with your own code. No need to overhaul the whole theme (unless you want to, of course!), you can just pick and chose what you need. 
+This is how [CodeBuddies](http://hangouts.codebuddies.org/) is able to add “Start Time” and “End Time” fields and turn Telescope into an event scheduling system:
+
+<%= figure "blog/cb-custom-fields.jpg", "CodeBuddies uses Telescope for event scheduling thanks to the power of custom fields.", "" , "http://hangouts.codebuddies.org/" %>
+
+What's more, you can also target any fragment of the user interface and [replace it](http://docs.telescopeapp.org/v0.20/docs/custom-templates) with your own code. No need to overhaul the whole theme (unless you want to, of course!), you can just pick and chose what you need.
+
+For example, [CrunchHunt](http://www.crunchhunt.com) inserts a “Shares” module to the left of each post without touching the overall layout:
+
+<%= figure "showcase/crunchhunt.jpg", "CrunchHunt: a few subtle template customizations.", "" , "http://www.crunchhunt.com/" %>
 
 ### Telescope & Hackathons
 
@@ -36,8 +49,6 @@ Shouldn't you be focusing your efforts on the things that will make your project
 
 This is exactly what Telescope lets you do. If you think about it, a big proportion of startup and app ideas can be boiled down to “users sharing content and other users reacting to it”. And that's exactly where Telescope shines. 
 
-### Powered By Meteor
-
 The fact that Telescope runs on top of [Meteor](http://meteor.com) is also a major advantage. Right out of the box, Meteor includes quite a few features that help you go faster:
 
 - Live reload and CSS concatenation.
@@ -45,5 +56,36 @@ The fact that Telescope runs on top of [Meteor](http://meteor.com) is also a maj
 - Uses JavaScript, the most common language on the web.
 - Real-time and reactive by default.
 
-### A Case Study
+### Textie: A Case Study
 
+But don't take my word for it. Instead, how about an actual, real-world case study of a team using Telescope to launch a functional product in a single week-end?
+
+[Textie](http://www.textie.co/) is a service that helps you figure out how to answer tricky text messages by crowdsourcing the best replies. It was built in less than 48 hours at [Perth Startup Weekend #6](http://www.startupnews.com.au/2015/05/26/startup-weekend-perth-6-wrap-up/).
+
+<%= figure "blog/textie.jpg", "The Textie team used Telescope to get something out the door in a weekend.", "" , "http://textie.co/" %>
+
+Once the team was assembled, Saxon Druce and Tom Cuthbert were put in charge of development. But that doesn't mean they were looking to reinvent the wheel. As Saxon tells it: “In a Startup Weekend there usually isn't time to build something *and* validate it as well, so I knew it would be best to use something that already existed if we could”.
+
+### Quick Setup
+
+The setup and deployment process was quick: “By Saturday morning Tom had an instance of the site deployed on a droplet on Digital Ocean, our domain was registered and the site was live at www.textie.co”.
+
+Saxon then set about customizing the app, and managed to get things going despite his lack of experience with Meteor: “Although I've done a bunch of web dev on various platforms before, I've never used Node, Meteor or Telescope, and so there was a steep learning curve. We didn't have time to properly learn any of these, we just had to jump in and start hacking”. 
+
+Textie ended up receiving a honorable mention from the judges. But that's not the end of the story by any means!
+
+### Textie Goes Viral
+
+Unbeknown to the Textie team, someone had submitted the app to [Product Hunt](http://producthunt.com), where it quickly reached the number two spot. 
+
+Not only did this trigger a flood of traffic, it also got other sites to pay attention. The result was articles in [Cosmopolitan](http://www.cosmopolitan.com/sex-love/news/a40982/new-app-lets-other-people-answer-your-text-messages-for-you/), [The Daily Dot](http://www.dailydot.com/technology/textie-crowdsource-text-message-replies/), [Jezebel](http://jezebel.com/let-a-stranger-reply-to-your-text-message-why-not-1706967442), and more!
+
+<%= figure "blog/textie-cosmo.jpg", "Textie in Cosmo.", "" , "http://www.cosmopolitan.com/sex-love/news/a40982/new-app-lets-other-people-answer-your-text-messages-for-you/" %>
+
+### Just Start Hacking
+
+If you want to set up something fast and just start hacking, Telescope was made for you. From [link sharing](http://crater.io) to [event scheduling](http://hangouts.codebuddies.org) to [content aggregation](http://crunchhunt.com), Telescope is kinda like the swiss-army-knife community app you always wished existed. 
+
+So next time you need to get something out the door in 48 hours, don't spend 47 of them trying to get that damn Twitter log-in working. 
+
+Instead, follow Textie's lead and just start hacking!
