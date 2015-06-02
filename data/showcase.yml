@@ -62,10 +62,10 @@
 #     Madrasa offers a selection of tutorials from across the web. 
 # # Making use of Telescope's grid layout and search features, 
 #   screenshot: madrasa.jpg 
-- title: Weld
+- title: Welderwire
   url: http://welderwire.meteor.com/
   repo: https://github.com/weld-co/telescope-theme-weld
-  description: A free, completely customized Telescope theme.
+  description: A completely customized theme for the WELD coworking community.
   screenshot: weld.jpg
 # - title: Data For Good
 #   url: http://dataforgood.co/
