@@ -1,25 +1,12 @@
-- content_for(:title, "Telescope Documentation")
+%section.documentation
+  .container.page-content
+    .container-medium
+      .page-title
+        %h1.main-title
+          Documentation
 
-%section.docs-archive
-  .page-title
-    %h3.main-title
-      Documentation
-  .articles
-    .post.inverted
-      .post-content
-        - data.doc_sections.each_with_index do |section, i|
-        - # blog('docs').articles.group_by{|item| item.metadata[:page]["section"]}.sort_by{|t, a| t}.each_with_index do |section, i|
-          .docs-section
-            %h2.section-title=section.name
-            %p.section-description=section.description
-            %ol.docs-toc
-              - posts = blog('docs').articles.find_all {|post| post.metadata[:page]["section"] == i+1 }.sort_by! {|post| post.metadata[:page]["date"]}
-              - posts.each_with_index do |post, i|
-                - if post.url == current_page.url
-                  - li_class = "active"
-                %li{class: li_class}
-                  %a.docs-list-link{:href => post.url}
-                    =post.title
-                  - if post.data.blurb
-                    %p.docs-list-blurb
-                      =post.data.blurb
+      .docs-content.text-content
+    
+        :markdown
+
+          Please refer to the [new documentation](http://docs.telescopeapp.org).
