@@ -4,10 +4,10 @@
   description: A community to discuss all things Meteor. 
   repo: https://github.com/meteorclub/telescope-theme-crater
   screenshot: crater2.jpg
-- title: Weld
+- title: Welderwire
   url: http://welderwire.meteor.com/
   repo: https://github.com/weld-co/telescope-theme-weld
-  description: A free, completely customized Telescope theme.
+  description: A completely customized theme for the WELD coworking community.
   screenshot: weld.jpg
 - title: CodeBuddies
   tagline: Event Scheduling
