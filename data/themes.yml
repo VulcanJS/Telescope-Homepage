@@ -19,3 +19,17 @@
   author: Montecruiseto
   author_url: https://twitter.com/montecruiseto
   description: A minimalist tech news theme
+- title: Palomar
+  url: https://atmospherejs.com/montecruiseto/telescope-theme-sm-palomar
+  demo: http://sm-palomar.meteor.com/
+  screenshot: palomar.jpg
+  author: Montecruiseto
+  author_url: https://twitter.com/montecruiseto
+  description: Great for a travel or photography community.
+- title: Newton
+  url: https://atmospherejs.com/montecruiseto/telescope-theme-sm-sloan
+  demo: http://sm-sloan.meteor.com/
+  screenshot: sloan.png
+  author: Montecruiseto
+  author_url: https://twitter.com/montecruiseto
+  description: For communities that crowd-curate digital products.
