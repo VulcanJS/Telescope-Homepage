@@ -26,10 +26,17 @@
   author: Montecruiseto
   author_url: https://twitter.com/montecruiseto
   description: Great for a travel or photography community.
-- title: Newton
+- title: Sloan
   url: https://atmospherejs.com/montecruiseto/telescope-theme-sm-sloan
   demo: http://sm-sloan.meteor.com/
   screenshot: sloan.png
   author: Montecruiseto
   author_url: https://twitter.com/montecruiseto
   description: For communities that crowd-curate digital products.
+- title: Lulin
+  url: https://atmospherejs.com/montecruiseto/telescope-theme-sm-lulin
+  demo: http://sm-lulin.meteor.com/
+  screenshot: lulin.jpg
+  author: Montecruiseto
+  author_url: https://twitter.com/montecruiseto
+  description: A mobile-first foodie theme.
