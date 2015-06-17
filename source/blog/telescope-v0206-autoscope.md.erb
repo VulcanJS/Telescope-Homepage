@@ -1,0 +1,26 @@
+---
+title: "Telescope v0.20.6: AutoScope"
+published: true
+author: sacha
+date: 2015/06/17
+---
+
+A minor update, but with a pretty cool feature.
+
+READMORE
+
+The main new feature is a simpler way to replace templates. In addition to the manual template replacement syntax (`Template.foo.replaces("bar")`), you can now simply add the `custom_` prefix to any existing template name and the replacement will be picked up automatically. 
+
+For example, if you want to replace the `post_title` template, you can simply create a template named `custom_post_title`. Here's a short video that showcases the feature:
+
+<div class="video">
+<iframe width="560" height="315" src="//www.youtube.com/embed/m3xxkiw0zVs" frameborder="0" allowfullscreen></iframe>
+</div>
+
+If you prefer using another prefix, you can simply set the `Telescope.config.customPrefix` variable to something else. 
+
+Note that up to now the recommended way of adding customizations was through packages, but since version 0.20 you can also put your code right in your regular app directories if you prefer (unless of course you intend to publish your code to Atmosphere).
+
+### Security Fix
+
+This update also fixes an issue with over-publishing the Settings collection's private properties. 
