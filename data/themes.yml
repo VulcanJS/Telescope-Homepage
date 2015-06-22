@@ -40,3 +40,17 @@
   author: Montecruiseto
   author_url: https://twitter.com/montecruiseto
   description: A mobile-first foodie theme.
+- title: Iris
+  url: https://github.com/WebbROI/telescope-themes/tree/master/telescope-theme-iris
+  demo: http://telescope-iris.meteor.com/
+  screenshot: iris.jpg
+  author: WebbROI
+  author_url: http://telescope-themes.meteor.com/
+  description: A theme inspired by the design of Crater.io
+- title: Starfire
+  url: http://blog.startrack.io/scopemount-theme-starfire/
+  demo: http://sm-starfire.meteor.com/
+  screenshot: starfire.jpg
+  author: Montecruiseto
+  author_url: https://twitter.com/montecruiseto
+  description: A gaming news site theme.
