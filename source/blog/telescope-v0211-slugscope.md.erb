@@ -1,0 +1,45 @@
+---
+title: "Telescope v0.21.1: SlugScope"
+published: true
+author: sacha
+date: 2015/06/17
+---
+
+Slugs, downvoting, more languages: tons of new features in the latest Telescope release!
+
+READMORE
+
+### Updating
+
+Depending on your install method, you can either:
+
+- Run the `meteor update` command.
+- Pull in the changes from GitHub. 
+
+### URL Slugs
+
+This version introduces a long-awaited feature, URL slugs (a.k.a. human-readable URLs) for posts. 
+
+Instead of `domain/posts/:_id`, URLs now follow a `domain/posts/:_id/:slug` structure. The main advantage of this is SEO, as Google and other search engines take into account keywords present in a page's URL. 
+
+Note that old URLs (i.e. `domain/posts/:_id`) will keep on working, but will now redirect to the new ones. Entering an incorrect URL slug will also work, as long as the `_id` part is correct. 
+
+### Downvoting
+
+Telescope has always support post downvoting, but up to now this feature wasn't exposed in the default theme's user interface. With the latest release, you can now check the "enable downvotes" checkbox in the settings to enable post and comment downvoting without any extra work on your part. 
+
+Note that to accomodate this change, the `post_upvote` template was renamed to `post_vote`. 
+
+### Refactored Notifications
+
+While this shouldn't have any impact on the user experience, Telescope's notifications code has been refactored to be cleaner and easier to understand. New test routes for different email notifications types have also been added. 
+
+### Better Internationalization Workflow & New Languages
+
+Telescope is now officially using [LingoHub](http://lingohub.com) to manage translations. In order to implement [this new workflow](http://docs.telescopeapp.org/v0.20/docs/internationalization), I've cleaned up all of Telescope's i18n files to make sure each string is translated in the package that makes use of it. 
+
+Thanks also to [Alexander Lindberg](https://github.com/Alekzanther) and [Camille Roux](https://github.com/camilleroux) for their help with the Swedish and French translation. 
+
+### Security Issues & Bug Fixes
+
+This release also fixes a couple small security issues and bugs. Thanks as always to everybody who contributed!
