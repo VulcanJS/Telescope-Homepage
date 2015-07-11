@@ -1,0 +1,72 @@
+---
+title: "Creating Your Own Reddit Alternative: Reddit vs Telescope"
+published: true
+author: sacha
+date: 2015/07/11
+---
+
+You've probably heard about the recent Reddit drama: a slew of unpopular decisions by Reddit management led to some major subreddits temporarily shutting down in protest, and many users voiced their intention to abandon the site. 
+
+READMORE
+
+This in turn created a renewed interest around Reddit alternatives, as shown by this now-famous Google Trends graph:
+
+<%= figure "blog/reddit-alternative.png", "“Reddit alternative” on Google Trends", "", "http://www.google.com/trends/explore?hl=en-GB&q=Reddit+alternative#q=Reddit%20alternative&cmpt=q&tz=Etc%2FGMT-9" %>
+
+Some of the more popular options, like [Voat](https://voat.co/) or [Snapzu](http://snapzu.com/) are homespun, original codebases. But not everybody has the necessary coding skills to create a Reddit-site like from scratch. 
+
+### Reddit vs Telescope
+
+So if you too want to launch your own Reddit alternative, you have a couple options. You could use Reddit's [own codebase](https://github.com/reddit/reddit), since it's free and open-source. 
+
+Or you could use **Telescope**. It's also a free, open-source Reddit-style app, but it sports a few key differences with Reddit. 
+
+So in this post, I'll walk you through a couple key questions to help you understand these differences, and pick the app that's best for your own needs. 
+
+### Which Operating System Do You Run?
+
+Reddit features a helpful [install script](https://github.com/reddit/reddit/wiki/reddit-install-script-for-Ubuntu), but that install script is designed for Ubuntu, not Mac OS or Windows. 
+
+The [full install instructions](https://github.com/reddit/reddit/wiki/Install-guide) on the other hand are pretty daunting, with multiple steps and separate components. 
+
+Telescope's [install process](http://docs.telescopeapp.org/docs/installing-telescope) is a little easier and, crucially, works equally well on Windows, Mac OS, or Linux. 
+
+So if you're running Windows or Mac OS, Telescope will probably be a lot easier to set up locally. 
+
+### How Comfortable Are You With Server Administration?
+
+Even Reddit's install script will require a basic level of familiarity with Ubuntu and sysadmins stuff. If sentences like “the easiest thing is probably editing /etc/hosts on the host machine” make no sense to you, you might get stuck if you happen to run into any issues. 
+
+Telescope does also require you to use the command line for basic operations such as set up, update, and deployment, but it's a little bit more user-friendly. 
+
+Thanks to tools like [Meteor Up](https://github.com/arunoda/meteor-up), you should be able to do every operation remotely with simple command entered from your local machine, without having to actually log in to your server.
+
+### Do You Need Subreddits?
+
+Reddit's key selling point is its subreddit feature: unlike traditional message boards with their predefined categories, Reddit lets anybody create, customize, and moderate their own sub-forum.
+
+While Telescope supports categories, it doesn't have something as powerful and flexible as subreddits. So if that's a key requirement, Reddit will be better suited to your needs. 
+
+### Do You Need Themes And Plug-ins?
+
+While Reddit is popular and open-source, it's not a *popular open-source app*. In other words, it lacks the ecosystem and community that has developed around apps like WordPress or Drupal. 
+
+As Redditor [crimson117 put it](https://www.reddit.com/r/redditdev/comments/1uyxre/why_dont_we_see_more_websites_using_reddit_code/):
+
+> Reddit is difficult to deploy. It's mostly open source, but it's not designed to be widely distributed and easy to install, especially when compared to, say, PHPBB. 
+
+While Telescope isn't *quite* at WordPress-level popularity just yet, it does have a growing [collection of themes](/themes) you can use for free, with more on the way. 
+
+### Do You Need Advanced Moderation Tools?
+
+Reddit has been around for a while, and it has had time to develop an array of moderation features. 
+
+As a younger project, Telescope doesn't support as many tools just yet. 
+
+### Conclusion
+
+Reddit is an older, stabler project with a decade-long track record, but it's also a bit less welcoming and harder to get into. 
+
+Telescope is a fresher, more experimental codebase that's just getting started, with an active community but also some of the growing pains that come with younger projects.
+
+Both have their pros and cons, and hopefully this article will help you choose the one that's best for you!
