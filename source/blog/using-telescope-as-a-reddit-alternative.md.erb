@@ -1,5 +1,5 @@
 ---
-title: "Reddit vs Telescope: Creating Your Own Reddit Alternative"
+title: "Reddit vs Telescope: Launching Your Own Reddit Alternative"
 published: true
 author: sacha
 date: 2015/07/13
@@ -47,9 +47,9 @@ So if you're running Windows or Mac OS, Telescope will probably be a lot easier 
 
 Even Reddit's install script will require a basic level of familiarity with Ubuntu and sysadmins stuff. If sentences like “the easiest thing is probably editing /etc/hosts on the host machine” make no sense to you, you might get stuck if you happen to run into any issues.
 
-Telescope does also require you to use the command line for basic operations such as set up, update, and deployment, but it's a little bit more user-friendly. 
+Telescope does also require you to use the command line for basic operations such as set up, update, and deployment, but it's a little bit more user-friendly. Thanks to tools like [Meteor Up](https://github.com/arunoda/meteor-up), you should be able to do every operation remotely with simple command entered from your local machine, without having to actually log in to your server.
 
-Thanks to tools like [Meteor Up](https://github.com/arunoda/meteor-up), you should be able to do every operation remotely with simple command entered from your local machine, without having to actually log in to your server.
+And if all you want is quickly get started, you can use Telescope's [one-click deploy on Heroku](https://heroku.com/deploy?template=https://github.com/TelescopeJS/sample-project) to try it out right away. 
 
 ### Do You Need Themes And Plug-ins?
 
@@ -77,15 +77,19 @@ Obviously, merely installing Reddit's codebase won't give you the same scaling a
 
 On the other hand, Telescope hasn't (yet) been tested at that scale. Although it can happily support thousands of users relatively cheaply, if you're planning for the whole population of Canada (approximately 36 million people) to log on then Reddit might prove to be a safer choice. 
 
+<%= figure "blog/lesswrong.jpg", "Less Wrong, one of the most active communities based on Reddit.", "", "http://lesswrong.com/" %>
+
 ### Which Features Do You Need?
 
 Reddit and Telescope have a lot in common (submitting links, commenting and voting on them, nested comment threads, etc.) but they also each have their specific features, too. 
 
 For example, Reddit comes with [an extensive API](https://www.reddit.com/dev/api), a private message system, and the ability to add users as friends. 
 
-Telescope supports automated email newsletters, auto-posting from RSS feeds, and optionally features the day-by-day view made popular by sites such as [Product Hunt](http://producthunt.com).
+Telescope supports automated email newsletters, auto-posting from RSS feeds, optional Twitter and Facebook log-in, and also features the day-by-day view made popular by [Product Hunt](http://producthunt.com).
 
 So a good way to choose can be to make a list of all the features you expect you'll need, and see which option satisfies it best. 
+
+<%= figure "home/watchjudge.jpg", "Watch Judge running Telescope's default theme.", "", "http://watchjudge.com/" %>
 
 ### Which Programming Language Are You Comfortable With?
 
@@ -95,25 +99,11 @@ If you're already familiar with either one, you'll probably have an easier time 
 
 If on the other hand you know neither Python nor JavaScript, then I would probably recommend starting with JavaScript. It's the most common language on the web, and there are [lots of free resources](https://www.javascript.com/) available to learn it. 
 
+<%= figure "blog/crater2.jpg", "Crater, a highly customized Telescope site.", "", "http://crater.io/" %>
+
 ### Conclusion
 
 Let's go over our two contenders one last time:
-
-<% note do %> 
-
-### The Case For Telescope
-
-Telescope is a newer project that's just getting started with an active and friendly community, and it was conceived from the start to be easy to install, deploy, and customize. 
-
-But then again, it can suffer from some of the growing pains that come with younger projects; and it's also not as feature-rich in a couple aspects.
-
-So pick Telescope if: 
-
-- You want to be able to install ready-made themes and plugins.
-- You want an easy way to customize your app's look-and-feel and behavior.
-- You prefer a simplified install and deployment process. 
-
-<% end %> 
 
 <% note do %> 
 
@@ -128,6 +118,22 @@ So pick Reddit if:
 - You need to let your users create their own sub-communities.
 - You expect a huge amount of traffic.
 - You're comfortable with basic sysadmin tasks.
+
+<% end %> 
+
+<% note do %> 
+
+### The Case For Telescope
+
+Telescope is a newer project that's just getting started with an active and friendly community, and it was conceived from the start to be easy to install, deploy, and customize. 
+
+But then again, it can suffer from some of the growing pains that come with younger projects; and it's also not as feature-rich in a couple aspects.
+
+So pick Telescope if: 
+
+- You want to be able to install ready-made themes and plugins.
+- You want an easy way to customize your app's look-and-feel and behavior.
+- You prefer a simplified install and deployment process. 
 
 <% end %> 
 
