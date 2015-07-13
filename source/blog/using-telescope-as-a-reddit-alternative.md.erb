@@ -1,5 +1,5 @@
 ---
-title: "Creating Your Own Reddit Alternative: Reddit vs Telescope"
+title: "Reddit vs Telescope: Creating Your Own Reddit Alternative"
 published: true
 author: sacha
 date: 2015/07/11
@@ -19,9 +19,17 @@ Some of the more popular options, like [Voat](https://voat.co/) or [Snapzu](http
 
 So if you too want to launch your own Reddit alternative, you have a couple options. You could use Reddit's [own codebase](https://github.com/reddit/reddit), since it's free and open-source. 
 
-Or you could use **Telescope**. It's also a free, open-source Reddit-style app, but it sports a few key differences with Reddit. 
+Or you could use [Telescope](http://www.telescopeapp.org). It's also a free, open-source Reddit-style app, but it sports a few key differences with Reddit. 
 
 So in this post, I'll walk you through a couple key questions to help you understand these differences, and pick the app that's best for your own needs. 
+
+<% note do %>
+
+### Reddit & Reddit
+
+Just to be clear, in this post whenever I talk about “using Reddit” it will refer to running your own copy of Reddit's codebase, not using the actual [Reddit](http://reddit.com) site.
+
+<% end %>
 
 ### Which Operating System Do You Run?
 
@@ -33,23 +41,19 @@ Telescope's [install process](http://docs.telescopeapp.org/docs/installing-teles
 
 So if you're running Windows or Mac OS, Telescope will probably be a lot easier to set up locally. 
 
+<%= figure "blog/redditdev.jpg", "The r/RedditDev subreddit is a great place to get support for setting up Reddit.", "", "https://www.reddit.com/r/redditdev/" %>
+
 ### How Comfortable Are You With Server Administration?
 
-Even Reddit's install script will require a basic level of familiarity with Ubuntu and sysadmins stuff. If sentences like “the easiest thing is probably editing /etc/hosts on the host machine” make no sense to you, you might get stuck if you happen to run into any issues. 
+Even Reddit's install script will require a basic level of familiarity with Ubuntu and sysadmins stuff. If sentences like “the easiest thing is probably editing /etc/hosts on the host machine” make no sense to you, you might get stuck if you happen to run into any issues.
 
 Telescope does also require you to use the command line for basic operations such as set up, update, and deployment, but it's a little bit more user-friendly. 
 
 Thanks to tools like [Meteor Up](https://github.com/arunoda/meteor-up), you should be able to do every operation remotely with simple command entered from your local machine, without having to actually log in to your server.
 
-### Do You Need Subreddits?
-
-Reddit's key selling point is its subreddit feature: unlike traditional message boards with their predefined categories, Reddit lets anybody create, customize, and moderate their own sub-forum.
-
-While Telescope supports categories, it doesn't have something as powerful and flexible as subreddits. So if that's a key requirement, Reddit will be better suited to your needs. 
-
 ### Do You Need Themes And Plug-ins?
 
-While Reddit is popular and open-source, it's not a *popular open-source app*. In other words, it lacks the ecosystem and community that has developed around apps like WordPress or Drupal. 
+While Reddit is popular and open-source, it's not a *popular open-source app*. In other words, while Reddit Inc is gracious enough to provide their code for free, it's not trying to create the ecosystem and community that has developed around other open-source apps like WordPress or Drupal. 
 
 As Redditor [crimson117 put it](https://www.reddit.com/r/redditdev/comments/1uyxre/why_dont_we_see_more_websites_using_reddit_code/):
 
@@ -57,16 +61,74 @@ As Redditor [crimson117 put it](https://www.reddit.com/r/redditdev/comments/1uyx
 
 While Telescope isn't *quite* at WordPress-level popularity just yet, it does have a growing [collection of themes](/themes) you can use for free, with more on the way. 
 
-### Do You Need Advanced Moderation Tools?
+<%= figure "blog/magellan.jpg", "The Magellan theme for Telescope.", "", "http://scopemount.startrack.io/" %>
 
-Reddit has been around for a while, and it has had time to develop an array of moderation features. 
+### Do You Need Subreddits?
 
-As a younger project, Telescope doesn't support as many tools just yet. 
+Reddit's key selling point is its subreddit feature: unlike traditional message boards with their predefined categories, Reddit lets anybody create, customize, and moderate their own sub-forum.
+
+While Telescope supports categories, it doesn't have something as powerful and flexible as subreddits. So if that's a key requirement, Reddit will be better suited to your needs. 
+
+### Do You Expect Millions Of Users?
+
+One thing you can say about Reddit is that it's battle-tested: it's one of the most popular sites on the Internet, and it's survived through countless DoS attacks. 
+
+Obviously, merely installing Reddit's codebase won't give you the same scaling and infrastructure that it benefits from. But it's certainly a good start. 
+
+On the other hand, Telescope hasn't (yet) been tested at that scale. Although it can happily support thousands of users relatively cheaply, if you're planning for the whole population of Canada (approximately 36 million people) to log on then Reddit might prove to be a safer choice. 
+
+### Which Features Do You Need?
+
+Reddit and Telescope have a lot in common (submitting links, commenting and voting on them, nested comment threads, etc.) but they also each have their specific features, too. 
+
+For example, Reddit comes with [an extensive API](https://www.reddit.com/dev/api), a private message system, and the ability to add users as friends. 
+
+Telescope supports automated email newsletters, auto-posting from RSS feeds, and optionally features the day-by-day view made popular by sites such as [Product Hunt](http://producthunt.com).
+
+So a good way to choose can be to make a list of all the features you expect you'll need, and see which option satisfies it best. 
+
+### Which Programming Language Are You Comfortable With?
+
+Reddit uses Python, while Telescope is based on the [Meteor](http://meteor.com) framework, which itself uses JavaScript. 
+
+If you're already familiar with either one, you'll probably have an easier time picking the matching codebase.
+
+If on the other hand you know neither Python nor JavaScript, then I would probably recommend starting with JavaScript. It's the most common language on the web, and there are [lots of free resources](https://www.javascript.com/) available to learn it. 
 
 ### Conclusion
 
-Reddit is an older, stabler project with a decade-long track record, but it's also a bit less welcoming and harder to get into. 
+Let's go over our two contenders one last time:
 
-Telescope is a fresher, more experimental codebase that's just getting started, with an active community but also some of the growing pains that come with younger projects.
+<% note do %> 
 
-Both have their pros and cons, and hopefully this article will help you choose the one that's best for you!
+### The Case For Telescope
+
+Telescope is a newer project that's just getting started with an active and friendly community, and it was conceived from the start to be easy to install, deploy, and customize. 
+
+But then again, it can suffer from some of the growing pains that come with younger projects; and it's also not as feature-rich in a couple aspects.
+
+So pick Telescope if: 
+
+- You want to be able to install ready-made themes and plugins.
+- You want an easy way to customize your app's look-and-feel and behavior.
+- You prefer a simplified install and deployment process. 
+
+<% end %> 
+
+<% note do %> 
+
+### The Case For Reddit
+
+Reddit is an older, stabler project with a decade-long track record, and it's also tailor-made to support extra sub-communities in the form of subreddits. 
+
+On the other hand, it's also a not that welcoming and harder to get into. There's also relatively few examples of other sites successfully running Reddit's codebase, and no real active ecosystem around the app. 
+
+So pick Reddit if: 
+
+- You need to let your users create their own sub-communities.
+- You expect a huge amount of traffic.
+- You're comfortable with basic sysadmin tasks.
+
+<% end %> 
+
+As you can see, both solutions have their pros and cons. Hopefully this article will help you understand the differences, and choose the one that's best for you!
