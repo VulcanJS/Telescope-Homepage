@@ -54,3 +54,24 @@
   author: Montecruiseto
   author_url: https://twitter.com/montecruiseto
   description: A gaming news site theme.
+- title: Colossus
+  url: http://scopemount.startrack.io/
+  demo: http://sm-colossus.meteor.com/
+  screenshot: colossus.jpg
+  author: Montecruiseto
+  author_url: https://twitter.com/montecruiseto
+  description: A big and bold boutique look.
+- title: Magellan
+  url: http://scopemount.startrack.io/
+  demo: http://sm-magellan.meteor.com/
+  screenshot: magellan.jpg
+  author: Montecruiseto
+  author_url: https://twitter.com/montecruiseto
+  description: Turn your Telescope app into a blog.
+- title: Laval
+  url: http://scopemount.startrack.io/
+  demo: http://sm-laval.meteor.com/
+  screenshot: laval.jpg
+  author: Montecruiseto
+  author_url: https://twitter.com/montecruiseto
+  description: A a colourful book club theme.
