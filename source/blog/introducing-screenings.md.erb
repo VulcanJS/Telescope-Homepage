@@ -1,0 +1,64 @@
+---
+title: 'Introducing Screenings: Curated Design Videos With Telescope'
+published: true
+author: sacha
+date: 2015/07/23
+---
+
+I spent most of my time working on Telescope, which means I don't often get the chance to work *with* Telescope.
+
+READMORE
+
+When you're caught up trying to develop a product, it's easy to lose focus and forget that what really matters is the end user experience. And if you never *experience* it yourself, then how are you supposed to improve it?
+
+For that reason, I try to make sure I don't go too long without using Telescope myself for an actual, real-world project. And this is how I ended up spending the past week working on a new project: [Screenings](http://screenings.io), a site that curates the best design videos from around the web.
+
+### “TED for Design”
+
+Screenings is an idea I've had for a while. [Sidebar](http://sidebar.io) has gotten very popular as a curated newsletter of links to design articles and resources, but I felt it was never the best platform for sharing videos. 
+
+So I always thought it would be cool to have a dedicated site for this, with a layout designed specifically for watching videos. Kind of like a [TED](http://www.ted.com/) for design (So just “D”, I guess!).
+
+<%= figure "blog/screenings-screenshot1.jpg", "Screenings homepage.", "", "http://screenings.io" %>
+
+### Introducing Template Debug Mode
+
+As often happens when you try to dogfood your own products, I started bumping into countless little issues and annoyances with Telescope.
+
+Mostly, it felt like theming Telescope should be easier. Sure, [replacing a template](http://docs.telescopeapp.org/docs/custom-templates) was easy enough: just create a new template with the same name as the template you want to replace, except prefixed with `custom_`.
+
+But how would you even know that name in the first place? Apart from going through Telescope's codebase, there wasn't any obvious way. 
+
+This is how I ended up creating the new [template debug mode](http://docs.telescopeapp.org/docs/debug-mode). 
+
+<%= figure "https://www.filepicker.io/api/file/rolmteaRGrDqcdNvHVsw", "Template debug mode", "", "" %>
+
+Starting with the next release of Telescope (or right now on the [devel](https://github.com/TelescopeJS/Telescope/tree/devel) branch), you'll be able to press the “`” key to bring up an overlay highlighting all the templates in your app (in red), as well as Telescope's own special module zones (in blue). 
+
+### Open-Sourcing Screenings
+
+That's not all though: I also decided to [open-source the Screenings theme itself](https://github.com/TelescopeJS/Screenings) and make it available freely to all Telescope users.
+
+Note that many things in the theme are currently still hard-coded for Screenings, but I'm planning on working to make it more adaptable to any use case via simple configuration options. 
+
+### Screenings Step-By-Step Screencast
+
+And finally, a lot of people have asked for an in-depth, step-by-step guide to customizing Telescope. 
+
+In the past, I've been hesitant to invest the time necessary in producing this because Telescope's APIs were still changing frequently. But now that Telescope has stabilized, I think the time is right, and Screenings is the perfect candidate for a customization guide. 
+
+So in the next few weeks, I'll record a series of in-depth screencasts that will walk you through going from a vanilla Telescope install all the way to the Screenings theme.
+
+Hopefully, they'll teach you everything you need to know to adapt Telescope to your needs!
+
+<%= figure "blog/screenings-screenshot2.jpg", "Screenings single video page.", "", "http://screenings.io" %>
+
+### Next Steps
+
+I won't lie, open-source can be tough work: without the external validation you get from things like revenue or funding, it can sometimes be hard to know if you're moving in the right direction.
+
+But working on Screenings made me feel pretty good about Telescope: after all I was able to build a completely custom community in less than a week… and most of that time was spent working on that new template debugging system!
+
+And while a good coder might be able to replicate many of Screening's major features in a week, there's also a lot under the surface: out of the box Telescope gives you an API, RSS feeds, post moderation, an auto-generated newsletter, a mobile version, and more. 
+
+So I'm hoping this little experiment turns out well. And if you want to help out and support Telescope, [a tweet](https://twitter.com/home?status=This%20is%20pretty%20cool:%20Screenings%20is%20a%20new%20site%20that%20features%20the%20most%20inspiring%20videos%20about%20design%20http://screenings.io%20via%20%40ScreeningsIO) will be much appreciated!
