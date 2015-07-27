@@ -1,0 +1,122 @@
+---
+title: "Telescope v0.22.1 “DebugScope”"
+published: true
+author: sacha
+date: 2015/07/27
+---
+
+Big new release for Telescope, with a brand new template debugging mode. 
+
+READMORE
+
+### How To Update
+
+You'll find [update instructions](http://docs.telescopeapp.org/docs/updating) for your install method in the documentation. Make sure you add the `telescope:debug` package if needed (see note below).
+
+### Template Debug Mode
+
+The big new feature in this release is the new template debug mode: 
+
+<div class="video">
+<iframe width="560" height="315" src="//www.youtube.com/embed/7Ux4wxg7Kko" frameborder="0" allowfullscreen></iframe>
+</div>
+
+To enable it, just hold the “`” key on your keyboard. Note that debug mode only works when running your app locally, not in production. 
+
+<% note do %>
+
+### Enabling Debug Mode
+
+If you've used Telescope's [manual install](http://docs.telescopeapp.org/docs/installing-telescope), you'll need to manually add the `telescope:debug` package to your app with `meteor add telescope:debug` before you can use debug mode. 
+
+<% end %>
+
+### Template Refactoring
+
+In order to make debug mode work, quite a few templates had to be refactored or renamed. 
+
+For a template to appear properly in debug mode, it needs to be wrapped in a single outermost HTML element. So the following template is valid:
+
+```html
+<template name="my_template1">
+  <div class="my-template-div">
+    <h2>My Title</h2>
+    {{#each posts}}
+    ...
+    {{/each}}
+  </div>
+</template>
+```
+
+But the following isn't:
+
+```html
+<template name="my_template2">
+  <div class="my-template-title">
+    <h2>My Title</h2>
+  </div>
+  <div class="my-template-content">
+    {{#each posts}}
+    ...
+    {{/each}}
+  </div>
+</template>
+```
+
+And neither is this one:
+
+```html
+<template name="my_template3">
+  {{#if isAdmin}}
+    <div class="my-template-content">
+      {{#each posts}}
+      ...
+      {{/each}}
+    </div>
+  {{/if}}
+</template>
+```
+
+To be clear, both `my_template2` and `my_template3` will work fine inside your app, it's just that their outline might not show up properly when activating template debug mode. 
+
+Another goal of the refactor was avoiding having template and module zones share the same name. Here's the list of renamed templates and module zones:
+
+* Renamed `nav` template to `header`.
+* Renamed `postsListTop` zone to `top`.
+* Renamed `footer` template to `footer_code`, which is part of the `footer` module zone. 
+
+### SEO & Meta Tags Improvements
+
+Telescope's support for Open Graph and Twitter meta tags has been improved, and sharing a post's page on these social networks will now pull a post's thumbnail along with its title and description:
+
+<%= figure "blog/twitter-cards.jpg", "Sharing a Telescope post page on Twitter now pulls in more data", "" %>
+
+### Post Page Data Context
+
+The post's data context on single post pages is now stored inside the `this.post` object instead of being on `this`. Wrapping your post template in a `{{#with post}}...{{/with}}` should do the trick. 
+
+### Other Improvements
+
+#### Responsive Grid
+
+For those using the default Hubble theme's grid layout, you'll notice the grid's column number now adapts to the viewport width.
+
+#### Better Video Support
+
+Videos now stop playing when their lightbox is closed, and videos are now responsive thanks to [FitVids](http://fitvidsjs.com/). 
+
+#### Better Menu Labels
+
+The menu component now accepts passing a template name as the main menu label. 
+
+#### Better API and RSS Feeds 
+
+The posts API now has an additional `pageUrl` property that points back to the post's page, as well as a `thumbnailUrl` property. 
+
+The RSS feed also support images via the `imageUrl` property. 
+
+### More Information
+
+As always, be sure to check out the [full release notes](https://github.com/TelescopeJS/Telescope/releases/tag/v0.22.1) on GitHub, or for even more details [checkout the full diff](https://github.com/TelescopeJS/Telescope/compare/297d6c844b6a9636cf2515c593daddddbf9ae9d6...master).
+
+And come by the [Slack channel](http://slack.telescopeapp.org) if you have any questions or notice any bugs!
