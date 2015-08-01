@@ -1,0 +1,56 @@
+---
+title: "How Telescope Uses SimpleSchema And Autoform"
+published: true
+author: sacha
+date: 2015/07/31
+---
+
+In this hangout, I talk about how Telescope makes use of two key packages, [SimpleSchema](https://github.com/aldeed/meteor-simple-schema) and [Autoform](https://github.com/aldeed/meteor-autoform/).
+
+READMORE
+
+The main idea is to concentrate as much of your logic inside the schema, and then refer back to it whenever possible throughout the app. 
+
+<div class="video">
+<iframe width="560" height="315" src="//www.youtube.com/embed/545QZXHinbY" frameborder="0" allowfullscreen></iframe>
+</div>
+
+### Topics
+
+→ The `Posts` Schema and the `editableBy` property ([00:40](https://www.youtube.com/watch?v=545QZXHinbY#t=40))
+
+- [posts.js](https://github.com/TelescopeJS/Telescope/blob/master/packages/telescope-posts/lib/posts.js)
+- [base.js](https://github.com/TelescopeJS/Telescope/blob/master/packages/telescope-lib/lib/base.js) 
+
+→ Creating Allow/Deny rules from the schema with `Telescope.allowCheck()` and `getEditableFields()` ([04:52](https://www.youtube.com/watch?v=545QZXHinbY#t=292))
+
+- [collections.js](https://github.com/TelescopeJS/Telescope/blob/master/packages/telescope-lib/lib/collections.js)
+
+→ Using `getEditableFields()` and `Users.can.submitField()` in methods ([09:06](https://www.youtube.com/watch?v=545QZXHinbY#t=546))
+
+- [methods.js](https://github.com/TelescopeJS/Telescope/blob/master/packages/telescope-posts/lib/methods.js)
+- [permissions.js](https://github.com/TelescopeJS/Telescope/blob/master/packages/telescope-users/lib/permissions.js)
+
+→ Generating forms from the schema ([12:10](https://www.youtube.com/watch?v=545QZXHinbY#t=730))
+
+- [post_submit.html](https://github.com/TelescopeJS/Telescope/blob/master/packages/telescope-posts/lib/client/templates/post_submit.html)
+- [post_submit.js](https://github.com/TelescopeJS/Telescope/blob/master/packages/telescope-posts/lib/client/templates/post_submit.js)
+
+→ Adding and removing schema fields, and custom schema properties ([15:05](https://www.youtube.com/watch?v=545QZXHinbY#t=905))
+
+- [Custom Fields](http://docs.telescopeapp.org/docs/custom-fields)
+
+→ User-specific properties ([19:10](https://www.youtube.com/watch?v=545QZXHinbY#t=1150))
+
+→ Using the schema to define publications ([22:58](https://www.youtube.com/watch?v=545QZXHinbY#t=1378))
+
+- [users.js](https://github.com/TelescopeJS/Telescope/blob/master/packages/telescope-users/lib/users.js)
+- [pubsub.js](https://github.com/TelescopeJS/Telescope/blob/master/packages/telescope-users/lib/pubsub.js)
+
+→ Using the schema to render content ([25:05](https://www.youtube.com/watch?v=545QZXHinbY#t=1505))
+
+- [user_profile_twitter.html](https://github.com/TelescopeJS/Telescope/blob/master/packages/telescope-users/lib/client/templates/profile/user_profile_twitter.html)
+
+→ Conclusion ([29:10](https://www.youtube.com/watch?v=545QZXHinbY#t=1750))
+
+→ Q&A ([30:00](https://www.youtube.com/watch?v=545QZXHinbY#t=1800))

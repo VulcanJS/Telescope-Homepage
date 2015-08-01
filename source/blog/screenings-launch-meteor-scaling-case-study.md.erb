@@ -1,0 +1,115 @@
+---
+title: "The Screenings Launch: A Meteor Scaling Case Study"
+published: true
+author: sacha
+date: 2015/07/29
+---
+
+"Does Meteor scale?"
+
+More than any other, this question has been asked since he framework's early days.
+
+READMORE
+
+I've [written about this topic in the past](https://www.discovermeteor.com/blog/scaling-meteor-the-challenges-of-realtime-apps/), and like with so many other complex issues, the answer is: "it depends".
+
+I know that's not the kind of answer you were waiting for, but I just can't just make up some general principle that will be true for *all* Meteor apps. 
+
+So instead, I'll do the next best thing: tell you about how *my* Meteor app (in other words, Telescope) scales.
+
+### The Screenings Launch
+
+I recently had the perfect occasion to test Telescope's scaling capabilities with the recent launch of [Screenings](/blog/introducing-screenings/).
+
+<%= figure "blog/screenings-screenshot1.jpg", "The Screenings homepage.", "", "http://screenings.io" %>
+
+Now before we move on, I should warn you that I'm the furthest thing from a performance or dev ops expert. To give you an idea of my skill level, I would not consider myself capable of properly configuring a Meteor server without tools like [Meteor Up](https://github.com/arunoda/meteor-up).
+
+What I'm trying to say is that people more familiar with these matters than me may have a vastly different experience. With that out of the way, here's my story.
+
+### Server Configuration
+
+I launched with the recommended configuration for hosting Telescope, in other words a 1GB Digital Ocean instance set up with Meteor Up, along with a Compose Oplog MongoDB deployment.
+
+<%= figure "blog/compose.jpg", "The Compose web UI.", "", "http://compose.io" %>
+
+Oplog may seem pricey at $18 per month, but it's absolutely vital for your app's performances so I would definitely *not* recommend launching any serious MongoDB-based Meteor project without it. And the fact that you get access to Compose's handy web UI is a nice bonus. 
+
+### #1 on Product Hunt
+
+My main strategy for generating traffic for the launch was getting a good ranking on Product Hunt.
+
+I had launched a couple projects on Product Hunt before, so I knew what to expect in terms of traffic if the site was well-received. And it was, spending most of the day at number one, before ending in second place. 
+
+This meant around 200 concurrent users on the site for a whole day, with peaks around 250. And I have to say the app held up just fine, with no noticeable slowdowns or issues. 
+
+<%= figure "blog/screenings-ph.jpg", "Screenings on Product Hunt.", "", "http://www.producthunt.com/tech/screenings" %>
+
+### Red Alert
+
+And then, at around 11pm that evening, I made a mistake: I decided to tell [Sidebar](http://sidebar.io) subscribers about Screenings. 
+
+The problem is that instead of sending the announcement email in staggered batches, I emailed *all* 20k subscribers at once. After all, I figured people rarely open email announcements, let alone click through. What's the worst that could happen?
+
+<%= figure "blog/screenings-launch-users.jpg", "Slightly underestimating Sidebar's traffic.", "", "" %>
+
+As it turns out, the worst that could happen is that people *did* open the email, and *did* click through. And pretty soon, I had over 650 concurrent users on Screenings, and the server wasn't liking that very much. 
+
+Almost immediately, CPU usage jumped to 100% and the app became unresponsive. 
+
+<%= figure "blog/screenings-launch-cpu.jpg", "The kind of curve you don't want to see, unless there's a “$” next to it.", "", "" %>
+
+Now at this point let's review how a Meteor app works: when receiving a new connection, the server sends a payload containing template markup, CSS styles, a slim HTML wrapper, and all the JavaScript needed to run Meteor on the client and in turn load your actual data through subscriptions. 
+
+While that initial loading phase still worked just fine, things were breaking down after that: the client was asking for data, but the server was so swamped it would take it upwards of 20 seconds to send anything back.
+
+### Saved By Fast Render
+
+Now here's the interesting part: despite all this, most visitors never noticed anything was wrong with the site at all (and to be honest, it even took *me* a while to realize there was a problem). 
+
+But that doesn't make any sense! Didn't I just say that the app was unable to get any data from the server? Surely everybody would noticed something like *that*. 
+
+Well, it turns out the day was saved by the [Fast Render](https://github.com/meteorhacks/fast-render) package. What Fast Render does it let you package your subscription data *inside the initial payload* sent over when the client first connect. 
+
+This way, it didn't matter that communications were breaking down after that initial load, because the client already had all the data it needed to render the homepage. 
+
+What's more, thanks to [Subs Manager](https://github.com/meteorhacks/subs-manager), that homepage data was staying cached in memory. So users could click through from the homepage to any individual video without any disruption. 
+
+Of course, any data *not* included in that initial payload was inaccessible: comments wouldn't show, clicking "load more" would trigger an endless spinner, and – in one of those weird bugs – the "sign in" button wouldn't appear because it apparently depended on subscription data to decide whether to show itself or not.
+
+This was a problem, so I set out to fix it. 
+
+### Scaling Up
+
+The first thing I did was scale up my Digital Oean instance from a 1GB weakling to a 4GB, dual-core powerhouse. Surely my performance troubles would be over now!
+
+Maybe you already noticed the flaw in my reasoning: it's the *CPU* that was maxing out, not the RAM. So bumping up the memory achived precisely nothing, and so did adding a second core since Node can only use one at a time. 
+
+This is where load balancing with packages like [Cluster](https://github.com/meteorhacks/cluster) usually comes in. But it was late, I had never used Cluster before, and I didn't feel like experimenting with new deployment techniques on a live production server. And after all, the homepage and its contents were still showing up just fine. 
+
+So I decided to just leave the site be and go to bed. Eventually, traffic would die down and the CPU would go back to a more reasonable level. 
+
+Sure enough, by the next morning the insanity had died down and everything was working smoothly again. 
+
+### Lessons Learned
+
+I think we can take a few general conclusions from all this:
+
+- A large Meteor app like Telescope will comfortably scale up to at least 200-300 concurrent users, which is more traffic than being #1 on Product Hunt will get you (in other words, more than 99% of websites out there will ever receive at once).
+- The performance bottleneck for Meteor apps is the CPU, not the RAM. Adding more RAM won't do anyting except increase your hosting bill.
+- Fast Render and Subs Manager are invaluable tools to make sure your app remains functional even when shit hits the fan. 
+- If [Arunoda](http://meteorhacks.com) had decided to spend his time growing tulips instead of hacking on Meteor, we would all be screwed right now. 
+
+On a personal level, I also learned that I can't rely only on vertical scaling, and that I should probably look into this Cluster thing. 
+
+And finally, I wonder if Meteor couldn't do something to address some of these issues at a framework or package level. 
+
+Maybe users should see an error message if their subscriptions time out? Or maybe there's a better way to manage the subscription queue itself?
+
+### It Depends
+
+Once again, I need to emphasize that scaling is hugely dependant on the specific app. 
+
+For example, a social media inbox app like [Respondly](https://respond.ly/) might see much larger number of concurrent users even without traffic spikes, just because their users keep the app open in a tab all day.
+
+So at the end of the day, the answer is still “it depends”. But hopefully, case studies like this one will help us all come up with a clearer picture eventually.
