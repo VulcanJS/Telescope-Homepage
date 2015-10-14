@@ -119,3 +119,7 @@
   url: http://demo.citizenlab.co/
   description: Co-create your city
   screenshot: citizenlab.jpg
+- title: Screenings
+  url: http://screenings.io/
+  description: Discover new design videos every day
+  screenshot: screenings.jpg
