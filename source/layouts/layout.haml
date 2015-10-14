@@ -22,7 +22,8 @@
   %body{:class => yield_content(:page)}
   
     .top
-      %canvas#space
+      - if yield_content(:page) == "home"
+        %canvas#space
       .header
         %h2.header-logo
           %a{:href => "/"}

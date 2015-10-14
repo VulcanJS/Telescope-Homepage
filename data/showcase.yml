@@ -103,3 +103,15 @@
   url: http://ryfma.ru/
   description: A community of poets and writers
   screenshot: ryfma.jpg
+- title: Deals Democracy
+  url: http://www.dealsdemocracy.com/
+  description: The best deals happening on the internet each day
+  screenshot: dealsdemocracy.jpg
+- title: ProtoTalk News
+  url: http://news.prototalk.io/
+  description: News & articles about your favourite prototyping tools
+  screenshot: prototalk.jpg
+- title: ReleaseIQ
+  url: http://releaseiq.com/
+  description: Planning Gone Awesome
+  screenshot: releaseiq.jpg
