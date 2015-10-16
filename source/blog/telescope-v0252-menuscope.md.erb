@@ -1,0 +1,31 @@
+---
+title: 'Telescope v0.25.2 “MenuScope”'
+published: true
+author: sacha
+date: 2015/10/16
+---
+
+Telescope's menu component now has its own package. 
+
+READMORE
+
+In this latest release, a lot of work went into extracting Telescope's menu component into its own, [independent package](https://github.com/meteor-utilities/menu). 
+
+This means you can now easily reuse it in your own Meteor apps, and it's all part of making Telescope more modular, and more community-driven. 
+
+### Full Changelog
+
+* Added `regenerateAllThumbnails` method.
+* Fixed `postedAt` issue with pending posts. 
+* Created `postsListTop` zone and moved `messages`, `category_title`, and `views_menu` modules to it.
+* Renamed `category_menu_item` template to `categories_menu_item`.
+* Added `itemTemplate` option to menu to enable setting a custom template for all elements.
+* Created new `defaultMenuItem` template.
+* Now passing reference to whole `menu` object to each node instead of just `menuItems`.
+* Renamed `top` zone to `contentTop`.
+* Created new `contentBottom`, `postsListTop`, `postsListBottom` zones.
+* Extracted menu component into its own `utilities:menu` package.
+* Newsletter banner is now included in `contentTop` zone, not `hero`. 
+* Renamed "Outside Links Point To" setting to "RSS Links Point To".
+* Added infinite scrolling option.
+* Added one hour offset to show future posts to fix real-time bug. 
