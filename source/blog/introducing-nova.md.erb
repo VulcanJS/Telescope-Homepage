@@ -1,0 +1,82 @@
+---
+title: 'Introducing Telescope Nova'
+published: true
+author: sacha
+date: 2016/02/22
+---
+
+In last month's [The State Of Telescope](/blog/the-state-of-telescope/), I said I was taking a break from working on Telescope. 
+
+READMORE
+
+Turns out taking a break was just what I needed. With the pressure off, I was able to explore new directions and try out a few ideas I had been thinking about. Before I knew it, I ended up with a new React-based branch of Telescope, which I codenamed [Nova](https://github.com/TelescopeJS/Telescope/tree/nova). 
+
+You can learn all about it by watching the following video, or else keep reading!
+
+<div class="video">
+<iframe width="560" height="315" src="//www.youtube.com/embed/n8sTPFNvbH4" frameborder="0" allowfullscreen></iframe>
+</div>
+
+### User Experience vs Developer Experience
+
+If you look at the current, “vanilla” version of Telescope, you'll quickly realize just how much work I put into making it as user-friendly as possible: one-click deploys, settings panels, dynamic layouts, a mobile version, dynamic menus and forms… 
+
+But these user-experience improvements all came at a cost: a worse *developer* experience. The size of Telescope's codebase was making it hard to maintain, and also discouraged contributions.
+
+Also, focusing on ease-of-use naturally tends to attract non-developers, which (through no fault of their own) don't have the skills needed to contribute to the project.
+
+This is why Nova goes in the complete opposite direction: it's 100% focused on *developers*. 
+
+### Developer-Focused
+
+For example, Nova won't include a theme or admin UI. In fact, although it includes a set of default React components, these are completely optional. 
+
+This means that, for example, you can use Nova with your own Angular front-end, or even as a back-end for a native mobile app. 
+
+Over the years, my favorite Telescope projects have been those that really push the app and customize every aspect of it, so Nova is aimed squarely at these users. It'll give you access to all of Telescope's back-end, and then get out of your way. 
+
+This means you'll have to code your own theme and do all your project configuration in code. If that's not what you signed up for then don't worry, the regular version of Telescope will always be there. 
+
+### A New Architecture
+
+This is all achieved through a new codebase architecture. In the original Telescope, each feature (such as posts, comments, etc.) is entirely contained within one package, from back-end code to front-end components to CSS styles:
+
+<%= figure "blog/telescope-diagram.png", "The Telescope architecture", "", "" %>
+
+This works great in terms of making Telescope modular, but the downside is that customization can be tricky: since package code can't be modified, your only option is to load the entire package, and then override parts of it with your own code.
+
+Nova still embraces a package-based architecture, but basically splits off all client-only code (which is usually the part you'd want to modify):
+
+<%= figure "blog/nova-diagram.png", "The Nova architecture", "", "" %>
+
+This way, you can safely customize the client part of the stack without worrying about impacting Nova's core features. 
+
+### Breaking Changes
+
+This new focus on breaking up the codebase comes at a cost: beyond a set of basic components and styles which you can use as a starting point, client-side features won't be supported out of the box by Nova. This includes things like:
+
+- Settings dashboard.
+- Feed parsing dashboard.
+- Categories dashboard.
+- Users dashboard.
+- On-site notifications.
+- Pages.
+- Profile pages.
+- Invites.
+- Dynamic menus and modules.
+- Default theme (no/minimal CSS out of the box).
+- Sharing widget.
+
+As you can imagine, going from Telescope to Nova won't be an easy task, and may in fact be impossible if you rely heavily on some of the features above. 
+
+That being said, both use the exact same database structure, meaning you can easily go back and forth on the same project. 
+
+### Project Goals
+
+I've learned a lot from working on Telescope up to now, and I'll take a very different approach for Nova. Nova will be all about quality over quantity, which means more time spent refactoring and writing tests, and less time building new features. 
+
+I also want to take another shot at building a real community of developers. Although many developers are currently using Telescope, the size of the codebase, lack of tests, and unclear contributing instructions make it really hard for them to contribute. I want to change that. 
+
+At this point, I should emphasize that Nova is a work in progress and is in no way production ready (I would estimate I'm about 50% “done”). But I'm hoping some of you will join me for the rest of the way!
+
+If all this sounds interesting, you can [check out Nova on GitHub](https://github.com/TelescopeJS/Telescope/tree/nova), and drop by [the Telescope Slack chatroom](http://slack.telescopeapp.org) to let me know what you think. 
