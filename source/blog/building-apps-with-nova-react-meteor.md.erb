@@ -1,0 +1,59 @@
+---
+title: 'Building Apps With Nova, React, and Meteor'
+published: true
+author: sacha
+date: 2016/02/29
+---
+
+Although Telescope started its life as a Reddit-like app, it's been inspiring to see just how far people have customized it. 
+
+READMORE
+
+So for [Nova](/blog/introducing-nova/), my goal from the start has been to make customization as easy as possible. In fact, not only can you extend Nova's default `Posts` and `Comments` collections, but you can actually easily create your own!
+
+In this video, I'll show you how create a new `Movies` collection, then build a paginated list to display it, as well as forms for inserting and editing documents. And all of that with almost no back-end code!
+
+<%= figure "blog/building-nova-apps1.png", "What we'll build." %>
+
+Warning: all of this is still very experimental, and should be taken more as a proof of concept than a full-fledged demo!
+
+<div class="video">
+<iframe width="560" height="315" src="//www.youtube.com/embed/R8XwjaavOKc" frameborder="0" allowfullscreen></iframe>
+</div>
+
+As you can see, the goal is for Nova to be an awesome back-end for React apps: you write your front-end components, and Nova will take care of the rest!
+
+### The Code
+
+Here's the code for `nova-app.jsx`: 
+
+<script src="https://gist.github.com/SachaG/7cc7306974a18778aedd.js"></script>
+
+And for `nova-component.jsx` (the React part of the demo):
+
+<script src="https://gist.github.com/SachaG/2af4c8c18388ec185b32.js"></script>
+
+### Resources
+
+#### Nova
+
+You can run Nova by cloning [the `nova` branch of Telescope](https://github.com/TelescopeJS/Telescope/tree/nova).
+
+The files I work on in the video are [`demo-app.jsx`](https://github.com/TelescopeJS/Telescope/blob/nova/packages/nova-demo/demo-app.jsx) and [`demo-component.jsx`](https://github.com/TelescopeJS/Telescope/blob/nova/packages/nova-demo/demo-component.jsx).
+
+#### Packages
+
+The features I show in the video have all been extracted as separate, open-source packages:
+
+- [React List Container](https://github.com/meteor-utilities/react-list-container): used to subscribe to a publication, and then pass on the resulting documents to a child component.
+- [React Form Containers](https://github.com/meteor-utilities/React-Form-Containers): used to display simple new document and edit document forms.
+- [Smart Publications](https://github.com/meteor-utilities/smart-publications): used to automatically set up publications.
+- [Smart Methods](https://github.com/meteor-utilities/smart-methods): used to automatically set up methods. 
+
+### Getting Started
+
+I wrote a post about [getting started with Nova](/blog/getting-started-with-nova/).
+
+Additionally, the four package mentioned above are pretty well-documented, and you can all use them by themselves independently from Nova, too.
+
+So read up on all this, play around with it, and then let me know what you think here or in the [Telescope Slack](http://slack.telescopeapp.org)!
