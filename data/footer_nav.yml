@@ -14,7 +14,7 @@
       url: "http://twitter.com/telescopeapp"
 
 - title: Community
-  items: 
+  items:
     - title:  "Showcase"
       url:    "/showcase"
     - title:  "Telescope on Slack"
@@ -25,9 +25,9 @@
       url:    "http://github.com/TelescopeJS/Telescope"
 
 - title: Resources
-  items: 
+  items:
     - title:  "Documentation"
-      url:    "http://telescope.readme.io"
+      url:    "http://telescope.readme.io/docs"
     - title:  "Themes"
       url:    "/themes"
     - title:  "Plugins"
