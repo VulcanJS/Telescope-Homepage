@@ -27,7 +27,7 @@
 - title: Resources
   items: 
     - title:  "Documentation"
-      url:    "http://telescope.readme.io"
+      url:    "http://telescope.readme.io/docs"
     - title:  "Themes"
       url:    "/themes"
     - title:  "Plugins"
