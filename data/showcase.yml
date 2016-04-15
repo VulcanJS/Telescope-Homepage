@@ -12,57 +12,24 @@
   url: http://www.sproutguild.com/
   description: Daily discovery of the hippest natural foods, products & brands.
   screenshot: sproutguild.jpg
-- title: Kadira Hub
-  url: http://hub.kadira.io/
-  description: Discuss Meteor performance optimization and scaling.
-  screenshot: kadira.jpg
-- title: Frontends
-  url: http://www.frontends.org/
-  description: Front-end development news and discussions.
-  screenshot: frontends.jpg
 - title: Bootstrappers
   url: http://www.bootstrappers.io/
   description: A community for bootstrapped entrepreneurs.
   screenshot: bootstrappers.jpg
-- title: GameDev News
-  url: http://news.powerupgames.io/
-  description: The latest news from the gaming industry.
-  screenshot: gamedevnews.jpg
-- title: Happy Endings
-  url: http://happyendings.radialpoint.com/
-  description: News for customer service professionals.
-  screenshot: happyendings.jpg 
 - title: Closing Call
   url: http://www.closingcall.co/
   description: A community about sales and marketing.
   screenshot: closingcall.jpg
-- title: Excel News
-  url: http://www.excel-news.com/
-  description: Everything Excel.
-  screenshot: excelnews.jpg 
 - title: Madrasa
   url: http://madrasa.ca/
   description: >
     Madrasa offers a selection of tutorials from across the web. 
 # Making use of Telescope's grid layout and search features, 
   screenshot: madrasa.jpg 
-- title: Welderwire
-  url: http://welderwire.meteor.com/
-  repo: https://github.com/weld-co/telescope-theme-weld
-  description: A completely customized theme for the WELD coworking community.
-  screenshot: weld.jpg
-- title: Datalook
-  url: http://datalook.io/
-  description: A showcase for data-driven social good projects.
-  screenshot: datalook.jpg
 - title: About Admissions
   url: https://aboutadmissions.admithub.com/
   description: The latest college admission tips.
   screenshot: aboutadmissions.png
-- title: Zombts
-  url: http://zombts.com/
-  description: The best beatboxing videos.
-  screenshot: zombts.jpg
 - title: CodeBuddies
   tagline: Event Scheduling
   url: http://hangouts.codebuddies.org/
@@ -70,23 +37,6 @@
     CodeBuddies helps you find study partners and organize group hangouts to learn to code. 
   repo: https://github.com/lpatmo/cb
   screenshot: codebuddies.jpg
-- title: CrunchHunt
-  tagline: Content Aggregator
-  url: http://www.crunchhunt.com/
-  description: >
-    CrunchHunt automatically imports 
-    TechCrunch blog posts and ranks by popularity.
-  repo: https://github.com/TelescopeJS/CrunchHunt
-  screenshot: crunchhunt.jpg
-- title: EEHub
-  url: http://ee-hub.com/
-  description: The hub for the Expression Engine community.
-  screenshot: eehub.jpg
-- title: Backa
-  tagline: Feedback & Advice
-  url: http://app.backa.co/
-  description: Gain valuable, actionable feedback on your startup ideas.
-  screenshot: backa.jpg
 - title: Syrup
   url: http://getsyrup.com/
   description: Sweet deals for startups and makers.
@@ -95,10 +45,6 @@
   url: http://www.textie.co/
   description: Crowdsource the ultimate replies to tricky text messages.
   screenshot: textie.jpg
-- title: Zen Market
-  url: https://zen.market/
-  description: The best tool for every task.
-  screenshot: zenmarket.jpg
 - title: Ryfma
   url: http://ryfma.ru/
   description: A community of poets and writers
@@ -107,10 +53,6 @@
   url: http://www.dealsdemocracy.com/
   description: The best deals happening on the internet each day
   screenshot: dealsdemocracy.jpg
-- title: ProtoTalk News
-  url: http://news.prototalk.io/
-  description: News & articles about your favourite prototyping tools
-  screenshot: prototalk.jpg
 - title: ReleaseIQ
   url: http://releaseiq.com/
   description: Planning Gone Awesome

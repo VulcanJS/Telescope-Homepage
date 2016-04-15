@@ -1,0 +1,28 @@
+---
+title: 'Moving Forward With Nova'
+published: true
+author: sacha
+date: 2016/04/15
+---
+
+I [first wrote about Nova](/blog/introducing-nova/) about two months ago. Today, I'm officially making Nova the main version of Telescope moving forward.
+
+READMORE
+
+In case you're wondering, Nova is an almost-complete rewrite of Telescope using React instead of Blaze. In the process the back-end got refactored and streamlined a lot as well. 
+
+And even though Nova is still young and lacks a lot of the original Telescope's features, I feel like there's no sense in new users learning and customizing the old version, since it's going to go away eventually. 
+
+### Nova & Legacy
+
+Practically speaking, this means the [master](https://github.com/TelescopeJS/Telescope/tree/master) and [devel](https://github.com/TelescopeJS/Telescope/tree/devel) branches of Telescope now run Nova, while the “old” version now has its own [legacy](https://github.com/TelescopeJS/Telescope/tree/legacy) and [legacy-devel](https://github.com/TelescopeJS/Telescope/tree/legacy-devel) branches. 
+
+While I'm hoping to personally invest most of my time on Nova, I know a lot of people rely on the Legacy version so I want to do the best I can to keep it maintained and functional. Note too that Nova and Legacy packages have different names (e.g. `nova:lib` vs `telescope:lib`), so it should be possible for both projects to coexist. 
+
+Also, as of right now both versions use the exact same database schema, which means you should be able to go back and forth between either branch on the same app. 
+
+### Getting Started
+
+I've also updated the [sample project](https://github.com/TelescopeJS/sample-project) to use Nova, and you can simply clone it to get started with the new version. 
+
+Finally, if you'd like to contribute to Nova, check out the [roadmap](https://trello.com/b/dwPR0LTz/nova-roadmap) and then come say hello in the [Slack chatroom](http://slack.telescopeapp.org)!
