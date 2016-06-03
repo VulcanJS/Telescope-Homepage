@@ -5,7 +5,7 @@
 - title: Crater.io
   tagline: News & Discussions
   url: http://crater.io/
-  description: A community to discuss all things Meteor. 
+  description: A community to discuss all things Meteor.
   repo: https://github.com/meteorclub/telescope-theme-crater
   screenshot: crater2.jpg
 - title: SproutGuild
@@ -31,7 +31,7 @@
 - title: Happy Endings
   url: http://happyendings.radialpoint.com/
   description: News for customer service professionals.
-  screenshot: happyendings.jpg 
+  screenshot: happyendings.jpg
 - title: Closing Call
   url: http://www.closingcall.co/
   description: A community about sales and marketing.
@@ -39,13 +39,13 @@
 - title: Excel News
   url: http://www.excel-news.com/
   description: Everything Excel.
-  screenshot: excelnews.jpg 
+  screenshot: excelnews.jpg
 - title: Madrasa
   url: http://madrasa.ca/
   description: >
-    Madrasa offers a selection of tutorials from across the web. 
-# Making use of Telescope's grid layout and search features, 
-  screenshot: madrasa.jpg 
+    Madrasa offers a selection of tutorials from across the web.
+# Making use of Telescope's grid layout and search features,
+  screenshot: madrasa.jpg
 - title: Welderwire
   url: http://welderwire.meteor.com/
   repo: https://github.com/weld-co/telescope-theme-weld
@@ -67,14 +67,14 @@
   tagline: Event Scheduling
   url: http://hangouts.codebuddies.org/
   description: >
-    CodeBuddies helps you find study partners and organize group hangouts to learn to code. 
+    CodeBuddies helps you find study partners and organize group hangouts to learn to code.
   repo: https://github.com/lpatmo/cb
   screenshot: codebuddies.jpg
 - title: CrunchHunt
   tagline: Content Aggregator
   url: http://www.crunchhunt.com/
   description: >
-    CrunchHunt automatically imports 
+    CrunchHunt automatically imports
     TechCrunch blog posts and ranks by popularity.
   repo: https://github.com/TelescopeJS/CrunchHunt
   screenshot: crunchhunt.jpg
@@ -91,10 +91,6 @@
   url: http://getsyrup.com/
   description: Sweet deals for startups and makers.
   screenshot: syrup.jpg
-- title: Textie
-  url: http://www.textie.co/
-  description: Crowdsource the ultimate replies to tricky text messages.
-  screenshot: textie.jpg
 - title: Zen Market
   url: https://zen.market/
   description: The best tool for every task.
