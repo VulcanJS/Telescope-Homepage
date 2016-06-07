@@ -34,3 +34,34 @@
 		}
 	}
 }
+
+.technologies{
+	@include medium {
+		@include pad(2,2);
+	}
+	.technology{
+		margin-bottom: 60px;
+    @include medium{
+	    @include span(6);
+	    &:nth-of-type(2n){
+	      @include omega;
+	    }
+    }
+    h3{
+    	margin-bottom: 5px;
+    }
+    p{
+    	font-size: 18px;
+    }
+	}
+
+  .technology-logo{
+		display: block;
+		margin: 0 auto 5px auto;
+		max-width: 200px;
+		img{
+			display: block;
+			width: 100%;
+		}
+  }
+}

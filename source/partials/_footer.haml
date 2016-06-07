@@ -19,16 +19,16 @@
           Constellation background by [Acauã Montiel](http://codepen.io/acauamontiel/pen/mJdnw).
     =partial('partials/meteor')
 
-  .footer-chart
-    %h2.section-heading Project Stats
-    %h4.section-subheading For the last 60 days
-    .footer-chart-inner
-      %canvas#myChart{width: '600px', height: '150px'}
+  / .footer-chart
+  /   %h2.section-heading Project Stats
+  /   %h4.section-subheading For the last 60 days
+  /   .footer-chart-inner
+  /     %canvas#myChart{width: '600px', height: '150px'}
 
-      .chartjs-tooltips
-        .tooltip-divider
-        .tooltips
-          - (1..4).each_with_index do |e, i|
-            .tooltip
-              %span.tooltip-label
-              %span.tooltip-value
+  /     .chartjs-tooltips
+  /       .tooltip-divider
+  /       .tooltips
+  /         - (1..4).each_with_index do |e, i|
+  /           .tooltip
+  /             %span.tooltip-label
+  /             %span.tooltip-value

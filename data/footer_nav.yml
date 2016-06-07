@@ -19,8 +19,8 @@
       url:    "/showcase"
     - title:  "Telescope on Slack"
       url:    "http://slack.telescopeapp.org"
-    - title:  "Telescope Meta"
-      url:    "http://meta.telescopeapp.org/"
+    # - title:  "Telescope Meta"
+    #   url:    "http://meta.telescopeapp.org/"
     - title:  "GitHub"
       url:    "http://github.com/TelescopeJS/Telescope"
 

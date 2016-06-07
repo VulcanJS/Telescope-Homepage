@@ -2,8 +2,8 @@
 #   url: http://telescope.readme.io/
 - title: GitHub
   url: https://github.com/TelescopeJS/Telescope
-- title: Meta
-  url: http://meta.telescopeapp.org/
+# - title: Meta
+#   url: http://meta.telescopeapp.org/
 - title: Slack
   url: http://slack.telescopeapp.org/
 - title: Blog
