@@ -18,17 +18,24 @@
 }
 .video-thumb{
   display: block;
-  max-width: 160px;
   border: 4px solid $light-grey;
-  float: left;
   border-radius: 3px;
+  @include small{
+    margin-bottom: 10px;
+  }
+  @include medium{
+    max-width: 160px;
+    float: left;
+  }
   img{
     display: block;
     width: 100%;
   }
 }
 .video-content{
-  margin-left: 180px;
+  @include medium{
+    margin-left: 180px;
+  }
   text-align: left;
 }
 .video-title{
