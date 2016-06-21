@@ -1,14 +1,27 @@
-- name: 'Real-time Updating'
-  description: 'Watch as posts and comments update live.'
-- name: 'Invite-only Access'
-  description: 'Control access to make Telescope either private or public.'
-- name: 'Notifications'
-  description: 'Never miss a reply thanks to built-in email notifications.'
-- name: 'Markdown Support'
-  description: 'Markdown makes it easy to format your posts beautifully.'
-- name: 'Flexible Authentication'
-  description: 'Telescope is flexible: log-in however you want.'
-- name: 'Multiple Views'
-  description: 'Rank posts by date, votes, or view the best posts of each day.'
-# - name: 'Easy Theming'
-#   description: "Extend the included skeleton theme to customize the app's look and feel."
+- name: 'Extensible Components'
+  description: 'Easily replace the entire front-end, or pick and choose which components to customize.'
+  link: https://github.com/TelescopeJS/Telescope#customizing-components
+- name: 'Custom Fields'
+  description: 'Extend posts, comments, and users with your own custom fields.'
+  link: https://github.com/TelescopeJS/Telescope#custom-fields
+- name: 'Callback Hooks'
+  description: 'Nova provides multiple callback hooks so you never have to modify its core.'
+  link: https://github.com/TelescopeJS/Telescope#callbacks
+- name: 'Internationalized'
+  description: 'Nova is internationalized using [react-intl](https://github.com/yahoo/react-intl).'
+  link: https://github.com/TelescopeJS/Telescope#internationalization
+- name: 'Auto-generated Forms'
+  description: 'Forms are generated from your data schema; no front-end coding required.'
+  link: https://github.com/TelescopeJS/Telescope/tree/master/packages/nova-forms
+- name: 'Social Login'
+  description: 'Let users log in with all the most common oAuth providers.'
+  link: https://github.com/TelescopeJS/Telescope#social-login
+- name: 'Built-in Emails'
+  description: 'Nova features a built-in email templating system for notifications and auto-generated newsletters.'
+  link: https://github.com/TelescopeJS/Telescope#customizing-emails
+- name: 'Reusable Front-end'
+  description: 'If you ever outgrow Nova, just keep your React components and switch in your own back-end.'
+  link: https://github.com/TelescopeJS/Telescope#customizing-components
+- name: 'Powerful Filters'
+  description: 'Search your data by category, keyword, or date, or add your own custom filters.'
+  link: https://github.com/TelescopeJS/Telescope#posts-parameters
