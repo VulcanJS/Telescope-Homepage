@@ -1,0 +1,77 @@
+---
+title: 'Introducing Nova: a new kind of back-end for React apps'
+published: true
+author: sacha
+date: 2016/06/22
+thumbnail: mailchimp-thumb.jpg
+---
+
+Over the past couple months, we've been busy porting Telescope from its original pure Meteor stack to a new, more powerful React/Meteor combo. 
+
+READMORE
+
+And while there's still a lot of work to be done, Nova (as the new version is called) is finally starting to really take shape. 
+
+### So What's Nova?
+
+If you look around the web, you'll quickly realize that a lot of apps fit the same overall model: a user-generated feed of items, usually with the ability to leave comments on these items. Instagram, Reddit, Product Hunt, WordPress blogs, they all follow the same pattern.
+
+This means whenever you start a new project, a lot of time is spent essentially recreating the same features: paginated feeds, user accounts, comments, and especially forms (so many forms!). 
+
+Nova's goal is to take care of all the boring stuff, and make creating this kind of app drastically easier. 
+
+Here's a short 2-min video that should make all of this a little bit clearer:
+
+<div class="video">
+<iframe width="560" height="315" src="//www.youtube.com/embed/_cLv6fH-PSQ" frameborder="0" allowfullscreen></iframe>
+</div>
+
+### The Nova Stack
+
+Nova runs on top of [Meteor](https://www.meteor.com/) and [MongoDB](https://www.mongodb.com/). Mongo stores your data, while Meteor takes care of syncing that data to the client in real-time, and making it available to your React components. 
+
+<%= figure "blog/meteor-architecture-diagram.png", "The Nova Architecture.", "", "" %>
+
+When you first run Nova, you'll get a fairly simple Product Hunt-type site with posts, comments, and user accounts. But the magic of Nova is that any of these data types can be customized with additional properties. As soon as you add a new custom field it'll automatically appear in every "new" or "edit" form, and just work. 
+
+What's more, you can also create your own completely new data schemas, and reuse Nova's pre-made forms and feeds just the same.
+
+So Nova isn't quite a CMS like WordPress or Drupal (it doesn't come with a separate admin UI), but it's also a lot more than a traditional boilerplate. It stays right in that sweet spot that makes your life easier without becoming bloated. 
+
+### Some Of Nova's Features
+
+What else can Nova do? Here's a short list of what you get out of the box:
+
+- Extensible components using React and [react-bootstrap](https://react-bootstrap.github.io/).
+- Automatically generated forms.
+- Multiple callback hooks to tweak Nova's back-end behavior.
+- Full internationalization using [react-intl](https://github.com/yahoo/react-intl)
+- Built-in user accounts and social log-in.
+- Email templating, and a newsletter auto-generated from your content.
+- Server-side rendering using [react-router](https://github.com/reactjs/react-router) and [meteor-react-router-ssr](https://github.com/thereactivestack/meteor-react-router-ssr). 
+
+<%= figure "blog/nova-newsletter.png", "Nova can generate email newsletters from your latest content.", "", "" %>
+
+Nova also leverages Meteor's packaging system to easily let you add and remove features as need be. Don't need the newsletter? Just do `meteor remove nova:newsletter` and it'll be gone forever (or at least, until you put it back in with `meteor add nova:newsletter`).
+
+### Making Your App Back-End Agnostic
+
+Another thing Nova encourages is making your React front-end back-end agnostic. Practically speaking, this means that if you ever outgrow Nova's own Meteor back-end, you'll be able to easily take your React components, and port them to a completely different stack.
+
+And we're also in the process of using [React Storybook](https://github.com/kadirahq/react-storybook) with Nova's base set of components, to make it even easier to work on your Nova front-end without having to worry about the back-end. 
+
+### Who Is Nova For?
+
+All this good stuff does come with a caveat: unlike the previous version of Telescope, Nova isn't meant for everybody. It's targeted at experienced developers who want to use it as a base to build something great. 
+
+This means you should already be somewhat familiar with JavaScript, React, and the Node ecosystem in general if you want to start using Nova.
+
+<%= figure "blog/nova-frontpage.png", "The default Nova front page.", "", "" %>
+
+This is also why the default Bootstrap front-end is admittedly a little uninspiring: it's meant to serve as an easily customizable starting point, not as a finished product!
+
+### Getting Started
+
+If all that made you even a little bit curious, the best way to get started is by [checking out the documentation](https://github.com/TelescopeJS/Telescope/), and then watching [this short series of getting started screencasts](https://www.youtube.com/playlist?list=PLBoa_Q6hVeSzChsSi8X8x3FQ8NN2D73fB).
+
+And if you run into any issues, just [drop by the Slack chatroom](http://slack.telescopeapp.org) and we'll do our best to help!
