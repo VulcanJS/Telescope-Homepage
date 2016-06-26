@@ -1,0 +1,21 @@
+- question: "What do I need to know to use Nova?"
+  answer: >
+    Nova makes building apps easier, but it does require some knowledge of 
+    the Node and React ecosystems. You should also be comfortable with using the command line
+    and Git. In other words, it's aimed at intermediate-level developers.
+- question: "What can I build with Nova?"
+  answer: >
+    The best use case for Nova is any type of app organized around 
+    a feed or database of user-generated content. Think Instagram, Product Hunt, or even AirBnB. 
+    That being said you can also use Nova's various modules to help build anything at all if 
+    you know Meteor and React. 
+- question: "How much does Nova cost to deploy?"
+  answer: >
+    You should budget around $10/month for a Digital Ocean droplet, 
+    plus $20/month for MongoDB database hosting. Note that Nova *cannot* be
+    hosted on shared hosting.
+- question: "Where can I get help with Nova?"
+  answer: >
+    Check out the [Nova Slack group](http://slack.telescopeapp.org) and the [Nova forums](http://meta.telescopeapp.org).
+    If you're looking to hire someone, you can post in the #jobs channels of the 
+    Slack group or in the [Reactiflux chat](http://www.reactiflux.com/) to find a React developer.

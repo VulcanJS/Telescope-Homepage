@@ -1,0 +1,10 @@
+%section.faq-section
+  .container
+    .section-heading FAQ
+    .questions
+      - data.questions.each do |question|
+        .question
+          %h3.question-heading=question.question
+          .question-answer
+            :markdown
+              #{question.answer}
