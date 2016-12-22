@@ -25,6 +25,14 @@ That doesn't mean saying goodbye to Meteor though. Nova still runs on top of Met
 
 The difference is that we can now leverage Meteor's strengths without being held back by its weaknesses. 
 
+### The Nova Framework
+
+With this new release, we also want to put more focus on using Nova as a framework, and not just a "build your own Hacker News" platform.
+
+What I mean by this is that Nova includes many lower-level tools to help you do things like generate your GraphQL schema, load data on the client, manage data updates, and generate and process forms. 
+
+In a way, Nova is the missing link between GraphQL's flexibility and Meteor's "it just works" approach.
+
 ### Getting Started
 
 You can find the new GraphQL version of Nova [on the `devel` branch](https://github.com/TelescopeJS/Telescope/tree/devel), and the best way to get started is to check out the brand new [documentation](http://nova-docs.telescopeapp.org). 
