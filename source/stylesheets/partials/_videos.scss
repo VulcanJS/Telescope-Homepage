@@ -1,0 +1,44 @@
+.videos{
+  @include medium {
+    @include pad(3,3);
+  }
+  .videos-inner{
+    border-radius: 3px;
+    border: 1px solid $light-grey;
+  }
+  margin-bottom: 60px;
+  .video{
+    @include cf;
+    border-bottom: 1px solid $light-grey;
+    padding: 20px;
+    &:last-child{
+      border-bottom: 0;
+    }
+  }
+  .video-thumb{
+    display: block;
+    border: 4px solid $light-grey;
+    border-radius: 3px;
+    @include small{
+      margin-bottom: 10px;
+    }
+    @include medium{
+      max-width: 160px;
+      float: left;
+    }
+    img{
+      display: block;
+      width: 100%;
+    }
+  }
+  .video-content{
+    @include medium{
+      margin-left: 180px;
+    }
+    text-align: left;
+  }
+  .video-title{
+    text-align: left;
+    margin-bottom: 5px;
+  }
+}

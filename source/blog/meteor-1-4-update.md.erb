@@ -1,0 +1,21 @@
+---
+title: 'Updating Nova To Meteor 1.4'
+published: true
+author: sacha
+date: 2016/07/27
+---
+
+Meteor just released the [1.4 update](https://guide.meteor.com/1.4-migration.html).
+
+After pulling the latest `devel` branch and running `meteor update`, you might run into some NPM-related issues. 
+
+This is generally because the `meteorhacks:kadira-binary-deps` hasn't been updated properly. You can force the update (to version 1.5.0 or higher) with:
+
+```
+meteor update meteorhacks:kadira-binary-deps
+```
+
+Other tips to fix issues:
+
+- Delete your `versions` file to force it to be recreated.
+- Remove all packages from `packages` and then add then back one by one to track down the issue. 

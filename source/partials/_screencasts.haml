@@ -1,0 +1,14 @@
+%section.gettingstarted
+  .container.gettingstarted-container
+    %h2.section-heading Screencasts
+    .videos
+      .videos-inner
+        - data.screencasts.each do |video|
+          .video
+            - url = "https://www.youtube.com/watch?v="+video.id+"&index=1&list=PLBoa_Q6hVeSzChsSi8X8x3FQ8NN2D73fB"
+            %a.video-thumb{href: url, target: "_blank"}
+              %img{src: video.thumb}
+            .video-content
+              %h5.video-title
+                %a{href: url, target: "_blank"}=video.title
+              %p.video-description=video.description
