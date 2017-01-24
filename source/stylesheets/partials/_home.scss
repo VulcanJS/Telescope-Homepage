@@ -36,14 +36,11 @@
 }
 
 .technologies{
-	@include medium {
-		@include pad(2,2);
-	}
 	.technology{
 		margin-bottom: 60px;
     @include medium{
-	    @include span(6);
-	    &:nth-of-type(2n){
+	    @include span(4);
+	    &:nth-of-type(3n){
 	      @include omega;
 	    }
     }

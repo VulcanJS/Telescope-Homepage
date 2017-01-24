@@ -303,7 +303,7 @@ if (!window.requestAnimationFrame) {
         star.create();
       }
 
-      star.line();
+      // star.line();
       star.animate();
     };
 

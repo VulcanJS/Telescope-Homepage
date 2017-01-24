@@ -1,7 +1,7 @@
 %section.examples
   .container.examples-container
     %h2.section-heading Built With Telescope
-    %h4.section-subheading A few open-source projects you can learn from
+    %h4.section-subheading A small selection of projects
     .sites
       - data.examples.each do |site|
         = partial('partials/site', :locals => {:site => site, :type => "examples"})

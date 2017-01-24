@@ -15,8 +15,6 @@
 
 - title: Community
   items: 
-    - title:  "Showcase"
-      url:    "/showcase"
     - title:  "Telescope on Slack"
       url:    "http://slack.telescopeapp.org"
     # - title:  "Telescope Meta"
@@ -27,7 +25,7 @@
 - title: Resources
   items: 
     - title:  "Documentation"
-      url:    "https://github.com/TelescopeJS/Telescope/"
+      url:    "http://nova-docs.telescopeapp.org"
     # - title:  "Themes"
     #   url:    "/themes"
     # - title:  "Plugins"

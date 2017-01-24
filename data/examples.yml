@@ -2,22 +2,18 @@
   tagline: News & Discussions
   url: http://crater.io/
   description: A community to discuss all things Meteor.
-  repo: https://github.com/meteorclub/telescope-theme-crater
   screenshot: crater2.jpg
-- title: CodeBuddies
-  tagline: Event Scheduling
-  url: http://hangouts.codebuddies.org/
+- title: Sidebar
+  tagline: Design Links
+  url: http://sidebar.io/
   description: >
-    CodeBuddies helps you find study partners and organize group hangouts to learn to code.
-  repo: https://github.com/lpatmo/cb
-# For this project, Telescope's upvote feature was repurposed
-# as an “RSVP” button for people to sign up to upcoming hangouts.
-  screenshot: codebuddies.jpg
+    Sidebar aggregates the five best design links of the day.
+  screenshot: sidebar2.png
 - title: CitizenLab
   url: http://demo.citizenlab.co/
   description: Co-create your city
   screenshot: citizenlab.jpg
-- title: Screenings
-  url: http://screenings.io/
-  description: Discover new design videos every day
-  screenshot: screenings.jpg
+- title: SmartHosts
+  url: https://www.smarthosts.org/
+  description: Where the world's smartest vacation rental pros hangout.
+  screenshot: smarthosts.png
