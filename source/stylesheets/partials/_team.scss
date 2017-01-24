@@ -1,0 +1,40 @@
+.contributors{
+  .intro{
+    text-align: center;
+    margin-bottom: $spacing;
+  }
+}
+.contributor{
+  @include medium{
+    @include span(6);
+    &:nth-of-type(2n){
+      @include omega;
+    }
+  }
+  margin-bottom: $spacing;
+  
+  text-align:center;
+  .contributor-name{
+    font-size:30px;
+    margin-bottom:5px;
+    line-height:1;
+  }
+  .contributor-bio{
+    font-size:16px;
+    @include light;
+  }
+  .contributor-avatar{
+    @include border-radius(100px);
+    @include single-transition(ease-out, all, 300ms, 0ms);
+    position:relative;
+    top:0px;
+    display:block;
+    width:200px;
+    margin:0 auto 20px auto;
+    img{
+      display:block;
+      width: 100%;
+    }
+    @include glow;
+  }
+}

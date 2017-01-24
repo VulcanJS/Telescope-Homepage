@@ -2,6 +2,8 @@
   items:
     - title:  "About"
       url:    "/about"
+    - title:  "Team"
+      url:    "/team"
     - title:  "Blog"
       url:    "/blog"
     - title:  "Roadmap"
@@ -10,8 +12,6 @@
     #   url:    "/faq"
     # - title:  "Contact"
     #   url:    "/contact"
-    - title: "Follow on Twitter"
-      url: "http://twitter.com/telescopeapp"
 
 - title: Community
   items: 
@@ -21,6 +21,8 @@
     #   url:    "http://meta.telescopeapp.org/"
     - title:  "GitHub"
       url:    "http://github.com/TelescopeJS/Telescope"
+    - title: "Follow on Twitter"
+      url: "http://twitter.com/telescopeapp"
 
 - title: Resources
   items: 
